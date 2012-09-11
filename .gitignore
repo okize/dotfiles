@@ -1,0 +1,13 @@
+# Folder view configuration files
+.DS_Store
+Desktop.ini
+
+# Thumbnail cache files
+._*
+Thumbs.db
+
+# Subversion files
+.svn
+
+# Dotfiles I don't want commited
+.extra
