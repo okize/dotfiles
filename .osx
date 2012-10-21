@@ -1,0 +1,12 @@
+# Show System Info at the Login Screen
+sudo defaults write /Library/Preferences/com.apple.loginwindow AdminHostInfo HostName
+
+# Enable Text Selection in Quick Look Windows
+defaults write com.apple.finder QLEnableTextSelection -bool TRUE;killall Finder
+
+# Stop Full Names from Copying with Email Addresses in OS X Mail
+defaults write com.apple.mail AddressesIncludeNameOnPasteboard -bool false
+
+# Make Hidden App Icons Translucent in the Dock
+defaults write com.apple.Dock showhidden -bool YES && killall Dock
+

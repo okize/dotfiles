@@ -72,8 +72,10 @@ alias rot13='tr a-zA-Z n-za-mN-ZA-M'
 alias emptytrash="sudo rm -rfv /Volumes/*/.Trashes; rm -rfv ~/.Trash"
 
 # Show/hide hidden files in Finder
-alias show="defaults write com.apple.Finder AppleShowAllFiles -bool true && killall Finder"
-alias hide="defaults write com.apple.Finder AppleShowAllFiles -bool false && killall Finder"
+alias show="defaults write com.apple.finder AppleShowAllFiles TRUE && killall Finder"
+alias hide="defaults write com.apple.finder AppleShowAllFiles FALSE && killall Finder"
+#alias show="defaults write com.apple.Finder AppleShowAllFiles -bool true && killall Finder"
+#alias hide="defaults write com.apple.Finder AppleShowAllFiles -bool false && killall Finder"
 #alias show='defaults write com.apple.Finder AppleShowAllFiles YES && killall Finder && open /System/Library/CoreServices/Finder.app'
 #alias hide='defaults write com.apple.Finder AppleShowAllFiles NO && killall Finder && open /System/Library/CoreServices/Finder.app'
 
@@ -98,3 +100,4 @@ done
 alias stfu="osascript -e 'set volume output muted true'"
 alias pumpitup="osascript -e 'set volume 10'"
 alias hax="growlnotify -a 'Activity Monitor' 'System error' -m 'WTF R U DOIN'"
+alias horsey="curl -s horseebooksipsum.com/api/v1/ | say"
