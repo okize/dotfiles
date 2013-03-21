@@ -3,8 +3,9 @@ HOMEBREW=/usr/local/bin:/usr/local/sbin
 NODE=/usr/local/lib/node:/usr/local/lib/node_modules
 GIT=/usr/local/git/bin
 RBENV=~/.rbenv/shims:/usr/bin/gcc-4.2
+GEM=$(cd $(which gem)/..; pwd)
 #PATH="/Library/Frameworks/Python.framework/Versions/2.7/bin:${PATH}"
-export PATH=$HOMEBREW:$NODE:$GIT:$RBENV:$PATH
+export PATH=$HOMEBREW:$NODE:$GIT:$RBENV:$GEM:$PATH
 
 # Load ~/.extra, ~/.bash_prompt, ~/.exports, ~/.aliases and ~/.functions
 # ~/.extra used for settings I don’t want to commit
