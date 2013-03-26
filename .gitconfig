@@ -13,7 +13,7 @@
 	excludesfile = ~/.gitignore
 	attributesfile = ~/.gitattributes
 	whitespace = fix,space-before-tab,tab-in-indent,trailing-space
-	autocrlf = input
+	autocrlf = false
 [color "branch"]
 	current = yellow reverse
 	local = yellow

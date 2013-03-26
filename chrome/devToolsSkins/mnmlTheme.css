@@ -10,48 +10,53 @@
   background: #888;
   opacity: 1;
 }
-#-webkit-web-inspector.compact #toolbar {
+#-webkit-web-inspector #toolbar {
   background: -webkit-linear-gradient(#555555, #333333) !important;
   border-top: 5px solid #c96666 !important;
   border-bottom: 1px solid #444444 !important;
   padding-top: 0 !important;
   height: 50px !important;
 }
-#-webkit-web-inspector.compact #toolbar .toolbar-label {
+#-webkit-web-inspector #toolbar .toolbar-label {
   color: #ffffff !important;
 }
-#-webkit-web-inspector.compact #toolbar .toggled-on .toolbar-label {
+#-webkit-web-inspector #toolbar .toggled-on .toolbar-label {
   color: #ffffff !important;
 }
-#-webkit-web-inspector.compact #toolbar .toolbar-item {
+#-webkit-web-inspector #toolbar .toolbar-item {
+  height: 45px !important;
   padding: 10px 15px !important;
 }
-#-webkit-web-inspector.compact #toolbar .toolbar-item .toolbar-icon {
+#-webkit-web-inspector #toolbar .toolbar-item .toolbar-icon {
   -webkit-filter: grayscale(0.3);
   -webkit-transform: scale(0.9);
 }
-#-webkit-web-inspector.compact #toolbar .toolbar-item.toggleable.toggled-on {
+#-webkit-web-inspector #toolbar .toolbar-item.toggleable.toggled-on {
   background: -webkit-linear-gradient(#444444, #333333) !important;
   padding: 10px 13px !important;
 }
-#-webkit-web-inspector.compact .toolbar-item.close-left {
-  margin-top: 1px !important;
+#-webkit-web-inspector #toolbar .toolbar-item.close-left {
+  padding-right: 22px !important;
 }
-#-webkit-web-inspector.compact #toolbar-controls {
-  margin-top: -4px !important;
+#-webkit-web-inspector #toolbar-controls {
+  margin-top: 2px !important;
+  color: #ffffff !important;
 }
-#-webkit-web-inspector.compact #toolbar-search-item {
+#-webkit-web-inspector #toolbar-search-item {
   margin-top: 12px !important;
 }
-#-webkit-web-inspector.compact #main {
+#-webkit-web-inspector #main {
   top: 50px !important;
 }
-#-webkit-web-inspector.compact #search-results-matches {
+#-webkit-web-inspector #search-results-matches {
   color: #eee !important;
   text-shadow: none !important;
 }
-#-webkit-web-inspector.compact #search {
+#-webkit-web-inspector #search {
   background: #1d1f21 !important;
+}
+#-webkit-web-inspector .resources-divider-label {
+  color: #ffffff !important;
 }
 #-webkit-web-inspector .crumbs .crumb {
   display: none;
@@ -223,6 +228,27 @@
   background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBNYWNpbnRvc2giIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6MjRGNTc2MTZDMTA2MTFFMDgwRUZGQ0JCMjgzMzU0MTYiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6MjRGNTc2MTdDMTA2MTFFMDgwRUZGQ0JCMjgzMzU0MTYiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo5MzM3N0Y2MUMxMDUxMUUwODBFRkZDQkIyODMzNTQxNiIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo5MzM3N0Y2MkMxMDUxMUUwODBFRkZDQkIyODMzNTQxNiIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/Plf0eOsAAAB4SURBVHjaYvz//z8DMYAFxph+BqyhA8qtQFaUacKIUAgFLkBsDMSCUMXvYRJMaApdgfgsEKcB8W6oJqwK30MVr4YqOgPEodgUgoASkkkgjfewKSyHmqIEdYIJlEZR6ILk606oonsYwQMEe6A+PQtlowBGYgMcIMAAF2wcFPVNZx8AAAAASUVORK5CYII=) !important;
   color: #c5c8c6 !important;
 }
+#-webkit-web-inspector #network-container th,
+#-webkit-web-inspector #network-container td,
+#-webkit-web-inspector #network-container .data-grid,
+#-webkit-web-inspector #network-container .network-summary-bar {
+  color: #ffffff;
+  background: #1d1f21 !important;
+  border-color: #444444 !important;
+}
+#-webkit-web-inspector #network-container th {
+  padding-left: 10px !important;
+}
+#-webkit-web-inspector #network-container .network-summary-bar {
+  border-top: 1px solid #444444;
+}
+#-webkit-web-inspector #network-container .network-graph-label {
+  color: #ffffff !important;
+  text-shadow: none !important;
+}
+#-webkit-web-inspector #network-container .timeline-column select {
+  color: #ffffff !important;
+}
 #-webkit-web-inspector .script-view,
 #-webkit-web-inspector .properties-tree,
 #-webkit-web-inspector .pane,
@@ -245,7 +271,7 @@
   background: rgba(255, 255, 255, 0.2) !important;
 }
 #-webkit-web-inspector #elements-content .selected {
-  background-color: #0e4c6e !important;
+  background-color: #242729 !important;
 }
 #-webkit-web-inspector .styles-sidebar-separator,
 #-webkit-web-inspector .pane > .title {
@@ -345,8 +371,12 @@
   color: #7c7c7c !important;
 }
 #-webkit-web-inspector .webkit-css-selector,
-#-webkit-web-inspector .styles-selector {
+#-webkit-web-inspector .styles-selector,
+#-webkit-web-inspector .styles-section .selector-matches {
   color: #bbde57 !important;
+}
+#-webkit-web-inspector .styles-section .selector {
+  color: #d5eb97 !important;
 }
 #-webkit-web-inspector .webkit-css-property {
   color: #eec574 !important;
@@ -397,6 +427,19 @@
 #-webkit-web-inspector .event-properties .name {
   color: #82a1be !important;
 }
+#-webkit-web-inspector .popover {
+  color: #ffffff !important;
+}
+#-webkit-web-inspector .popover .arrow {
+  display: none;
+}
+#-webkit-web-inspector .popover .network-timing-bar {
+  background: #808080 !important;
+  border-color: #808080 !important;
+}
+#-webkit-web-inspector .network-timing-bar-title {
+  color: #ffffff !important;
+}
 #-webkit-web-inspector .editing {
   color: #c5c8c6 !important;
   background-color: #000 !important;
@@ -426,6 +469,13 @@
   margin-right: 1px !important;
   margin-left: -5px !important;
   opacity: 0.6 !important;
+}
+#-webkit-web-inspector .outline-disclosure ol:focus li {
+  line-height: 16px;
+}
+#-webkit-web-inspector .outline-disclosure ol:focus li.selected {
+  outline: 1px solid rgba(255, 255, 255, 0.1);
+  line-height: 16px;
 }
 #-webkit-web-inspector .section.expanded > .header::before,
 #-webkit-web-inspector .properties-tree li.parent.expanded::before,

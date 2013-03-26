@@ -9,6 +9,9 @@ Thumbs.db
 # Subversion files
 .svn
 
+# SASS cache
+.sass-cache
+
 # Dotfiles I don't want commited
 .extra
 .netrc
