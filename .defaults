@@ -1,0 +1,10 @@
+ 6666  history |grep "defaults"
+ 6667  defaults write com.apple.Dock autohide-delay -float 0 && killall Dock
+ 6668  defaults write com.apple.dock expose-animation-duration -float 0.12 && killall Dock
+ 6669  defaults write com.apple.Dock showhidden -bool YES && killall Dock
+ 6670  defaults write com.apple.mail AddressesIncludeNameOnPasteboard -bool false
+ 6671  defaults write com.apple.finder QLEnableTextSelection -bool TRUE;killall Finder
+ 6672  defaults write com.apple.screencapture location ~/Documents/Screenshots
+ 6673  sudo defaults write /Library/Preferences/com.apple.loginwindow AdminHostInfo HostName
+ 6674  defaults write com.apple.Dock showhidden -bool YES && killall Dock
+ 6666  history |grep "defaults"

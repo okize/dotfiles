@@ -2,14 +2,9 @@
 alias ..="cd .."
 alias ...="cd ../.."
 alias ~="cd ~"
-alias tt="cd ~/Google\ Drive/projects/techtarget"
 
 # List all files colorized in long format, including dot files
 alias la="ls -Gla"
-
-#alias ls='ls -G'
-#alias la='ls -A'
-#alias ll='ls -hl'
 
 # List only directories
 alias lsd='ls -l | grep "^d"'
@@ -77,10 +72,6 @@ alias emptytrash="sudo rm -rfv /Volumes/*/.Trashes; rm -rfv ~/.Trash"
 # Show/hide hidden files in Finder
 alias show="defaults write com.apple.finder AppleShowAllFiles TRUE && killall Finder"
 alias hide="defaults write com.apple.finder AppleShowAllFiles FALSE && killall Finder"
-#alias show="defaults write com.apple.Finder AppleShowAllFiles -bool true && killall Finder"
-#alias hide="defaults write com.apple.Finder AppleShowAllFiles -bool false && killall Finder"
-#alias show='defaults write com.apple.Finder AppleShowAllFiles YES && killall Finder && open /System/Library/CoreServices/Finder.app'
-#alias hide='defaults write com.apple.Finder AppleShowAllFiles NO && killall Finder && open /System/Library/CoreServices/Finder.app'
 
 # Hide/show all desktop icons (useful when presenting)
 alias hidedesktop="defaults write com.apple.finder CreateDesktop -bool false && killall Finder"
@@ -102,7 +93,6 @@ done
 # Stuff I never really use but cannot delete either because of http://xkcd.com/530/
 alias stfu="osascript -e 'set volume output muted true'"
 alias pumpitup="osascript -e 'set volume 10'"
-alias hax="growlnotify -a 'Activity Monitor' 'System error' -m 'WTF R U DOIN'"
 alias horsey="curl -s horseebooksipsum.com/api/v1/ | say"
 
 # of course
