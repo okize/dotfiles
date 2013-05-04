@@ -44,7 +44,7 @@ complete -o "nospace" -W "Contacts Calendar Dock Finder Mail Safari iTunes Syste
 
 
 # init rbenv
-# eval "$(rbenv init -)"x`
+# eval "$(rbenv init -)"
 
 # PLM-specific
 export RUBY_HEAP_MIN_SLOTS=1000000
