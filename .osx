@@ -1,12 +1,26 @@
-# Show System Info at the Login Screen
-sudo defaults write /Library/Preferences/com.apple.loginwindow AdminHostInfo HostName
+# See All Defaults Commands Executed
+history |grep "defaults"
 
-# Enable Text Selection in Quick Look Windows
-defaults write com.apple.finder QLEnableTextSelection -bool TRUE;killall Finder
+# Remove the Auto-Hide Dock Delay
+defaults write com.apple.Dock autohide-delay -float 0 && killall Dock
 
-# Stop Full Names from Copying with Email Addresses in OS X Mail
-defaults write com.apple.mail AddressesIncludeNameOnPasteboard -bool false
+# Speed Up Mission Control Animations
+defaults write com.apple.dock expose-animation-duration -float 0.12 && killall Dock
 
 # Make Hidden App Icons Translucent in the Dock
 defaults write com.apple.Dock showhidden -bool YES && killall Dock
 
+# Stop Full Names from Copying with Email Addresses in OS X Mail
+defaults write com.apple.mail AddressesIncludeNameOnPasteboard -bool false
+
+# Enable Text Selection in Quick Look Windows
+defaults write com.apple.finder QLEnableTextSelection -bool TRUE;killall Finder
+
+# Change Where Screen Shots Are Saved To
+defaults write com.apple.screencapture location ~/Documents/Screenshots
+
+# Show System Info at the Login Screen
+sudo defaults write /Library/Preferences/com.apple.loginwindow AdminHostInfo HostName
+
+# Make Hidden App Icons Translucent in the Dock
+defaults write com.apple.Dock showhidden -bool YES && killall Dock
