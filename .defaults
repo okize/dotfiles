@@ -8,3 +8,5 @@
  6673  sudo defaults write /Library/Preferences/com.apple.loginwindow AdminHostInfo HostName
  6674  defaults write com.apple.Dock showhidden -bool YES && killall Dock
  6666  history |grep "defaults"
+  349  git checkout -- .defaults
+  349  git checkout -- .defaults

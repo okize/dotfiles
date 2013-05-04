@@ -1,10 +1,65 @@
+#GIT
+
+# list number of commits per user
+alias gscore="git shortlog -n -s -e"
+
+# get lines of code
+alias loc="git ls-files | xargs wc -l"
+
+# shows difference between empty tree and current working tree
+alias treediff="git diff --stat `git hash-object -t tree /dev/null`"
+
+# nice log output
+alias gls="git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --"
+
+# push to master branch on github
+alias gpom="git push origin master"
+
+# display current branch
+alias gb="git branch"
+
+# display local and remote branches
+alias gball="git branch -a"
+
+# display only remote branches
+alias gbrem="git branch -r"
+
+# display short status
+alias gst="git status -s"
+
+# show git files about to be commited
+alias gshow="git show --pretty="format:" --name-only"
+
+# Pull from a remote and avoid the merge commit:
+alias gupr="git pull --rebase"
+
+# undo a 'git push'
+alias unpush="git push -f origin HEAD^:master"
+
+# undo a 'git add .'
+alias unadd="git rm -r --cached ."
+
+# see dry run of 'git add .'
+alias dryrun="git add -n ."
+
+# info about my contributions
+# alias gme="git log --author='Morgan Wigmanich' --pretty=tformat: --numstat | gawk '{ add += $1 ; subs += $2 ; loc += $1 - $2 } END { printf \"added lines: %s removed lines : %s total lines: %s\n\",add,subs,loc }' -"
+
+# batch git rm (opposite of git add .)
+# alias grm="git rm $(git ls-files --deleted)"
+
 # navigation
 alias ..="cd .."
 alias ...="cd ../.."
+alias ....="cd ../../.."
+alias .....="cd ../../../.."
 alias ~="cd ~"
 
+# update OS X, homebrew, npm & gems
+alias update='sudo softwareupdate -i -a; brew update; brew upgrade; brew cleanup; npm update npm -g; npm update -g; sudo gem update'
+
 # List all files colorized in long format, including dot files
-alias la="ls -Gla"
+alias la="ls -la"
 
 # List only directories
 alias lsd='ls -l | grep "^d"'
@@ -22,20 +77,11 @@ fi
 alias c='pygmentize -O style=monokai -f console256 -g'
 
 # programs
-alias slt='open -a "Sublime Text 2"'
-
-# Undo a `git push`
-alias undopush="git push -f origin HEAD^:master"
-
-# git root
-alias gr='[ ! -z `git rev-parse --show-cdup` ] && cd `git rev-parse --show-cdup || pwd`'
-
-# show git files about to be commited
-alias gsf="git show --pretty="format:" --name-only bd61ad98"
+# alias subl='open -a "Sublime Text 2"'
 
 # IP addresses
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
-alias localip="ipconfig getifaddr en1"
+alias localip="ipconfig getifaddr en0"
 alias ips="ifconfig -a | perl -nle'/(\d+\.\d+\.\d+\.\d+)/ && print $1'"
 
 # Enhanced WHOIS lookups
@@ -45,8 +91,8 @@ alias whois="whois -h whois-servers.net"
 alias flush="dscacheutil -flushcache"
 
 # View HTTP traffic
-alias sniff="sudo ngrep -d 'en1' -t '^(GET|POST) ' 'tcp and port 80'"
-alias httpdump="sudo tcpdump -i en1 -n -s 0 -w - | grep -a -o -E \"Host\: .*|GET \/.*\""
+alias sniff="sudo ngrep -d 'en0' -t '^(GET|POST) ' 'tcp and port 80'"
+alias httpdump="sudo tcpdump -i en0 -n -s 0 -w - | grep -a -o -E \"Host\: .*|GET \/.*\""
 
 # Canonical hex dump; some systems have this symlinked
 type -t hd > /dev/null || alias hd="hexdump -C"
@@ -56,6 +102,9 @@ type -t md5sum > /dev/null || alias md5sum="md5"
 
 # Trim new lines and copy to clipboard
 alias c="tr -d '\n' | pbcopy"
+
+# Clean up LaunchServices to remove duplicates in the “Open With” menu
+alias lscleanup="/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user && killall Finder"
 
 # Recursively delete `.DS_Store` files
 alias cleanup="find . -name '*.DS_Store' -type f -ls -delete"
@@ -69,6 +118,13 @@ alias rot13='tr a-zA-Z n-za-mN-ZA-M'
 # Empty the Trash on all mounted volumes and the main HDD
 alias emptytrash="sudo rm -rfv /Volumes/*/.Trashes; rm -rfv ~/.Trash"
 
+# PlistBuddy alias, because sometimes `defaults` just doesn’t cut it
+alias plistbuddy="/usr/libexec/PlistBuddy"
+
+# minimize/maximize volume (http://xkcd.com/530/)
+alias shhh="osascript -e 'set volume output muted true'"
+alias crankit="osascript -e 'set volume 10'"
+
 # Show/hide hidden files in Finder
 alias show="defaults write com.apple.finder AppleShowAllFiles TRUE && killall Finder"
 alias hide="defaults write com.apple.finder AppleShowAllFiles FALSE && killall Finder"
@@ -77,23 +133,9 @@ alias hide="defaults write com.apple.finder AppleShowAllFiles FALSE && killall F
 alias hidedesktop="defaults write com.apple.finder CreateDesktop -bool false && killall Finder"
 alias showdesktop="defaults write com.apple.finder CreateDesktop -bool true && killall Finder"
 
-# Disable Spotlight
+# Disable/Enable Spotlight
 alias spotoff="sudo mdutil -a -i off"
-# Enable Spotlight
 alias spoton="sudo mdutil -a -i on"
 
-# PlistBuddy alias, because sometimes `defaults` just doesn’t cut it
-alias plistbuddy="/usr/libexec/PlistBuddy"
-
-# One of @janmoesen’s ProTip™s
-for method in GET HEAD POST PUT DELETE TRACE OPTIONS; do
-	alias "$method"="lwp-request -m '$method'"
-done
-
-# Stuff I never really use but cannot delete either because of http://xkcd.com/530/
-alias stfu="osascript -e 'set volume output muted true'"
-alias pumpitup="osascript -e 'set volume 10'"
+# horse ebooks
 alias horsey="curl -s horseebooksipsum.com/api/v1/ | say"
-
-# of course
-alias fucking='sudo'
