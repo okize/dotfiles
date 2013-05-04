@@ -1,11 +1,11 @@
 [alias]
   co = checkout
+  s = status -s
   st = status
   ci = commit
   c = commit -am
   up = pull
   p = push
-  s = status -s
   df = diff --color --color-words --abbrev
   lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
 [color]
@@ -13,11 +13,11 @@
 [apply]
   whitespace = fix
 [core]
-  excludesfile = ~/.gitignore
-  attributesfile = ~/.gitattributes
-  whitespace = fix,space-before-tab,tab-in-indent,trailing-space
   autocrlf = false
+  attributesfile = ~/.gitattributes
   editor = open -a 'Sublime Text 2'
+  excludesfile = ~/.gitignore
+  whitespace = fix,space-before-tab,tab-in-indent,trailing-space
 [color "branch"]
   current = yellow reverse
   local = yellow
