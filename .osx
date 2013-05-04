@@ -1,6 +1,3 @@
-# See All Defaults Commands Executed
-history |grep "defaults"
-
 # Remove the Auto-Hide Dock Delay
 defaults write com.apple.Dock autohide-delay -float 0 && killall Dock
 
