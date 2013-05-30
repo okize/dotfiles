@@ -1,4 +1,9 @@
-#GIT
+# RAILS
+
+# start up rails app
+alias start="bundle exec rails s"
+
+# GIT
 
 # list number of commits per user
 alias gscore="git shortlog -n -s -e"
@@ -47,6 +52,9 @@ alias dryrun="git add -n ."
 
 # batch git rm (opposite of git add .)
 # alias grm="git rm $(git ls-files --deleted)"
+
+# remove changes to that db file that gets updated on branch change
+alias byedb="git checkout db/structure.sql"
 
 # navigation
 alias ..="cd .."
