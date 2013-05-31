@@ -1,6 +1,6 @@
 # path settings
 HOMEBREW=/usr/local/bin:/usr/local/sbin
-NODE=/usr/local/lib/node:/usr/local/lib/node_modules
+NODE=/usr/local/share/npm/bin:/usr/local/share/npm/lib/node_modules
 GIT=/usr/local/git/bin
 RBENV=~/.rbenv/shims:/usr/bin/gcc-4.2
 # RVM=$PATH:$HOME/.rvm/bin
