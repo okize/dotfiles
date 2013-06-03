@@ -3,6 +3,9 @@
 # start up rails app
 alias start="bundle exec rails s"
 
+# start up rails console
+alias con="rails c"
+
 # GIT
 
 # list number of commits per user
