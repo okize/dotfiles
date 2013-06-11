@@ -1,10 +1,13 @@
 # RAILS
 
-# start up rails app
-alias start="bundle exec rails s"
+# start up PLM website
+alias splm="bundle exec rails server -p 3000"
+
+# start up ORE website
+alias sore="bundle exec rails server -p 4000"
 
 # start up rails console
-alias con="rails c"
+alias con="rails console"
 
 # GIT
 
