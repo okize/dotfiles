@@ -2,8 +2,8 @@
 HOMEBREW=/usr/local/bin:/usr/local/sbin
 NODE=/usr/local/share/npm/bin:/usr/local/share/npm/lib/node_modules
 GIT=/usr/local/git/bin
-# RBENV=~/.rbenv/shims:/usr/bin/gcc-4.2
-RBENV=/usr/local/var/rbenv
+RBENV=~/.rbenv/shims:/usr/bin/gcc-4.2
+# RBENV=/usr/local/var/rbenv
 GEM=$(cd $(which gem)/..; pwd)
 #PY="/Library/Frameworks/Python.framework/Versions/2.7/bin"
 export PATH=$HOMEBREW:$NODE:$GIT:$RBENV:$GEM:$PATH
