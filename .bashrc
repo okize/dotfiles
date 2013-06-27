@@ -15,8 +15,14 @@ for file in ~/.{extra,bash_prompt,exports,aliases,functions}; do
 done
 unset file
 
+# logs defaults write commands
+PROMPT_COMMAND='echo "$(history 1 | grep "defaults")" | sed '/^$/d' >> ~/dotfiles/.defaults'
+
+# init rbenv
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+
 # initialize z (https://github.com/rupa/z)
-. ~/dotfiles/code/z/z.sh
+source ~/dotfiles/code/z/z.sh
 
 # tab completion for SSH hostnames based on ~/.ssh/config, ignoring wildcards
 [ -e "$HOME/.ssh/config" ] && complete -o "default" -o "nospace" -W "$(grep "^Host" ~/.ssh/config | grep -v "[?*]" | cut -d " " -f2)" scp sftp ssh
@@ -37,9 +43,3 @@ complete -o "nospace" -W "Contacts Calendar Dock Finder Mail Safari iTunes Syste
 
 # If possible, add tab completion for many more commands
 [ -f /etc/bash_completion ] && source /etc/bash_completion
-
-# logs defaults write commands
-PROMPT_COMMAND='echo "$(history 1 | grep "defaults")" | sed '/^$/d' >> ~/dotfiles/.defaults'
-
-# init rbenv
-if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
