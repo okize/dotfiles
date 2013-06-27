@@ -2,8 +2,7 @@
   co = checkout
   s = status -s
   st = status
-  ci = commit
-  c = commit -am
+  c = commit -m
   up = pull
   p = push
   df = diff --color --color-words --abbrev
@@ -47,7 +46,7 @@
   insteadOf = "gist:"
 [user]
   name = Morgan Wigmanich
-  email = okize123@gmail.com
+  email = mwigmanich@patientslikeme.com
 [credential]
   helper = osxkeychain
 [push]
