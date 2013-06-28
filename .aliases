@@ -26,6 +26,9 @@ alias gls="git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d
 # push to master branch on github
 alias gpom="git push origin master"
 
+# push to master branch on github
+alias gpoh="git push origin HEAD"
+
 # display current branch
 alias gb="git branch"
 
