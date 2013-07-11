@@ -15,7 +15,7 @@
   autocrlf = false
   attributesfile = ~/.gitattributes
   editor = open -a 'Sublime Text 2'
-  excludesfile = ~/.gitignore
+	excludesfile = /Users/morganwigmanich/.gitignore
   whitespace = fix,space-before-tab,tab-in-indent,trailing-space
 [color "branch"]
   current = yellow reverse
@@ -45,9 +45,15 @@
 [url "git://gist.github.com/"]
   insteadOf = "gist:"
 [user]
-  name = Morgan Wigmanich
-  email = mwigmanich@patientslikeme.com
+	name = Morgan Wigmanich
+	email = mwigmanich@patientslikeme.com
 [credential]
   helper = osxkeychain
 [push]
   default = tracking
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
