@@ -5,7 +5,6 @@ GIT=/usr/local/git/bin
 # RBENV=~/.rbenv/shims:/usr/bin/gcc-4.2
 RBENV=/usr/local/var/rbenv
 GEM=$(cd $(which gem)/..; pwd)
-#PY="/Library/Frameworks/Python.framework/Versions/2.7/bin"
 export PATH=$HOMEBREW:$NODE:$GIT:$RBENV:$GEM:$PATH
 
 # Load ~/.extra, ~/.bash_prompt, ~/.exports, ~/.aliases and ~/.functions
@@ -38,7 +37,7 @@ which grunt > /dev/null && eval "$(grunt --completion=bash)"
 # tab completion for 'defaults read|write NSGlobalDomain'
 complete -W "NSGlobalDomain" defaults
 
-# `killall` tab completion for common apps
+# killall tab completion for common apps
 complete -o "nospace" -W "Contacts Calendar Dock Finder Mail Safari iTunes SystemUIServer Terminal Twitter" killall
 
 # If possible, add tab completion for many more commands
