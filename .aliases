@@ -1,3 +1,5 @@
+
+
 # RAILS
 
 # start up PLM website
@@ -66,7 +68,7 @@ alias dryrun="git add -n ."
 alias byedb="git checkout db/structure.sql"
 
 # open a 'clean' profile of Chrome
-alias cc=open -a "Google Chrome" --args --user-data-dir=/dev/null
+alias cc="open -a 'Google Chrome' --args --user-data-dir=/dev/null"
 
 # navigation
 alias ..="cd .."
