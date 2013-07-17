@@ -65,6 +65,9 @@ alias dryrun="git add -n ."
 # remove changes to that db file that gets updated on branch change
 alias byedb="git checkout db/structure.sql"
 
+# open a 'clean' profile of Chrome
+alias cc=open -a "Google Chrome" --args --user-data-dir=/dev/null
+
 # navigation
 alias ..="cd .."
 alias ...="cd ../.."
