@@ -29,7 +29,7 @@ alias gpom="git push origin master"
 # push to master branch on github
 alias gpoh="git push origin HEAD"
 
-# display current branch
+# display current branches
 alias gb="git branch"
 
 # display local and remote branches
@@ -74,6 +74,8 @@ alias ...="cd ../.."
 alias ....="cd ../../.."
 alias .....="cd ../../../.."
 alias ~="cd ~"
+alias src='cd ~/src'
+alias docs='cd ~/documents'
 
 # update OS X, homebrew, npm & gems
 alias update='sudo softwareupdate -i -a; brew update; brew upgrade; brew cleanup; npm update npm -g; npm update -g; sudo gem update'
