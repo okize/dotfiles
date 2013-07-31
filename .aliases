@@ -96,8 +96,13 @@ fi
 # 							   sudo easy_install Pygments
 alias c='pygmentize -O style=monokai -f console256 -g'
 
-# programs
-# alias subl='open -a "Sublime Text 2"'
+# Sublime Text
+
+# open file(s) in Sublime
+alias subl='open -a "Sublime Text 2"'
+
+# list of install sublime packages
+alias sublpak='ls ~/Library/Application\ Support/Sublime\ Text\ 2/Packages'
 
 # IP addresses
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
