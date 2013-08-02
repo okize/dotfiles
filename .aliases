@@ -102,7 +102,7 @@ alias c='pygmentize -O style=monokai -f console256 -g'
 # Sublime Text
 
 # open file(s) in Sublime
-alias subl='open -a "Sublime Text 2"'
+# alias subl='open -a "Sublime Text 2"'
 
 # list of install sublime packages
 alias sublpak='ls ~/Library/Application\ Support/Sublime\ Text\ 2/Packages'
