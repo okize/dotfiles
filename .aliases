@@ -1,4 +1,4 @@
-# RAILS
+## RAILS
 
 # start up PLM website
 alias splm="bundle exec rails server -p 3000"
@@ -9,7 +9,15 @@ alias sore="bundle exec rails server -p 4000"
 # start up rails console
 alias con="rails console"
 
-# GIT
+## Sublime Text
+
+# open file(s) in Sublime
+# alias subl='open -a "Sublime Text 2"'
+
+# list of install sublime packages
+alias sublpak='ls ~/Library/Application\ Support/Sublime\ Text\ 2/Packages'
+
+## GIT
 
 # list number of commits per user
 alias gscore="git shortlog -n -s -e"
@@ -77,27 +85,8 @@ alias ~="cd ~"
 alias src='cd ~/src'
 alias docs='cd ~/documents'
 
-# navigate and dir
-function cdd() {
-  if [ "$*" = "" ]
-    then
-      cd
-  else
-    cd "$*";
-  fi
-  ls -lav;
-}
-
-# quicklook from the terminal
-function qlf() {
-  qlmanage -p "$*" >& /dev/null;
-}
-
-# update OS X, homebrew, npm & gems
-alias update='sudo softwareupdate -i -a; brew update; brew upgrade; brew cleanup; npm update npm -g; npm update -g; sudo gem update'
-
 # List all files colorized in long format, including dot files
-alias la="ls -la"
+alias la="ls -lav"
 alias dir="ls -lav"
 
 # List only directories
@@ -112,16 +101,24 @@ else
 fi
 
 # `cat` with beautiful colors. requires Pygments installed.
-# 							   sudo easy_install Pygments
-alias c='pygmentize -O style=monokai -f console256 -g'
+# sudo easy_install Pygments
+# alias c='pygmentize -O style=monokai -f console256 -g'
 
-# Sublime Text
+# navigate and dir
+function cdd() {
+  if [ "$*" = "" ]
+    then
+      cd
+  else
+    cd "$*";
+  fi
+  dir;
+}
 
-# open file(s) in Sublime
-# alias subl='open -a "Sublime Text 2"'
-
-# list of install sublime packages
-alias sublpak='ls ~/Library/Application\ Support/Sublime\ Text\ 2/Packages'
+# quicklook from the terminal
+function qlf() {
+  qlmanage -p "$*" >& /dev/null;
+}
 
 # IP addresses
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
@@ -183,3 +180,6 @@ alias spoton="sudo mdutil -a -i on"
 
 # horse ebooks
 alias horsey="curl -s horseebooksipsum.com/api/v1/ | say"
+
+# update OS X, homebrew, npm & gems
+alias update='sudo softwareupdate -i -a; brew update; brew upgrade; brew cleanup; npm update npm -g; npm update -g; sudo gem update'
