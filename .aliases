@@ -38,7 +38,7 @@ alias gpom="git push origin master"
 alias gpoh="git push origin HEAD"
 
 # Pull from a remote and avoid the merge commit
-alias gpr="git pull --rebase"
+alias gpre="git pull --rebase"
 
 # display current branches
 alias gb="git branch"
