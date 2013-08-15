@@ -1,35 +1,4 @@
-## RAILS
-
-# start up PLM website
-alias splm="bundle exec rails server -p 3000"
-
-# start up ORE website
-alias sore="bundle exec rails server -p 4000"
-
-# start up rails console
-alias con="rails console"
-
-## Sublime Text
-
-# open file(s) in Sublime
-# alias subl='open -a "Sublime Text 2"'
-
-# list of install sublime packages
-alias sublpak='ls ~/Library/Application\ Support/Sublime\ Text\ 2/Packages'
-
-## GIT
-
-# list number of commits per user
-alias gscore="git shortlog -n -s -e"
-
-# get lines of code
-alias loc="git ls-files | xargs wc -l"
-
-# shows difference between empty tree and current working tree
-alias treediff="git diff --stat `git hash-object -t tree /dev/null`"
-
-# nice log output
-alias gls="git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --"
+## Git
 
 # push to master branch on github
 alias gpom="git push origin master"
@@ -50,31 +19,73 @@ alias gball="git branch -a"
 alias gbrem="git branch -r"
 
 # display short status
-alias gst="git status -s"
+alias gst="git status --short"
 
 # show git files about to be commited
 alias gshow="git show --pretty="format:" --name-only"
 
 # undo a 'git push'
-alias unpush="git push -f origin HEAD^:master"
+alias gunpush="git push -f origin HEAD^:master"
 
 # undo a 'git add .'
-alias unadd="git rm -r --cached ."
+alias gunadd="git rm -r --cached ."
 
 # see dry run of 'git add .'
-alias dryrun="git add -n ."
+alias gdryrun="git add -n ."
 
-# info about my contributions
-# alias gitme="git log --author='Morgan Wigmanich' --pretty=tformat: --numstat | gawk '{ add += $1 ; subs += $2 ; loc += $1 - $2 } END { printf \"added lines: %s removed lines : %s total lines: %s\n\",add,subs,loc }' -"
+# stash latest updates
+alias gsth="git stash"
 
-# batch git rm (opposite of git add .)
-# alias grm="git rm $(git ls-files --deleted)"
+# recover last stash
+alias gsthp="git stash pop"
 
-# remove changes to that db file that gets updated on branch change
-alias byedb="git checkout db/structure.sql"
+# display stashes
+alias gsthl="git stash list"
 
-# open a 'clean' profile of Chrome
-alias cc="open -a 'Google Chrome' --args --user-data-dir=/dev/null"
+# display diff stats
+alias gdiff="git diff --stat"
+
+# shows difference between empty tree and current working tree
+alias gtreediff="git diff --stat `git hash-object -t tree /dev/null`"
+
+# nice log output
+alias glog="git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --"
+
+# log output with cmd-clickable github urls
+alias glogc="gf"
+
+## Git repo trivia
+
+# get lines of code in repo
+alias loc="git ls-files | xargs wc -l"
+
+# list number of commits in repo per user
+alias gscore="git shortlog -n -s -e"
+
+# info about own contributions
+alias gme="gitContribute 1"
+
+# info about own contributions over previous day
+alias gme24="gitContribute 2"
+
+# info about team contributions
+alias gteam="gitContribute 3"
+
+# info about team contributions over previous day
+alias gteam24="gitContribute 4"
+
+## Rails
+
+# start up rails console
+alias con="rails console"
+
+## Sublime Text
+
+# open file(s) in Sublime
+# alias subl='open -a "Sublime Text 2"'
+
+# list of install sublime packages
+alias sublpak='ls ~/Library/Application\ Support/Sublime\ Text\ 2/Packages'
 
 # navigation
 alias ..="cd .."
@@ -104,21 +115,8 @@ fi
 # sudo easy_install Pygments
 # alias c='pygmentize -O style=monokai -f console256 -g'
 
-# navigate and dir
-function cdd() {
-  if [ "$*" = "" ]
-    then
-      cd
-  else
-    cd "$*";
-  fi
-  dir;
-}
-
-# quicklook from the terminal
-function qlf() {
-  qlmanage -p "$*" >& /dev/null;
-}
+# open a 'clean' profile of Chrome
+alias cc="open -a 'Google Chrome' --args --user-data-dir=/dev/null"
 
 # IP addresses
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
