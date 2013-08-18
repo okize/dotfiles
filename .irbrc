@@ -27,14 +27,12 @@ require 'time'
 # include my gem for doing Project Euler tasks and the like
 # require 'boqwij'
 
-
 # Have to have the Chronic gem (n'est-ce pas, Brad?)
 # require 'chronic'
 # require 'chronic_duration'
 
 # Create an alias for a quick exit
 alias q exit
-
 
 ANSI = {}
 ANSI[:RESET]     = "\e[0m"
@@ -115,7 +113,6 @@ extend_console 'wirb' do
   Wirb.start
 end
 
-
 # Hirb is a mini view framework for console applications, designed
 # to make formatting of ActiveRecord objects easier on the eyes
 # http://tagaholic.me/2009/03/13/hirb-irb-on-the-good-stuff.html
@@ -125,8 +122,6 @@ extend_console 'hirb' do
   Hirb.enable
   extend Hirb::Console
 end
-
-
 
 # # Trick I like from Thoughtbot's Dan Croak to show log info in console
 # # http://robots.thoughtbot.com/post/159806033/irb-script-console-tips
