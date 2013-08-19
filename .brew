@@ -1,0 +1,49 @@
+#!/usr/bin/env bash
+
+# Make sure we’re using the latest Homebrew
+brew update
+
+# Upgrade any already-installed formulae
+brew upgrade
+
+# Install GNU core utilities (those that come with OS X are outdated)
+# brew install coreutils
+# echo "Don’t forget to add $(brew --prefix coreutils)/libexec/gnubin to \$PATH."
+
+# Install GNU `find`, `locate`, `updatedb`, and `xargs`, g-prefixed
+# brew install findutils
+
+# Install Bash 4
+# brew install bash
+
+# Install wget with IRI support
+brew install wget --enable-iri
+
+# Install other useful binaries
+brew install ack
+brew install casperjs
+brew install git
+brew install hub
+brew install monogodb
+brew install node
+brew install phantomjs
+brew install ruby-build
+brew install rbenv
+brew install optipng
+
+# Install native apps
+brew tap phinze/homebrew-cask
+brew install brew-cask
+
+function installcask() {
+  brew cask install "${@}" 2> /dev/null
+}
+
+installcask dropbox
+installcask google-chrome
+installcask google-chrome-canary
+installcask iterm2
+installcask virtualbox
+
+# Remove outdated versions from the cellar
+brew cleanup
