@@ -33,6 +33,9 @@ alias gunadd="git rm -r --cached ."
 # see dry run of 'git add .'
 alias gdryrun="git add -n ."
 
+# grep through previous commits (and deleted code)
+alias gsearch="git log -S"
+
 # stash latest updates
 alias gstash="git stash"
 
