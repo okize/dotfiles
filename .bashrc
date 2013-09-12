@@ -5,7 +5,8 @@ GIT=/usr/local/git/bin
 # RBENV=~/.rbenv/shims:/usr/bin/gcc-4.2
 RBENV=/usr/local/var/rbenv
 GEM=$(cd $(which gem)/..; pwd)
-export PATH=$HOMEBREW:$NODE:$GIT:$RBENV:$GEM:$PATH
+HEROKU=/usr/local/heroku/bin
+export PATH=$HOMEBREW:$NODE:$GIT:$RBENV:$GEM:$HEROKU:$PATH
 
 # Load ~/.extra, ~/.bash_prompt, ~/.exports, ~/.aliases and ~/.functions
 # ~/.extra used for settings I don’t want to commit
@@ -42,5 +43,3 @@ complete -o "nospace" -W "Contacts Calendar Dock Finder Mail Safari iTunes Syste
 
 # If possible, add tab completion for many more commands
 [ -f /etc/bash_completion ] && source /etc/bash_completion
-
-export PLM_SCREENSHOT_PATH=/Users/morganwigmanich/src/plm-website/tmp/test-screenshots
