@@ -3,8 +3,11 @@
 # push to master branch on github
 alias gpom="git push origin master"
 
-# push to master branch on github
+# push to currently checked out branch on github
 alias gpoh="git push origin HEAD"
+
+# push to Heroku
+alias gphm="git push heroku master"
 
 # Pull from a remote and avoid the merge commit
 alias gpre="git pull --rebase"
