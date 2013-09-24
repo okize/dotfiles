@@ -176,6 +176,9 @@ alias emptytrash="sudo rm -rfv /Volumes/*/.Trashes; rm -rfv ~/.Trash"
 # PlistBuddy alias, because sometimes `defaults` just doesn’t cut it
 alias plistbuddy="/usr/libexec/PlistBuddy"
 
+# display running processes
+alias procs="ps aux"
+
 # minimize/maximize volume (http://xkcd.com/530/)
 alias shhh="osascript -e 'set volume output muted true'"
 alias crankit="osascript -e 'set volume 10'"
