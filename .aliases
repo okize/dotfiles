@@ -82,8 +82,8 @@ alias gteam24="gitContribute 4"
 
 ## Rails
 
-# start up rails console
-alias con="rails console"
+# displays running rails servers
+alias zombie-rails="ps ax | grep rails"
 
 ## Sublime Text
 
