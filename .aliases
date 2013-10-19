@@ -85,6 +85,9 @@ alias gteam24="gitContribute 4"
 # displays running rails servers
 alias zombie-rails="ps ax | grep rails"
 
+# bundle exec shortcut
+alias brake="bundle exec rake"
+
 ## Sublime Text
 
 # open file(s) in Sublime
