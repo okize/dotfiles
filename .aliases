@@ -1,16 +1,16 @@
 ## Git
 
-# push to master branch on github
-alias gpom="git push origin master"
+    # push to master branch on github
+    alias gpom="git push origin master"
 
-# push to currently checked out branch on github
-alias gpoh="git push origin HEAD"
+    # push to currently checked out branch on github
+    alias gpoh="git push origin HEAD"
 
-# push to Heroku
-alias gphm="git push heroku master"
+    # push to Heroku
+    alias gphm="git push heroku master"
 
-# Pull from a remote and avoid the merge commit
-alias gpre="git pull --rebase"
+    # Pull from a remote and avoid the merge commit
+    alias gpre="git pull --rebase"
 
 # display current branches
 alias gb="git branch"
@@ -34,7 +34,7 @@ alias gunpush="git push -f origin HEAD^:master"
 alias gunadd="git rm -r --cached ."
 
 # see dry run of 'git add .'
-alias gdryrun="git add -n ."
+alias gadryrun="git add -n ."
 
 # grep through previous commits (and deleted code)
 alias gsearch="git log -S"
@@ -50,6 +50,9 @@ alias gstashl="git stash list"
 
 # display diff stats
 alias gdiff="git diff --stat"
+
+# show difference without whitespace changes
+alias gdiffw="git diff --ignore-space-change"
 
 # shows difference between empty tree and current working tree
 alias gtreediff="git diff --stat `git hash-object -t tree /dev/null`"
