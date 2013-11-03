@@ -1,16 +1,16 @@
 ## Git
 
-    # push to master branch on github
-    alias gpom="git push origin master"
+# push to master branch on github
+alias gpom="git push origin master"
 
-    # push to currently checked out branch on github
-    alias gpoh="git push origin HEAD"
+# push to currently checked out branch on github
+alias gpoh="git push origin HEAD"
 
-    # push to Heroku
-    alias gphm="git push heroku master"
+# push to Heroku
+alias gphm="git push heroku master"
 
-    # Pull from a remote and avoid the merge commit
-    alias gpre="git pull --rebase"
+# Pull from a remote and avoid the merge commit
+alias gpre="git pull --rebase"
 
 # display current branches
 alias gb="git branch"
@@ -195,7 +195,7 @@ alias plistbuddy="/usr/libexec/PlistBuddy"
 alias procs="ps aux"
 
 # minimize/maximize volume (http://xkcd.com/530/)
-alias shhh="osascript -e 'set volume output muted true'"
+alias mute="osascript -e 'set volume output muted true'"
 alias crankit="osascript -e 'set volume 10'"
 
 # Show/hide hidden files in Finder
