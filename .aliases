@@ -66,6 +66,9 @@ alias glog="git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%
 # log output with cmd-clickable github urls
 alias glogc="gf"
 
+# open all files with merge conflicts in Sublime Text
+alias gconflicts="git diff --name-only | uniq | xargs subl"
+
 ## Git repo trivia
 
 # get lines of code in repo
