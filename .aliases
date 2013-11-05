@@ -48,8 +48,11 @@ alias gstashp="git stash pop"
 # display stashes
 alias gstashl="git stash list"
 
-# display diff stats
+# display diff
 alias gd="git diff"
+
+# display diff
+alias gdiff="git diff --color --color-words --abbrev"
 
 # show difference without whitespace changes
 alias gdw="git diff --ignore-space-change"
