@@ -12,14 +12,20 @@ alias gphm="git push heroku master"
 # Pull from a remote and avoid the merge commit
 alias gpre="git pull --rebase"
 
-# display current branches
-alias gb="git branch"
+# display local branches
+alias gbloc="git branch"
+
+# display remote branches
+alias gbrem="git branch -r"
 
 # display local and remote branches
 alias gball="git branch -a"
 
-# display only remote branches
-alias gbrem="git branch -r"
+# delete local branch
+alias gbdloc="git branch -D"
+
+# delete remote branch
+alias gbdrem="git push origin --delete"
 
 # display short status
 alias gst="git status --short"
