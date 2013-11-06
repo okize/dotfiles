@@ -3,10 +3,6 @@
   s = status -s
   st = status
   c = commit -m
-  up = pull
-  p = push
-  df = diff --color --color-words --abbrev
-  lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
 [color]
   ui = auto
 [apply]
