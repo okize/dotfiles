@@ -9,8 +9,11 @@ alias gpoh="git push origin HEAD"
 # push to Heroku
 alias gphm="git push heroku master"
 
-# Pull from a remote and avoid the merge commit
+# pull from a remote and avoid the merge commit
 alias gpre="git pull --rebase"
+
+# abort a merge
+alias gabort="git reset --hard HEAD"
 
 # display local branches
 alias gbloc="git branch"
