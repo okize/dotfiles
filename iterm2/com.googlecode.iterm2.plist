@@ -1063,7 +1063,7 @@
         <key>NSWindow Frame Preferences</key>
         <string>241 305 924 485 0 0 1440 878 </string>
         <key>NSWindow Frame iTerm Window 0</key>
-        <string>870 14 570 864 0 0 1440 878 </string>
+        <string>869 45 570 833 0 0 1440 878 </string>
         <key>New Bookmarks</key>
         <array>
                 <dict>
@@ -1756,7 +1756,7 @@
         <key>SUHasLaunchedBefore</key>
         <true/>
         <key>SULastCheckTime</key>
-        <date>2013-10-21T19:35:11Z</date>
+        <date>2013-11-08T20:09:17Z</date>
         <key>SavePasteHistory</key>
         <false/>
         <key>ShowBookmarkName</key>
@@ -1780,7 +1780,10 @@
         <key>TripleClickSelectsFullWrappedLines</key>
         <false/>
         <key>URLHandlersByGuid</key>
-        <dict/>
+        <dict>
+                <key>ssh</key>
+                <string>13CE218C-C31B-4442-B3A6-A973E3240960</string>
+        </dict>
         <key>UseBorder</key>
         <false/>
         <key>UseCompactLabel</key>
