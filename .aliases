@@ -58,16 +58,13 @@ alias gstashp="git stash pop"
 alias gstashl="git stash list"
 
 # display diff
-alias gd="git diff"
-
-# display diff
 alias gdiff="git diff --color --color-words --abbrev"
 
 # show difference without whitespace changes
 alias gdw="git diff --ignore-space-change"
 
-# display diff stats
-alias gdstat="git diff --stat"
+# display differences by filename
+alias gdfiles="git diff --stat"
 
 # shows difference between empty tree and current working tree
 alias gtreediff="git diff --stat `git hash-object -t tree /dev/null`"
