@@ -1,5 +1,8 @@
 ## Git
 
+# pull from a remote and avoid the merge commit
+alias gpre="git pull --rebase"
+
 # push to master branch on github
 alias gpom="git push origin master"
 
@@ -9,8 +12,8 @@ alias gpoh="git push origin HEAD"
 # push to Heroku
 alias gphm="git push heroku master"
 
-# pull from a remote and avoid the merge commit
-alias gpre="git pull --rebase"
+# make a commit without adding anything (for Heroku push)
+alias gempty="git commit --allow-empty -m"
 
 # abort a merge
 alias gabort="git reset --hard HEAD"
