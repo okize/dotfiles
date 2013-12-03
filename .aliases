@@ -13,7 +13,7 @@ alias gpoh="git push origin HEAD"
 alias gphm="git push heroku master"
 
 # make a commit without adding anything (for Heroku push)
-alias gempty="git commit --allow-empty -m"
+alias gce="git commit --allow-empty -m"
 
 # abort a merge
 alias gabort="git reset --hard HEAD"
