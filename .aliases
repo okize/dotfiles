@@ -83,6 +83,9 @@ alias gconflicts="git diff --name-only | uniq | xargs subl"
 
 ## Git repo trivia
 
+# display contribution calendar of repo
+alias gc="git-cal"
+
 # get lines of code in repo
 alias loc="git ls-files | xargs wc -l"
 
