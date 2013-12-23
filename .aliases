@@ -104,8 +104,6 @@ alias gteam="gitContribute 3"
 # info about team contributions over previous day
 alias gteam24="gitContribute 4"
 
-
-
 ## Rails
 
 # bundle exec shortcut
@@ -119,11 +117,10 @@ alias zs="zeus start"
 
 ## Sublime Text
 
-# open file(s) in Sublime
-# alias subl='open -a "Sublime Text 2"'
-
 # list of install sublime packages
-alias sublpak='ls ~/Library/Application\ Support/Sublime\ Text\ 2/Packages'
+alias sublpak="ls ~/Library/Application\ Support/Sublime\ Text\ 2/Packages"
+alias subl2pak="ls ~/Library/Application\ Support/Sublime\ Text\ 2/Packages"
+
 
 # navigation
 alias ..="cd .."
@@ -131,8 +128,8 @@ alias ...="cd ../.."
 alias ....="cd ../../.."
 alias .....="cd ../../../.."
 alias ~="cd ~"
-alias src='cd ~/src'
-alias docs='cd ~/documents'
+alias src="cd ~/src"
+alias docs="cd ~/documents"
 
 # Always use color output for `ls`
 if [[ "$OSTYPE" =~ ^darwin ]]; then
@@ -181,7 +178,7 @@ alias ips="ifconfig -a | perl -nle'/(\d+\.\d+\.\d+\.\d+)/ && print $1'"
 alias whois="whois -h whois-servers.net"
 
 # Stopwatch
-alias timer='echo "Timer started. Stop with Ctrl-D." && date && time cat && date'
+alias timer="echo 'Timer started. Stop with Ctrl-D.' && date && time cat && date"
 
 # Flush Directory Service cache
 alias flush="dscacheutil -flushcache"
@@ -206,7 +203,7 @@ alias lscleanup="/System/Library/Frameworks/CoreServices.framework/Frameworks/La
 alias cleanup="find . -name '*.DS_Store' -type f -ls -delete"
 
 # ROT13-encode text. Works for decoding, too! ;)
-alias rot13='tr a-zA-Z n-za-mN-ZA-M'
+alias rot13="tr a-zA-Z n-za-mN-ZA-M"
 
 # Empty the Trash on all mounted volumes and the main HDD
 alias emptytrash="sudo rm -rfv /Volumes/*/.Trashes; rm -rfv ~/.Trash"
@@ -241,4 +238,4 @@ alias chromekill="ps ux | grep '[C]hrome Helper --type=renderer' | grep -v exten
 alias horsey="curl -s horseebooksipsum.com/api/v1/ | say"
 
 # update OS X, homebrew, npm & gems
-alias update='sudo softwareupdate -i -a; brew update; brew cleanup; npm update npm -g; npm update -g; sudo gem update'
+alias update="sudo softwareupdate -i -a; brew update; brew cleanup; npm update npm -g; npm update -g; sudo gem update"
