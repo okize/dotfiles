@@ -218,6 +218,10 @@ alias emptytrash="sudo rm -rfv /Volumes/*/.Trashes; rm -rfv ~/.Trash"
 # PlistBuddy alias, because sometimes `defaults` just doesn’t cut it
 alias plistbuddy="/usr/libexec/PlistBuddy"
 
+# reset the DNS cache
+# alias reset-dns="sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.mDNSResponder.plist; sudo launchctl load -w /System/Library/LaunchDaemons/com.apple.mDNSResponder.plist;"
+alias reset-dns="sudo killall -HUP mDNSResponder"
+
 # display running processes
 alias procs="ps aux"
 
