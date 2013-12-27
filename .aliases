@@ -176,6 +176,12 @@ alias power="pmset -g"
 # open a 'clean' profile of Chrome
 alias cc="open -a 'Google Chrome' --args --user-data-dir=/dev/null"
 
+# flush DNS cache
+alias flush-dns="sudo killall -HUP mDNSResponder"
+
+# reset DNS cache
+alias reset-dns="sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.mDNSResponder.plist; sudo launchctl load -w /System/Library/LaunchDaemons/com.apple.mDNSResponder.plist;"
+
 # IP addresses
 alias externalip="dig +short myip.opendns.com @resolver1.opendns.com"
 alias localip="ipconfig getifaddr en0"
@@ -217,10 +223,6 @@ alias emptytrash="sudo rm -rfv /Volumes/*/.Trashes; rm -rfv ~/.Trash"
 
 # PlistBuddy alias, because sometimes `defaults` just doesn’t cut it
 alias plistbuddy="/usr/libexec/PlistBuddy"
-
-# reset the DNS cache
-alias reset-dns="sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.mDNSResponder.plist; sudo launchctl load -w /System/Library/LaunchDaemons/com.apple.mDNSResponder.plist;"
-# alias reset-dns="sudo killall -HUP mDNSResponder"
 
 # display running processes
 alias procs="ps aux"
