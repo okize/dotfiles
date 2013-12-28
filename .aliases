@@ -118,7 +118,7 @@ alias zs="zeus start"
 ## Sublime Text
 
 # list of install sublime packages
-alias sublpak="ls ~/Library/Application\ Support/Sublime\ Text\ 2/Packages"
+alias sublpak="ls ~/Library/Application\ Support/Sublime\ Text/Packages"
 alias subl2pak="ls ~/Library/Application\ Support/Sublime\ Text\ 2/Packages"
 
 # spin up a server (requires https://github.com/nodeapps/http-server)
