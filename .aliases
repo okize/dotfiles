@@ -125,6 +125,7 @@ alias subl2="/Applications/Sublime\ Text\ 2.app/Contents/SharedSupport/bin/subl"
 alias sublpak="ls ~/Library/Application\ Support/Sublime\ Text/Packages"
 alias subl2pak="ls ~/Library/Application\ Support/Sublime\ Text\ 2/Packages"
 
+## NodeJS
 
 # spin up a server (requires https://github.com/nodeapps/http-server)
 function __srv {
@@ -133,6 +134,8 @@ function __srv {
   fi
 }
 alias srv='__srv'
+
+## File system
 
 # navigation
 alias ..="cd .."
@@ -156,8 +159,8 @@ alias la="ls -lav"
 alias dir="ls -lav"
 
 # List only directories
-alias lsd='ls -lh'
-alias dirs='ls -lh'
+# alias lsd='ls -lh'
+alias dirs="ls -d */ | tr -d /"
 
 # List size of contents of files and dirs inside a dir
 alias dirsize="du -smc * | sort -n"
