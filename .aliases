@@ -12,6 +12,9 @@ alias gpoh="git push origin HEAD"
 # push to Heroku
 alias gphm="git push heroku master"
 
+# push to Dokku
+alias gpdm="git push dokku master"
+
 # make a commit without adding anything (for Heroku push)
 alias gce="git commit --allow-empty -m"
 
