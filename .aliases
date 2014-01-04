@@ -191,10 +191,10 @@ alias power="pmset -g"
 alias cc="open -a 'Google Chrome' --args --user-data-dir=/dev/null"
 
 # flush DNS cache
-alias flush-dns="sudo killall -HUP mDNSResponder"
+alias dns-flush="sudo killall -HUP mDNSResponder"
 
 # reset DNS cache
-alias reset-dns="sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.mDNSResponder.plist; sudo launchctl load -w /System/Library/LaunchDaemons/com.apple.mDNSResponder.plist;"
+alias dns-reset="sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.mDNSResponder.plist; sudo launchctl load -w /System/Library/LaunchDaemons/com.apple.mDNSResponder.plist;"
 
 # IP addresses
 alias externalip="dig +short myip.opendns.com @resolver1.opendns.com"
