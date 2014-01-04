@@ -87,6 +87,12 @@ alias glog="git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%
 # log output with cmd-clickable github urls
 alias glogc="gf"
 
+# user commits in repo for last week
+alias gtime="git log --author='`git config --global user.name`' --since='1 sunday ago' --until='now' --format='%Cred%h%Creset %s %Cgreen(%ci) %Cblue<%an>%Creset' --no-merges"
+
+# user commits in repo for previous week
+alias gtime2="git log --author='`git config --global user.name`' --since='2 sunday ago' --until='1 sunday ago' --format='%Cred%h%Creset %s %Cgreen(%ci) %Cblue<%an>%Creset' --no-merges"
+
 ## Git repo trivia ##
 
 # display contribution calendar of repo
