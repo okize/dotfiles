@@ -1,4 +1,34 @@
-## Git
+## Git ##
+
+# make a commit without adding anything (for Heroku push)
+alias gce="git commit --allow-empty -m"
+
+# show git files about to be commited
+alias gshow="git show --pretty='format:' --name-only"
+
+# abort a merge
+alias gabort="git reset --hard HEAD"
+
+# display local branches
+alias gbl="git branch"
+
+# display remote branches
+alias gbr="git branch -r"
+
+# display local and remote branches
+alias gba="git branch -a"
+
+# delete local branch
+alias gbld="git branch -D"
+
+# delete remote branch
+alias gbrd="git push origin --delete"
+
+# display short status
+alias gst="git status --short"
+
+# pull from a remote
+alias gp="git pull"
 
 # pull from a remote and avoid the merge commit
 alias gpre="git pull --rebase"
@@ -15,33 +45,6 @@ alias gphm="git push heroku master"
 # push to Dokku
 alias gpdm="git push dokku master"
 
-# make a commit without adding anything (for Heroku push)
-alias gce="git commit --allow-empty -m"
-
-# abort a merge
-alias gabort="git reset --hard HEAD"
-
-# display local branches
-alias gbloc="git branch"
-
-# display remote branches
-alias gbrem="git branch -r"
-
-# display local and remote branches
-alias gball="git branch -a"
-
-# delete local branch
-alias gbdloc="git branch -D"
-
-# delete remote branch
-alias gbdrem="git push origin --delete"
-
-# display short status
-alias gst="git status --short"
-
-# show git files about to be commited
-alias gshow="git show --pretty='format:' --name-only"
-
 # undo a 'git push'
 alias gunpush="git push -f origin HEAD^:master"
 
@@ -50,9 +53,6 @@ alias gunadd="git rm -r --cached ."
 
 # see dry run of 'git add .'
 alias gadryrun="git add -n ."
-
-# grep through previous commits (and deleted code)
-alias gsearch="git log -S"
 
 # stash latest updates
 alias gstash="git stash"
@@ -72,8 +72,14 @@ alias gdw="git diff --ignore-space-change"
 # display differences by filename
 alias gdfiles="git diff --stat"
 
+# open all files with merge conflicts in Sublime Text
+alias gconflicts="git diff --name-only | uniq | xargs subl"
+
 # shows difference between empty tree and current working tree
 alias gtreediff="git diff --stat `git hash-object -t tree /dev/null`"
+
+# grep through previous commits (and deleted code)
+alias gsearch="git log -S"
 
 # nice log output
 alias glog="git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --"
@@ -81,16 +87,10 @@ alias glog="git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%
 # log output with cmd-clickable github urls
 alias glogc="gf"
 
-# open all files with merge conflicts in Sublime Text
-alias gconflicts="git diff --name-only | uniq | xargs subl"
-
-## Git repo trivia
+## Git repo trivia ##
 
 # display contribution calendar of repo
 alias gc="git-cal"
-
-# get lines of code in repo
-alias loc="git ls-files | xargs wc -l"
 
 # list number of commits in repo per user
 alias gscore="git shortlog -n -s -e"
@@ -107,7 +107,10 @@ alias gteam="gitContribute 3"
 # info about team contributions over previous day
 alias gteam24="gitContribute 4"
 
-## Rails
+# get lines of code in repo
+alias loc="git ls-files | xargs wc -l"
+
+## Rails ##
 
 # bundle exec shortcut
 alias brake="bundle exec rake"
@@ -115,10 +118,7 @@ alias brake="bundle exec rake"
 # displays running rails servers
 alias zombie-rails="ps ax | grep rails"
 
-# starts zeus
-alias zs="zeus start"
-
-## Sublime Text
+## Sublime Text ##
 
 # sublime text shortcuts
 alias subl="/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl"
@@ -128,7 +128,7 @@ alias subl2="/Applications/Sublime\ Text\ 2.app/Contents/SharedSupport/bin/subl"
 alias sublpak="ls ~/Library/Application\ Support/Sublime\ Text\ 3/Packages"
 alias subl2pak="ls ~/Library/Application\ Support/Sublime\ Text\ 2/Packages"
 
-## NodeJS
+## NodeJS ##
 
 # displays globally installed modules
 alias npmg="npm -g ls --depth=0"
@@ -141,7 +141,7 @@ function __srv {
 }
 alias srv='__srv'
 
-## File system
+## File system ##
 
 # navigation
 alias ..="cd .."
