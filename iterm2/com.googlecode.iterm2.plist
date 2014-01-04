@@ -1017,7 +1017,7 @@
 	<key>IRMemory</key>
 	<integer>4</integer>
 	<key>JobName</key>
-	<false/>
+	<true/>
 	<key>LeftCommand</key>
 	<integer>7</integer>
 	<key>LeftOption</key>
@@ -1067,7 +1067,7 @@
 	<key>NSWindow Frame SUStatusFrame</key>
 	<string>68 458 384 129 0 0 1440 878 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>823 14 619 864 0 0 1440 878 </string>
+	<string>823 430 570 448 0 0 1440 878 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -1517,11 +1517,11 @@
 			<key>Name</key>
 			<string>Morgan</string>
 			<key>Non Ascii Font</key>
-			<string>SourceCodePro-Medium 12</string>
+			<string>SourceCodePro-Semibold 12</string>
 			<key>Non-ASCII Anti Aliased</key>
 			<true/>
 			<key>Normal Font</key>
-			<string>SourceCodePro-Regular 12</string>
+			<string>SourceCodePro-Light 12</string>
 			<key>Option Key Sends</key>
 			<integer>0</integer>
 			<key>Prompt Before Closing 2</key>
@@ -1803,7 +1803,7 @@
 	<key>WebKitStandardFont</key>
 	<string>Lucida Grande</string>
 	<key>WindowNumber</key>
-	<false/>
+	<true/>
 	<key>WindowStyle</key>
 	<integer>0</integer>
 	<key>WordCharacters</key>
@@ -1813,6 +1813,6 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>1.0.0.20131124</string>
+	<string>1.0.0.20131228</string>
 </dict>
 </plist>
