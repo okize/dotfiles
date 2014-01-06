@@ -11,7 +11,7 @@
 [core]
   autocrlf = false
   attributesfile = ~/.gitattributes
-  editor = open -a 'Sublime Text 2'
+  editor = open -a 'Sublime Text 3'
   excludesfile = ~/.gitignore
   whitespace = fix,space-before-tab,tab-in-indent,trailing-space
 [color "branch"]
