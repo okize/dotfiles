@@ -1,64 +1,13 @@
-# write this less shittily someday
-function gitContribute() {
-  case "$1" in
-
-  1)  echo "All your contributions to this repo..."
-      git log --stat --author $(git config --get user.email) | awk -F',' '/files? changed/ {
-          files += $1
-          insertions += $2
-          deletions += $3
-      }
-      END {
-          print "Files Changed: " files
-          print "Insertions: " insertions
-          print "Deletions: " deletions
-          print "Lines changed: " insertions + deletions
-      }'
-      ;;
-  2)  echo "Your contributions to this repo in the last day..."
-      git log --stat --author $(git config --get user.email) --since='yesterday' --until='now' | awk -F',' '/files? changed/ {
-          files += $1
-          insertions += $2
-          deletions += $3
-      }
-      END {
-          print "Files Changed: " files
-          print "Insertions: " insertions
-          print "Deletions: " deletions
-          print "Lines changed: " insertions + deletions
-      }'
-      ;;
-  3)  echo "All team contributions to this repo..."
-      git log --stat | awk -F',' '/files? changed/ {
-          files += $1
-          insertions += $2
-          deletions += $3
-      }
-      END {
-          print "Files Changed: " files
-          print "Insertions: " insertions
-          print "Deletions: " deletions
-          print "Lines changed: " insertions + deletions
-      }'
-      ;;
-  4)  echo "All team contributions to this repo in the last day..."
-      git log --stat --since='yesterday' --until='now' | awk -F',' '/files? changed/ {
-          files += $1
-          insertions += $2
-          deletions += $3
-      }
-      END {
-          print "Files Changed: " files
-          print "Insertions: " insertions
-          print "Deletions: " deletions
-          print "Lines changed: " insertions + deletions
-      }'
-      ;;
-  *) echo "Fail"
-     ;;
-  esac
-
-
+# sort jpegs into sub directories based on creation date
+function sortPhotos() {
+  for fil in *.JPG
+  do
+    datepath="$(identify -verbose $fil | grep DateTimeOri | awk '{print $2 }' | sed s%:%/%g)"
+    if ! test -e "$datepath"; then
+      mkdir -pv "$datepath"
+    fi
+    mv -v $fil $datepath
+  done
 }
 
 # batch git rm (opposite of git add .)
@@ -233,4 +182,67 @@ function win7chrome(){
 function win7ff(){
   local url="http://www.browserstack.com/start#os=Windows&os_version=7&browser=Firefox&browser_version=16.0&zoom_to_fit=true&resolution=1024x768&speed=1&url=$1&start=true"
   openurl $url $2
+}
+
+# write this less shittily someday
+function gitContribute() {
+  case "$1" in
+
+  1)  echo "All your contributions to this repo..."
+      git log --stat --author $(git config --get user.email) | awk -F',' '/files? changed/ {
+          files += $1
+          insertions += $2
+          deletions += $3
+      }
+      END {
+          print "Files Changed: " files
+          print "Insertions: " insertions
+          print "Deletions: " deletions
+          print "Lines changed: " insertions + deletions
+      }'
+      ;;
+  2)  echo "Your contributions to this repo in the last day..."
+      git log --stat --author $(git config --get user.email) --since='yesterday' --until='now' | awk -F',' '/files? changed/ {
+          files += $1
+          insertions += $2
+          deletions += $3
+      }
+      END {
+          print "Files Changed: " files
+          print "Insertions: " insertions
+          print "Deletions: " deletions
+          print "Lines changed: " insertions + deletions
+      }'
+      ;;
+  3)  echo "All team contributions to this repo..."
+      git log --stat | awk -F',' '/files? changed/ {
+          files += $1
+          insertions += $2
+          deletions += $3
+      }
+      END {
+          print "Files Changed: " files
+          print "Insertions: " insertions
+          print "Deletions: " deletions
+          print "Lines changed: " insertions + deletions
+      }'
+      ;;
+  4)  echo "All team contributions to this repo in the last day..."
+      git log --stat --since='yesterday' --until='now' | awk -F',' '/files? changed/ {
+          files += $1
+          insertions += $2
+          deletions += $3
+      }
+      END {
+          print "Files Changed: " files
+          print "Insertions: " insertions
+          print "Deletions: " deletions
+          print "Lines changed: " insertions + deletions
+      }'
+      ;;
+  *) echo "Fail"
+     ;;
+  esac
+
+
 }
