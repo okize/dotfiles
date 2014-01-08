@@ -275,3 +275,6 @@ alias horsey="curl -s horseebooksipsum.com/api/v1/ | say"
 
 # update OS X, homebrew, npm & gems
 alias update="sudo softwareupdate -i -a; brew update; brew cleanup; npm update npm -g; npm update -g; sudo gem update"
+
+# refresh shell after dotfiles changes
+alias br="source ~/.bashrc"
