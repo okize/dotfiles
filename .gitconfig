@@ -11,7 +11,7 @@
 [core]
   autocrlf = false
   attributesfile = ~/.gitattributes
-  editor = open -a 'Sublime Text 3'
+  editor = open -a 'Sublime Text'
   excludesfile = ~/.gitignore
   whitespace = fix,space-before-tab,tab-in-indent,trailing-space
 [color "branch"]
@@ -43,7 +43,7 @@
   insteadOf = "gist:"
 [user]
   name = Morgan Wigmanich
-  email = okize123@gmail.com
+  email = mwigmanich@patientslikeme.com
 [credential]
   helper = osxkeychain
 [push]
