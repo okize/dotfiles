@@ -1,17 +1,5 @@
-# sort jpegs into sub directories based on creation date
-function sortPhotos() {
-  for fil in *.JPG
-  do
-    datepath="$(identify -verbose $fil | grep DateTimeOri | awk '{print $2 }' | sed s%:%/%g)"
-    if ! test -e "$datepath"; then
-      mkdir -pv "$datepath"
-    fi
-    mv -v $fil $datepath
-  done
-}
-
 # batch git rm (opposite of git add .)
-function gitRm() {
+function git-rm() {
   git rm $(git ls-files --deleted)
 }
 
