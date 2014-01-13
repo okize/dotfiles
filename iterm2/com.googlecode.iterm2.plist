@@ -1277,7 +1277,7 @@
 	<key>NSWindow Frame SUStatusFrame</key>
 	<string>530 561 384 129 0 0 1440 878 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>567 430 570 448 0 0 1440 878 </string>
+        <string>869 14 570 864 0 0 1440 878 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -1883,7 +1883,7 @@
 			<key>Terminal Type</key>
 			<string>xterm-256color</string>
 			<key>Transparency</key>
-			<real>0.19556444883346558</real>
+                        <real>0.0</real>
 			<key>Triggers</key>
 			<array/>
 			<key>Unlimited Scrollback</key>
@@ -1974,7 +1974,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2014-01-04T19:01:06Z</date>
+        <date>2014-01-10T16:09:08Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>ShowBookmarkName</key>
