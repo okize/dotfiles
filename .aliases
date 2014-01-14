@@ -147,9 +147,9 @@ function __srv {
 }
 alias srv='__srv'
 
-## File system ##
+## Misc ##
 
-# navigation
+# File system navigation
 alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
@@ -247,6 +247,12 @@ alias emptytrash="sudo rm -rfv /Volumes/*/.Trashes; rm -rfv ~/.Trash"
 # PlistBuddy alias, because sometimes `defaults` just doesn’t cut it
 alias plistbuddy="/usr/libexec/PlistBuddy"
 
+# Display hardware info
+alias hw="hostinfo"
+
+# Display *a lot* of hardware info
+alias hwl="hostinfo; system_profiler; ioreg -bls;"
+
 # display running processes
 alias procs="ps aux"
 
@@ -269,9 +275,6 @@ alias spoton="sudo mdutil -a -i on"
 # Kill all the tabs in Chrome to free up memory
 # [C] explained: http://www.commandlinefu.com/commands/view/402/exclude-grep-from-your-grepped-output-of-ps-alias-included-in-description
 alias chromekill="ps ux | grep '[C]hrome Helper --type=renderer' | grep -v extension-process | tr -s ' ' | cut -d ' ' -f2 | xargs kill"
-
-# horse ebooks
-alias horsey="curl -s horseebooksipsum.com/api/v1/ | say"
 
 # update OS X, homebrew, npm & gems
 alias update="sudo softwareupdate -i -a; brew update; brew cleanup; npm update npm -g; npm update -g; sudo gem update"
