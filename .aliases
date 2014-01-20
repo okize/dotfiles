@@ -116,6 +116,9 @@ alias gteam24="gitContribute 4"
 # get lines of code in repo
 alias loc="git ls-files | xargs wc -l"
 
+## MongoDB ##
+alias mongo-start="mongod"
+
 ## Rails ##
 
 # bundle exec shortcut
