@@ -1,9 +1,7 @@
 [alias]
   co = checkout
-  s = status -s
   st = status
   c = commit -m
-  unc = reset --soft HEAD^
 [color]
   ui = auto
 [apply]
