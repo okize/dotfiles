@@ -5,7 +5,7 @@ GIT=/usr/local/git/bin
 RBENV=/usr/local/var/rbenv
 GEM=$(cd $(which gem)/..; pwd)
 HEROKU=/usr/local/heroku/bin
-GO=/usr/local/Cellar/go/1.2/libexec/bin
+GO=/usr/local/go/bin
 export PATH=$HOMEBREW:$NODE:$GIT:$RBENV:$GEM:$HEROKU:$GO:$PATH
 
 # Load ~/.extra, ~/.bash_prompt, ~/.exports, ~/.aliases and ~/.functions
@@ -43,8 +43,3 @@ complete -o "nospace" -W "Contacts Calendar Dock Finder Mail Safari iTunes Syste
 
 # if possible, add tab completion for many more commands
 [ -f /etc/bash_completion ] && source /etc/bash_completion
-
-# glorious 256 color display
-if [ -n "$DISPLAY" -a "$TERM" == "xterm" ]; then
-    export TERM=xterm-256color
-fi
