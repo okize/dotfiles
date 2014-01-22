@@ -93,6 +93,9 @@ alias gtime="git log --author='`git config --global user.name`' --since='1 sunda
 # user commits in repo for previous week
 alias gtime2="git log --author='`git config --global user.name`' --since='2 sunday ago' --until='1 sunday ago' --format='%Cred%h%Creset %s %Cgreen(%ci) %Cblue<%an>%Creset' --no-merges"
 
+# display global git user email
+alias gemail="git config --global --get user.email"
+
 ## Git repo trivia ##
 
 # display contribution calendar of repo
