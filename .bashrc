@@ -5,7 +5,8 @@ GIT=/usr/local/git/bin
 RBENV=/usr/local/var/rbenv
 GEM=$(cd $(which gem)/..; pwd)
 HEROKU=/usr/local/heroku/bin
-export PATH=$HOMEBREW:$NODE:$GIT:$RBENV:$GEM:$HEROKU:$PATH
+GO=/usr/local/Cellar/go/1.2/libexec/bin
+export PATH=$HOMEBREW:$NODE:$GIT:$RBENV:$GEM:$HEROKU:$GO:$PATH
 
 # Load ~/.extra, ~/.bash_prompt, ~/.exports, ~/.aliases and ~/.functions
 # ~/.extra used for settings I don’t want to commit
