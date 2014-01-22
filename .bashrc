@@ -1,11 +1,11 @@
 # path settings
-HOMEBREW=/usr/local/bin:/usr/local/sbin
-NODE=/usr/local/share/npm/bin:/usr/local/share/npm/lib/node_modules
-GIT=/usr/local/git/bin
-RBENV=/usr/local/var/rbenv
+HOMEBREW=$HOME/bin:$HOME/sbin
+NODE=$HOME/share/npm/bin:$HOME/share/npm/lib/node_modules
+GIT=$HOME/git/bin
+RBENV=$HOME/var/rbenv
 GEM=$(cd $(which gem)/..; pwd)
-HEROKU=/usr/local/heroku/bin
-GO=/usr/local/go/bin
+HEROKU=$HOME/heroku/bin
+GO=$HOME/go/bin
 export PATH=$HOMEBREW:$NODE:$GIT:$RBENV:$GEM:$HEROKU:$GO:$PATH
 
 # Load ~/.extra, ~/.bash_prompt, ~/.exports, ~/.aliases and ~/.functions
