@@ -41,6 +41,7 @@
   insteadOf = "gist:"
 [user]
   name = Morgan Wigmanich
+	email = mwigmanich@patientslikeme.com
 [credential]
   helper = osxkeychain
 [push]

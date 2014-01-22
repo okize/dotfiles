@@ -43,3 +43,10 @@ complete -o "nospace" -W "Contacts Calendar Dock Finder Mail Safari iTunes Syste
 
 # if possible, add tab completion for many more commands
 [ -f /etc/bash_completion ] && source /etc/bash_completion
+
+# sets gitconfig email based on computer in use (work v. home)
+if [ ${HOME} == "/Users/morganwigmanich" ]; then
+  git config --global user.email mwigmanich@patientslikeme.com
+else
+  git config --global user.email okize123@gmail.com
+fi
