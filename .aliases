@@ -6,8 +6,14 @@ alias gce="git commit --allow-empty -m"
 # show git files about to be commited
 alias gshow="git show --pretty='format:' --name-only"
 
-# abort a merge
-alias gabort="git reset --hard HEAD"
+#
+alias grs="git reset --soft HEAD^"
+
+#
+alias grm="git reset --mixed HEAD^"
+
+#
+alias grh="git reset --hard HEAD^"
 
 # display local branches
 alias gbl="git branch"
