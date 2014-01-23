@@ -161,6 +161,9 @@ alias srv='__srv'
 
 ## Misc ##
 
+# start redis server
+alias redis-start="redis-server /usr/local/etc/redis.conf"
+
 # File system navigation
 alias ..="cd .."
 alias ...="cd ../.."
