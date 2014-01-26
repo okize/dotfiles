@@ -274,6 +274,9 @@ alias hwl="hostinfo; system_profiler; ioreg -bls;"
 # display running processes
 alias procs="ps aux"
 
+# grep for a process name in running processes
+alias fprocs="ps aux | grep "
+
 # minimize/maximize volume (http://xkcd.com/530/)
 alias mute="osascript -e 'set volume output muted true'"
 alias crankit="osascript -e 'set volume 10'"
