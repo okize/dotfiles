@@ -7,8 +7,8 @@ if [ -n "$DISPLAY" -a "$TERM" == "xterm" ]; then
   export TERM=xterm-256color
 fi
 
-# set sublime text as default editor
-export EDITOR='subl -w'
+# set nano as default editor
+export EDITOR='nano'
 
 # Don’t clear the screen after quitting a manual page
 export MANPAGER="less -X"
