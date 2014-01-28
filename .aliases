@@ -102,6 +102,10 @@ alias gtime2="git log --author='`git config --global user.name`' --since='2 sund
 # display global git user email
 alias gemail="git config --global --get user.email"
 
+# create an orphan branch for gh-pages and unstage all files
+# follow with git rm --cached $(git-files)
+alias ghpages="git checkout --orphan gh-pages"
+
 ## Git repo trivia ##
 
 # display contribution calendar of repo
