@@ -122,6 +122,9 @@ alias gteam="gitContribute 3"
 # info about team contributions over previous day
 alias gteam24="gitContribute 4"
 
+# get number of files in repo
+alias gfiles="git ls-files | wc -l"
+
 # get lines of code in repo
 alias loc="git ls-files | xargs wc -l"
 
