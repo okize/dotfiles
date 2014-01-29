@@ -1,7 +1,7 @@
 ## Git ##
 
 # make a commit without adding anything (for Heroku push)
-alias gce="git commit --allow-empty -m"
+alias gfc="git commit --allow-empty -m"
 
 # show git files about to be commited
 alias gshow="git show --pretty='format:' --name-only"
