@@ -135,6 +135,9 @@ alias loc="git ls-files | xargs wc -l"
 ## MongoDB ##
 alias mongo-start="mongod"
 
+## Procfile ##
+alias fst="foreman start -f Procfile.dev"
+
 ## Rails ##
 
 # bundle exec shortcut
