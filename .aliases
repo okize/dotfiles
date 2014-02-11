@@ -228,7 +228,7 @@ alias power="pmset -g"
 # alias c='pygmentize -O style=monokai -f console256 -g'
 
 # open a 'clean' profile of Chrome
-alias cc="open -a 'Google Chrome' --args --user-data-dir=/dev/null"
+alias clean-chrome="open -a 'Google Chrome' --args --user-data-dir=/dev/null"
 
 # flush DNS cache
 alias dns-flush="sudo killall -HUP mDNSResponder"
