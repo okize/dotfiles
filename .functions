@@ -145,10 +145,11 @@ function json() {
 
 # get gzipped size
 function gz() {
-  echo "orig size    (bytes): "
-  cat "$1" | wc -c
-  echo "gzipped size (bytes): "
-  gzip -c "$1" | wc -c
+  local original="$(cat "$1" | wc -c)"
+  local gzipped="$(gzip -c "$1" | wc -c)"
+  echo ""
+  echo "orig size    (bytes):" $original
+  echo "gzipped size (bytes):" $gzipped
 }
 
 # Escape UTF-8 characters into their 3-byte format
