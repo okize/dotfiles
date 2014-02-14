@@ -10,8 +10,10 @@ function gz() {
 # get gzipped size of a remote file
 function gzu() {
   local dlFile="$(curl $1)"
-  local original="$(echo "scale=1; $(echo $dlFile | wc -c)/1024" | bc)"
-  local gzipped="$(echo "scale=1; $(echo $dlFile | gzip -c | wc -c)/1024" | bc)"
+  local origSize="$(echo $dlFile | wc -c)"
+  local gzipSize=$(echo $dlFile | gzip -c | wc -c)
+  local original="$(echo "scale=1; $origSize/1024" | bc)"
+  local gzipped="$(echo "scale=1; $gzipSize/1024" | bc)"
   echo
   echo "original file size (kb):" $original
   echo "gzipped file size  (kb):" $gzipped
