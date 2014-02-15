@@ -1,12 +1,11 @@
 # path settings
-HOMEBREW=/usr/local/bin:/usr/local/sbin
 NODE=/usr/local/share/npm/bin:/usr/local/share/npm/lib/node_modules
 GIT=/usr/local/git/bin
+HOMEBREW=/usr/local/bin:/usr/local/sbin
 RBENV=/usr/local/var/rbenv
-GEM=$(cd $(which gem)/..; pwd)
 HEROKU=/usr/local/heroku/bin
 GO=/usr/local/go/bin
-export PATH=$HOMEBREW:$NODE:$GIT:$RBENV:$GEM:$HEROKU:$GO:$PATH
+export PATH=$NODE:$GIT:$HOMEBREW:$RBENV:$HEROKU:$GO:$PATH
 
 # Load ~/.extra, ~/.bash_prompt, ~/.exports, ~/.aliases and ~/.functions
 # ~/.extra used for settings I don’t want to commit
