@@ -164,14 +164,6 @@ alias subl2pak="ls ~/Library/Application\ Support/Sublime\ Text\ 2/Packages"
 # displays globally installed modules
 alias npmg="npm -g ls --depth=0"
 
-# spin up a server (requires https://github.com/nodeapps/http-server)
-function __srv {
-  if [ -n "$1" ]; then
-    open http://localhost:$1 && http-server -p $1;
-  fi
-}
-alias srv='__srv'
-
 ## Misc ##
 
 # start redis cli
@@ -313,5 +305,5 @@ alias chromekill="ps ux | grep '[C]hrome Helper --type=renderer' | grep -v exten
 # update OS X, homebrew, npm & gems
 alias update="sudo softwareupdate -i -a; brew update; brew cleanup; npm update npm -g; npm update -g; sudo gem update"
 
-# refresh shell after dotfiles changes
-alias br="source ~/.bashrc"
+# reload shell after dotfiles change
+alias br="source ~/.bashrc; echo 'reloaded shell session'"
