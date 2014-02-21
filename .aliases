@@ -270,6 +270,9 @@ alias emptytrash="sudo rm -rfv /Volumes/*/.Trashes; rm -rfv ~/.Trash"
 # PlistBuddy alias, because sometimes `defaults` just doesn’t cut it
 alias plistbuddy="/usr/libexec/PlistBuddy"
 
+# Get headers of a URL
+alias hinfo="curl -I"
+
 # Display hardware info
 alias hw="hostinfo"
 
