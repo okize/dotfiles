@@ -1,10 +1,11 @@
 # path settings
-HOMEBREW=/usr/local/bin:/usr/local/sbin
+HOMEBREW=/usr/local/bin:/usr/local/lib:/usr/local/sbin
 GIT=/usr/local/git/bin
+NODE=/usr/local/share/npm/bin:/usr/local/share/npm/lib/node_modules
 HEROKU=/usr/local/heroku/bin
 GO=/usr/local/go/bin
 RBENV=$HOME/.rbenv/bin
-export PATH=$HOMEBREW:$GIT:$HEROKU:$GO:$RBENV:$PATH
+export PATH=$HOMEBREW:$GIT:$NODE:$HEROKU:$GO:$RBENV:$PATH
 
 # Load ~/.extra, ~/.bash_prompt, ~/.exports, ~/.aliases and ~/.functions
 # ~/.extra used for settings I don’t want to commit
@@ -14,10 +15,9 @@ done
 unset file
 
 # init rbenv
-if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
-
-# tab completion for SSH hostnames based on ~/.ssh/config, ignoring wildcards
-[ -e "$HOME/.ssh/config" ] && complete -o "default" -o "nospace" -W "$(grep "^Host" ~/.ssh/config | grep -v "[?*]" | cut -d " " -f2)" scp sftp ssh
+if which rbenv > /dev/null; then
+  eval "$(rbenv init -)"
+fi
 
 # init z (https://github.com/rupa/z)
 if [ -f ~/dotfiles/code/z/z.sh ]; then
@@ -26,13 +26,16 @@ fi
 
 # tab completion for Git
 if [ -f ~/.git-completion.bash ]; then
-  . ~/.git-completion.bash
+  . ~/dotfiles/code/git-completion/git-completion.bash
 fi
 
 # tab completion for homebrew
 if [ -f ~/dotfiles/code/homebrew/brew-completion.sh ]; then
     . ~/dotfiles/code/homebrew/brew-completion.sh
 fi
+
+# tab completion for SSH hostnames based on ~/.ssh/config, ignoring wildcards
+[ -e "$HOME/.ssh/config" ] && complete -o "default" -o "nospace" -W "$(grep "^Host" ~/.ssh/config | grep -v "[?*]" | cut -d " " -f2)" scp sftp ssh
 
 # tab completion for Grunt commands
 which grunt > /dev/null && eval "$(grunt --completion=bash)"
