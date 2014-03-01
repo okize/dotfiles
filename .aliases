@@ -1,11 +1,5 @@
 ## Git ##
 
-# make a commit without adding anything (for Heroku push)
-alias gfc="git commit --allow-empty -m 'forced commit'"
-
-# show git files about to be commited
-alias gshow="git show --pretty='format:' --name-only"
-
 #
 alias grs="git reset --soft HEAD^"
 
@@ -14,6 +8,30 @@ alias grm="git reset --mixed HEAD^"
 
 #
 alias grh="git reset --hard HEAD^"
+
+# checkout files
+alias gitco="git checkout"
+
+# commit files on stage
+alias gc="git commit -m"
+
+# display long status
+alias gitst="git status"
+
+# display short status
+alias gst="git status --short"
+
+# grep through repo
+alias ggrep="git grep --break --heading --line-number"
+
+# grep through previous commits (and deleted code)
+alias gsearch="git log -S"
+
+# make a commit without adding anything (for Heroku push)
+alias gfc="git commit --allow-empty -m 'forced commit'"
+
+# show git files about to be commited
+alias gshow="git show --pretty='format:' --name-only"
 
 # display local branches
 alias gbl="git branch"
@@ -29,9 +47,6 @@ alias gbld="git branch -D"
 
 # delete remote branch
 alias gbrd="git push origin --delete"
-
-# display short status
-alias gst="git status --short"
 
 # pull from a remote
 alias gp="git pull"
@@ -54,13 +69,20 @@ alias gpdm="git push dokku master"
 # undo a 'git push'
 alias gunpush="git push -f origin HEAD^:master"
 
+# add all unstaged files to index
+alias gall="git add ."
+
 # undo a 'git add .'
-alias gunadd="git rm -r --cached ."
+alias gunall="git rm -r --cached ."
 
 # see dry run of 'git add .'
-alias gadryrun="git add -n ."
+alias galldry="git add -n ."
 
-# stash latest updates
+# open all files with merge conflicts in Sublime Text
+# why doesn't this work?
+alias gconf="git diff --name-only --diff-filter=U | uniq | xargs subl -n"
+
+# stash unstaged files
 alias gstash="git stash"
 
 # recover last stash
@@ -78,14 +100,8 @@ alias gdw="git diff --ignore-space-change"
 # display differences by filename
 alias gdfiles="git diff --stat"
 
-# open all files with merge conflicts in Sublime Text
-alias gconflicts="git diff --name-only | uniq | xargs subl"
-
 # shows difference between empty tree and current working tree
 alias gtreediff="git diff --stat `git hash-object -t tree /dev/null`"
-
-# grep through previous commits (and deleted code)
-alias gsearch="git log -S"
 
 # nice log output
 alias glog="git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --"
