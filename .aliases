@@ -13,7 +13,7 @@ alias grh="git reset --hard HEAD^"
 alias gitco="git checkout"
 
 # commit files on stage
-alias gc="git commit -m"
+alias gc="git commit -m "
 
 # display long status
 alias gitst="git status"
@@ -125,7 +125,7 @@ alias ghpages="git checkout --orphan gh-pages"
 ## Git repo trivia ##
 
 # display contribution calendar of repo
-alias gc="git-cal"
+alias gcal="git-cal"
 
 # list number of commits in repo per user
 alias gscore="git shortlog -n -s -e"
