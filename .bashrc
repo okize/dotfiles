@@ -25,7 +25,7 @@ if [ -f ~/dotfiles/code/z/z.sh ]; then
 fi
 
 # tab completion for Git
-if [ -f ~/.git-completion.bash ]; then
+if [ -f ~/dotfiles/code/git-completion/git-completion.bash ]; then
   . ~/dotfiles/code/git-completion/git-completion.bash
 fi
 
