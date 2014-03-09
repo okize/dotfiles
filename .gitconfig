@@ -6,6 +6,13 @@
   ui = auto
 [apply]
   whitespace = fix
+[credential]
+  helper = osxkeychain
+[push]
+  default = tracking
+[grep]
+  lineNumber = true
+  extendRegexp = true
 [core]
   autocrlf = false
   attributesfile = ~/.gitattributes
@@ -42,7 +49,3 @@
 [user]
   name = Morgan Wigmanich
 	email = mwigmanich@patientslikeme.com
-[credential]
-  helper = osxkeychain
-[push]
-  default = tracking
