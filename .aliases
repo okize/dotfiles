@@ -57,8 +57,11 @@ alias gphm="git push heroku master"
 # push to Dokku
 alias gpdm="git push dokku master"
 
-# undo a 'git push'
+# undo a push
 alias gunpush="git push -f origin HEAD^:master"
+
+# undo a merge
+alias gunmerge="git reset --merge ORIG_HEAD"
 
 # add all unstaged files to index
 alias gall="git add ."
