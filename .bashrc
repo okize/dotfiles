@@ -7,9 +7,9 @@ GO=/usr/local/go/bin
 RBENV=$HOME/.rbenv/bin
 export PATH=$HOMEBREW:$GIT:$NODE:$HEROKU:$GO:$RBENV:$PATH
 
-# Load ~/.extra, ~/.bash_prompt, ~/.exports, ~/.aliases and ~/.functions
+# loads dotfiles into shell
 # ~/.extra used for settings I don’t want to commit
-for file in ~/.{extra,bash_prompt,exports,aliases,functions}; do
+for file in ~/.{bash_prompt,aliases,gitaliases,functions,exports,extra}; do
   [ -r "$file" ] && source "$file"
 done
 unset file
