@@ -182,11 +182,11 @@ alias fst="foreman start -f Procfile.dev"
 
 ## DB ##
 
-# start redis cli
-alias redc="redis-cli"
-
 # start redis server
 alias reds="redis-server /usr/local/etc/redis.conf"
+
+# start redis cli
+alias redc="redis-cli"
 
 ## MongoDB ##
 alias mongo-start="mongod"
@@ -297,10 +297,6 @@ alias procs="ps aux"
 # grep for a process name in running processes
 alias fprocs="ps aux | grep "
 
-# minimize/maximize volume (http://xkcd.com/530/)
-alias mute="osascript -e 'set volume output muted true'"
-alias crankit="osascript -e 'set volume 10'"
-
 # Show/hide hidden files in Finder
 alias show="defaults write com.apple.finder AppleShowAllFiles TRUE && killall Finder"
 alias hide="defaults write com.apple.finder AppleShowAllFiles FALSE && killall Finder"
@@ -308,6 +304,10 @@ alias hide="defaults write com.apple.finder AppleShowAllFiles FALSE && killall F
 # Hide/show all desktop icons (useful when presenting)
 alias hidedesktop="defaults write com.apple.finder CreateDesktop -bool false && killall Finder"
 alias showdesktop="defaults write com.apple.finder CreateDesktop -bool true && killall Finder"
+
+# minimize/maximize volume (http://xkcd.com/530/)
+alias mute="osascript -e 'set volume output muted true'"
+alias crankit="osascript -e 'set volume 10'"
 
 # Disable/Enable Spotlight
 alias spotoff="sudo mdutil -a -i off"
