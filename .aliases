@@ -6,6 +6,9 @@ alias gitco="git checkout"
 # commit files on stage
 alias gc="git commit -m "
 
+# add all modified files and commit
+alias gac="git add -A && git commit -m"
+
 # display long status
 alias gitst="git status"
 
