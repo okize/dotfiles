@@ -298,7 +298,10 @@ alias hwl="hostinfo; system_profiler; ioreg -bls;"
 alias procs="ps aux"
 
 # grep for a process name in running processes
-alias fprocs="ps aux | grep "
+alias fproc="ps aux | grep "
+
+# kill a running process by pid
+alias kproc="kill -9 "
 
 # Show/hide hidden files in Finder
 alias show="defaults write com.apple.finder AppleShowAllFiles TRUE && killall Finder"
