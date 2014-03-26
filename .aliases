@@ -27,6 +27,9 @@ alias gfc="git commit --allow-empty -m 'forced commit'"
 # show git files about to be commited
 alias gshow="git show --pretty='format:' --name-only"
 
+# create new local branch
+alias gbn="git checkout -b "
+
 # display local branches
 alias gbl="git branch"
 
