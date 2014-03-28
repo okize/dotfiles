@@ -158,7 +158,8 @@ alias gteam24="gitContribute 4"
 alias gfiles="git ls-files | wc -l"
 
 # get lines of code in repo
-alias loc="git ls-files | xargs wc -l"
+# alias loc="git ls-files -z | xargs -0 wc -l"
+alias loc="git diff --stat `git hash-object -t tree /dev/null` | tail -1"
 
 ## Sublime Text ##
 
