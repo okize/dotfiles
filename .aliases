@@ -181,11 +181,15 @@ alias npmg="npm -g ls --depth=0"
 # bundle exec shortcut
 alias brake="bundle exec rake"
 
+# run pending migrations
+alias brakem="bundle exec rake db:migrate RAILS_ENV=development"
+
 # displays running rails servers
 alias zombie-rails="ps ax | grep rails"
 
 ## Procfile ##
-alias fst="foreman start -f Procfile.dev"
+alias fst="foreman start"
+alias fstd="foreman start -f Procfile.dev"
 
 ## DB ##
 
@@ -196,7 +200,7 @@ alias reds="redis-server /usr/local/etc/redis.conf"
 alias redc="redis-cli"
 
 ## MongoDB ##
-alias mongo-start="mongod"
+alias mongs="mongod"
 
 ## Postgres ##
 alias dblist="psql --list"
