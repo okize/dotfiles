@@ -30,6 +30,9 @@ alias gshow="git show --pretty='format:' --name-only"
 # create new local branch
 alias gbn="git checkout -b "
 
+# git blame that ignore whitespace
+alias gb="git blame -w"
+
 # display local branches
 alias gbl="git branch"
 
