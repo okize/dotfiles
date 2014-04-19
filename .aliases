@@ -303,6 +303,12 @@ alias hinfo="curl -I"
 # Display hardware info
 alias hw="hostinfo"
 
+# Display disk usage
+alias diskspace="df -H"
+
+# Display free space on disk
+alias freespace="diskutil info / | grep 'Free Space'"
+
 # Display *a lot* of hardware info
 alias hwl="hostinfo; system_profiler; ioreg -bls;"
 
