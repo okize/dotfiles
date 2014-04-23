@@ -176,7 +176,10 @@ alias subl2pak="ls ~/Library/Application\ Support/Sublime\ Text\ 2/Packages"
 
 ## NodeJS ##
 
-# displays globally installed modules
+# lists locally installed top-level modules
+alias npml="npm ls --depth=0"
+
+# lists globally installed top-level modules
 alias npmg="npm -g ls --depth=0"
 
 ## Rails ##
