@@ -137,6 +137,9 @@ alias gemail="git config --global --get user.email"
 # follow with git rm --cached $(git-files)
 alias ghpages="git checkout --orphan gh-pages"
 
+# browse (requires lighthttpd)
+alias gweb="git instaweb"
+
 ## Git repo trivia ##
 
 # display contribution calendar of repo
