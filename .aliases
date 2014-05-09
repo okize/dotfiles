@@ -146,7 +146,7 @@ alias gweb="git instaweb"
 alias gcal="git-cal"
 
 # list number of commits in repo per user
-alias gscore="git shortlog -n -s -e"
+alias gcoms="git shortlog -n -s -e"
 
 # info about own contributions
 alias gme="gitContribute 1"
@@ -165,7 +165,7 @@ alias gfiles="git ls-files | wc -l"
 
 # get lines of code in repo
 # alias loc="git ls-files -z | xargs -0 wc -l"
-alias loc="git diff --stat `git hash-object -t tree /dev/null` | tail -1"
+alias gloc="git diff --stat `git hash-object -t tree /dev/null` | tail -1"
 
 ## Sublime Text ##
 
