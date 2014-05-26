@@ -19,6 +19,11 @@ function gzu() {
   echo "gzipped file size  (kb):" $gzipped
 }
 
+# list files in dir greater than a certain size
+function lsgt() {
+  find . -size +$1 -exec du -h {} \;
+}
+
 # start an HTTP server from a directory, optionally specifying the port
 # requires node & https://github.com/nodeapps/http-server to be installed
 function server() {
@@ -78,7 +83,7 @@ function cdd() {
 
 # find shorthand
 function f() {
-    find . -name "$1"
+  find . -name "$1"
 }
 
 # quicklook from the terminal
