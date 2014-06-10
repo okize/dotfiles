@@ -146,7 +146,13 @@ alias gweb="git instaweb"
 alias gcal="git-cal"
 
 # list number of commits in repo per user
-alias gcoms="git shortlog -n -s -e"
+alias gcoms="git shortlog --numbered --summary"
+
+# list number of commits in repo per user with email address
+alias gcomse="git shortlog --numbered --summary --email"
+
+# list number of commits in repo per user with email address
+alias gcomsnm="git shortlog -sn --no-merges"
 
 # info about own contributions
 alias gme="gitContribute 1"
@@ -196,7 +202,7 @@ alias brakem="bundle exec rake db:migrate RAILS_ENV=development"
 # displays running rails servers
 alias zombie-rails="ps ax | grep rails"
 
-## Procfile ##
+## ruby foreman ##
 alias fst="foreman start"
 alias fstd="foreman start -f Procfile.dev"
 
