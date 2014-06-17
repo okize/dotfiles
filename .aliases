@@ -206,6 +206,10 @@ alias zombie-rails="ps ax | grep rails"
 alias fst="foreman start"
 alias fstd="foreman start -f Procfile.dev"
 
+## node foreman ##
+alias nfst="nf start"
+alias nfstd="nf start -f Procfile.dev"
+
 ## DB ##
 
 # start redis server
@@ -218,6 +222,7 @@ alias redc="redis-cli"
 alias mongs="mongod"
 
 ## Postgres ##
+alias stoppostgres="pg_ctl -D /usr/local/var/postgres stop -m immediate"
 alias dblist="psql --list"
 
 # File system navigation
