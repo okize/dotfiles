@@ -8,7 +8,7 @@
 
 dir=~/dotfiles                    # dotfiles directory
 olddir=~/dotfilesBackup           # old dotfiles backup directory
-files=".aliases .gitaliases .bash_profile .bash_prompt .bashrc .exports .extra .functions .gitconfig .gitignore .gitattributes .inputrc .osx"    # list of files/folders to symlink in homedir
+files=".aliases .gitaliases .bash_profile .bash_prompt .bashrc .exports .extra .functions .gitconfig .gitignore .gitattributes .inputrc"    # list of files/folders to symlink in homedir
 
 ##########
 
@@ -28,3 +28,21 @@ for file in $files; do
     mv ~/$file $olddir
     ln -s $dir/$file ~/$file
 done
+
+# Setup OSX
+.osx
+
+# Install Homebrew
+ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
+
+# Setup Homebrew
+.brew
+
+# Install Ruby gems
+.gems
+
+# Install NPM packages
+.npm
+
+# Install httpie
+pip3 install httpie
