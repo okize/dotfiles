@@ -54,6 +54,10 @@ alias gp="git pull"
 # pull from a remote and avoid the merge commit
 alias gpre="git pull --rebase"
 
+# interative rebase (example: `gir4` where 4 is the number of commits to go back in history)
+# TODO move this to function so it's possible to pass agrument
+alias gir="git rebase -i HEAD~"
+
 # push to master branch on github
 alias gpom="git push origin master"
 
@@ -148,11 +152,11 @@ alias gcal="git-cal"
 # list number of commits in repo per user
 alias gcoms="git shortlog --numbered --summary"
 
-# list number of commits in repo per user with email address
-alias gcomse="git shortlog --numbered --summary --email"
+# list number of commits in repo per user not including merges
+alias gcomsnm="git shortlog --numbered --summary --no-merges"
 
-# list number of commits in repo per user with email address
-alias gcomsnm="git shortlog -sn --no-merges"
+# list number of commits in repo per user with their email address
+alias gcomse="git shortlog --numbered --summary --email"
 
 # info about own contributions
 alias gme="gitContribute 1"
