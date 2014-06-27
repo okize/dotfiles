@@ -924,7 +924,7 @@
 	<key>NSColorPanelMode</key>
 	<string>0</string>
 	<key>NSNavLastRootDirectory</key>
-	<string>~/dotfiles/iterm2</string>
+	<string>~/Documents</string>
 	<key>NSNavPanelExpandedSizeForOpenMode</key>
 	<string>{712, 448}</string>
 	<key>NSQuotedKeystrokeBinding</key>
@@ -955,7 +955,7 @@
 	<key>NSWindow Frame Preferences</key>
 	<string>17 178 924 485 0 0 1440 878 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>863 36 577 842 0 0 1440 878 </string>
+	<string>876 36 563 842 0 0 1440 878 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>183 68 570 426 0 0 1440 878 </string>
 	<key>New Bookmarks</key>
@@ -1763,7 +1763,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2014-06-11T18:52:18Z</date>
+	<date>2014-06-24T13:46:07Z</date>
 	<key>SUSkippedVersion</key>
 	<string>1.0.0.20140518</string>
 	<key>SavePasteHistory</key>
@@ -1806,6 +1806,10 @@
 	<integer>0</integer>
 	<key>WordCharacters</key>
 	<string>/-+\~_.</string>
+	<key>findIgnoreCase_iTerm</key>
+	<true/>
+	<key>findRegex_iTerm</key>
+	<false/>
 	<key>iTerm Version</key>
 	<string>1.0.0.20130622</string>
 </dict>
