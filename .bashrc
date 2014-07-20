@@ -34,6 +34,11 @@ if [ -f ~/dotfiles/code/homebrew/brew-completion.sh ]; then
     . ~/dotfiles/code/homebrew/brew-completion.sh
 fi
 
+# tab completion for gulp
+if [ -f ~/dotfiles/code/gulp/gulp-completion.sh ]; then
+    . ~/dotfiles/code/gulp/gulp-completion.sh
+fi
+
 # tab completion for SSH hostnames based on ~/.ssh/config, ignoring wildcards
 [ -e "$HOME/.ssh/config" ] && complete -o "default" -o "nospace" -W "$(grep "^Host" ~/.ssh/config | grep -v "[?*]" | cut -d " " -f2)" scp sftp ssh
 
