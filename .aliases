@@ -363,7 +363,7 @@ alias spoton="sudo mdutil -a -i on"
 alias chromekill="ps ux | grep '[C]hrome Helper --type=renderer' | grep -v extension-process | tr -s ' ' | cut -d ' ' -f2 | xargs kill"
 
 # update OS X, homebrew, npm & gems
-alias update="sudo softwareupdate -i -a; brew update; brew cleanup; npm update npm -g; npm update -g; sudo gem update"
+alias update="sudo softwareupdate -i -a; brew update; brew cleanup; npm update npm -g; npm update -g;"
 
 # reload shell after dotfiles change
 alias br="source ~/.bashrc; echo 'reloaded shell session'"
