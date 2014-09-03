@@ -17,7 +17,7 @@
 	<key>AutoHideTmuxClientSession</key>
 	<false/>
 	<key>CheckTestRelease</key>
-	<true/>
+	<false/>
 	<key>ClosingHotkeySwitchesSpaces</key>
 	<false/>
 	<key>CommandSelection</key>
@@ -893,12 +893,16 @@
 	<false/>
 	<key>HideActivityIndicator</key>
 	<false/>
+	<key>HideMenuBarInFullscreen</key>
+	<true/>
 	<key>HideScrollbar</key>
 	<false/>
 	<key>HideTab</key>
 	<true/>
 	<key>HighlightTabLabels</key>
 	<true/>
+	<key>HotKeyBookmark</key>
+	<string>F445DBBE-7F14-48A9-A75F-601C70145F39</string>
 	<key>HotKeyTogglesWindow</key>
 	<false/>
 	<key>Hotkey</key>
@@ -953,9 +957,9 @@
 	<key>NSWindow Frame NSColorPanel</key>
 	<string>307 274 214 309 0 0 1440 878 </string>
 	<key>NSWindow Frame Preferences</key>
-	<string>17 178 924 485 0 0 1440 878 </string>
+	<string>275 280 924 485 0 0 1440 878 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>876 36 563 842 0 0 1440 878 </string>
+	<string>870 452 570 426 0 0 1440 878 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>183 68 570 426 0 0 1440 878 </string>
 	<key>New Bookmarks</key>
@@ -1708,7 +1712,7 @@
 	<key>PassOnControlClick</key>
 	<false/>
 	<key>PasteFromClipboard</key>
-	<true/>
+	<false/>
 	<key>PointerActions</key>
 	<dict>
 		<key>Button,1,1,,</key>
@@ -1759,13 +1763,11 @@
 	<key>SUEnableAutomaticChecks</key>
 	<true/>
 	<key>SUFeedURL</key>
-	<string>http://iterm2.com/appcasts/testing.xml</string>
+	<string>http://iterm2.com/appcasts/final.xml</string>
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2014-06-24T13:46:07Z</date>
-	<key>SUSkippedVersion</key>
-	<string>1.0.0.20140518</string>
+	<date>2014-07-16T04:08:47Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>ShowBookmarkName</key>
@@ -1811,6 +1813,6 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>1.0.0.20130622</string>
+	<string>2.0</string>
 </dict>
 </plist>
