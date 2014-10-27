@@ -226,8 +226,9 @@ alias redc="redis-cli"
 alias mongs="mongod"
 
 ## Postgres ##
-alias stoppostgres="pg_ctl -D /usr/local/var/postgres stop -m immediate"
-alias dblist="psql --list"
+alias startpg="postgres -D /usr/local/var/postgres"
+alias stoppg="pg_ctl -D /usr/local/var/postgres stop -m immediate"
+alias lspg="psql --list"
 
 # File system navigation
 alias ..="cd .."
