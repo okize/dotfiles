@@ -1,13 +1,31 @@
 ## Git ##
 
-# checkout files
-alias gitco="git checkout"
+# list local branches
+alias gbl="git branch"
+
+# list local branches by most recently updated
+alias gbll="git-branch-local-ls"
+
+# list remote branches
+alias gbr="git branch -r"
+
+# display remote branches by most recently updated
+alias gbrl="git-branch-remote-ls"
+
+# display local and remote branches
+alias gba="git branch -a"
+
+# delete local branch
+alias gbld="git branch -D"
+
+# delete remote branch
+alias gbrd="git push origin --delete"
 
 # commit files on stage
 alias gc="git commit -m "
 
 # add all modified files and commit
-alias gac="git add -A && git commit -m"
+alias gac="git add . -A && git commit -m"
 
 # display long status
 alias gitst="git status"
@@ -31,22 +49,7 @@ alias gshow="git show --pretty='format:' --name-only"
 alias gbn="git checkout -b "
 
 # git blame that ignore whitespace
-alias gb="git blame -w"
-
-# display local branches
-alias gbl="git branch"
-
-# display remote branches
-alias gbr="git branch -r"
-
-# display local and remote branches
-alias gba="git branch -a"
-
-# delete local branch
-alias gbld="git branch -D"
-
-# delete remote branch
-alias gbrd="git push origin --delete"
+alias gblame="git blame -w"
 
 # pull from a remote
 alias gp="git pull"
@@ -67,6 +70,9 @@ alias gpoh="git push origin HEAD"
 # push to Heroku
 alias gphm="git push heroku master"
 
+# force push to Heroku
+alias gphmf="git push heroku master --force"
+
 # push to Dokku
 alias gpdm="git push dokku master"
 
@@ -74,7 +80,8 @@ alias gpdm="git push dokku master"
 alias gunpush="git push -f origin HEAD^:master"
 
 # undo a merge
-alias gunmerge="git reset --merge ORIG_HEAD"
+alias gunmerge="git reset --hard HEAD@{1}"
+# alias gunmerge="git reset --merge ORIG_HEAD"
 
 # add all unstaged files to index
 alias gall="git add ."
@@ -89,13 +96,13 @@ alias gallr="git reset HEAD ."
 # alias gunall="git rm -r --cached ."
 
 # redo last commit statement
-alias grs="git reset --soft HEAD^"
+alias grs="git reset --soft HEAD"
 
 # redo last commit AND undo staged files
-alias grm="git reset --mixed HEAD^"
+alias grm="git reset --mixed HEAD"
 
 #
-alias grh="git reset --hard HEAD^"
+alias grh="git reset --hard HEAD"
 
 # open all files with merge conflicts in Sublime Text
 # why doesn't this work?
@@ -111,7 +118,8 @@ alias gstashp="git stash pop"
 alias gstashl="git stash list"
 
 # display diff
-alias gdiff="git diff --color --color-words --abbrev"
+alias gdiff="git icdiff"
+# alias gdiff="git diff --color --color-words --abbrev"
 
 # show difference without whitespace changes
 alias gdw="git diff --ignore-space-change"
@@ -222,11 +230,7 @@ alias reds="redis-server /usr/local/etc/redis.conf"
 # start redis cli
 alias redc="redis-cli"
 
-## MongoDB ##
-alias mongs="mongod"
-
 ## Postgres ##
-alias startpg="postgres -D /usr/local/var/postgres"
 alias stoppg="pg_ctl -D /usr/local/var/postgres stop -m immediate"
 alias lspg="psql --list"
 
