@@ -5,7 +5,9 @@ NODE=/usr/local/share/npm/bin:/usr/local/share/npm/lib/node_modules
 HEROKU=/usr/local/heroku/bin
 GO=/usr/local/go/bin
 RBENV=$HOME/.rbenv/bin
-export PATH=$HOMEBREW:$GIT:$NODE:$HEROKU:$GO:$RBENV:$PATH
+DOCKER=~/dotfiles/code/docker/
+DIFF=~/dotfiles/code/icdiff/
+export PATH=$HOMEBREW:$GIT:$NODE:$HEROKU:$GO:$RBENV:$DOCKER:$DIFF:$PATH
 
 # loads dotfiles into shell
 # ~/.extra used for settings I don’t want to commit
