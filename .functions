@@ -120,6 +120,34 @@ function unidecode() {
   echo # newline
 }
 
+# display list of remote git branches ordered by most recently updated
+# can pass argument to limit count
+function git-branch-remote-ls() {
+  for branch in `git branch -r | grep -v HEAD`;
+  do echo -e `git show --date=short --pretty=format:"%Cblue%cd | %Cred%cr | %Creset%an | %Cgreen$k" $branch | head -n 1` \\t$branch;
+  done | sort -r | head -n 50 | column -t -s '|' | \
+  if [ -n "$1" ]
+    then
+      head -n $1
+  else
+    head -n 500
+  fi
+}
+
+# display list of local git branches ordered by most recently updated
+# can pass argument to limit count
+function git-branch-local-ls() {
+  git for-each-ref \
+  --format='%(color:blue)%(committerdate:short)%(color:reset) | %(color:red)%(committerdate:relative)%(color:reset) | %(authorname) | %(color:yellow)%(refname:short)%(color:reset)' \
+  --sort=-committerdate refs/heads/ | column -t -s '|' | \
+  if [ -n "$1" ]
+    then
+      head -n $1
+  else
+    head -n 500
+  fi
+}
+
 # write this less shittily someday
 function gitContribute() {
   case "$1" in
