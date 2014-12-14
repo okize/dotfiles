@@ -73,9 +73,6 @@ alias gphm="git push heroku master"
 # force push to Heroku
 alias gphmf="git push heroku master --force"
 
-# push to Dokku
-alias gpdm="git push dokku master"
-
 # undo a push
 alias gunpush="git push -f origin HEAD^:master"
 
@@ -230,9 +227,19 @@ alias reds="redis-server /usr/local/etc/redis.conf"
 # start redis cli
 alias redc="redis-cli"
 
+## MongoDB ##
+alias smongo="mongod"
+
 ## Postgres ##
+alias spg="postgres -D /usr/local/var/postgres"
 alias stoppg="pg_ctl -D /usr/local/var/postgres stop -m immediate"
 alias lspg="psql --list"
+
+## Heroku ##
+alias hra="heroku restart --app "
+
+## Mou ##
+alias mou="open -a Mou "
 
 # File system navigation
 alias ..="cd .."
