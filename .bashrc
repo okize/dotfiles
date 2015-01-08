@@ -2,12 +2,13 @@
 HOMEBREW=/usr/local/bin:/usr/local/lib:/usr/local/sbin
 GIT=/usr/local/git/bin
 NODE=/usr/local/share/npm/bin:/usr/local/share/npm/lib/node_modules
+NVM_DIR=~/.nvm
 HEROKU=/usr/local/heroku/bin
 GO=/usr/local/go/bin
 RBENV=$HOME/.rbenv/bin
 DOCKER=~/dotfiles/code/docker/
 DIFF=~/dotfiles/code/icdiff/
-export PATH=$HOMEBREW:$GIT:$NODE:$HEROKU:$GO:$RBENV:$DOCKER:$DIFF:$PATH
+export PATH=$HOMEBREW:$GIT:$NODE:$NVM_DIR:$HEROKU:$GO:$RBENV:$DOCKER:$DIFF:$PATH
 
 # loads dotfiles into shell
 # ~/.extra used for settings I don’t want to commit
@@ -20,6 +21,9 @@ unset file
 if which rbenv > /dev/null; then
   eval "$(rbenv init -)"
 fi
+
+# init nvm for node
+source $(brew --prefix nvm)/nvm.sh
 
 # init z (https://github.com/rupa/z)
 if [ -f ~/dotfiles/code/z/z.sh ]; then
