@@ -13,8 +13,8 @@ export EDITOR='nano'
 # Don’t clear the screen after quitting a manual page
 export MANPAGER="less -X"
 
-# Larger bash history (allow 32³ entries; default is 500)
-export HISTSIZE=32768
+# Larger bash history (default is 500)
+export HISTSIZE=1000000
 export HISTFILESIZE=$HISTSIZE
 export HISTCONTROL=ignoredups
 
