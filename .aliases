@@ -4,13 +4,16 @@
 alias gbl="git branch"
 
 # list local branches by most recently updated
-alias gbll="git-branch-local-ls"
+alias gbll="git_branch_local_ls"
 
 # list remote branches
 alias gbr="git branch -r"
 
 # display remote branches by most recently updated
-alias gbrl="git-branch-remote-ls"
+alias gbrl="git_branch_remote_ls"
+
+# display all changed files in current branch
+alias gbls="git_branch_ls"
 
 # display local and remote branches
 alias gba="git branch -a"
@@ -131,7 +134,7 @@ alias gtreediff="git diff --stat `git hash-object -t tree /dev/null`"
 alias glog="git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --"
 
 # log output with cmd-clickable github urls
-alias glogc="gf"
+alias glogc="git_log_clickable"
 
 # user commits in repo for last week
 alias gtime="git log --author='`git config --global user.name`' --since='1 sunday ago' --until='now' --format='%Cred%h%Creset %s %Cgreen(%ci) %Cblue<%an>%Creset' --no-merges"
@@ -164,22 +167,22 @@ alias gcomsnm="git shortlog --numbered --summary --no-merges"
 alias gcomse="git shortlog --numbered --summary --email"
 
 # info about own contributions
-alias gme="gitContribute 1"
+alias gme="git_contribute 1"
 
 # info about own contributions over previous day
-alias gme24="gitContribute 2"
+alias gme24="git_contribute 2"
 
 # info about team contributions
-alias gteam="gitContribute 3"
+alias gteam="git_contribute 3"
 
 # info about team contributions over previous day
-alias gteam24="gitContribute 4"
+alias gteam24="git_contribute 4"
 
 # get number of files in repo
 alias gfiles="git ls-files | wc -l"
 
 # get lines of code in repo
-# alias loc="git ls-files -z | xargs -0 wc -l"
+alias loc="git ls-files -z | xargs -0 wc -l"
 alias gloc="git diff --stat `git hash-object -t tree /dev/null` | tail -1"
 
 ## Sublime Text ##
