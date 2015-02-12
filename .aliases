@@ -197,6 +197,9 @@ alias subl2pak="ls ~/Library/Application\ Support/Sublime\ Text\ 2/Packages"
 
 ## NodeJS ##
 
+# npm update; delete node_modules dir then npm install
+alias npmu="rm -rf ./node_modules && npm install --ignore-scripts"
+
 # lists locally installed top-level modules
 alias npml="npm ls --depth=0"
 
