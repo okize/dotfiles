@@ -6,9 +6,10 @@ NVM_DIR=~/.nvm
 HEROKU=/usr/local/heroku/bin
 GO=/usr/local/go/bin
 RBENV=$HOME/.rbenv/bin
-DOCKER=~/dotfiles/code/docker/
-DIFF=~/dotfiles/code/icdiff/
-export PATH=$HOMEBREW:$GIT:$NODE:$NVM_DIR:$HEROKU:$GO:$RBENV:$DOCKER:$DIFF:$PATH
+RBENV_SHIMS=$HOME/.rbenv/shims
+DOCKER=~/dotfiles/code/docker
+DIFF=~/dotfiles/code/icdiff
+export PATH=$HOMEBREW:$GIT:$NODE:$NVM_DIR:$HEROKU:$GO:$RBENV:$RBENV_SHIMS:$DOCKER:$DIFF:$PATH
 
 # loads dotfiles into shell
 # ~/.extra used for settings I don’t want to commit
