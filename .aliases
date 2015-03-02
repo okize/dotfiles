@@ -1,5 +1,14 @@
 ## Git ##
 
+# pull from a remote
+alias gp="git pull"
+
+# pull from a remote and avoid the merge commit
+alias gpre="git pull --rebase"
+
+# create new local branch
+alias gb="git checkout -b"
+
 # list local branches
 alias gbl="git branch"
 
@@ -24,41 +33,29 @@ alias gbld="git branch -D"
 # delete remote branch
 alias gbrd="git push origin --delete"
 
+# display short status
+alias gst="git status --short"
+
+# display long status
+alias gstl="git status"
+
+# add all unstaged files to index
+alias gall="git add ."
+
+# see dry run of 'git add .'
+alias galldry="git add -n ."
+
 # commit files on stage
 alias gc="git commit -m "
 
 # add all modified files and commit
-alias gac="git add . -A && git commit -m"
-
-# display long status
-alias gitst="git status"
-
-# display short status
-alias gst="git status --short"
-
-# grep through repo
-alias ggrep="git grep --break --heading --line-number"
-
-# grep through previous commits (and deleted code)
-alias gsearch="git log -S"
+alias gca="git add . -A && git commit -m"
 
 # make a commit without adding anything (for Heroku push)
-alias gfc="git commit --allow-empty -m 'forced commit'"
+alias gcf="git commit --allow-empty -m 'forced commit'"
 
 # show git files about to be commited
-alias gshow="git show --pretty='format:' --name-only"
-
-# create new local branch
-alias gbn="git checkout -b "
-
-# git blame that ignore whitespace
-alias gblame="git blame -w"
-
-# pull from a remote
-alias gp="git pull"
-
-# pull from a remote and avoid the merge commit
-alias gpre="git pull --rebase"
+alias gcs="git show --pretty='format:' --name-only"
 
 # interative rebase (example: `gir4` where 4 is the number of commits to go back in history)
 # TODO move this to function so it's possible to pass agrument
@@ -70,24 +67,12 @@ alias gpom="git push origin master"
 # push to currently checked out branch on github
 alias gpoh="git push origin HEAD"
 
-# push to Heroku
-alias gphm="git push heroku master"
-
-# force push to Heroku
-alias gphmf="git push heroku master --force"
-
 # undo a push
 alias gunpush="git push -f origin HEAD^:master"
 
 # undo a merge
 alias gunmerge="git reset --hard HEAD@{1}"
 # alias gunmerge="git reset --merge ORIG_HEAD"
-
-# add all unstaged files to index
-alias gall="git add ."
-
-# see dry run of 'git add .'
-alias galldry="git add -n ."
 
 # remove all files from stage
 alias gallr="git reset HEAD ."
@@ -136,12 +121,6 @@ alias glog="git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%
 # log output with cmd-clickable github urls
 alias glogc="git_log_clickable"
 
-# user commits in repo for last week
-alias gtime="git log --author='`git config --global user.name`' --since='1 sunday ago' --until='now' --format='%Cred%h%Creset %s %Cgreen(%ci) %Cblue<%an>%Creset' --no-merges"
-
-# user commits in repo for previous week
-alias gtime2="git log --author='`git config --global user.name`' --since='2 sunday ago' --until='1 sunday ago' --format='%Cred%h%Creset %s %Cgreen(%ci) %Cblue<%an>%Creset' --no-merges"
-
 # display global git user email
 alias gemail="git config --global --get user.email"
 
@@ -152,7 +131,23 @@ alias ghpages="git checkout --orphan gh-pages"
 # browse (requires lighthttpd)
 alias gweb="git instaweb"
 
+# grep through repo
+alias ggrep="git grep --break --heading --line-number"
+
+# grep through previous commits (and deleted code)
+alias gsearch="git log -S"
+
+# git blame that ignore whitespace
+alias gblame="git blame -w"
+
+
 ## Git repo trivia ##
+
+# user commits in repo for last week
+alias gtime="git log --author='`git config --global user.name`' --since='1 sunday ago' --until='now' --format='%Cred%h%Creset %s %Cgreen(%ci) %Cblue<%an>%Creset' --no-merges"
+
+# user commits in repo for previous week
+alias gtime2="git log --author='`git config --global user.name`' --since='2 sunday ago' --until='1 sunday ago' --format='%Cred%h%Creset %s %Cgreen(%ci) %Cblue<%an>%Creset' --no-merges"
 
 # display contribution calendar of repo
 alias gcal="git-cal"
