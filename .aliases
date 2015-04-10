@@ -57,6 +57,9 @@ alias gcf="git commit --allow-empty -m 'forced commit'"
 # show git files about to be commited
 alias gcs="git show --pretty='format:' --name-only"
 
+# cherry pick commits
+alias gcp="git cherry-pick "
+
 # interative rebase (example: `gir4` where 4 is the number of commits to go back in history)
 # TODO move this to function so it's possible to pass agrument
 alias gir="git rebase -i HEAD~"
