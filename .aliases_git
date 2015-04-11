@@ -1,0 +1,184 @@
+## Git ##
+
+# pull from a remote
+alias gp="git pull"
+
+# pull from a remote and avoid the merge commit
+alias gpre="git pull --rebase"
+
+# create new local branch
+alias gb="git checkout -b"
+
+# list local branches
+alias gbl="git branch"
+
+# list local branches by most recently updated
+alias gbll="git_branch_local_ls"
+
+# list remote branches
+alias gbr="git branch -r"
+
+# display remote branches by most recently updated
+alias gbrl="git_branch_remote_ls"
+
+# display all changed files in current branch
+alias gbls="git_branch_ls"
+
+# display local and remote branches
+alias gba="git branch -a"
+
+# delete local branch
+alias gbld="git branch -D"
+
+# delete remote branch
+alias gbrd="git push origin --delete"
+
+# display short status
+alias gst="git status --short"
+
+# display long status
+alias gstl="git status"
+
+# add all unstaged files to index
+alias gall="git add ."
+
+# see dry run of 'git add .'
+alias galldry="git add -n ."
+
+# commit files on stage
+alias gc="git commit -m "
+
+# add all modified files and commit
+alias gca="git add . -A && git commit -m"
+
+# make a commit without adding anything (for Heroku push)
+alias gcf="git commit --allow-empty -m 'forced commit'"
+
+# show git files about to be commited
+alias gcs="git show --pretty='format:' --name-only"
+
+# cherry pick commits
+alias gcp="git cherry-pick "
+
+# interative rebase (example: `gir4` where 4 is the number of commits to go back in history)
+# TODO move this to function so it's possible to pass agrument
+alias gir="git rebase -i HEAD~"
+
+# push to master branch on github
+alias gpom="git push origin master"
+
+# push to currently checked out branch on github
+alias gpoh="git push origin HEAD"
+
+# undo a push
+alias gunpush="git push -f origin HEAD^:master"
+
+# undo a merge
+alias gunmerge="git reset --hard HEAD@{1}"
+# alias gunmerge="git reset --merge ORIG_HEAD"
+
+# remove all files from stage
+alias gallr="git reset HEAD ."
+
+# undo a 'git add .'
+# alias gunall="git rm -r --cached ."
+
+# redo last commit statement
+alias grs="git reset --soft HEAD"
+
+# redo last commit AND undo staged files
+alias grm="git reset --mixed HEAD"
+
+#
+alias grh="git reset --hard HEAD"
+
+# open all files with merge conflicts in Sublime Text
+# why doesn't this work?
+alias gconf="git diff --name-only --diff-filter=U | uniq | xargs subl -n"
+
+# stash unstaged files
+alias gstash="git stash"
+
+# recover last stash
+alias gstashp="git stash pop"
+
+# display stashes
+alias gstashl="git stash list"
+
+# display diff
+alias gdiff="git icdiff"
+# alias gdiff="git diff --color --color-words --abbrev"
+
+# show difference without whitespace changes
+alias gdw="git diff --ignore-space-change"
+
+# display differences by filename
+alias gdfiles="git diff --stat"
+
+# shows difference between empty tree and current working tree
+alias gtreediff="git diff --stat `git hash-object -t tree /dev/null`"
+
+# nice log output
+alias glog="git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --"
+
+# log output with cmd-clickable github urls
+alias glogc="git_log_clickable"
+
+# display global git user email
+alias gemail="git config --global --get user.email"
+
+# create an orphan branch for gh-pages and unstage all files
+# follow with git rm --cached $(git-files)
+alias ghpages="git checkout --orphan gh-pages"
+
+# browse (requires lighthttpd)
+alias gweb="git instaweb"
+
+# grep through repo
+alias ggrep="git grep --break --heading --line-number"
+
+# grep through previous commits (and deleted code)
+alias gsearch="git log -S"
+
+# git blame that ignore whitespace
+alias gblame="git blame -w"
+
+
+## Git repo trivia ##
+
+# user commits in repo for last week
+alias gtime="git log --author='`git config --global user.name`' --since='1 sunday ago' --until='now' --format='%Cred%h%Creset %s %Cgreen(%ci) %Cblue<%an>%Creset' --no-merges"
+
+# user commits in repo for previous week
+alias gtime2="git log --author='`git config --global user.name`' --since='2 sunday ago' --until='1 sunday ago' --format='%Cred%h%Creset %s %Cgreen(%ci) %Cblue<%an>%Creset' --no-merges"
+
+# display contribution calendar of repo
+alias gcal="git-cal"
+
+# list number of commits in repo per user
+alias gcoms="git shortlog --numbered --summary"
+
+# list number of commits in repo per user not including merges
+alias gcomsnm="git shortlog --numbered --summary --no-merges"
+
+# list number of commits in repo per user with their email address
+alias gcomse="git shortlog --numbered --summary --email"
+
+# info about own contributions
+alias gme="git_contribute 1"
+
+# info about own contributions over previous day
+alias gme24="git_contribute 2"
+
+# info about team contributions
+alias gteam="git_contribute 3"
+
+# info about team contributions over previous day
+alias gteam24="git_contribute 4"
+
+# get number of files in repo
+alias gfiles="git ls-files | wc -l"
+
+# get lines of code in repo
+alias loc="git ls-files -z | xargs -0 wc -l"
+alias gloc="git diff --stat `git hash-object -t tree /dev/null` | tail -1"
