@@ -13,7 +13,7 @@ export PATH=$HOMEBREW:$GIT:$NODE:$NVM_DIR:$HEROKU:$GO:$RBENV:$RBENV_SHIMS:$DOCKE
 
 # loads dotfiles into shell
 # ~/.extra used for settings I don’t want to commit
-for file in ~/.{bash_prompt,aliases,aliases_git,functions,exports,extra}; do
+for file in ~/.{bash_prompt,aliases,gitaliases,functions,exports,extra}; do
   [ -r "$file" ] && source "$file"
 done
 unset file
