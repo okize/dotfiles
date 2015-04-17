@@ -9,9 +9,13 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 # General UI/UX
 
 # Set computer name (as done via System Preferences → Sharing)
-# scutil --set ComputerName 'MastaShake'
-# scutil --set HostName ''
-# scutil --set LocalHostName 'MacBookPro'
+# sudo scutil --set ComputerName 'MastaShake'
+# sudo scutil --set HostName ''
+# sudo scutil --set LocalHostName 'MacBookPro'
+# sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "0x6D746873"
+
+# Set highlight color to green
+defaults write NSGlobalDomain AppleHighlightColor -string "0.764700 0.976500 0.568600"
 
 # Make Hidden App Icons Translucent in the Dock
 defaults write com.apple.Dock showhidden -bool YES && killall Dock
