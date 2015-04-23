@@ -156,6 +156,9 @@ alias fstd="foreman start -f Procfile.dev"
 # npm update; delete node_modules dir then npm install
 alias npmu="rm -rf ./node_modules && npm install --ignore-scripts"
 
+# npm update & rebuild
+alias npmur="rm -rf ./node_modules && npm install"
+
 # lists locally installed top-level modules
 alias npml="npm ls --depth=0"
 
