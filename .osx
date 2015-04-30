@@ -17,6 +17,9 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 # Set highlight color to green
 defaults write NSGlobalDomain AppleHighlightColor -string "0.764700 0.976500 0.568600"
 
+# Reveal IP address, hostname, etc. when clicking the clock in the login window
+defaults write /Library/Preferences/com.apple.loginwindow AdminHostInfo HostName
+
 # Make Hidden App Icons Translucent in the Dock
 defaults write com.apple.Dock showhidden -bool YES && killall Dock
 
