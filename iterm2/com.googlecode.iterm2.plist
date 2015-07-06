@@ -985,7 +985,7 @@
 	<key>MaxVertically</key>
 	<false/>
 	<key>NSColorPanelMode</key>
-	<string>0</string>
+	<string>4</string>
 	<key>NSNavLastRootDirectory</key>
 	<string>~/Documents</string>
 	<key>NSNavPanelExpandedSizeForOpenMode</key>
@@ -1018,7 +1018,7 @@
 	<key>NSWindow Frame Preferences</key>
 	<string>66 292 924 485 0 0 1440 878 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>870 413 570 448 0 0 1440 878 </string>
+	<string>903 14 535 864 0 0 1440 878 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>870 4 570 874 0 0 1440 878 </string>
 	<key>New Bookmarks</key>
@@ -1622,20 +1622,20 @@
 			<key>Selected Text Color</key>
 			<dict>
 				<key>Blue Component</key>
-				<real>0.97396081686019897</real>
+				<real>0.0049136178568005562</real>
 				<key>Green Component</key>
-				<real>0.87603878974914551</real>
+				<real>0.0041758124716579914</real>
 				<key>Red Component</key>
-				<real>1</real>
+				<real>0.034834776073694229</real>
 			</dict>
 			<key>Selection Color</key>
 			<dict>
 				<key>Blue Component</key>
-				<real>0.84981262683868408</real>
+				<real>0.29478555917739868</real>
 				<key>Green Component</key>
-				<real>0.052183192223310471</real>
+				<real>0.90767878293991089</real>
 				<key>Red Component</key>
-				<real>0.75600433349609375</real>
+				<real>0.56670635938644409</real>
 			</dict>
 			<key>Semantic History</key>
 			<dict>
@@ -1779,6 +1779,10 @@
 	</array>
 	<key>NoSyncNeverRemindPrefsChangesCopy</key>
 	<true/>
+	<key>NoSyncTimeOfLastPromo</key>
+	<real>455402295.58539402</real>
+	<key>NoSyncTimeOfLastPromoDownload</key>
+	<real>455997133.18678403</real>
 	<key>OnlyWhenMoreTabs</key>
 	<true/>
 	<key>OpenArrangementAtStartup</key>
@@ -1847,7 +1851,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2015-05-07T16:57:27Z</date>
+	<date>2015-06-16T15:47:32Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>ShowBookmarkName</key>
@@ -1877,7 +1881,7 @@
 	<key>UseCompactLabel</key>
 	<true/>
 	<key>UseLionStyleFullscreen</key>
-	<true/>
+	<false/>
 	<key>WebKitDefaultFontSize</key>
 	<integer>11</integer>
 	<key>WebKitStandardFont</key>
@@ -1893,6 +1897,6 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>2.0</string>
+	<string>2.1.1</string>
 </dict>
 </plist>
