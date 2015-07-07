@@ -131,6 +131,11 @@ function git_contribute() {
 
 }
 
+# look up an IP address
+function lookup_ip() {
+  curl ipinfo.io/$1
+}
+
 # get gzipped size of a local file
 function gz() {
   local original="$(cat "$1" | wc -c)"
