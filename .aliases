@@ -43,9 +43,12 @@ alias dns-reset="sudo launchctl unload -w /System/Library/LaunchDaemons/com.appl
 
 # IP addresses
 alias externalip="dig +short myip.opendns.com @resolver1.opendns.com"
+# alias externalip="curl http://ipecho.net/plain; echo"
 # alias externalip="curl http://ifconfig.me/ip"
 alias localip="ipconfig getifaddr en0"
 alias ips="ifconfig -a | perl -nle'/(\d+\.\d+\.\d+\.\d+)/ && print $1'"
+alias lookup="lookup_ip"
+# alias lookupip="curl ifconfig.me/"
 
 # Enhanced WHOIS lookups
 alias whois="whois -h whois-servers.net"
@@ -143,6 +146,9 @@ alias brake="bundle exec rake"
 
 # run pending migrations
 alias brakem="bundle exec rake db:migrate RAILS_ENV=development"
+
+# running tests
+alias rt="ruby -Itest"
 
 # displays running rails servers
 alias zombie-rails="ps ax | grep rails"
@@ -295,6 +301,9 @@ alias grm="git reset --mixed HEAD"
 #
 alias grh="git reset --hard HEAD"
 
+# ref-log
+alias gr="git reflog"
+
 # open all files with merge conflicts in Sublime Text
 # why doesn't this work?
 alias gconf="git diff --name-only --diff-filter=U | uniq | xargs subl -n"
@@ -323,6 +332,12 @@ alias gtreediff="git diff --stat `git hash-object -t tree /dev/null`"
 
 # nice log output
 alias glog="git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --"
+
+# nice log output, don't show merge commits
+alias glognm="git log --no-merges --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --"
+
+# nice log output, only display commits directly to current branch
+alias glogoc="git log --no-merges --first-parent --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --"
 
 # log output with cmd-clickable github urls
 alias glogc="git_log_clickable"
@@ -385,3 +400,6 @@ alias gfiles="git ls-files | wc -l"
 # get lines of code in repo
 alias loc="git ls-files -z | xargs -0 wc -l"
 alias gloc="git diff --stat `git hash-object -t tree /dev/null` | tail -1"
+
+# get my merge commits
+alias gmymerges="git log --merges --color --graph --abbrev-commit --author='`git config --global user.name`'"
