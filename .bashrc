@@ -32,8 +32,8 @@ if [ -f ~/dotfiles/code/z/z.sh ]; then
 fi
 
 # tab completion for Git
-if [ -f ~/dotfiles/code/git-completion/git-completion.bash ]; then
-  . ~/dotfiles/code/git-completion/git-completion.bash
+if [ -f ~/dotfiles/code/git/git-completion.bash ]; then
+  . ~/dotfiles/code/git/git-completion.bash
 fi
 
 # tab completion for homebrew
