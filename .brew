@@ -54,6 +54,7 @@ installcask appcleaner
 installcask dropbox
 installcask firefox
 installcask flux
+installcask evernote
 installcask google-chrome
 installcask google-chrome-canary
 installcask iterm2
