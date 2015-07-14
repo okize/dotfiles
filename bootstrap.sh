@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 ############################
-# .make.sh
 # This script creates symlinks from the home directory to any desired dotfiles in ~/dotfiles
 ############################
 
@@ -32,17 +31,11 @@ done
 # Setup OSX
 .osx
 
-# Install Homebrew
-ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
-
 # Setup Homebrew
 .brew
 
-# Install Ruby gems
-.gems
-
-# Install NPM packages
+# Install NPM modules
 .npm
 
-# Install httpie
-pip3 install httpie
+# Install Ruby gems
+.gems
