@@ -28,6 +28,11 @@ for file in $files; do
     ln -s $dir/$file ~/$file
 done
 
+# install fonts
+echo "Installing fonts"
+rsync --exclude ".DS_Store" -av --no-perms fonts/ ~/Library/Fonts/
+echo "...done"
+
 # Setup OSX
 .osx
 
