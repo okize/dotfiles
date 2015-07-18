@@ -367,7 +367,6 @@ alias gsearch="git log -S"
 # git blame that ignore whitespace
 alias gblame="git blame -w"
 
-
 ## Git repo trivia ##
 
 # user commits in repo for last week
