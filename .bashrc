@@ -1,15 +1,14 @@
 # path settings
-HOMEBREW=/usr/local/bin:/usr/local/lib:/usr/local/sbin
 GIT=/usr/local/git/bin
+HOMEBREW=/usr/local/bin:/usr/local/lib:/usr/local/sbin
 NODE=/usr/local/share/npm/bin:/usr/local/share/npm/lib/node_modules
 NVM_DIR=~/.nvm
 HEROKU=/usr/local/heroku/bin
-GO=/usr/local/go/bin
 RBENV=$HOME/.rbenv/bin
 RBENV_SHIMS=$HOME/.rbenv/shims
 DOCKER=~/dotfiles/code/docker
 DIFF=~/dotfiles/code/icdiff
-export PATH=$HOMEBREW:$GIT:$NODE:$NVM_DIR:$HEROKU:$GO:$RBENV:$RBENV_SHIMS:$DOCKER:$DIFF:$PATH
+export PATH=$GIT:$HOMEBREW:$NODE:$NVM_DIR:$HEROKU:$RBENV:$RBENV_SHIMS:$DOCKER:$DIFF:$PATH
 
 # loads dotfiles into shell
 # ~/.extra used for settings I don’t want to commit
@@ -27,24 +26,16 @@ fi
 source $(brew --prefix nvm)/nvm.sh
 
 # init z (https://github.com/rupa/z)
-if [ -f ~/dotfiles/code/z/z.sh ]; then
-    . ~/dotfiles/code/z/z.sh
-fi
+. ~/dotfiles/code/z/z.sh
 
 # tab completion for Git
-if [ -f ~/dotfiles/code/git/git-completion.bash ]; then
-  . ~/dotfiles/code/git/git-completion.bash
-fi
+. ~/dotfiles/code/git-completion.bash
 
 # tab completion for homebrew
-if [ -f ~/dotfiles/code/homebrew/brew-completion.sh ]; then
-    . ~/dotfiles/code/homebrew/brew-completion.sh
-fi
+. ~/dotfiles/code/homebrew-completion.sh
 
 # tab completion for gulp
-if [ -f ~/dotfiles/code/gulp/gulp-completion.sh ]; then
-    . ~/dotfiles/code/gulp/gulp-completion.sh
-fi
+. ~/dotfiles/code/gulp-completion.sh
 
 # tab completion for SSH hostnames based on ~/.ssh/config, ignoring wildcards
 [ -e "$HOME/.ssh/config" ] && complete -o "default" -o "nospace" -W "$(grep "^Host" ~/.ssh/config | grep -v "[?*]" | cut -d " " -f2)" scp sftp ssh
