@@ -7,7 +7,7 @@
 
 dir=~/dotfiles                    # dotfiles directory
 olddir=~/dotfilesBackup           # old dotfiles backup directory
-files=".aliases .bash_profile .bash_prompt .bashrc .exports .extra .functions .gitconfig .gitignore .inputrc"    # list of files/folders to symlink in homedir
+files=".aliases .bash_profile .bash_prompt .bashrc .exports .extra .functions .gitconfig .gitignore .inputrc .gemrc .gitk .irbrc .pryrc .rspec .wgetrc"    # list of files/folders to symlink in homedir
 
 ##########
 
@@ -26,6 +26,7 @@ echo "Moving any existing dotfiles from ~ to $olddir & Creating symlink to $file
 for file in $files; do
     mv ~/$file $olddir
     ln -s $dir/$file ~/$file
+    echo "symlinking $dir/$file -> ~/$file"
 done
 
 # install fonts

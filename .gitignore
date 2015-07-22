@@ -14,7 +14,6 @@ Thumbs.db
 
 # Dotfiles I don't want commited
 .extra
-.netrc
 
 # Local gem editing
 Gemfile.local
