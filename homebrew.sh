@@ -43,6 +43,7 @@ brew install wget
 
 # Install native apps
 brew tap phinze/homebrew-cask
+brew tap caskroom/versions
 brew install brew-cask
 
 function installcask() {
@@ -64,7 +65,7 @@ installcask opera-mobile-emulator
 installcask rdm
 installcask robomongo
 installcask selfcontrol
-installcask sublime-text
+installcask sublime-text3
 installcask xquartz
 installcask virtualbox
 
