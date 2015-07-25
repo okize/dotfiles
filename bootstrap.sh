@@ -34,14 +34,14 @@ echo "Installing fonts"
 rsync --exclude ".DS_Store" -av --no-perms fonts/ ~/Library/Fonts/
 echo "...done"
 
-# Setup OSX
-.osx
+# Setup homebrew and apps
+source homebrew.sh
 
-# Setup Homebrew
-.brew
+# Setup OSX
+source osx.sh
 
 # Install NPM modules
-.npm
+source npm.sh
 
 # Install Ruby gems
-.gems
+source gems.sh
