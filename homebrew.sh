@@ -12,6 +12,8 @@ brew update
 # Upgrade any already-installed formulae
 brew upgrade
 
+echo "installing binaries..."
+
 # Install GNU core utilities (those that come with OS X are outdated)
 brew install coreutils
 
@@ -29,32 +31,35 @@ brew install homebrew/dupes/grep
 brew install wget --enable-iri
 
 # Install other useful binaries
-brew install ack
-brew install elasticsearch
-brew install git
-brew install git-cal
-brew install graphicsmagick
-brew install hub
-brew install memcached
-brew install mongodb
-brew install mysql
-brew install nvm
-brew install optipng
-brew install phantomjs
-brew install postgresql
-brew install python3
-brew install rbenv
-brew install redis
-brew install rename
-brew install Rserve
-brew install ruby-build
-brew install sqlite
-brew install trash
-brew install tree
-brew install webkit2png
-brew install wget
+binaries=(
+  ack
+  elasticsearch
+  git
+  git-cal
+  graphicsmagick
+  hub
+  memcached
+  mongodb
+  mysql
+  nvm
+  optipng
+  phantomjs
+  postgresql
+  python3
+  rbenv
+  redis
+  rename
+  Rserve
+  ruby-build
+  sqlite
+  trash
+  tree
+  webkit2png
+  wget
+)
 
-# Install native apps
+brew install ${binaries[@]}
+
 brew tap phinze/homebrew-cask
 brew tap caskroom/versions
 brew install brew-cask
@@ -63,24 +68,31 @@ function installcask() {
   brew cask install "${@}" 2> /dev/null
 }
 
-installcask adium
-installcask appcleaner
-installcask dropbox
-installcask firefox
-installcask flux
-installcask evernote
-installcask google-chrome
-installcask google-chrome-canary
-installcask iterm2
-installcask mou
-installcask opera
-installcask opera-mobile-emulator
-installcask rdm
-installcask robomongo
-installcask selfcontrol
-installcask sublime-text3
-installcask xquartz
-installcask virtualbox
+echo "installing applications..."
+
+# Install native applications
+apps=(
+  adium
+  appcleaner
+  dropbox
+  firefox
+  flux
+  evernote
+  google-chrome
+  google-chrome-canary
+  iterm2
+  mou
+  opera
+  opera-mobile-emulator
+  rdm
+  robomongo
+  selfcontrol
+  sublime-text3
+  xquartz
+  virtualbox
+)
+
+installcask ${apps[@]}
 
 # Remove outdated versions from the cellar
 brew cleanup
