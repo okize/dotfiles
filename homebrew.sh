@@ -38,6 +38,7 @@ binaries=(
   git-cal
   graphicsmagick
   hub
+  licecap
   memcached
   mongodb
   mysql
@@ -51,11 +52,11 @@ binaries=(
   rename
   Rserve
   ruby-build
+  slack
   sqlite
   trash
   tree
   webkit2png
-  wget
 )
 
 brew install ${binaries[@]}
@@ -73,6 +74,7 @@ echo "installing applications..."
 # Install native applications
 apps=(
   adium
+  alfred
   appcleaner
   dropbox
   firefox
@@ -93,6 +95,9 @@ apps=(
 )
 
 installcask ${apps[@]}
+
+# links apps to Alfred since they are not install in /Applications
+brew cask alfred link
 
 # Remove outdated versions from the cellar
 brew cleanup
