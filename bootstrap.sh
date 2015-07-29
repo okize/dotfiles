@@ -37,11 +37,11 @@ echo "...done"
 # Setup homebrew and apps
 source homebrew.sh
 
-# Setup OS X
-source osx.sh
-
 # Setup Node environment
 source node.sh
 
 # Setup Ruby environment
 source ruby.sh
+
+# Setup OS X
+source osx.sh

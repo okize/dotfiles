@@ -8,7 +8,8 @@ RBENV=$HOME/.rbenv/bin
 RBENV_SHIMS=$HOME/.rbenv/shims
 DOCKER=~/dotfiles/code/docker
 DIFF=~/dotfiles/code/icdiff
-export PATH=$GIT:$HOMEBREW:$NODE:$NVM_DIR:$HEROKU:$RBENV:$RBENV_SHIMS:$DOCKER:$DIFF:$PATH
+COREUTILS=$(brew --prefix coreutils)/libexec/gnubin
+export PATH=$GIT:$HOMEBREW:$NODE:$NVM_DIR:$HEROKU:$RBENV:$RBENV_SHIMS:$DOCKER:$DIFF:$COREUTILS:$PATH
 
 # loads dotfiles into shell
 # ~/.extra used for settings I don’t want to commit

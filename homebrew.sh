@@ -12,8 +12,18 @@ brew update
 # Upgrade any already-installed formulae
 brew upgrade
 
+# Install GNU core utilities (those that come with OS X are outdated)
+brew install coreutils
+
+# Install GNU `find`, `locate`, `updatedb`, and `xargs`, g-prefixed
+brew install findutils
+
 # Install Bash 4
 brew install bash
+
+# Install more recent versions of some OS X tools
+brew tap homebrew/dupes
+brew install homebrew/dupes/grep
 
 # Install wget with IRI support
 brew install wget --enable-iri
@@ -23,8 +33,8 @@ brew install ack
 brew install elasticsearch
 brew install git
 brew install git-cal
+brew install graphicsmagick
 brew install hub
-brew install imagemagick
 brew install memcached
 brew install mongodb
 brew install mysql
@@ -35,10 +45,13 @@ brew install postgresql
 brew install python3
 brew install rbenv
 brew install redis
+brew install rename
 brew install Rserve
 brew install ruby-build
 brew install sqlite
+brew install trash
 brew install tree
+brew install webkit2png
 brew install wget
 
 # Install native apps
