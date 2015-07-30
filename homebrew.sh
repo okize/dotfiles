@@ -96,9 +96,6 @@ apps=(
 
 installcask ${apps[@]}
 
-# links apps to Alfred since they are not install in /Applications
-brew cask alfred link
-
 # Remove outdated versions from the cellar
 brew cleanup
 

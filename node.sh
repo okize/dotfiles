@@ -1,5 +1,6 @@
 # Install latest version of Node
 nvm install 0.12
+nvm use 0.12
 
 # Development
 npm install -g babel-eslint
