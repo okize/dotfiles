@@ -5,9 +5,14 @@
 
 ########## Variables
 
-dir=~/dotfiles                    # dotfiles directory
-olddir=~/dotfilesBackup           # old dotfiles backup directory
-files=".aliases .bash_profile .bash_prompt .bashrc .exports .extra .functions .gitconfig .gitignore .inputrc .gemrc .gitk .irbrc .pryrc .rspec .wgetrc"    # list of files/folders to symlink in homedir
+# dotfiles directory
+dir=~/dotfiles
+
+# old dotfiles backup directory
+olddir=~/dotfilesBackup
+
+# list of files/folders to symlink in homedir
+files=".aliases .bash_profile .bash_prompt .bashrc .exports .extra .functions .gitconfig .gitignore .inputrc .gemrc .gitk .irbrc .pryrc .rspec .wgetrc"
 
 ##########
 
@@ -35,13 +40,13 @@ rsync --exclude ".DS_Store" -av --no-perms fonts/ ~/Library/Fonts/
 echo "...done"
 
 # Setup homebrew and apps
-source homebrew.sh
+source ./setup/homebrew.sh
 
 # Setup Node environment
-source node.sh
+source ./setup/node.sh
 
 # Setup Ruby environment
-source ruby.sh
+source ./setup/ruby.sh
 
 # Setup OS X
-source osx.sh
+source ./setup/osx.sh
