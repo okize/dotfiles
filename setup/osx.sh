@@ -140,7 +140,7 @@ defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
 defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
 
 # Disable “natural” (Lion-style) scrolling
-defaults write NSGlobalDomain com.apple.swipescrolldirection -bool false
+# defaults write NSGlobalDomain com.apple.swipescrolldirection -bool false
 
 # Increase sound quality for Bluetooth headphones/headsets
 defaults write com.apple.BluetoothAudioAgent "Apple Bitpool Min (editable)" -int 40
@@ -319,7 +319,7 @@ defaults write com.apple.finder FXInfoPanesExpanded -dict \
   Privileges -bool true
 
 ###############################################################################
-# Dock, Dashboard, and hot corners                                            #
+# Dock
 ###############################################################################
 
 # Wipe all (default) app icons from the Dock; this is only really useful when setting up a new Mac
@@ -362,10 +362,21 @@ defaults write com.apple.dock autohide -bool true
 defaults write com.apple.dock showhidden -bool true
 
 # Add a spacer to the left side of the Dock (where the applications are)
-defaults write com.apple.dock persistent-apps -array-add '{tile-data={}; tile-type="spacer-tile";}'
+# defaults write com.apple.dock persistent-apps -array-add '{tile-data={}; tile-type="spacer-tile";}'
 
 # Add a spacer to the right side of the Dock (where the Trash is)
-defaults write com.apple.dock persistent-others -array-add '{tile-data={}; tile-type="spacer-tile";}'
+# defaults write com.apple.dock persistent-others -array-add '{tile-data={}; tile-type="spacer-tile";}'
+
+dockutil --no-restart --remove all
+dockutil --no-restart --position 1 --add "/Applications/Google Chrome.app"
+dockutil --no-restart --position 2 --add "/Applications/Google Chrome Canary.app"
+dockutil --no-restart --position 3 --add "/Applications/Sublime Text.app"
+dockutil --no-restart --position 4 --add "/Applications/iTerm.app"
+dockutil --no-restart --position 5 --add "/Applications/Adium.app"
+
+###############################################################################
+# Mission Control, Dashboard, and hot corners                                            #
+###############################################################################
 
 # Speed up Mission Control animations
 defaults write com.apple.dock expose-animation-duration -float 0.1
@@ -406,16 +417,16 @@ defaults write com.apple.dock wvous-tl-corner -int 2
 defaults write com.apple.dock wvous-tl-modifier -int 0
 
 # Top right screen corner → Desktop
-defaults write com.apple.dock wvous-tr-corner -int 4
-defaults write com.apple.dock wvous-tr-modifier -int 0
+# defaults write com.apple.dock wvous-tr-corner -int 4
+# defaults write com.apple.dock wvous-tr-modifier -int 0
 
 # Bottom left screen corner → Start screen saver
 defaults write com.apple.dock wvous-bl-corner -int 5
 defaults write com.apple.dock wvous-bl-modifier -int 0
 
 # Bottom right screen corner → Show application windows
-defaults write com.apple.dock wvous-br-corner -int 3
-defaults write com.apple.dock wvous-br-modifier -int 0
+# defaults write com.apple.dock wvous-br-corner -int 3
+# defaults write com.apple.dock wvous-br-modifier -int 0
 
 ###############################################################################
 # Terminal & iTerm 2                                                          #
@@ -594,9 +605,8 @@ defaults write com.apple.mail DisableInlineAttachmentViewing -bool true
 ###############################################################################
 
 for app in "Activity Monitor" "Address Book" "Calendar" "Contacts" "cfprefsd" \
-  "Dock" "Finder" "Google Chrome" "Google Chrome Canary" "Mail" "Messages" \
-  "Opera" "Safari" "SizeUp" "Spectacle" "SystemUIServer" "Terminal" \
-  "Transmission" "Twitter" "iCal"; do
+  "Dock" "Finder" "Google Chrome" "Google Chrome Canary" "Firefox" "Mail" "Messages" \
+  "SystemUIServer" "iTerm" "Terminal" "iCal"; do
   killall "${app}" > /dev/null 2>&1
 done
 echo "Done. Note that some of these changes require a logout/restart to take effect."

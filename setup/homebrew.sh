@@ -33,6 +33,7 @@ brew install wget --enable-iri
 # Install other useful binaries
 binaries=(
   ack
+  dockutil
   elasticsearch
   git
   git-cal
@@ -66,7 +67,7 @@ brew tap caskroom/versions
 brew install brew-cask
 
 function installcask() {
-  brew cask install "${@}" 2> /dev/null
+  brew cask install --appdir="/Applications" "${@}" 2> /dev/null
 }
 
 echo "installing applications..."
