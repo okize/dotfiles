@@ -189,7 +189,7 @@ defaults write NSGlobalDomain AppleFontSmoothing -int 2
 sudo defaults write /Library/Preferences/com.apple.windowserver DisplayResolutionEnabled -bool true
 
 ###############################################################################
-# Screenshots                                                                  #
+# Screenshots                                                                 #
 ###############################################################################
 
 # Save screenshots to the desktop
@@ -375,7 +375,7 @@ dockutil --no-restart --position 4 --add "/Applications/iTerm.app"
 dockutil --no-restart --position 5 --add "/Applications/Adium.app"
 
 ###############################################################################
-# Mission Control, Dashboard, and hot corners                                            #
+# Mission Control, Dashboard, and hot corners                                 #
 ###############################################################################
 
 # Speed up Mission Control animations
@@ -429,14 +429,17 @@ defaults write com.apple.dock wvous-bl-modifier -int 0
 # defaults write com.apple.dock wvous-br-modifier -int 0
 
 ###############################################################################
-# Terminal & iTerm 2                                                          #
+# iTerm & Terminal                                                            #
 ###############################################################################
-
-# Only use UTF-8 in Terminal.app
-defaults write com.apple.terminal StringEncodings -array 4
 
 # Don’t display the annoying prompt when quitting iTerm
 defaults write com.googlecode.iterm2 PromptOnQuit -bool false
+
+# Set iterm to use saved settings
+defaults write com.googlecode.iterm2 PrefsCustomFolder "/Users/morganwigmanich/dotfiles/iterm2"
+
+# Only use UTF-8 in Terminal.app
+defaults write com.apple.terminal StringEncodings -array 4
 
 ###############################################################################
 # Google Chrome & Google Chrome Canary                                        #
@@ -605,8 +608,8 @@ defaults write com.apple.mail DisableInlineAttachmentViewing -bool true
 ###############################################################################
 
 for app in "Activity Monitor" "Address Book" "Calendar" "Contacts" "cfprefsd" \
-  "Dock" "Finder" "Google Chrome" "Google Chrome Canary" "Firefox" "Mail" "Messages" \
-  "SystemUIServer" "iTerm" "Terminal" "iCal"; do
+  "Dock" "Finder" "Google Chrome" "Google Chrome Canary" "Firefox" "iCal"\
+  "iTerm" "Mail" "Messages" "SystemUIServer" "Terminal" ; do
   killall "${app}" > /dev/null 2>&1
 done
 echo "Done. Note that some of these changes require a logout/restart to take effect."
