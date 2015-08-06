@@ -48,5 +48,8 @@ source ./setup/node.sh
 # Setup Ruby environment
 source ./setup/ruby.sh
 
+# Setup Sublime Text environment
+source ./setup/sublime.sh
+
 # Setup OS X
 source ./setup/osx.sh

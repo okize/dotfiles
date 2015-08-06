@@ -190,12 +190,8 @@ alias hra="heroku restart --app "
 
 ## Sublime Text ##
 
-# sublime text shortcuts
-alias subl="/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl"
-alias subl2="/Applications/Sublime\ Text\ 2.app/Contents/SharedSupport/bin/subl"
-
 # list of installed sublime packages
-alias sublpak="ls ~/Library/Application\ Support/Sublime\ Text\ 3/Packages"
+alias sublpak="ls ~/Library/Application\ Support/Sublime\ Text\ 3/Installed\ Packages | sed -E 's/.{16}$//'"
 alias subl2pak="ls ~/Library/Application\ Support/Sublime\ Text\ 2/Packages"
 
 ## Misc programs ##
