@@ -40,16 +40,26 @@ rsync --exclude ".DS_Store" -av --no-perms fonts/ ~/Library/Fonts/
 echo "...done"
 
 # Setup homebrew and apps
+echo "Installing binaries and apps with Homebrew"
 source ./setup/homebrew.sh
+echo "...done"
 
 # Setup Node environment
+echo "Installing node and global modules"
 source ./setup/node.sh
+echo "...done"
 
 # Setup Ruby environment
+echo "Setting up Ruby, Bundler & Rake"
 source ./setup/ruby.sh
+echo "...done"
 
 # Setup Sublime Text environment
+echo "Setting up Sublime Text"
 source ./setup/sublime.sh
+echo "...done"
 
 # Setup OS X
+echo "Setting up OS X"
 source ./setup/osx.sh
+echo "...done"
