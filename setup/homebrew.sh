@@ -39,7 +39,6 @@ binaries=(
   git-cal
   graphicsmagick
   hub
-  licecap
   memcached
   mongodb
   mysql
@@ -84,6 +83,7 @@ apps=(
   google-chrome
   google-chrome-canary
   iterm2
+  licecap
   mou
   opera
   opera-mobile-emulator
