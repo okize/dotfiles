@@ -7,11 +7,10 @@ mkdir ~/Projects
 ln -s "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" /usr/local/bin/subl
 ln -s "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" /usr/local/bin/sublime
 
-# Remove Sublime config dir if it exists
-rm -rf ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User
+# Remove package dirs if they exist
+rm -rf ~/Library/Application\ Support/Sublime\ Text\ 3/Packages
+rm -rf ~/Library/Application\ Support/Sublime\ Text\ 3/Install\ Packages
 
-# Setup Sublime Text user settings
-# git clone https://github.com/okize/sublime-text-settings.git -b sublime-text-3 --single-branch ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User
-
-# Setup Packages
-# wget -P ~/Library/Application\ Support/Sublime\ Text\ 3/Installed\ Packages https://packagecontrol.io/Package%20Control.sublime-package
+# Symlink package dirs to dotfiles repo
+ln -s ~/dotfiles/sublime/Installed\ Packages ~/Library/Application\ Support/Sublime\ Text\ 3/Installed\ Packages
+ln -s ~/dotfiles/sublime/Packages ~/Library/Application\ Support/Sublime\ Text\ 3/Packages
