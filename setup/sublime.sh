@@ -9,8 +9,8 @@ ln -s "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" /usr/loca
 
 # Remove package dirs if they exist
 rm -rf ~/Library/Application\ Support/Sublime\ Text\ 3/Packages
-rm -rf ~/Library/Application\ Support/Sublime\ Text\ 3/Install\ Packages
+rm -rf ~/Library/Application\ Support/Sublime\ Text\ 3/Installed\ Packages
 
 # Symlink package dirs to dotfiles repo
-ln -s ~/dotfiles/sublime/Installed\ Packages ~/Library/Application\ Support/Sublime\ Text\ 3/Installed\ Packages
 ln -s ~/dotfiles/sublime/Packages ~/Library/Application\ Support/Sublime\ Text\ 3/Packages
+ln -s ~/dotfiles/sublime/Installed\ Packages ~/Library/Application\ Support/Sublime\ Text\ 3/Installed\ Packages
