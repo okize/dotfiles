@@ -1,0 +1,32 @@
+{
+	"in_process_packages":
+	[
+	],
+	"installed_packages":
+	[
+		"Babel",
+		"Better CoffeeScript",
+		"Dotfiles Syntax Highlighting",
+		"EditorConfig",
+		"Git",
+		"GitGutter",
+		"Handlebars",
+		"HTML5",
+		"Jade",
+		"Package Control",
+		"ReactJS",
+		"SideBarEnhancements",
+		"Stylus",
+		"SublimeERB",
+		"SublimeLinter",
+		"SublimeLinter-coffee",
+		"SublimeLinter-coffeelint",
+		"SublimeLinter-contrib-eslint",
+		"SublimeLinter-contrib-scss-lint",
+		"SublimeLinter-html-tidy",
+		"SublimeLinter-json",
+		"SublimeLinter-ruby",
+		"Syntax Highlighting for Sass",
+		"Theme - Afterglow"
+	]
+}
