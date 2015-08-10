@@ -102,8 +102,8 @@
 	"hot_exit": true,
 	"ignored_packages":
 	[
-                "Vintage",
-                "Stylus"
+		"Stylus",
+		"Vintage"
 	],
 	"indent_guide_options":
 	[
@@ -150,7 +150,7 @@
 	"tab_size": 2,
 	"tabs_padding_small": true,
 	"tabs_small": true,
-	"theme": "Okize.sublime-theme",
+	"theme": "Soda SolarizedDark.sublime-theme",
 	"translate_tabs_to_spaces": true,
 	"tree_animation_enabled": true,
 	"trim_automatic_white_space": true,
