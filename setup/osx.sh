@@ -330,7 +330,8 @@ defaults write com.apple.dock mouse-over-hilite-stack -bool true
 echo "Set the icon size of Dock items to 36 pixels"
 defaults write com.apple.dock tilesize -int 36
 
-echo "Move the dock to the left-side of screen"
+echo "Move the dock to the top-left-side of screen"
+defaults write com.apple.dock orientation -string "left"
 defaults write com.apple.dock pinning -string start
 
 echo "Change minimize/maximize window effect"
@@ -485,8 +486,8 @@ defaults write com.apple.Safari HomePage -string "about:blank"
 echo "Prevent Safari from opening ‘safe’ files automatically after downloading"
 defaults write com.apple.Safari AutoOpenSafeDownloads -bool false
 
-echo "Allow hitting the Backspace key to go to the previous page in history"
-defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebKit2BackspaceKeyNavigationEnabled -bool true
+# echo "Allow hitting the Backspace key to go to the previous page in history"
+# defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebKit2BackspaceKeyNavigationEnabled -bool true
 
 echo "Hide Safari’s bookmarks bar by default"
 defaults write com.apple.Safari ShowFavoritesBar -bool false
