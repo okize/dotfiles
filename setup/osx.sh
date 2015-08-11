@@ -330,8 +330,11 @@ defaults write com.apple.dock mouse-over-hilite-stack -bool true
 echo "Set the icon size of Dock items to 36 pixels"
 defaults write com.apple.dock tilesize -int 36
 
-echo "Move the dock to the top-left-side of screen"
+echo "Move the dock to the left-side of screen"
 defaults write com.apple.dock orientation -string "left"
+
+echo "Move the dock to the upper-left corner"
+# this does not appear to work in Yosemite
 defaults write com.apple.dock pinning -string start
 
 echo "Change minimize/maximize window effect"
