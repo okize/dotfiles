@@ -17,3 +17,7 @@ Thumbs.db
 
 # Local gem editing
 Gemfile.local
+
+# Sublime packages I don't want commited
+Package\ Control.cache/
+Package\ Control.last-run
