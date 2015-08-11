@@ -751,7 +751,7 @@
 	<key>HighlightTabLabels</key>
 	<true/>
 	<key>HotKeyBookmark</key>
-	<string>F445DBBE-7F14-48A9-A75F-601C70145F39</string>
+	<string>68621130-422A-480D-95DC-F53DED3520C1</string>
 	<key>HotKeyTogglesWindow</key>
 	<false/>
 	<key>Hotkey</key>
@@ -1574,7 +1574,7 @@
 	<key>NoSyncTimeOfLastPromoDownload</key>
 	<real>456624124.48968101</real>
 	<key>OnlyWhenMoreTabs</key>
-	<true/>
+	<false/>
 	<key>OpenArrangementAtStartup</key>
 	<false/>
 	<key>OpenBookmark</key>
@@ -1623,7 +1623,7 @@
 	<key>PrefsCustomFolder</key>
 	<string>/Users/morganwigmanich/dotfiles/iterm2</string>
 	<key>PromptOnClose</key>
-	<false/>
+	<true/>
 	<key>PromptOnQuit</key>
 	<false/>
 	<key>QuitWhenAllWindowsClosed</key>
