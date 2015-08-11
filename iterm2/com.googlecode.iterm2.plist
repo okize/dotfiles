@@ -1623,9 +1623,9 @@
 	<key>PrefsCustomFolder</key>
 	<string>/Users/morganwigmanich/dotfiles/iterm2</string>
 	<key>PromptOnClose</key>
-	<true/>
+	<false/>
 	<key>PromptOnQuit</key>
-	<true/>
+	<false/>
 	<key>QuitWhenAllWindowsClosed</key>
 	<false/>
 	<key>RightCommand</key>

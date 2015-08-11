@@ -435,9 +435,6 @@ defaults write com.apple.dock wvous-bl-modifier -int 0
 # iTerm & Terminal                                                            #
 ###############################################################################
 
-echo "Don’t display the annoying prompt when quitting iTerm"
-defaults write com.googlecode.iterm2 PromptOnQuit -bool false
-
 echo "Set iterm to use saved settings"
 defaults write com.googlecode.iterm2 PrefsCustomFolder "/Users/morganwigmanich/dotfiles/iterm2"
 
