@@ -12,7 +12,7 @@ dir=~/dotfiles
 olddir=~/dotfilesBackup
 
 # list of files/folders to symlink in homedir
-files=".aliases .bash_profile .bash_prompt .bashrc .exports .extra .functions .gitconfig .gitignore .inputrc .gemrc .gitk .irbrc .pryrc .rspec .vimrc .wgetrc"
+files=".aliases .bash_profile .bash_prompt .bashrc .eslintrc .exports .extra .functions .gitconfig .gitignore .inputrc .gemrc .gitk .irbrc .pryrc .rspec .vimrc .wgetrc"
 
 ##########
 
