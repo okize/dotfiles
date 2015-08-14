@@ -7,11 +7,6 @@
         "gutter_theme_excludes": [],
         "lint_mode": "background",
         "linters": {
-            "coffee": {
-                "@disable": false,
-                "args": [],
-                "excludes": []
-            },
             "coffeelint": {
                 "@disable": false,
                 "args": [],
