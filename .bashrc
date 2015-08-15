@@ -1,15 +1,14 @@
 # path settings
 GIT=/usr/local/git/bin
 HOMEBREW=/usr/local/bin:/usr/local/lib:/usr/local/sbin
-NODE=/usr/local/share/npm/bin:/usr/local/share/npm/lib/node_modules
-NVM_DIR=~/.nvm
 HEROKU=/usr/local/heroku/bin
 RBENV=$HOME/.rbenv/bin
 RBENV_SHIMS=$HOME/.rbenv/shims
+NVM_DIR=~/.nvm
 DOCKER=~/dotfiles/code/docker
 DIFF=~/dotfiles/code/icdiff
 COREUTILS=$(brew --prefix coreutils)/libexec/gnubin
-export PATH=$GIT:$HOMEBREW:$NODE:$NVM_DIR:$HEROKU:$RBENV:$RBENV_SHIMS:$DOCKER:$DIFF:$COREUTILS:$PATH
+export PATH=$GIT:$HOMEBREW:$HEROKU:$RBENV:$RBENV_SHIMS:$NVM_DIR:$DOCKER:$DIFF:$COREUTILS:$PATH
 
 # loads dotfiles into shell
 # ~/.extra used for settings I don’t want to commit
