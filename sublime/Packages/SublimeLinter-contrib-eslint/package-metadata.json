@@ -1,1 +1,1 @@
-{"version": "1.5.4", "url": "https://github.com/roadhump/SublimeLinter-eslint", "platforms": ["*"], "sublime_text": ">=3000", "dependencies": [], "description": "This linter plugin for SublimeLinter provides an interface to ESLint"}
+{"description": "This linter plugin for SublimeLinter provides an interface to ESLint", "sublime_text": ">=3000", "version": "1.5.5", "url": "https://github.com/roadhump/SublimeLinter-eslint", "platforms": ["*"], "dependencies": []}

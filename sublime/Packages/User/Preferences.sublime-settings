@@ -102,8 +102,8 @@
 	"hot_exit": true,
 	"ignored_packages":
 	[
-		"Vintage",
-		"Stylus"
+		"Stylus",
+		"Vintage"
 	],
 	"indent_guide_options":
 	[
