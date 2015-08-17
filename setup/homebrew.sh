@@ -34,18 +34,18 @@ brew install wget --enable-iri
 binaries=(
   ack
   dockutil
-  elasticsearch
   git
   git-cal
   graphicsmagick
   hub
+  imagemagick
   memcached
   mongodb
   mysql
   nvm
   optipng
   phantomjs
-  postgresql
+  postgresql93
   python3
   rbenv
   redis
@@ -90,6 +90,7 @@ apps=(
   rdm
   robomongo
   selfcontrol
+  slack
   sublime-text3
   xquartz
   virtualbox
