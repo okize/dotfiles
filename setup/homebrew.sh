@@ -34,6 +34,7 @@ brew install wget --enable-iri
 binaries=(
   ack
   dockutil
+  flow
   git
   git-cal
   graphicsmagick

@@ -21,6 +21,9 @@ if [[ $response =~ ^([yY][eE][sS]|[yY])$ ]]; then
   sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string $COMPUTER_NAME
 fi
 
+echo "Installing xcode command line tools..."
+xcode-select --install
+
 echo "Setting up OS X defaults..."
 
 echo "Menu bar: hide the Bluetooth, Time Machine and User icons"
@@ -34,6 +37,9 @@ defaults write com.apple.systemuiserver menuExtras -array \
   "/System/Library/CoreServices/Menu Extras/AirPort.menu" \
   "/System/Library/CoreServices/Menu Extras/Battery.menu" \
   "/System/Library/CoreServices/Menu Extras/Clock.menu"
+
+echo "Menu bar: show battery percentage remaining"
+defaults write com.apple.menuextra.battery ShowPercent -string "YES"
 
 echo "Disable the sound effects on boot"
 sudo nvram SystemAudioVolume=" "
@@ -94,12 +100,15 @@ sudo systemsetup -setcomputersleep Off > /dev/null
 echo "Check for software updates daily, not just once per week"
 defaults write com.apple.SoftwareUpdate ScheduleFrequency -int 1
 
-echo "Disable Notification Center and remove the menu bar icon"
-launchctl unload -w /System/Library/LaunchAgents/com.apple.notificationcenterui.plist 2> /dev/null
-
 echo "Disable smart quotes & dashes as they’re annoying when typing code"
 defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
 defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled -bool false
+
+echo "Disable Notification Center and remove the menu bar icon"
+launchctl unload -w /System/Library/LaunchAgents/com.apple.notificationcenterui.plist 2> /dev/null
+
+echo "Prime locate database"
+launchctl load -w /System/Library/LaunchDaemons/com.apple.locate.plist
 
 ###############################################################################
 # SSD-specific tweaks                                                         #
@@ -380,6 +389,7 @@ dockutil --no-restart --position 2 --add "/Applications/Google Chrome Canary.app
 dockutil --no-restart --position 3 --add "/Applications/Sublime Text.app"
 dockutil --no-restart --position 4 --add "/Applications/iTerm.app"
 dockutil --no-restart --position 5 --add "/Applications/Adium.app"
+dockutil --no-restart --position 6 --add "/Applications/Slack.app"
 
 ###############################################################################
 # Mission Control, Dashboard, and hot corners                                 #
