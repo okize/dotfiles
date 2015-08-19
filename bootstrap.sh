@@ -3,8 +3,6 @@
 # This script creates symlinks from the home directory to any desired dotfiles in ~/dotfiles
 ############################
 
-########## Variables
-
 # dotfiles directory
 dir=~/dotfiles
 
@@ -13,8 +11,6 @@ olddir=~/dotfilesBackup
 
 # list of files/folders to symlink in homedir
 files=".aliases .bash_profile .bash_prompt .bashrc .eslintrc .exports .extra .functions .gitconfig .gitignore .inputrc .gemrc .gitk .irbrc .pryrc .rspec .vimrc .wgetrc"
-
-##########
 
 # create dotfilesBackup in homedir
 echo "Creating $olddir for backup of any existing dotfiles in ~"
