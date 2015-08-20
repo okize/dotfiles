@@ -1,5 +1,5 @@
 # Always use color output for `ls`
-alias ls="command ls --color=auto"
+alias ls='ls -G'
 
 # List all files colorized in long format, including dot files
 alias la="ls -lav"

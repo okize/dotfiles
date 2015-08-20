@@ -390,6 +390,7 @@ dockutil --no-restart --position 3 --add "/Applications/Sublime Text.app"
 dockutil --no-restart --position 4 --add "/Applications/iTerm.app"
 dockutil --no-restart --position 5 --add "/Applications/Adium.app"
 dockutil --no-restart --position 6 --add "/Applications/Slack.app"
+dockutil --no-restart --position 7 --add '~/Downloads' --view grid --display folder
 
 ###############################################################################
 # Mission Control, Dashboard, and hot corners                                 #

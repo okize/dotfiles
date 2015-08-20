@@ -9,7 +9,7 @@ NVM_DIR=~/.nvm
 DOCKER=~/dotfiles/code/docker
 DIFF=~/dotfiles/code/icdiff
 
-export PATH=$GIT:$HOMEBREW:$HEROKU:$RBENV:$RBENV_SHIMS:$NVM_DIR:$DOCKER:$DIFF:$COREUTILS:$PATH
+export PATH=$PATH:$GIT:$HOMEBREW:$HEROKU:$RBENV:$RBENV_SHIMS:$NVM_DIR:$DOCKER:$DIFF:$COREUTILS
 
 # loads dotfiles into shell
 # ~/.extra used for settings I don’t want to commit
