@@ -84,6 +84,7 @@ apps=(
   google-chrome
   google-chrome-canary
   iterm2
+  keepingyouawake
   licecap
   mou
   opera
