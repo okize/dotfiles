@@ -391,7 +391,10 @@ dockutil --no-restart --position 4 --add "/Applications/iTerm.app"
 dockutil --no-restart --position 5 --add "/Applications/Adium.app"
 dockutil --no-restart --position 6 --add "/Applications/Slack.app"
 dockutil --no-restart --position 7 --add "/Applications/Evernote.app"
-dockutil --no-restart --position 8 --add '~/Downloads' --view grid --display folder
+dockutil --no-restart --position 8 --add "/Applications/SelfControl.app"
+dockutil --no-restart --position 9 --add "/Applications/Messages.app"
+dockutil --no-restart --position 10 --add "/Applications/Calendar.app.app"
+dockutil --no-restart --position 11 --add '~/Downloads' --view grid --display folder
 
 ###############################################################################
 # Mission Control, Dashboard, and hot corners                                 #
