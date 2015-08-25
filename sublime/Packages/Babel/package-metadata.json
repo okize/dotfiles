@@ -1,1 +1,1 @@
-{"url": "https://babeljs.io/", "description": "Syntax definitions for ES6 JavaScript with React JSX extensions.", "platforms": ["*"], "version": "7.0.0", "dependencies": [], "sublime_text": "*"}
+{"platforms": ["*"], "version": "7.1.1", "sublime_text": "*", "url": "https://babeljs.io/", "dependencies": [], "description": "Syntax definitions for ES6 JavaScript with React JSX extensions."}
