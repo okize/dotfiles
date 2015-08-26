@@ -26,26 +26,8 @@ xcode-select --install
 
 echo "Setting up OS X defaults..."
 
-echo "Menu bar: hide the Bluetooth, Time Machine and User icons"
-for domain in ~/Library/Preferences/ByHost/com.apple.systemuiserver.*; do
-  defaults write "${domain}" dontAutoLoad -array \
-    "/System/Library/CoreServices/Menu Extras/Bluetooth.menu" \
-    "/System/Library/CoreServices/Menu Extras/TimeMachine.menu" \
-    "/System/Library/CoreServices/Menu Extras/User.menu"
-done
-defaults write com.apple.systemuiserver menuExtras -array \
-  "/System/Library/CoreServices/Menu Extras/AirPort.menu" \
-  "/System/Library/CoreServices/Menu Extras/Battery.menu" \
-  "/System/Library/CoreServices/Menu Extras/Clock.menu"
-
-echo "Menu bar: show battery percentage remaining"
-defaults write com.apple.menuextra.battery ShowPercent -string "YES"
-
 echo "Disable the sound effects on boot"
 sudo nvram SystemAudioVolume=" "
-
-echo "Disable transparency in the menu bar and elsewhere on Yosemite"
-defaults write com.apple.universalaccess reduceTransparency -bool true
 
 echo "Set highlight color to green"
 defaults write NSGlobalDomain AppleHighlightColor -string "0.764700 0.976500 0.568600"
@@ -104,33 +86,36 @@ echo "Disable smart quotes & dashes as they’re annoying when typing code"
 defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
 defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled -bool false
 
-echo "Disable Notification Center and remove the menu bar icon"
-launchctl unload -w /System/Library/LaunchAgents/com.apple.notificationcenterui.plist 2> /dev/null
-
 echo "Prime locate database"
 launchctl load -w /System/Library/LaunchDaemons/com.apple.locate.plist
 
+echo "Disable Notification Center and remove the menu bar icon"
+launchctl unload -w /System/Library/LaunchAgents/com.apple.notificationcenterui.plist 2> /dev/null
+
 ###############################################################################
-# SSD-specific tweaks                                                         #
+# Menu bar                                                                    #
 ###############################################################################
 
-echo "Disable local Time Machine snapshots"
-sudo tmutil disablelocal
+echo "Menu bar: hide the Bluetooth, Time Machine and User icons"
+for domain in ~/Library/Preferences/ByHost/com.apple.systemuiserver.*; do
+  defaults write "${domain}" dontAutoLoad -array \
+    "/System/Library/CoreServices/Menu Extras/Bluetooth.menu" \
+    "/System/Library/CoreServices/Menu Extras/TimeMachine.menu" \
+    "/System/Library/CoreServices/Menu Extras/User.menu"
+done
+defaults write com.apple.systemuiserver menuExtras -array \
+  "/System/Library/CoreServices/Menu Extras/AirPort.menu" \
+  "/System/Library/CoreServices/Menu Extras/Battery.menu" \
+  "/System/Library/CoreServices/Menu Extras/Clock.menu"
 
-echo "Disable hibernation (speeds up entering sleep mode)"
-sudo pmset -a hibernatemode 0
+echo "Menu bar: show battery percentage remaining"
+defaults write com.apple.menuextra.battery ShowPercent -string "YES"
 
-# echo "Remove the sleep image file to save disk space"
-# sudo rm /private/var/vm/sleepimage
+echo "Menu bar: show month & day next to time"
+defaults write com.apple.menuextra.clock DateFormat -string "MMM d  h:mm a"
 
-# echo "Create a zero-byte file instead…"
-# sudo touch /private/var/vm/sleepimage
-
-# echo "…and make sure it can’t be rewritten"
-# sudo chflags uchg /private/var/vm/sleepimage
-
-echo "Disable the sudden motion sensor as it’s not useful for SSDs"
-sudo pmset -a sms 0
+echo "Menu bar: disable transparency (also elsewhere on Yosemite)"
+defaults write com.apple.universalaccess reduceTransparency -bool true
 
 ###############################################################################
 # Trackpad, mouse, keyboard, Bluetooth accessories, and input                 #
@@ -526,7 +511,7 @@ defaults write com.apple.Safari FindOnPageMatchesWordStartsOnly -bool false
 echo "Remove useless icons from Safari’s bookmarks bar"
 defaults write com.apple.Safari ProxiesInBookmarksBar "()"
 
-echo "Enable the Develop menu and the Web Inspector in Safari"
+echo "Enable the Developer menu and the Web Inspector in Safari"
 defaults write com.apple.Safari IncludeDevelopMenu -bool true
 defaults write com.apple.Safari WebKitDeveloperExtrasEnabledPreferenceKey -bool true
 defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebKit2DeveloperExtrasEnabled -bool true
@@ -622,6 +607,28 @@ defaults write com.apple.mail DisableInlineAttachmentViewing -bool true
 
 # echo "Disable automatic spell checking"
 # defaults write com.apple.mail SpellCheckingBehavior -string "NoSpellCheckingEnabled"
+
+###############################################################################
+# SSD-specific tweaks                                                         #
+###############################################################################
+
+echo "Disable local Time Machine snapshots"
+sudo tmutil disablelocal
+
+echo "Disable hibernation (speeds up entering sleep mode)"
+sudo pmset -a hibernatemode 0
+
+# echo "Remove the sleep image file to save disk space"
+# sudo rm /private/var/vm/sleepimage
+
+# echo "Create a zero-byte file instead…"
+# sudo touch /private/var/vm/sleepimage
+
+# echo "…and make sure it can’t be rewritten"
+# sudo chflags uchg /private/var/vm/sleepimage
+
+echo "Disable the sudden motion sensor as it’s not useful for SSDs"
+sudo pmset -a sms 0
 
 ###############################################################################
 # Kill affected applications                                                  #
