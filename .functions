@@ -131,6 +131,11 @@ function git_contribute() {
 
 }
 
+# install version of node with all previous global modules
+function nvm_install {
+  nvm install $1 --reinstall-packages-from=default
+}
+
 # look up an IP address
 function lookup_ip() {
   curl ipinfo.io/$1
