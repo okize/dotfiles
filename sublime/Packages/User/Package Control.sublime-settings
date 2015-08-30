@@ -24,6 +24,7 @@
 		"SublimeLinter-contrib-scss-lint",
 		"SublimeLinter-html-tidy",
 		"SublimeLinter-json",
+		"SublimeLinter-rubocop",
 		"SublimeLinter-ruby",
 		"Syntax Highlighting for Sass",
 		"Theme - Soda SolarizedDark"
