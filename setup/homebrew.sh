@@ -86,6 +86,7 @@ apps=(
   iterm2
   keepingyouawake
   licecap
+  livereload
   mou
   opera
   opera-mobile-emulator

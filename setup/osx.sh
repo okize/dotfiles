@@ -376,13 +376,14 @@ dockutil --no-restart --position 1 --add "/Applications/Google Chrome.app"
 dockutil --no-restart --position 2 --add "/Applications/Google Chrome Canary.app"
 dockutil --no-restart --position 3 --add "/Applications/Sublime Text.app"
 dockutil --no-restart --position 4 --add "/Applications/iTerm.app"
-dockutil --no-restart --position 5 --add "/Applications/Adium.app"
-dockutil --no-restart --position 6 --add "/Applications/Slack.app"
-dockutil --no-restart --position 7 --add "/Applications/Evernote.app"
-dockutil --no-restart --position 8 --add "/Applications/SelfControl.app"
-dockutil --no-restart --position 9 --add "/Applications/Messages.app"
-dockutil --no-restart --position 10 --add "/Applications/Calendar.app.app"
-dockutil --no-restart --position 11 --add '~/Downloads' --view grid --display folder
+dockutil --no-restart --position 5 --add "/Applications/LiveReload.app"
+dockutil --no-restart --position 6 --add "/Applications/Adium.app"
+dockutil --no-restart --position 7 --add "/Applications/Slack.app"
+dockutil --no-restart --position 8 --add "/Applications/Evernote.app"
+dockutil --no-restart --position 9 --add "/Applications/SelfControl.app"
+dockutil --no-restart --position 10 --add "/Applications/Messages.app"
+dockutil --no-restart --position 11 --add "/Applications/Calendar.app.app"
+dockutil --no-restart --position 12 --add '~/Downloads' --view grid --display folder
 
 ###############################################################################
 # Mission Control, Dashboard, and hot corners                                 #
