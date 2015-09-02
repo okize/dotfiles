@@ -38,6 +38,7 @@ binaries=(
   git
   git-cal
   graphicsmagick
+  heroku-toolbelt
   hub
   imagemagick
   memcached
@@ -78,9 +79,9 @@ apps=(
   alfred
   appcleaner
   dropbox
+  evernote
   firefox
   flux
-  evernote
   google-chrome
   google-chrome-canary
   iterm2
@@ -95,8 +96,8 @@ apps=(
   selfcontrol
   slack
   sublime-text3
-  xquartz
   virtualbox
+  xquartz
 )
 
 installcask ${apps[@]}
