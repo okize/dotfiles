@@ -2,6 +2,8 @@
 	"extensions":
 	[
 		"js",
-		"es6"
+    "jsx",
+    "es6",
+    ".eslintrc"
 	]
 }
