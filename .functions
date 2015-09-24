@@ -27,6 +27,11 @@ function git_export() {
   git archive master | tar -x -C "$1"
 }
 
+# go to rbenv directory of gems installed for local Ruby version
+function go_to_gem_dir() {
+  RUBYVER="$(ruby -e 'print RUBY_VERSION')"
+  cd ~/.rbenv/versions/$RUBYVER/lib/ruby/gems/$RUBYVER/gems/
+}
 
 function current_branch() {
   git branch | grep '*' | cut -f2 -d' '

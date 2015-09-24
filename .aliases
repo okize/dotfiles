@@ -133,13 +133,17 @@ alias .....="cd ../../../.."
 alias ~="cd ~"
 alias src="cd ~/src"
 alias docs="cd ~/documents"
+
 ## Rails ##
 
 # bundle exec shortcut
 alias brake="bundle exec rake"
 
 # run pending migrations
-alias brakem="bundle exec rake db:migrate RAILS_ENV=development"
+alias rmig="bundle exec rake db:migrate RAILS_ENV=development"
+
+# cds to directory where rbenv installed gems
+alias gemdir=go_to_gem_dir
 
 # running tests
 alias rt="ruby -Itest"
