@@ -59,3 +59,6 @@ echo "...done"
 echo "Setting up OS X"
 source ./setup/osx.sh
 echo "...done"
+
+# symlink diff-highlight into path
+sudo ln -sf "$(brew --prefix)/share/git-core/contrib/diff-highlight/diff-highlight" /usr/bin/diff-highlight
