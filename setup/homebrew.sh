@@ -58,6 +58,7 @@ binaries=(
   sqlite
   trash
   tree
+  watchman
   webkit2png
 )
 
