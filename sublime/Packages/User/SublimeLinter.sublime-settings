@@ -5,14 +5,14 @@
         "error_color": "D02000",
         "gutter_theme": "Packages/SublimeLinter/gutter-themes/Default/Default.gutter-theme",
         "gutter_theme_excludes": [],
-        "lint_mode": "background",
+        "lint_mode": "Load/save",
         "linters": {
             "coffeelint": {
                 "@disable": false,
                 "args": [],
                 "excludes": []
             },
-            "eslint": {
+            "eslint_d": {
                 "@disable": false,
                 "args": [],
                 "excludes": []

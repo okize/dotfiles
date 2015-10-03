@@ -1,4 +1,5 @@
 {
+	"bootstrapped": true,
 	"in_process_packages":
 	[
 	],
@@ -20,7 +21,7 @@
 		"SublimeERB",
 		"SublimeLinter",
 		"SublimeLinter-coffeelint",
-		"SublimeLinter-contrib-eslint",
+		"SublimeLinter-contrib-eslint_d",
 		"SublimeLinter-contrib-scss-lint",
 		"SublimeLinter-html-tidy",
 		"SublimeLinter-json",
