@@ -238,7 +238,7 @@ alias gbrl="git_branch_remote_ls"
 alias gbls="git_branch_ls"
 
 # display local and remote branches
-alias gba="git branch -a"
+alias gball="git branch -a"
 
 # delete local branch
 alias gbld="git branch -D"
@@ -253,16 +253,19 @@ alias gst="git status --short"
 alias gstl="git status"
 
 # add all unstaged files to index
-alias gall="git add ."
+alias gaall="git add ."
 
 # see dry run of 'git add .'
-alias galldry="git add -n ."
+alias gaalldry="git add -n ."
 
 # commit files on stage
 alias gc="git commit -m "
 
+# amend previous commit
+alias gca="git commit --amend"
+
 # add all modified files and commit
-alias gca="git add . -A && git commit -m"
+alias gcall="git add . -A && git commit -m"
 
 # make a commit without adding anything (for Heroku push)
 alias gce="git commit --allow-empty -m 'forced commit'"
