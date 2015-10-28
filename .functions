@@ -58,12 +58,6 @@ function rule () {
   printf "%$(tput cols)s\n"|tr " " "─"}}
 }
 
-# go to rbenv directory of gems installed for local Ruby version
-function go_to_gem_dir() {
-  RUBYVER="$(ruby -e 'print RUBY_VERSION')"
-  cd ~/.rbenv/versions/$RUBYVER/lib/ruby/gems/$RUBYVER/gems/
-}
-
 function current_branch() {
   git branch | grep '*' | cut -f2 -d' '
 }
@@ -165,6 +159,18 @@ function git_contribute() {
      ;;
   esac
 
+}
+
+# displays commits that are on branch1 that do not exist on branch2
+# git_compare_branch branch1 branch2
+function git_compare_branch() {
+  git log $1 ^$2 --no-merges
+}
+
+# go to rbenv directory of gems installed for local Ruby version
+function go_to_gem_dir() {
+  RUBYVER="$(ruby -e 'print RUBY_VERSION')"
+  cd ~/.rbenv/versions/$RUBYVER/lib/ruby/gems/$RUBYVER/gems/
 }
 
 # install version of node with all previous global modules
