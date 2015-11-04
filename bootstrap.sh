@@ -30,9 +30,9 @@ for file in $files; do
     echo "symlinking $dir/$file -> ~/$file"
 done
 
-# install fonts
-echo "Installing fonts"
-rsync --exclude ".DS_Store" -av --no-perms fonts/ ~/Library/Fonts/
+# Setup OS X
+echo "Setting up OS X"
+source ./setup/osx.sh
 echo "...done"
 
 # Setup homebrew and apps
@@ -55,9 +55,9 @@ echo "Setting up Sublime Text"
 source ./setup/sublime.sh
 echo "...done"
 
-# Setup OS X
-echo "Setting up OS X"
-source ./setup/osx.sh
+# install fonts
+echo "Installing fonts"
+rsync --exclude ".DS_Store" -av --no-perms fonts/ ~/Library/Fonts/
 echo "...done"
 
 # symlink diff-highlight into path
