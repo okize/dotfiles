@@ -162,8 +162,8 @@ function git_contribute() {
 }
 
 # displays commits that are on branch1 that do not exist on branch2
-# git_compare_branch branch1 branch2
-function git_compare_branch() {
+# git_branch_compare branch1 branch2
+function git_branch_compare() {
   git log $1 ^$2 --no-merges
 }
 
