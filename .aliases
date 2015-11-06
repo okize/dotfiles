@@ -139,6 +139,9 @@ alias docs="cd ~/documents"
 # bundle exec shortcut
 alias brake="bundle exec rake"
 
+# instead of slow rake assets:clobber (can only run in app root)
+alias clob="rm -rf ./tmp/cache/assets"
+
 # run pending migrations
 alias rmig="bundle exec rake db:migrate RAILS_ENV=development"
 
@@ -221,6 +224,9 @@ alias gpre="git pull --rebase"
 
 # create new local branch
 alias gb="git checkout -b"
+
+# display commits that are on one branch but not another
+alias gbc="git_branch_compare"
 
 # list local branches
 alias gbl="git branch"
