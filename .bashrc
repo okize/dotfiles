@@ -37,6 +37,9 @@ source ~/dotfiles/code/git-completion.bash
 # tab completion for homebrew
 source ~/dotfiles/code/homebrew-completion.sh
 
+# tab completion for NPM
+source ~/dotfiles/code/npm-completion.sh
+
 # tab completion for gulp
 source ~/dotfiles/code/gulp-completion.sh
 
