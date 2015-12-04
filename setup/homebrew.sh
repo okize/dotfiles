@@ -44,6 +44,7 @@ binaries=(
   memcached
   mongodb
   mysql
+  nmap
   nvm
   optipng
   phantomjs
