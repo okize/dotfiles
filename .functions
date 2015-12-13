@@ -281,6 +281,17 @@ function unidecode() {
   echo # newline
 }
 
+# alerts when a branch has completed tddium build
+function tddium_wait() {
+  [[ $# == 0 ]] && echo "tddium_wait needs a branch name to watch" && return 1
+
+  branch=$1
+  while tddium status --no-json | grep $branch | grep running ; do
+    sleep 60
+  done
+  say --interactive "$branch has finished building"
+}
+
 # Browserstack shortcuts
 # Note, a trial or paid for account is needed for this to work
 # Usage: ipad3 "http://www.google.com", win7ie8 "http://www.google.com" etc.
