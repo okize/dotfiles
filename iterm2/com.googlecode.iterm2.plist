@@ -804,9 +804,9 @@
 	<key>NSTableView Sort Ordering KeyBingingTable</key>
 	<array/>
 	<key>NSWindow Frame Preferences</key>
-	<string>455 159 924 485 0 0 1440 877 </string>
+	<string>735 306 924 485 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>856 13 584 864 0 0 1440 877 </string>
+	<string>735 163 703 714 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>275 101 710 426 0 0 1440 877 </string>
 	<key>New Bookmarks</key>
@@ -1570,7 +1570,7 @@
 	<key>NoSyncTimeOfLastPromo</key>
 	<real>456717040.18101698</real>
 	<key>NoSyncTimeOfLastPromoDownload</key>
-	<real>465461914.06135601</real>
+	<real>470584880.34610599</real>
 	<key>OnlyWhenMoreTabs</key>
 	<false/>
 	<key>OpenArrangementAtStartup</key>
@@ -1633,11 +1633,11 @@
 	<key>SUEnableAutomaticChecks</key>
 	<true/>
 	<key>SUFeedURL</key>
-	<string>http://iterm2.com/appcasts/final.xml</string>
+	<string>https://iterm2.com/appcasts/final.xml</string>
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2015-10-02T06:57:59Z</date>
+	<date>2015-11-30T04:25:39Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>ShowBookmarkName</key>
@@ -1661,7 +1661,10 @@
 	<key>TripleClickSelectsFullWrappedLines</key>
 	<false/>
 	<key>URLHandlersByGuid</key>
-	<dict/>
+	<dict>
+		<key>ssh</key>
+		<string>68621130-422A-480D-95DC-F53DED3520C1</string>
+	</dict>
 	<key>UseBorder</key>
 	<false/>
 	<key>UseCompactLabel</key>
@@ -1683,6 +1686,6 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>2.1.1</string>
+	<string>2.1.4</string>
 </dict>
 </plist>
