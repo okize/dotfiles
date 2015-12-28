@@ -276,6 +276,12 @@ alias gcall="git add . -A && git commit -m"
 # make a commit without adding anything (for Heroku push)
 alias gce="git commit --allow-empty -m 'forced commit'"
 
+# show the most recent commit
+alias gclast="git show `git rev-parse HEAD`"
+
+# undo the most recent commit
+alias gcundo="git reset `git log --format=%h -2 | tail -1`"
+
 # show git files about to be commited
 alias gcs="git show --pretty='format:' --name-only"
 
