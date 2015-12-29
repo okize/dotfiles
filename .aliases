@@ -339,6 +339,12 @@ alias gstashp="git stash pop"
 # display stashes
 alias gstashl="git stash list"
 
+# delete contents of most recent stash
+alias gstashd="git stash drop"
+
+# show contents of most recent stash
+alias gstashshow="git stash show -p stash@{0}"
+
 # display diff
 alias gdiff="git icdiff"
 # alias gdiff="git diff --color --color-words --abbrev"
