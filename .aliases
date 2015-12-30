@@ -345,6 +345,9 @@ alias gstashd="git stash drop"
 # show contents of most recent stash
 alias gstashshow="git stash show -p stash@{0}"
 
+# show contents of all stashes
+alias gstashshowall="git_show_all_stashes"
+
 # display diff
 alias gdiff="git icdiff"
 # alias gdiff="git diff --color --color-words --abbrev"
