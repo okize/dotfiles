@@ -23,6 +23,11 @@ if which rbenv > /dev/null; then
   eval "$(rbenv init -)"
 fi
 
+# init docker-machine
+if which docker-machine > /dev/null; then
+  eval $(docker-machine env dev)
+fi
+
 # init nvm for node
 if [ -d ~/.nvm ]; then
   source $(brew --prefix nvm)/nvm.sh
