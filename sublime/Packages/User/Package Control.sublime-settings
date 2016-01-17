@@ -5,6 +5,7 @@
 	],
 	"installed_packages":
 	[
+		"ANSIescape",
 		"Babel",
 		"Better CoffeeScript",
 		"Dotfiles Syntax Highlighting",
@@ -21,7 +22,6 @@
 		"SublimeERB",
 		"SublimeLinter",
 		"SublimeLinter-coffeelint",
-		"SublimeLinter-contrib-eslint_d",
 		"SublimeLinter-contrib-scss-lint",
 		"SublimeLinter-html-tidy",
 		"SublimeLinter-json",
