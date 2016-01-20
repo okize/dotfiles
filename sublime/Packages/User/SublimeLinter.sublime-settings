@@ -28,11 +28,6 @@
                 "args": [],
                 "excludes": []
             },
-            "ruby": {
-                "@disable": false,
-                "args": [],
-                "excludes": []
-            },
             "scss": {
                 "@disable": false,
                 "args": [],

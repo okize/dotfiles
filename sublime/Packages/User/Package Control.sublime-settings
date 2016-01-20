@@ -12,13 +12,13 @@
 		"EditorConfig",
 		"Git",
 		"GitGutter",
-		"Handlebars",
 		"HTML5",
 		"Jade",
 		"Package Control",
 		"ReactJS",
 		"SideBarEnhancements",
 		"Stylus",
+		"SublimeCodeIntel",
 		"SublimeERB",
 		"SublimeLinter",
 		"SublimeLinter-coffeelint",
@@ -26,7 +26,6 @@
 		"SublimeLinter-html-tidy",
 		"SublimeLinter-json",
 		"SublimeLinter-rubocop",
-		"SublimeLinter-ruby",
 		"Syntax Highlighting for Sass",
 		"Theme - Soda SolarizedDark"
 	]
