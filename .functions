@@ -285,6 +285,11 @@ function unidecode() {
   echo # newline
 }
 
+function count_files_by_extension() {
+  echo "Number of files with .$@ extension:"
+  find . -name "*.$@" | wc -l
+}
+
 # alerts when a branch has completed tddium build
 function tddium_wait() {
   [[ $# == 0 ]] && echo "tddium_wait needs a branch name to watch" && return 1
