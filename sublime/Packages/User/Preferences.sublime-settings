@@ -22,19 +22,20 @@
 	"auto_match_enabled": true,
 	"binary_file_patterns":
 	[
-		"*.jpg",
-		"*.jpeg",
-		"*.png",
-		"*.gif",
-		"*.ttf",
-		"*.tga",
 		"*.dds",
-		"*.ico",
 		"*.eot",
-		"*.pdf",
-		"*.swf",
+		"*.gif",
+		"*.ico",
 		"*.jar",
-		"*.zip"
+		"*.jpeg",
+		"*.jpg",
+		"*.pdf",
+		"*.png",
+		"*.swf",
+		"*.tga",
+		"*.ttf",
+		"*.zip",
+		"frontend/node_modules/**"
 	],
 	"bold_folder_labels": false,
 	"caret_style": "smooth",
@@ -112,6 +113,7 @@
 	"indent_to_bracket": false,
 	"index_exclude_patterns":
 	[
+		"/Users/morganwigmanich/src/common/tmp*",
 		"/Users/morganwigmanich/src/localhost/scrapers/campfire-transcript-spider-temp/node_modules*"
 	],
 	"index_files": true,
