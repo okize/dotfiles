@@ -120,7 +120,10 @@ alias spoton="sudo mdutil -a -i on"
 alias chromekill="ps ux | grep '[C]hrome Helper --type=renderer' | grep -v extension-process | tr -s ' ' | cut -d ' ' -f2 | xargs kill"
 
 # update OS X, homebrew, npm & gems
-alias update="sudo softwareupdate -i -a; brew update; brew cleanup; npm update -g;"
+alias update="sudo softwareupdate -i -a; brew update; brew cleanup;"
+
+# get laptop serial number
+alias serial_number="system_profiler | grep 'Serial Number (system):'"
 
 # reload shell after dotfiles change
 alias br="source ~/.bashrc; echo 'reloaded shell session'"
@@ -139,11 +142,11 @@ alias docs="cd ~/documents"
 # bundle exec shortcut
 alias brake="bundle exec rake"
 
+# run pending migrations
+alias rdbm="bundle exec rake db:migrate RAILS_ENV=development"
+
 # instead of slow rake assets:clobber (can only run in app root)
 alias clob="rm -rf ./tmp/cache/assets"
-
-# run pending migrations
-alias rmig="bundle exec rake db:migrate RAILS_ENV=development"
 
 # cds to directory where rbenv installed gems
 alias gemdir=go_to_gem_dir
@@ -277,10 +280,10 @@ alias gcall="git add . -A && git commit -m"
 alias gce="git commit --allow-empty -m 'forced commit'"
 
 # show the most recent commit
-alias gclast="git show `git rev-parse HEAD`"
+# alias gclast="git show '`git rev-parse HEAD`'"
 
 # undo the most recent commit
-alias gcundo="git reset `git log --format=%h -2 | tail -1`"
+# alias gcundo="git reset `git log --format=%h -2 | tail -1`"
 
 # show git files about to be commited
 alias gcs="git show --pretty='format:' --name-only"
