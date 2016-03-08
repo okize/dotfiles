@@ -256,6 +256,12 @@ function qlf() {
   qlmanage -p "$*" >& /dev/null;
 }
 
+# watch for a website to come back online
+# example: github down? do `mashf5 github.com`
+function mashf5() {
+  watch -d -n 5 "curl --head --silent --location $1 | grep '^HTTP/'"
+}
+
 # Test if HTTP compression (RFC 2616 + SDCH) is enabled for a given URL.
 # Send a fake UA string for sites that sniff it instead of using the Accept-Encoding header. (Looking at you, ajax.googleapis.com!)
 function http_compression() {
