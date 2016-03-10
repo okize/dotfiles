@@ -59,15 +59,19 @@ binaries=(
   sqlite
   trash
   tree
+  watch
   watchman
   webkit2png
 )
 
 brew install ${binaries[@]}
 
-brew tap phinze/homebrew-cask
-brew tap caskroom/versions
-brew install brew-cask
+# https://github.com/heroku/heroku-accounts
+heroku plugins:install https://github.com/heroku/heroku-accounts.git
+
+# brew tap phinze/homebrew-cask
+# brew tap caskroom/versions
+# brew install brew-cask
 
 function installcask() {
   brew cask install --appdir="/Applications" "${@}" 2> /dev/null
@@ -97,6 +101,7 @@ apps=(
   robomongo
   selfcontrol
   slack
+  sqlitestudio
   sublime-text3
   virtualbox
   xquartz
