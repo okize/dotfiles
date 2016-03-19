@@ -27,6 +27,11 @@ function git_export() {
   git archive master | tar -x -C "$1"
 }
 
+# returns first commit of a repo (depending on past merges may return multiple SHAs)
+function git_first_commit() {
+  git show `git rev-list --max-parents=0 HEAD`
+}
+
 # function strip_diff_leading_symbols(){
 #   color_code_regex=$'(\x1B\\[([0-9]{1,2}(;[0-9]{1,2})?)?[m|K])'
 
