@@ -48,7 +48,7 @@ binaries=(
   nvm
   optipng
   phantomjs
-  postgresql93
+  postgresql95
   python3
   rbenv
   redis

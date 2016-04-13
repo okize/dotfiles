@@ -6,17 +6,12 @@ nvm use stable
 nvm alias default node
 
 # Development
-npm install -g bower
-npm install -g browserify
-npm install -g coffee-script
-npm install -g coffeelint
-npm install -g ember-cli
-npm install -g eslint_d
+npm install -g express-generator
 npm install -g grunt-cli
 npm install -g gulp
-npm install -g mocha
+npm install -g iectrl
+npm install -g node-inspector
 npm install -g nodemon
-npm install -g webpack
 
 # Tools
 npm install -g browser-repl

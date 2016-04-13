@@ -311,8 +311,8 @@ alias gpoh="git push origin HEAD"
 alias gunpush="git push -f origin HEAD^:master"
 
 # undo a merge
-alias gunmerge="git reset --hard HEAD@{1}"
-# alias gunmerge="git reset --merge ORIG_HEAD"
+alias gunmerge="git reset --hard ORIG_HEAD"
+# alias gunmerge="git reset --hard HEAD@{1}"
 
 # remove all files from stage
 alias gallr="git reset HEAD ."
