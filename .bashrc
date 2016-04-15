@@ -6,10 +6,9 @@ HEROKU=/usr/local/heroku/bin
 RBENV=$HOME/.rbenv/bin
 RBENV_SHIMS=$HOME/.rbenv/shims
 NVM_DIR=~/.nvm
-DOCKER=~/dotfiles/code/docker
 DIFF=~/dotfiles/code/icdiff
 
-export PATH=$PATH:$GIT:$HOMEBREW:$HEROKU:$RBENV:$RBENV_SHIMS:$NVM_DIR:$DOCKER:$DIFF:$COREUTILS
+export PATH=$PATH:$GIT:$HOMEBREW:$HEROKU:$RBENV:$RBENV_SHIMS:$NVM_DIR::$DIFF:$COREUTILS
 
 # loads dotfiles into shell
 # ~/.extra used for settings I don’t want to commit
@@ -22,11 +21,6 @@ unset file
 if which rbenv > /dev/null; then
   eval "$(rbenv init -)"
 fi
-
-# init docker-machine
-# if which docker-machine > /dev/null; then
-#   eval $(docker-machine env dev)
-# fi
 
 # init nvm for node
 if [ -d ~/.nvm ]; then

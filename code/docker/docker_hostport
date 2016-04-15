@@ -1,6 +1,0 @@
-#!/bin/sh
-
-CONTAINER=$1
-PORT=$2
-
-docker port $CONTAINER $PORT | cut -d: -f2
