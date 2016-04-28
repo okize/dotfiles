@@ -36,7 +36,6 @@ binaries=(
   dockutil
   flow
   git
-  git-cal
   graphicsmagick
   heroku-toolbelt
   hub
@@ -55,7 +54,6 @@ binaries=(
   rename
   Rserve
   ruby-build
-  slack
   sqlite
   trash
   tree
@@ -66,12 +64,9 @@ binaries=(
 
 brew install ${binaries[@]}
 
+# installs plugin for heroku cli to manage multiple accounts
 # https://github.com/heroku/heroku-accounts
 heroku plugins:install https://github.com/heroku/heroku-accounts.git
-
-# brew tap phinze/homebrew-cask
-# brew tap caskroom/versions
-# brew install brew-cask
 
 function installcask() {
   brew cask install --appdir="/Applications" "${@}" 2> /dev/null
@@ -83,6 +78,7 @@ echo "installing applications..."
 apps=(
   adium
   alfred
+  arduino
   appcleaner
   dropbox
   evernote
