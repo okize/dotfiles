@@ -279,6 +279,9 @@ alias gcall="git add . -A && git commit -m"
 # make a commit without adding anything (for Heroku push)
 alias gce="git commit --allow-empty -m 'forced commit'"
 
+# show commits on current branch that do not exist on master
+alias gherenotthere="git log HEAD ^master --no-merges"
+
 # show the most recent commit
 # alias gclast="git show '`git rev-parse HEAD`'"
 
