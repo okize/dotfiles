@@ -60,6 +60,7 @@ binaries=(
   watch
   watchman
   webkit2png
+  youtube-dl
 )
 
 brew install ${binaries[@]}
