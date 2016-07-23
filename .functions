@@ -1,3 +1,27 @@
+# lazyload nvm for faster shell startup time
+# https://gist.github.com/fl0w/07ce79bd44788f647deab307c94d6922
+
+lazynvm() {
+  unset -f nvm node npm
+  export NVM_DIR=~/.nvm
+  [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+}
+
+nvm() {
+  lazynvm
+  nvm $@
+}
+
+node() {
+  lazynvm
+  node $@
+}
+
+npm() {
+  lazynvm
+  npm $@
+}
+
 # Pause execution until guest control is available for a virtual machine.
 function wait_for_guestcontrol() {
   sleep_wait="5"

@@ -23,9 +23,7 @@ if which rbenv > /dev/null; then
 fi
 
 # init nvm for node
-if [ -d ~/.nvm ]; then
-  source $(brew --prefix nvm)/nvm.sh
-fi
+# moved to .functions for lazy-loading
 
 # init z (https://github.com/rupa/z)
 source ~/dotfiles/code/z/z.sh
