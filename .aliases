@@ -280,7 +280,7 @@ alias gcall="git add . -A && git commit -m"
 alias gce="git commit --allow-empty -m 'forced commit'"
 
 # show commits on current branch that do not exist on master
-alias gherenotthere="git log HEAD ^master --no-merges"
+alias gherenotthere="git log HEAD \^origin/master --no-merges --oneline"
 
 # show the most recent commit
 # alias gclast="git show '`git rev-parse HEAD`'"
