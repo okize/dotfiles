@@ -7,6 +7,7 @@ Pry.config.editor = 'subl -n -w'
 # $ wget https://github.com/kyrylo/pry-theme-collection/blob/master/ocean/ocean.prytheme.rb
 # $ pry
 # $ pry-theme install ocean
+
 Pry.config.theme = 'ocean'
 
 # Custom prompt
@@ -15,6 +16,15 @@ Pry.config.prompt = [
   proc { |obj, nest_level, _| "#{prompt} (#{obj}):#{nest_level} > " },
   proc { |obj, nest_level, _| "#{prompt} (#{obj}):#{nest_level} * " }
 ]
+
+# Changes the process title while you're in a pry session
+Pry.hooks.add_hook :before_session, 'set_title' do
+  Process.setproctitle 'pry'
+end
+
+Pry.hooks.add_hook :after_session, 'set_title' do
+  Process.setproctitle 'ruby'
+end
 
 # Default Command Set, add custom methods here:
 default_command_set = Pry::CommandSet.new do
