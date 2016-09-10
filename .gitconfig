@@ -18,7 +18,6 @@
   attributesfile = ~/.gitattributes
   editor = "nano"
   excludesfile = ~/.gitignore
-  pager = bash -lc 'diff-highlight | strip_diff_leading_symbols | less -r'
   whitespace = fix,space-before-tab,tab-in-indent,trailing-space
 [color "branch"]
   current = yellow reverse
