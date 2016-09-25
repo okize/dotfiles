@@ -35,6 +35,8 @@
 		"*.tga",
 		"*.ttf",
 		"*.zip",
+		"/Users/morganwigmanich/src/plm-ui-components/node_modules/**",
+		"/Users/morganwigmanich/src/schooner/schooner-escalator/build/**",
 		"frontend/node_modules/**"
 	],
 	"bold_folder_labels": false,
