@@ -45,6 +45,7 @@ binaries=(
   mysql
   nmap
   nvm
+  openSSL
   optipng
   phantomjs
   postgresql95

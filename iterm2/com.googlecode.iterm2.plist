@@ -817,9 +817,9 @@
 	<key>NSWindow Frame SUUpdateAlert</key>
 	<string>412 363 620 392 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 0 1440 900 0 0 1440 877 </string>
+	<string>4 54 1431 816 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>-533 1678 710 427 -1120 900 2560 1417 </string>
+	<string>232 354 710 427 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
 	<string>162 91 710 426 0 0 1440 877 </string>
 	<key>New Bookmarks</key>
@@ -1618,6 +1618,8 @@
 	<false/>
 	<key>PasteFromClipboard</key>
 	<false/>
+	<key>PasteTabToStringTabStopSize</key>
+	<integer>4</integer>
 	<key>PointerActions</key>
 	<dict>
 		<key>Button,1,1,,</key>
@@ -1672,13 +1674,13 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2016-09-16T09:18:16Z</date>
+	<date>2016-10-04T13:57:40Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>ShowBookmarkName</key>
 	<false/>
 	<key>ShowFullScreenTabBar</key>
-	<true/>
+	<false/>
 	<key>ShowPaneTitles</key>
 	<true/>
 	<key>SmartPlacement</key>
