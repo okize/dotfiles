@@ -813,13 +813,13 @@
 	<key>NSWindow Frame Preferences</key>
 	<string>516 405 606 456 0 0 1440 877 </string>
 	<key>NSWindow Frame SUStatusFrame</key>
-	<string>2520 1086 400 129 1440 0 2560 1577 </string>
+	<string>-36 1866 400 129 -1120 900 2560 1417 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
-	<string>412 363 620 392 0 0 1440 877 </string>
+	<string>-150 1668 620 392 -1120 900 2560 1417 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>4 54 1431 816 0 0 1440 877 </string>
+	<string>-1114 909 2558 1408 -1120 900 2560 1417 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>232 354 710 427 0 0 1440 877 </string>
+	<string>2028 905 710 427 1440 0 2560 1577 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
 	<string>162 91 710 426 0 0 1440 877 </string>
 	<key>New Bookmarks</key>
@@ -1674,7 +1674,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2016-10-04T13:57:40Z</date>
+	<date>2016-11-04T00:48:44Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>ShowBookmarkName</key>
