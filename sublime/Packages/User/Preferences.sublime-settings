@@ -62,9 +62,10 @@
 	"fallback_encoding": "UTF-8",
 	"file_exclude_patterns":
 	[
-		"*.DS_store",
 		"*.ai",
+		"*.DS_store",
 		"*.eot",
+		".eslintcache",
 		"*.gem",
 		"*.gif",
 		"*.gz",
@@ -76,11 +77,11 @@
 		"*.psd",
 		"*.sassc",
 		"*.scssc",
+		"*.sublime-workspace",
 		"*.ttf",
 		"*.woff",
 		"*.xap",
-		"*.zip",
-		"*.sublime-workspace"
+		"*.zip"
 	],
 	"find_selected_text": true,
 	"fold_buttons": true,
@@ -90,8 +91,8 @@
 		".svn",
 		".sass-cache",
 		".hg",
-		".bundle",
-		".zeus.sock"
+		"node_modules",
+		"build"
 	],
 	"font_face": "Source Code Pro",
 	"font_options":
@@ -116,8 +117,6 @@
 	"indent_to_bracket": false,
 	"index_exclude_patterns":
 	[
-		"/Users/morganwigmanich/src/common/tmp*",
-		"/Users/morganwigmanich/src/localhost/scrapers/campfire-transcript-spider-temp/node_modules*"
 	],
 	"index_files": true,
 	"line_numbers": true,

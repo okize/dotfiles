@@ -22,6 +22,11 @@ npm() {
   npm $@
 }
 
+# retroactive git tagging
+# https://github.com/openmelody/melody/wiki/Devbest-tagging
+# git checkout SHA_HASH
+# GIT_COMMITTER_DATE="$(git show --format=%aD  | head -1)" git tag -a v1.0.0 -m"v1.0.0"
+
 # Pause execution until guest control is available for a virtual machine.
 function wait_for_guestcontrol() {
   sleep_wait="5"
