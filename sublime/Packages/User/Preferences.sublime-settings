@@ -1,6 +1,6 @@
 {
 	"always_prompt_for_file_reload": false,
-	"always_show_minimap_viewport": false,
+	"always_show_minimap_viewport": true,
 	"animation_enabled": true,
 	"atomic_save": true,
 	"auto_close_tags": true,
@@ -34,15 +34,12 @@
 		"*.swf",
 		"*.tga",
 		"*.ttf",
-		"*.zip",
-		"/Users/morganwigmanich/src/plm-ui-components/node_modules/**",
-		"/Users/morganwigmanich/src/schooner/schooner-escalator/build/**",
-		"frontend/node_modules/**"
+		"*.zip"
 	],
-	"bold_folder_labels": false,
+	"bold_folder_labels": true,
 	"caret_style": "smooth",
 	"close_windows_when_empty": false,
-	"color_scheme": "Packages/User/SublimeLinter/Okize (SL).tmTheme",
+	"color_scheme": "Packages/Material Theme/schemes/Material-Theme-Darker.tmTheme",
 	"copy_with_empty_selection": true,
 	"create_window_at_startup": true,
 	"default_encoding": "UTF-8",
@@ -97,6 +94,8 @@
 	"font_face": "Source Code Pro",
 	"font_options":
 	[
+		"gray_antialias",
+		"subpixel_antialias"
 	],
 	"font_size": 12,
 	"gpu_window_buffer": "auto",
@@ -111,7 +110,8 @@
 	],
 	"indent_guide_options":
 	[
-		"draw_normal"
+		"draw_normal",
+		"draw_active"
 	],
 	"indent_subsequent_lines": true,
 	"indent_to_bracket": false,
@@ -120,8 +120,8 @@
 	],
 	"index_files": true,
 	"line_numbers": true,
-	"line_padding_bottom": 0,
-	"line_padding_top": 0,
+	"line_padding_bottom": 1,
+	"line_padding_top": 1,
 	"margin": 4,
 	"match_brackets": true,
 	"match_brackets_angle": false,
@@ -132,7 +132,7 @@
 	"match_tags": true,
 	"move_to_limit_on_up_down": false,
 	"open_files_in_new_window": true,
-	"overlay_scroll_bars": "system",
+	"overlay_scroll_bars": "enabled",
 	"preview_on_click": true,
 	"remember_open_files": true,
 	"rulers":
@@ -154,7 +154,7 @@
 	"tab_size": 2,
 	"tabs_padding_small": true,
 	"tabs_small": true,
-	"theme": "Soda SolarizedDark.sublime-theme",
+	"theme": "Material-Theme-Darker.sublime-theme",
 	"translate_tabs_to_spaces": true,
 	"tree_animation_enabled": true,
 	"trim_automatic_white_space": true,
