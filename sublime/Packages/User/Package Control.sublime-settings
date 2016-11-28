@@ -7,18 +7,17 @@
 	[
 		"Babel",
 		"Better CoffeeScript",
-		"Color Highlighter",
+		"DocBlockr",
 		"Dotfiles Syntax Highlighting",
 		"Git",
 		"GitGutter",
-		"HTML5",
 		"Material Theme",
 		"Package Control",
 		"Pug",
+		"Sass",
 		"SideBarEnhancements",
 		"Stylus",
 		"SublimeERB",
-		"Syntax Highlighting for Sass",
 		"zz File Icons"
 	]
 }
