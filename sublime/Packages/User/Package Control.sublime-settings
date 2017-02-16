@@ -5,6 +5,7 @@
 	],
 	"installed_packages":
 	[
+		"A File Icon",
 		"Babel",
 		"Better CoffeeScript",
 		"DocBlockr",
@@ -17,7 +18,6 @@
 		"Sass",
 		"SideBarEnhancements",
 		"Stylus",
-		"SublimeERB",
-		"zz File Icons"
+		"SublimeERB"
 	]
 }
