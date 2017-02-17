@@ -165,6 +165,10 @@ function branches_first_commit() {
   git merge-base master $1
 }
 
+function git_commits_since_last_tag() {
+  git log `git describe --tags --abbrev=0`..HEAD --oneline
+}
+
 function git_branch_ls() {
   BRANCH="${1:-`current_branch`}"
   git log "$(branches_first_commit $BRANCH)"..HEAD --name-only --pretty=format: | sort | uniq

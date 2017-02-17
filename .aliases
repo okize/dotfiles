@@ -382,6 +382,9 @@ alias glogoc="git log --no-merges --first-parent --color --graph --pretty=format
 # log output with cmd-clickable github urls
 alias glogc="git_log_clickable"
 
+# log commits since last tag
+alias gloglt="git_commits_since_last_tag"
+
 # display global git user email
 alias gemail="git config --global --get user.email"
 
