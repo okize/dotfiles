@@ -39,6 +39,7 @@ binaries=(
   graphicsmagick
   heroku-toolbelt
   hub
+  id3lib
   imagemagick
   memcached
   mongodb
@@ -76,28 +77,31 @@ function installcask() {
 
 echo "installing applications..."
 
-# Install native applications
+# download and install native binaries
 apps=(
-  adium
   alfred
-  arduino
   appcleaner
+  arduino
+  docker
   dropbox
   evernote
   firefox
   flux
   google-chrome
   google-chrome-canary
+  hyper
   iterm2
+  java
   keepingyouawake
   licecap
   livereload
   mou
   opera
-  opera-mobile-emulator
   rdm
   robomongo
+  screenhero
   selfcontrol
+  skype
   slack
   sqlitestudio
   sublime-text3
