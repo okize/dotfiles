@@ -4,6 +4,7 @@ DIFF=~/dotfiles/code/icdiff
 GIT=/usr/local/git/bin
 HEROKU=/usr/local/heroku/bin
 HOMEBREW=/usr/local/bin:/usr/local/lib:/usr/local/sbin
+HOMEBREW_CASK_OPTS="--appdir=/Applications"
 NVM_DIR=~/.nvm
 RBENV=$HOME/.rbenv/bin
 RBENV_SHIMS=$HOME/.rbenv/shims
