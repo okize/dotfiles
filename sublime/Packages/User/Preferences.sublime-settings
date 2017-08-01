@@ -34,7 +34,8 @@
 		"*.swf",
 		"*.tga",
 		"*.ttf",
-		"*.zip"
+		"*.zip",
+		"/Users/morganwigmanich/src/open-pro/log/test.log"
 	],
 	"bold_folder_labels": true,
 	"caret_style": "smooth",
