@@ -101,8 +101,10 @@ apps=(
   robomongo
   screenhero
   selfcontrol
+  sketchup
   skype
   slack
+  spectacle
   sqlitestudio
   sublime-text3
   virtualbox
