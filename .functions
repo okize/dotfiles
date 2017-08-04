@@ -1,3 +1,8 @@
+# what is listening on a given port
+function which_port() {
+  lsof -n -i4TCP:$1 | grep LISTEN
+}
+
 # lazyload nvm for faster shell startup time
 # https://gist.github.com/fl0w/07ce79bd44788f647deab307c94d6922
 
