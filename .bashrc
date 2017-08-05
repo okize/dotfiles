@@ -8,8 +8,9 @@ HOMEBREW_CASK_OPTS="--appdir=/Applications"
 NVM_DIR=~/.nvm
 RBENV=$HOME/.rbenv/bin
 RBENV_SHIMS=$HOME/.rbenv/shims
+YARN=$HOME/.yarn/bin
 
-export PATH=$PATH:$COREUTILS:$DIFF:$GIT:$HEROKU:$HOMEBREW:$NVM_DIR:$RBENV:$RBENV_SHIMS
+export PATH=$PATH:$COREUTILS:$DIFF:$GIT:$HEROKU:$HOMEBREW:$NVM_DIR:$RBENV:$RBENV_SHIMS:$YARN
 
 # loads dotfiles into shell
 # ~/.extra used for settings I don’t want to commit
