@@ -122,6 +122,10 @@ alias chromekill="ps ux | grep '[C]hrome Helper --type=renderer' | grep -v exten
 # update OS X, homebrew, npm & gems
 alias update="sudo softwareupdate -i -a; brew update; brew cleanup;"
 
+# homebrew
+alias bi="brew install "
+alias bci='brew cask install --appdir="/Applications" '
+
 # get laptop serial number
 alias serial_number="system_profiler | grep 'Serial Number (system):'"
 
