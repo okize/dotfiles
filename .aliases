@@ -155,8 +155,10 @@ alias clob="rm -rf ./tmp/cache/assets"
 # cds to directory where rbenv installed gems
 alias gemdir=go_to_gem_dir
 
-# running tests
+# running Rails tests
 alias rt="ruby -Itest"
+alias crt="CAPYBARA_DRIVER=chrome ruby -Itest"
+alias rtreset="brake db:test:prepare"
 
 # displays running rails servers
 alias zombie-rails="ps ax | grep rails"
