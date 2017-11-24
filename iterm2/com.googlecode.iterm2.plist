@@ -823,7 +823,7 @@
 	<key>NSWindow Frame SharedPreferences</key>
 	<string>-10 401 918 381 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>-206 1039 1032 555 -1120 900 2560 1417 </string>
+	<string>4 46 1436 831 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>232 354 710 427 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
@@ -1739,13 +1739,13 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2017-10-07T18:24:09Z</date>
+	<date>2017-10-24T15:24:20Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>ShowBookmarkName</key>
 	<false/>
 	<key>ShowFullScreenTabBar</key>
-	<false/>
+	<true/>
 	<key>ShowPaneTitles</key>
 	<true/>
 	<key>SmartPlacement</key>
