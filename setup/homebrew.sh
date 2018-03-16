@@ -105,6 +105,7 @@ apps=(
   skype
   slack
   spectacle
+  spotify
   sqlitestudio
   sublime-text3
   virtualbox
