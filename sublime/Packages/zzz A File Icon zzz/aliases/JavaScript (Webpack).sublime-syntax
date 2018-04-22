@@ -6,6 +6,7 @@ hidden: true
 file_extensions:
   - webpack.config.js
   - webpack.config.babel.js
+  - webpack.mix.js
 scope: source.js.webpack
 contexts:
   main:

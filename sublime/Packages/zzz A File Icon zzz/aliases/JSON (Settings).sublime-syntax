@@ -4,7 +4,8 @@
 name: JSON (Settings)
 hidden: true
 file_extensions:
-  - jsbeautifyrc
+  - .jshintrc
+  - .jsbeautifyrc
 scope: source.json.settings
 contexts:
   main:
