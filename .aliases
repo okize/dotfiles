@@ -156,8 +156,8 @@ alias clob="rm -rf ./tmp/cache/assets"
 alias gemdir=go_to_gem_dir
 
 # running Rails tests
-alias rt="ruby -Itest"
-alias crt="CAPYBARA_DRIVER=chrome ruby -Itest"
+alias rt="bin/rails test"
+alias crt="CAPYBARA_DRIVER=chrome bin/rails test"
 alias rtreset="brake db:test:prepare"
 
 # displays running rails servers
