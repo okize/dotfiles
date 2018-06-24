@@ -197,8 +197,11 @@ alias redc="redis-cli"
 alias smongo="mongod"
 
 ## Postgres ##
+
+alias pg="pg_ctl start -D /usr/local/var/postgresql@9.5"
+alias stoppg="pg_ctl -D /usr/local/var/postgresql@9.5 stop -m immediate"
 alias spg="postgres -D /usr/local/var/postgres"
-alias stoppg="pg_ctl -D /usr/local/var/postgres stop -m immediate"
+alias oldstoppg="pg_ctl -D /usr/local/var/postgres stop -m immediate"
 alias lspg="psql --list"
 
 ## Heroku ##
