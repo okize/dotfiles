@@ -6,11 +6,13 @@ HEROKU=/usr/local/heroku/bin
 HOMEBREW=/usr/local/bin:/usr/local/lib:/usr/local/sbin
 HOMEBREW_CASK_OPTS="--appdir=/Applications"
 NVM_DIR=~/.nvm
+POSTGRES=/usr/local/opt/postgresql@9.5/bin
+PYTHON=~/Library/Python/2.7/bin
 RBENV=$HOME/.rbenv/bin
 RBENV_SHIMS=$HOME/.rbenv/shims
 YARN=$HOME/.yarn/bin
 
-export PATH=$PATH:$COREUTILS:$DIFF:$GIT:$HEROKU:$HOMEBREW:$NVM_DIR:$RBENV:$RBENV_SHIMS:$YARN
+export PATH=$COREUTILS:$DIFF:$GIT:$HEROKU:$HOMEBREW:$NVM_DIR:$POSTGRES:$PYTHON:$RBENV:$RBENV_SHIMS:$YARN:$PATH
 
 # loads dotfiles into shell
 # ~/.extra used for settings I don’t want to commit
