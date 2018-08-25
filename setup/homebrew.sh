@@ -33,14 +33,14 @@ brew install wget --enable-iri
 # Install other useful binaries
 binaries=(
   ack
+  bash
+  chromedriver
+  coreutils
   dockutil
-  flow
   git
-  graphicsmagick
   heroku-toolbelt
-  hub
   id3lib
-  imagemagick
+  maven
   memcached
   mongodb
   mysql
@@ -49,19 +49,21 @@ binaries=(
   openSSL
   optipng
   phantomjs
-  postgresql95
+  postgresql@9.5
   python3
   rbenv
+  readline
   redis
   rename
-  Rserve
   ruby-build
   sqlite
+  subversion
   trash
   tree
   watch
   watchman
-  webkit2png
+  wget
+  yarn
   youtube-dl
 )
 
