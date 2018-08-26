@@ -81,7 +81,7 @@ echo "installing applications..."
 
 # download and install native binaries
 apps=(
-  alfred
+  android-studio
   appcleaner
   arduino
   docker
@@ -91,26 +91,25 @@ apps=(
   flux
   google-chrome
   google-chrome-canary
-  hyper
+  insomnia
   iterm2
   java
   keepingyouawake
   licecap
   livereload
-  mou
-  opera
+  macdown
   rdm
   robomongo
-  screenhero
   selfcontrol
+  sketch
   sketchup
   skype
   slack
-  spectacle
   spotify
   sqlitestudio
   sublime-text3
   virtualbox
+  viscosity
   xquartz
 )
 

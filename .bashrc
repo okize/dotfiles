@@ -48,3 +48,10 @@ source ~/dotfiles/code/npm-completion.sh
 
 # killall tab completion for common apps
 complete -o "nospace" -W "Contacts Calendar Dock Finder Mail Safari iTunes SystemUIServer Terminal" killall
+
+# tabtab source for serverless package
+# uninstall by removing these lines or running `tabtab uninstall serverless`
+[ -f /Users/morganwigmanich/src/disease-management-api/node_modules/tabtab/.completions/serverless.bash ] && . /Users/morganwigmanich/src/disease-management-api/node_modules/tabtab/.completions/serverless.bash
+# tabtab source for sls package
+# uninstall by removing these lines or running `tabtab uninstall sls`
+[ -f /Users/morganwigmanich/src/disease-management-api/node_modules/tabtab/.completions/sls.bash ] && . /Users/morganwigmanich/src/disease-management-api/node_modules/tabtab/.completions/sls.bash
