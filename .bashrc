@@ -11,10 +11,11 @@ PYTHON=~/Library/Python/2.7/bin
 RBENV=$HOME/.rbenv/bin
 RBENV_SHIMS=$HOME/.rbenv/shims
 YARN=$HOME/.yarn/bin
-ANDROID=$HOME/Library/Android/sdk/tools/
-ANDROID_TOOLS=$HOME/Library/Android/sdk/platform-tools/
+ANDROID_HOME=$HOME/Library/Android/sdk/
+ANDROID=$ANDROID_HOME/tools/
+ANDROID_TOOLS=$ANDROID_HOME/platform-tools/
 
-export PATH=$COREUTILS:$DIFF:$GIT:$HEROKU:$HOMEBREW:$NVM_DIR:$POSTGRES:$PYTHON:$RBENV:$RBENV_SHIMS:$YARN:$ANDROID:$ANDROID_TOOLS:$PATH
+export PATH=$COREUTILS:$DIFF:$GIT:$HEROKU:$HOMEBREW:$NVM_DIR:$POSTGRES:$PYTHON:$RBENV:$RBENV_SHIMS:$YARN:$ANDROID:$ANDROID_TOOLS:$ANDROID_HOME:$PATH
 
 # loads dotfiles into shell
 # ~/.extra used for settings I don’t want to commit
