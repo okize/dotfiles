@@ -35,7 +35,8 @@
 		"*.tga",
 		"*.ttf",
 		"*.zip",
-		"/Users/morganwigmanich/src/open-pro/log/test.log"
+		"/Users/morganwigmanich/src/open-pro/log/test.log",
+		"yarn-error.log"
 	],
 	"bold_folder_labels": true,
 	"caret_style": "smooth",
