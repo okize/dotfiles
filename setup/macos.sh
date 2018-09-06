@@ -383,7 +383,7 @@ dockutil --no-restart --remove all
 dockutil --no-restart --position 1 --add "/Applications/Google Chrome.app"
 dockutil --no-restart --position 2 --add "/Applications/Google Chrome Canary.app"
 dockutil --no-restart --position 3 --add "/Applications/Sublime Text.app"
-dockutil --no-restart --position 4 --add "/Applications/iTerm (3.0.9).app"
+dockutil --no-restart --position 4 --add "/Applications/iTerm.app"
 dockutil --no-restart --position 5 --add "/Applications/Slack.app"
 dockutil --no-restart --position 6 --add "/Applications/Insomnia.app"
 dockutil --no-restart --position 7 --add "/Applications/Sketch.app"
@@ -454,7 +454,7 @@ defaults write com.apple.dock wvous-bl-modifier -int 0
 ###############################################################################
 
 echo "Set iterm to use saved settings"
-defaults write com.googlecode.iterm2 PrefsCustomFolder "/Users/morganwigmanich/dotfiles/iterm2"
+defaults write com.googlecode.iterm2 PrefsCustomFolder "/Users/morganwigmanich/dotfiles/iterm"
 
 echo "Only use UTF-8 in Terminal.app"
 defaults write com.apple.terminal StringEncodings -array 4
