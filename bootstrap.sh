@@ -30,9 +30,9 @@ for file in $files; do
     echo "symlinking $dir/$file -> ~/$file"
 done
 
-# Setup OS X
-echo "Setting up OS X"
-source ./setup/osx.sh
+# Setup macOS
+echo "Setting up macOS"
+source ./setup/macos.sh
 echo "...done"
 
 # Setup homebrew and apps

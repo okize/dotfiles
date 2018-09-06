@@ -14,7 +14,7 @@ brew upgrade
 
 echo "installing binaries..."
 
-# Install GNU core utilities (those that come with OS X are outdated)
+# Install GNU core utilities (those that come with macOS are outdated)
 brew install coreutils
 
 # Install GNU `find`, `locate`, `updatedb`, and `xargs`, g-prefixed
@@ -23,7 +23,7 @@ brew install findutils
 # Install Bash 4
 brew install bash
 
-# Install more recent versions of some OS X tools
+# Install more recent versions of some macOS tools
 brew tap homebrew/dupes
 brew install homebrew/dupes/grep
 

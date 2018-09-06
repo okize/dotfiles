@@ -24,7 +24,7 @@ fi
 echo "Installing xcode command line tools..."
 xcode-select --install
 
-echo "Setting up OS X defaults..."
+echo "Setting up macOS defaults..."
 
 echo "Disable the sound effects on boot"
 sudo nvram SystemAudioVolume=" "
