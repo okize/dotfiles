@@ -58,7 +58,7 @@ defaults write com.apple.print.PrintingPrefs "Quit When Finished" -bool true
 echo "Disable the “Are you sure you want to open this application?” dialog"
 defaults write com.apple.LaunchServices LSQuarantine -bool false
 
-echo "Remove duplicates in the “Open With” menu (also see `lscleanup` alias)"
+echo "Remove duplicates in the “Open With” menu"
 /System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user
 
 echo "Disable Resume system-wide"
@@ -174,7 +174,7 @@ defaults write NSGlobalDomain AppleLocale -string "en_US@currency=USD"
 defaults write NSGlobalDomain AppleMeasurementUnits -string "Inches"
 defaults write NSGlobalDomain AppleMetricUnits -bool false
 
-echo "Set the timezone; see `sudo systemsetup -listtimezones` for other values"
+echo "Set the timezone; see 'sudo systemsetup -listtimezones' for other values"
 sudo systemsetup -settimezone "America/New_York" > /dev/null
 
 # echo "Disable auto-correct"
@@ -501,7 +501,7 @@ defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebK
 echo "Show the full URL in the address bar (note: this still hides the scheme)"
 defaults write com.apple.Safari ShowFullURLInSmartSearchField -bool true
 
-echo "Set Safari's home page to `about:blank` for faster loading"
+echo "Set Safari's home page to 'about:blank' for faster loading"
 defaults write com.apple.Safari HomePage -string "about:blank"
 
 echo "Prevent Safari from opening ‘safe' files automatically after downloading"
@@ -608,7 +608,7 @@ echo "Disable send and reply animations in Mail.app"
 defaults write com.apple.mail DisableReplyAnimations -bool true
 defaults write com.apple.mail DisableSendAnimations -bool true
 
-echo "Copy email addresses as `foo@example.com` instead of `Foo Bar <foo@example.com>` in Mail.app"
+echo "Copy email addresses as 'foo@example.com' instead of 'Foo Bar <foo@example.com>' in Mail.app"
 defaults write com.apple.mail AddressesIncludeNameOnPasteboard -bool false
 
 echo "Add the keyboard shortcut ⌘ + Enter to send an email in Mail.app"
