@@ -26,6 +26,9 @@ alias rfosize="du -sh"
 # Display power settings
 alias power="pmset -g"
 
+# Print each PATH entry on a separate line
+alias path='echo -e ${PATH//:/\\n}'
+
 # open a 'clean' profile of Chrome
 alias clean-chrome="open -a 'Google Chrome' --args --user-data-dir=/dev/null"
 
