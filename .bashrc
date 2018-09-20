@@ -24,6 +24,13 @@ for file in ~/.{bash_prompt,aliases,functions,exports,extra}; do
 done
 unset file
 
+# Enable some Bash 4 features when possible:
+# * `autocd`, e.g. `**/qux` will enter `./foo/bar/baz/qux`
+# * Recursive globbing, e.g. `echo **/*.txt`
+for option in autocd globstar; do
+  shopt -s "$option" 2> /dev/null;
+done;
+
 # init rbenv for ruby
 if which rbenv > /dev/null; then
   eval "$(rbenv init -)"
