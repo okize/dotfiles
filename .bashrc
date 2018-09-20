@@ -45,14 +45,7 @@ source ~/dotfiles/code/homebrew-completion.sh
 source ~/dotfiles/code/npm-completion.sh
 
 # tab completion for SSH hostnames based on ~/.ssh/config, ignoring wildcards
-[ -e "$HOME/.ssh/config" ] && complete -o "default" -o "nospace" -W "$(grep "^Host" ~/.ssh/config | grep -v "[?*]" | cut -d " " -f2)" scp sftp ssh
+[ -e "$HOME/.ssh/config" ] && complete -o "default" -o "nospace" -W "$(grep "^Host" ~/.ssh/config | grep -v "[?*]" | cut -d " " -f2- | tr ' ' '\n')" scp sftp ssh;
 
 # killall tab completion for common apps
 complete -o "nospace" -W "Contacts Calendar Dock Finder Mail Safari iTunes SystemUIServer Terminal" killall
-
-# tabtab source for serverless package
-# uninstall by removing these lines or running `tabtab uninstall serverless`
-[ -f /Users/morganwigmanich/src/disease-management-api/node_modules/tabtab/.completions/serverless.bash ] && . /Users/morganwigmanich/src/disease-management-api/node_modules/tabtab/.completions/serverless.bash
-# tabtab source for sls package
-# uninstall by removing these lines or running `tabtab uninstall sls`
-[ -f /Users/morganwigmanich/src/disease-management-api/node_modules/tabtab/.completions/sls.bash ] && . /Users/morganwigmanich/src/disease-management-api/node_modules/tabtab/.completions/sls.bash
