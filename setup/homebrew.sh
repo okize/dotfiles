@@ -88,7 +88,7 @@ brew install ${binaries[@]}
 heroku plugins:install https://github.com/heroku/heroku-accounts.git
 
 function installcask() {
-  brew cask install "${@}" 2> /dev/null
+  brew cask install "${@}"
 }
 
 echo "installing applications..."
@@ -111,14 +111,12 @@ apps=(
   keepingyouawake
   licecap
   macdown
-  medis
-  robomongo
   selfcontrol
   sketch
   skype
   slack
   spotify
-  sublime-text3
+  sublime-text
   virtualbox
   viscosity
   xquartz
