@@ -16,11 +16,7 @@ Thumbs.db
 .extra
 .netrc
 
-# Local gem editing
-Gemfile.local
-
 # Sublime packages I don't want commited
 Package\ Control.cache/
 Package\ Control.last-run
-sublime/Packages/SublimeLinter/messages/
 sublime/Packages/Babel/test/
