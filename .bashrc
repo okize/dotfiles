@@ -1,21 +1,20 @@
 # path settings
 COREUTILS=$(brew --prefix coreutils)/libexec/gnubin
-DIFF=~/dotfiles/code/icdiff
+DIFF=$HOME/dotfiles/code/icdiff
 GIT=/usr/local/git/bin
 HEROKU=/usr/local/heroku/bin
 HOMEBREW=/usr/local/bin:/usr/local/lib:/usr/local/sbin
-HOMEBREW_CASK_OPTS="--appdir=/Applications"
-NVM_DIR=~/.nvm
+NVM_DIR=$HOME/.nvm
 POSTGRES=/usr/local/opt/postgresql@9.5/bin
-PYTHON=~/Library/Python/2.7/bin
+PYTHON=$HOME/Library/Python/2.7/bin
 RBENV=$HOME/.rbenv/bin
 RBENV_SHIMS=$HOME/.rbenv/shims
 YARN=$HOME/.yarn/bin
-ANDROID_HOME=$HOME/Library/Android/sdk/
+ANDROID_HOME=$HOME/Library/Android/sdk
 ANDROID=$ANDROID_HOME/tools/
 ANDROID_TOOLS=$ANDROID_HOME/platform-tools/
 
-export PATH=$COREUTILS:$DIFF:$GIT:$HEROKU:$HOMEBREW:$NVM_DIR:$POSTGRES:$PYTHON:$RBENV:$RBENV_SHIMS:$YARN:$ANDROID:$ANDROID_TOOLS:$ANDROID_HOME:$PATH
+export PATH=$PATH:$COREUTILS:$DIFF:$GIT:$HEROKU:$HOMEBREW:$NVM_DIR:$POSTGRES:$PYTHON:$RBENV:$RBENV_SHIMS:$YARN:$ANDROID_HOME:$ANDROID:$ANDROID_TOOLS
 
 # loads dotfiles into shell
 # ~/.extra used for settings I don’t want to commit
