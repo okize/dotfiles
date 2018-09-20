@@ -29,7 +29,7 @@ set show-all-if-ambiguous on
 set completion-query-items 200
 
 # No case-sensitivity
-set completion-ignore-case on
+# set completion-ignore-case on
 
 # Show extra file information when completing, like `ls -F` does
 set visible-stats on
