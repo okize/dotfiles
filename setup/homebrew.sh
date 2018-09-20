@@ -87,6 +87,7 @@ apps=(
   docker
   dropbox
   evernote
+  filezilla
   firefox
   flux
   google-chrome
