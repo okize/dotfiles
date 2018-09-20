@@ -46,7 +46,6 @@ fi;
 binaries=(
   ack
   bash
-  chromedriver
   coreutils
   dockutil
   git
@@ -100,6 +99,7 @@ echo "installing applications..."
 apps=(
   android-studio
   appcleaner
+  chromedriver
   docker
   dropbox
   evernote
