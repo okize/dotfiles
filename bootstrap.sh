@@ -30,11 +30,6 @@ for file in $files; do
     echo "symlinking $dir/$file -> ~/$file"
 done
 
-# Setup macOS
-echo "Setting up macOS"
-source ./setup/macos.sh
-echo "...done"
-
 # Setup homebrew and apps
 echo "Installing binaries and apps with Homebrew"
 source ./setup/homebrew.sh
@@ -53,6 +48,11 @@ echo "...done"
 # Setup Sublime Text environment
 echo "Setting up Sublime Text"
 source ./setup/sublime.sh
+echo "...done"
+
+# Setup macOS
+echo "Setting up macOS"
+source ./setup/macos.sh
 echo "...done"
 
 # install fonts
