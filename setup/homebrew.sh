@@ -117,7 +117,6 @@ apps=(
   slack
   spotify
   sublime-text
-  virtualbox
   viscosity
   xquartz
 )
