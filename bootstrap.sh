@@ -30,6 +30,19 @@ for file in $files; do
     echo "symlinking $dir/$file -> ~/$file"
 done
 
+# optionally set computer name
+echo ""
+echo "Would you like to set your computer name (as done via System Preferences >> Sharing)?  (y/n)"
+read -r response
+if [[ $response =~ ^([yY][eE][sS]|[yY])$ ]]; then
+  echo "What would you like it to be?"
+  read COMPUTER_NAME
+  sudo scutil --set ComputerName $COMPUTER_NAME
+  sudo scutil --set HostName $COMPUTER_NAME
+  sudo scutil --set LocalHostName $COMPUTER_NAME
+  sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string $COMPUTER_NAME
+fi
+
 # Setup homebrew and apps
 echo "Installing binaries and apps with Homebrew"
 source ./setup/homebrew.sh
