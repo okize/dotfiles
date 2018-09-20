@@ -6,10 +6,10 @@ if test ! $(which brew); then
   ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 fi
 
-# Make sure we’re using the latest Homebrew
+# Use the latest Homebrew
 brew update
 
-# Upgrade any already-installed formulae
+# Upgrade any already-installed packages
 brew upgrade
 
 echo "installing binaries..."
@@ -17,18 +17,30 @@ echo "installing binaries..."
 # Install GNU core utilities (those that come with macOS are outdated)
 brew install coreutils
 
+# Install some other useful utilities like `sponge`.
+brew install moreutils
+
 # Install GNU `find`, `locate`, `updatedb`, and `xargs`, g-prefixed
 brew install findutils
 
-# Install Bash 4
-brew install bash
-
-# Install more recent versions of some macOS tools
-brew tap homebrew/dupes
-brew install homebrew/dupes/grep
+# Install GNU `sed`, overwriting the built-in `sed`.
+brew install gnu-sed --with-default-names
 
 # Install wget with IRI support
 brew install wget --enable-iri
+
+# Install more recent versions of Vim
+brew install vim --with-override-system-vi
+
+# Install Bash 4
+brew install bash
+brew install bash-completion2
+
+# Switch to using brew-installed bash as default shell
+if ! fgrep -q '/usr/local/bin/bash' /etc/shells; then
+  echo '/usr/local/bin/bash' | sudo tee -a /etc/shells;
+  chsh -s /usr/local/bin/bash;
+fi;
 
 # Install other useful binaries
 binaries=(
@@ -38,17 +50,22 @@ binaries=(
   coreutils
   dockutil
   git
+  git-lfs
+  ghostscript
+  gnupg
+  grep
   heroku-toolbelt
   id3lib
+  imagemagick
   maven
   memcached
   mongodb
   mysql
   nmap
   nvm
+  openssh
   openSSL
   optipng
-  phantomjs
   postgresql@9.5
   python3
   rbenv
@@ -56,13 +73,13 @@ binaries=(
   redis
   rename
   ruby-build
+  screen
   sqlite
   subversion
   trash
   tree
   watch
   watchman
-  wget
   yarn
   youtube-dl
 )
@@ -74,7 +91,7 @@ brew install ${binaries[@]}
 heroku plugins:install https://github.com/heroku/heroku-accounts.git
 
 function installcask() {
-  brew cask install --appdir="/Applications" "${@}" 2> /dev/null
+  brew cask install "${@}" 2> /dev/null
 }
 
 echo "installing applications..."
@@ -83,7 +100,6 @@ echo "installing applications..."
 apps=(
   android-studio
   appcleaner
-  arduino
   docker
   dropbox
   evernote
@@ -97,17 +113,14 @@ apps=(
   java
   keepingyouawake
   licecap
-  livereload
   macdown
-  rdm
+  medis
   robomongo
   selfcontrol
   sketch
-  sketchup
   skype
   slack
   spotify
-  sqlitestudio
   sublime-text3
   virtualbox
   viscosity
