@@ -1,8 +1,14 @@
 #!/usr/bin/env bash
 
+# Close any open System Preferences panes, to prevent them from overriding
+# settings we're about to change
+osascript -e 'tell application "System Preferences" to quit'
+
 # Ask for the administrator password upfront and run a keep-alive
 # to update existing `sudo` time stamp until script has finished
 sudo -v
+
+# Keep-alive: update existing `sudo` time stamp until this script has finished
 while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
 ###############################################################################
@@ -20,9 +26,6 @@ if [[ $response =~ ^([yY][eE][sS]|[yY])$ ]]; then
   sudo scutil --set LocalHostName $COMPUTER_NAME
   sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string $COMPUTER_NAME
 fi
-
-echo "Installing xcode command line tools..."
-xcode-select --install
 
 echo "Setting up macOS defaults..."
 
@@ -82,12 +85,17 @@ sudo systemsetup -setcomputersleep Off > /dev/null
 echo "Check for software updates daily, not just once per week"
 defaults write com.apple.SoftwareUpdate ScheduleFrequency -int 1
 
-echo "Disable smart quotes & dashes as they’re annoying when typing code"
+echo "Disable smart quotes"
 defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
+
+echo "Disable automatic capitalization"
+defaults write NSGlobalDomain NSAutomaticCapitalizationEnabled -bool false
+
+echo "Disable smart dashes"
 defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled -bool false
 
-echo "Prime locate database"
-launchctl load -w /System/Library/LaunchDaemons/com.apple.locate.plist
+echo "Disable automatic period substitution"
+defaults write NSGlobalDomain NSAutomaticPeriodSubstitutionEnabled -bool false
 
 echo "Disable Notification Center and remove the menu bar icon"
 launchctl unload -w /System/Library/LaunchAgents/com.apple.notificationcenterui.plist 2> /dev/null
@@ -117,7 +125,7 @@ defaults write com.apple.menuextra.battery ShowPercent -string "YES"
 echo "Menu bar: show month & day next to time"
 defaults write com.apple.menuextra.clock DateFormat -string "MMM d  h:mm a"
 
-echo "Menu bar: disable transparency (also elsewhere on Yosemite)"
+echo "Menu bar: disable transparency"
 defaults write com.apple.universalaccess reduceTransparency -bool true
 
 ###############################################################################
@@ -125,7 +133,8 @@ defaults write com.apple.universalaccess reduceTransparency -bool true
 ###############################################################################
 
 echo "Set a fast keyboard repeat rate"
-defaults write NSGlobalDomain KeyRepeat -int 0
+defaults write NSGlobalDomain KeyRepeat -int 1
+defaults write NSGlobalDomain InitialKeyRepeat -int 10
 
 echo "Set trackpad & mouse speed to a reasonable number"
 defaults write -g com.apple.trackpad.scaling 2
@@ -183,7 +192,8 @@ defaults write com.apple.screensaver askForPassword -int 1
 defaults write com.apple.screensaver askForPasswordDelay -int 0
 
 echo "Enable subpixel font rendering on non-Apple LCDs"
-defaults write NSGlobalDomain AppleFontSmoothing -int 2
+# Reference: https://github.com/kevinSuttle/macOS-Defaults/issues/17#issuecomment-266633501
+defaults write NSGlobalDomain AppleFontSmoothing -int 1
 
 echo "Enable HiDPI display modes (requires restart)"
 sudo defaults write /Library/Preferences/com.apple.windowserver DisplayResolutionEnabled -bool true
@@ -192,8 +202,8 @@ sudo defaults write /Library/Preferences/com.apple.windowserver DisplayResolutio
 # Screenshots                                                                 #
 ###############################################################################
 
-echo "Save screenshots to the downloads dir"
-defaults write com.apple.screencapture location -string "${HOME}/Downloads"
+echo "Save screenshots to the desktop"
+defaults write com.apple.screencapture location -string "${HOME}/Desktop"
 
 echo "Save screenshots in PNG format (other options: BMP, GIF, JPG, PDF, TIFF)"
 defaults write com.apple.screencapture type -string "png"
@@ -301,17 +311,14 @@ defaults write com.apple.finder EmptyTrashSecurely -bool true
 echo "Enable AirDrop over Ethernet and on unsupported Macs running Lion"
 defaults write com.apple.NetworkBrowser BrowseAllInterfaces -bool true
 
-echo "Enable the MacBook Air SuperDrive on any Mac"
-sudo nvram boot-args="mbasd=1"
-
 echo "Show the ~/Library folder"
 chflags nohidden ~/Library
 
-echo "Remove Dropbox’s green checkmark icons in Finder"
+echo "Remove Dropbox's green checkmark icons in Finder"
 file=/Applications/Dropbox.app/Contents/Resources/emblem-dropbox-uptodate.icns
 [ -e "${file}" ] && mv -f "${file}" "${file}.bak"
 
-echo "Expand the following File Info panes:"
+echo "Expand 'File Info' panes:"
 # “General”, “Open with”, and “Sharing & Permissions”
 defaults write com.apple.finder FXInfoPanesExpanded -dict \
   General -bool true \
@@ -322,7 +329,8 @@ defaults write com.apple.finder FXInfoPanesExpanded -dict \
 # Dock
 ###############################################################################
 
-echo "Wipe all (default) app icons from the Dock; this is only really useful when setting up a new Mac"
+echo "Wipe all (default) app icons from the Dock"
+# this is only really useful when setting up a new Mac
 defaults write com.apple.dock persistent-apps -array
 
 echo "Enable highlight hover effect for the grid view of a stack (Dock)"
@@ -341,7 +349,7 @@ defaults write com.apple.dock pinning -string start
 echo "Change minimize/maximize window effect"
 defaults write com.apple.dock mineffect -string "scale"
 
-echo "Minimize windows into their application’s icon"
+echo "Minimize windows into their application's icon"
 defaults write com.apple.dock minimize-to-application -bool true
 
 echo "Enable spring loading for all Dock items"
@@ -350,7 +358,7 @@ defaults write com.apple.dock enable-spring-load-actions-on-all-items -bool true
 echo "Show indicator lights for open applications in the Dock"
 defaults write com.apple.dock show-process-indicators -bool true
 
-echo "Don’t animate opening applications from the Dock"
+echo "Don't animate opening applications from the Dock"
 defaults write com.apple.dock launchanim -bool false
 
 echo "Remove the auto-hiding Dock delay"
@@ -375,15 +383,17 @@ dockutil --no-restart --remove all
 dockutil --no-restart --position 1 --add "/Applications/Google Chrome.app"
 dockutil --no-restart --position 2 --add "/Applications/Google Chrome Canary.app"
 dockutil --no-restart --position 3 --add "/Applications/Sublime Text.app"
-dockutil --no-restart --position 4 --add "/Applications/iTerm.app"
-dockutil --no-restart --position 5 --add "/Applications/LiveReload.app"
-dockutil --no-restart --position 6 --add "/Applications/Adium.app"
-dockutil --no-restart --position 7 --add "/Applications/Slack.app"
-dockutil --no-restart --position 8 --add "/Applications/Evernote.app"
+dockutil --no-restart --position 4 --add "/Applications/iTerm (3.0.9).app"
+dockutil --no-restart --position 5 --add "/Applications/Slack.app"
+dockutil --no-restart --position 6 --add "/Applications/Insomnia.app"
+dockutil --no-restart --position 7 --add "/Applications/Sketch.app"
+dockutil --no-restart --position 8 --add "/Applications/Navicat Essentials for PostgreSQL.app"
 dockutil --no-restart --position 9 --add "/Applications/SelfControl.app"
-dockutil --no-restart --position 10 --add "/Applications/Messages.app"
-dockutil --no-restart --position 11 --add "/Applications/Calendar.app.app"
-dockutil --no-restart --position 12 --add '~/Downloads' --view grid --display folder
+dockutil --no-restart --position 10 --add "/Applications/Evernote.app"
+dockutil --no-restart --position 11 --add "/Applications/MacDown.app"
+dockutil --no-restart --position 12 --add "/Applications/Messages.app"
+dockutil --no-restart --position 13 --add "/Applications/Calendar.app"
+dockutil --no-restart --position 14 --add '~/Downloads' --view grid --display folder
 
 ###############################################################################
 # Mission Control, Dashboard, and hot corners                                 #
@@ -398,10 +408,10 @@ defaults write com.apple.dock "expose-group-by-app" -bool true
 echo "Disable Dashboard"
 defaults write com.apple.dashboard mcx-disabled -bool true
 
-echo "Don’t show Dashboard as a Space"
+echo "Don't show Dashboard as a Space"
 defaults write com.apple.dock dashboard-in-overlay -bool true
 
-echo "Don’t automatically rearrange Spaces based on most recent use"
+echo "Don't automatically rearrange Spaces based on most recent use"
 defaults write com.apple.dock mru-spaces -bool false
 
 echo "Reset Launchpad, but keep the desktop wallpaper intact"
@@ -477,9 +487,12 @@ defaults write com.google.Chrome.canary PMPrintingExpandedStateForPrint2 -bool t
 # Safari & WebKit                                                             #
 ###############################################################################
 
-echo "Privacy: don’t send search queries to Apple"
+echo "Privacy: don't send search queries to Apple"
 defaults write com.apple.Safari UniversalSearchEnabled -bool false
 defaults write com.apple.Safari SuppressSearchSuggestions -bool true
+
+echo "Enable 'Do Not Track'"
+defaults write com.apple.Safari SendDoNotTrackHTTPHeader -bool true
 
 echo "Press Tab to highlight each item on a web page"
 defaults write com.apple.Safari WebKitTabToLinksPreferenceKey -bool true
@@ -488,31 +501,31 @@ defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebK
 echo "Show the full URL in the address bar (note: this still hides the scheme)"
 defaults write com.apple.Safari ShowFullURLInSmartSearchField -bool true
 
-echo "Set Safari’s home page to `about:blank` for faster loading"
+echo "Set Safari's home page to `about:blank` for faster loading"
 defaults write com.apple.Safari HomePage -string "about:blank"
 
-echo "Prevent Safari from opening ‘safe’ files automatically after downloading"
+echo "Prevent Safari from opening ‘safe' files automatically after downloading"
 defaults write com.apple.Safari AutoOpenSafeDownloads -bool false
 
 # echo "Allow hitting the Backspace key to go to the previous page in history"
 # defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebKit2BackspaceKeyNavigationEnabled -bool true
 
-echo "Hide Safari’s bookmarks bar by default"
+echo "Hide Safari's bookmarks bar by default"
 defaults write com.apple.Safari ShowFavoritesBar -bool false
 
-echo "Hide Safari’s sidebar in Top Sites"
+echo "Hide Safari's sidebar in Top Sites"
 defaults write com.apple.Safari ShowSidebarInTopSites -bool false
 
-echo "Disable Safari’s thumbnail cache for History and Top Sites"
+echo "Disable Safari's thumbnail cache for History and Top Sites"
 defaults write com.apple.Safari DebugSnapshotsUpdatePolicy -int 2
 
-echo "Enable Safari’s debug menu"
+echo "Enable Safari's debug menu"
 defaults write com.apple.Safari IncludeInternalDebugMenu -bool true
 
-echo "Make Safari’s search banners default to Contains instead of Starts With"
+echo "Make Safari's search banners default to Contains instead of Starts With"
 defaults write com.apple.Safari FindOnPageMatchesWordStartsOnly -bool false
 
-echo "Remove useless icons from Safari’s bookmarks bar"
+echo "Remove useless icons from Safari's bookmarks bar"
 defaults write com.apple.Safari ProxiesInBookmarksBar "()"
 
 echo "Enable the Developer menu and the Web Inspector in Safari"
@@ -530,7 +543,7 @@ defaults write NSGlobalDomain WebKitDeveloperExtras -bool true
 echo "Disable automatic emoji substitution (i.e. use plain text smileys)"
 defaults write com.apple.messageshelper.MessageController SOInputLineSettings -dict-add "automaticEmojiSubstitutionEnablediMessage" -bool false
 
-echo "Disable smart quotes as it’s annoying for messages that contain code"
+echo "Disable smart quotes as it's annoying for messages that contain code"
 defaults write com.apple.messageshelper.MessageController SOInputLineSettings -dict-add "automaticQuoteSubstitutionEnabled" -bool false
 
 echo "Disable continuous spell checking"
@@ -628,19 +641,36 @@ sudo pmset -a hibernatemode 0
 # echo "Create a zero-byte file instead…"
 # sudo touch /private/var/vm/sleepimage
 
-# echo "…and make sure it can’t be rewritten"
+# echo "…and make sure it can't be rewritten"
 # sudo chflags uchg /private/var/vm/sleepimage
 
-echo "Disable the sudden motion sensor as it’s not useful for SSDs"
+echo "Disable the sudden motion sensor as it's not useful for SSDs"
 sudo pmset -a sms 0
 
 ###############################################################################
 # Kill affected applications                                                  #
 ###############################################################################
 
-for app in "Activity Monitor" "Address Book" "Calendar" "Contacts" "cfprefsd" \
-  "Dock" "Finder" "Google Chrome" "Google Chrome Canary" "Firefox" "iCal"\
-  "iTerm" "Mail" "Messages" "SystemUIServer"; do
-  killall "${app}" > /dev/null 2>&1
+for app in "Activity Monitor" \
+  "Address Book" \
+  "Calendar" \
+  "cfprefsd" \
+  "Contacts" \
+  "Dock" \
+  "Finder" \
+  "Firefox" \
+  "Google Chrome Canary" \
+  "Google Chrome" \
+  "iTerm" \
+  "Mail" \
+  "Messages" \
+  "Photos" \
+  "Safari" \
+  "SizeUp" \
+  "Spectacle" \
+  "SystemUIServer" \
+  "Terminal" \
+  "iCal"; do
+  killall "${app}" &> /dev/null
 done
 echo "Done. Note that some of these changes require a logout/restart to take effect."
