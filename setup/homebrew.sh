@@ -55,8 +55,6 @@ binaries=(
   grep
   heroku-toolbelt
   id3lib
-  imagemagick
-  maven
   memcached
   mongodb
   mysql
@@ -110,7 +108,6 @@ apps=(
   google-chrome-canary
   insomnia
   iterm2
-  java
   keepingyouawake
   licecap
   macdown
