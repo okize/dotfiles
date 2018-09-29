@@ -397,7 +397,7 @@ dockutil --no-restart --position 14 --add '~/Downloads' --view grid --display fo
 log_section "iTerm"
 
 log_step "Set iterm to use saved settings"
-defaults write com.googlecode.iterm2 PrefsCustomFolder "/Users/morganwigmanich/dotfiles/iterm"
+defaults write com.googlecode.iterm2 PrefsCustomFolder "$HOME/dotfiles/iterm"
 
 log_step "Only use UTF-8 in Terminal.app"
 defaults write com.apple.terminal StringEncodings -array 4
