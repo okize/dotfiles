@@ -12,6 +12,9 @@ brew update
 # Upgrade any already-installed packages
 brew upgrade
 
+# Alternate versions of casks (eg. Chrome Canary)
+brew tap homebrew/cask-versions
+
 echo "installing binaries..."
 
 # Install GNU core utilities (those that come with macOS are outdated)
