@@ -36,6 +36,7 @@
 		"*.ttf",
 		"*.zip",
 		"/Users/morganwigmanich/src/open-pro/log/test.log",
+		"/Users/mwigmanich/src/disease-management-mobile/coverage/**",
 		"yarn-error.log"
 	],
 	"bold_folder_labels": true,
