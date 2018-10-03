@@ -193,8 +193,8 @@ sudo defaults write /Library/Preferences/com.apple.windowserver DisplayResolutio
 # Screenshots                                                                 #
 ###############################################################################
 
-log_step "Save screenshots to the desktop"
-defaults write com.apple.screencapture location -string "${HOME}/Desktop"
+log_step "Save screenshots to downloads"
+defaults write com.apple.screencapture location -string "${HOME}/Downloads"
 
 log_step "Save screenshots in PNG format (other options: BMP, GIF, JPG, PDF, TIFF)"
 defaults write com.apple.screencapture type -string "png"
