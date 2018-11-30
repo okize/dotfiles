@@ -2,8 +2,7 @@
 	"extensions":
 	[
 		"js",
-    "jsx",
-    "es6",
-    ".eslintrc"
+		"es6",
+		".eslintrc"
 	]
 }
