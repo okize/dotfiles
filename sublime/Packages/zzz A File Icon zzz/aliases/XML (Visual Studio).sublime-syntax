@@ -1,0 +1,15 @@
+%YAML 1.2
+---
+# http://www.sublimetext.com/docs/3/syntax.html
+name: XML (Visual Studio)
+hidden: true
+file_extensions:
+  - csproj
+  - vsproj
+  - ruleset
+  - settings
+  - targets
+scope: text.xml.visualstudio
+contexts:
+  main:
+    - include: scope:text.xml

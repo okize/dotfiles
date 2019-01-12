@@ -4,6 +4,7 @@
 name: JSON (NPM)
 hidden: true
 file_extensions:
+  - package-lock.json
   - package.json
 scope: source.json.npm
 contexts:
