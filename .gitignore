@@ -1,3 +1,6 @@
+# Files for project notes
+.idea
+
 # Folder view configuration files
 .DS_Store
 Desktop.ini
@@ -20,3 +23,6 @@ Thumbs.db
 Package\ Control.cache/
 Package\ Control.last-run
 sublime/Packages/Babel/test/
+
+# VS Code settings I don't want commited
+.vscode
