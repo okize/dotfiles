@@ -4,6 +4,8 @@
 name: Markdown (License)
 hidden: true
 file_extensions:
+  - copying.md
+  - copyright.md
   - license.md
 scope: text.html.markdown.license
 contexts:
