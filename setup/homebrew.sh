@@ -100,6 +100,7 @@ echo "installing applications..."
 apps=(
   android-studio
   appcleaner
+  balenaetcher
   chromedriver
   docker
   dropbox
