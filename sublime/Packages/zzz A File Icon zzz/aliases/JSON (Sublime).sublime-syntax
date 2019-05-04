@@ -5,6 +5,8 @@ name: JSON (Sublime)
 hidden: true
 file_extensions:
   - .no-sublime-package
+  - hidden-color-scheme
+  - hidden-theme
   - sublime-color-scheme
   - sublime-commands
   - sublime-menu
