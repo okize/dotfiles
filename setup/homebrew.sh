@@ -120,7 +120,6 @@ apps=(
   skype
   slack
   spotify
-  sublime-text
   viscosity
   xquartz
 )
