@@ -1,1 +1,0 @@
-{"version": "4.3.0", "description": "Sublime Text enhanced syntax highlighting for JavaScript ES6/ES7/ES2015/ES2016/ES2017+, Babel, FlowType, React JSX, Styled Components, HTML5, SCSS3, PHP 7, phpDoc, PHPUnit, MQL4. Basic: Git config files.", "url": "https://github.com/borela/naomi", "platforms": ["*"], "dependencies": [], "sublime_text": ">=3092"}
