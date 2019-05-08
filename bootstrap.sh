@@ -58,6 +58,11 @@ echo "Setting up Ruby, Bundler & Rake"
 source ./setup/ruby.sh
 echo "...done"
 
+# Setup Heroku
+echo "Setting up Heroku"
+source ./setup/heroku.sh
+echo "...done"
+
 # Setup Sublime Text environment
 echo "Setting up Sublime Text"
 source ./setup/sublime.sh
