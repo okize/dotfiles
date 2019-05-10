@@ -1,9 +1,12 @@
 #!/usr/bin/env bash
 
-# install latest Ruby
-rbenv install 2.5.1
-rbenv global 2.5.1
+RUBY_VERSION=`cat ~/.ruby-version`
+echo "installing Ruby v$RUBY_VERSION..."
+
+# Install ruby version specified in .ruby-version
+rbenv install $RUBY_VERSION
+rbenv global $RUBY_VERSION
 rbenv rehash
 
-# install some gems
+# Install bundler
 gem install bundler
