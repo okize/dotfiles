@@ -26,15 +26,6 @@ brew install moreutils
 # Install GNU `find`, `locate`, `updatedb`, and `xargs`, g-prefixed
 brew install findutils
 
-# Install GNU `sed`, overwriting the built-in `sed`.
-brew install gnu-sed --with-default-names
-
-# Install wget with IRI support
-brew install wget --enable-iri
-
-# Install more recent versions of Vim
-brew install vim --with-override-system-vi
-
 # Install Bash 4
 brew install bash
 brew install bash-completion2
@@ -53,19 +44,15 @@ binaries=(
   dockutil
   git
   git-lfs
-  ghostscript
+  gnu-sed
   gnupg
   grep
-  heroku-toolbelt
   id3lib
   memcached
-  mongodb
-  mysql
   nmap
   nvm
   openssh
   openSSL
-  optipng
   postgresql@9.5
   python3
   rbenv
@@ -75,20 +62,17 @@ binaries=(
   ruby-build
   screen
   sqlite
-  subversion
   trash
   tree
+  vim
   watch
   watchman
+  wget
   yarn
   youtube-dl
 )
 
 brew install ${binaries[@]}
-
-# installs plugin for heroku cli to manage multiple accounts
-# https://github.com/heroku/heroku-accounts
-heroku plugins:install https://github.com/heroku/heroku-accounts.git
 
 function installcask() {
   brew cask install "${@}"
@@ -102,14 +86,12 @@ apps=(
   appcleaner
   balenaetcher
   chromedriver
+  cyberduck
   docker
   dropbox
   evernote
-  filezilla
   firefox
-  flux
   google-chrome
-  google-chrome-canary
   insomnia
   iterm2
   keepingyouawake
@@ -117,12 +99,12 @@ apps=(
   macdown
   selfcontrol
   sketch
-  skype
   slack
   spotify
   sublime-text
   viscosity
   xquartz
+  zoomus
 )
 
 installcask ${apps[@]}

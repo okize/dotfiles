@@ -1,4 +1,4 @@
-# Morgan's dotfiles
+# Okize dotfiles
 
 ## Installation
 
