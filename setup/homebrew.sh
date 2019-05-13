@@ -94,6 +94,7 @@ apps=(
   google-chrome
   insomnia
   iterm2
+  karabiner-elements
   keepingyouawake
   licecap
   macdown

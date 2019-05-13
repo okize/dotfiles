@@ -166,6 +166,10 @@ defaults write NSGlobalDomain AppleMetricUnits -bool false
 log_step "Set the timezone; see 'sudo systemsetup -listtimezones' for other values"
 sudo systemsetup -settimezone "America/New_York" > /dev/null
 
+log_step "Override action key mapping"
+ln -s ~/dotfiles/karabiner ~/.config
+launchctl kickstart -k gui/`id -u`/org.pqrs.karabiner.karabiner_console_user_server
+
 # log_step "Disable auto-correct"
 # defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
 
