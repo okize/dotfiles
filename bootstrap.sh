@@ -63,11 +63,6 @@ echo "Setting up Heroku"
 source ./setup/heroku.sh
 echo "...done"
 
-# Setup Sublime Text environment
-echo "Setting up Sublime Text"
-source ./setup/sublime.sh
-echo "...done"
-
 # Setup macOS
 echo "Setting up macOS"
 source ./setup/macos.sh

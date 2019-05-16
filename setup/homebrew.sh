@@ -102,7 +102,6 @@ apps=(
   sketch
   slack
   spotify
-  sublime-text
   viscosity
   xquartz
   zoomus
