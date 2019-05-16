@@ -1,7 +1,6 @@
 # path settings
 COREUTILS=$(brew --prefix coreutils)/libexec/gnubin
 DIFF=$HOME/dotfiles/code/icdiff
-GNUBIN=/usr/local/opt/gnu-sed/libexec/gnubin
 GIT=/usr/local/git/bin
 HEROKU=/usr/local/heroku/bin
 HOMEBREW=/usr/local/bin:/usr/local/lib:/usr/local/sbin
@@ -17,7 +16,7 @@ ANDROID_TOOLS=$ANDROID_HOME/tools
 ANDROID_TOOLS_BIN_STUBS=$ANDROID_TOOLS/bin
 ANDROID_PLATFORM_TOOLS=$ANDROID_HOME/platform-tools
 
-export PATH=$PATH:$COREUTILS:$DIFF:$GIT:$GNUBIN:$HEROKU:$HOMEBREW:$NVM_DIR:$POSTGRES:$AWSEBCLI:$PYTHON:$RBENV:$RBENV_SHIMS:$YARN:$ANDROID_HOME:$ANDROID_TOOLS:$ANDROID_TOOLS_BIN_STUBS:$ANDROID_PLATFORM_TOOLS
+export PATH=$PATH:$COREUTILS:$DIFF:$GIT:$HEROKU:$HOMEBREW:$NVM_DIR:$POSTGRES:$AWSEBCLI:$PYTHON:$RBENV:$RBENV_SHIMS:$YARN:$ANDROID_HOME:$ANDROID_TOOLS:$ANDROID_TOOLS_BIN_STUBS:$ANDROID_PLATFORM_TOOLS
 
 # loads dotfiles into shell
 # ~/.extra used for settings I don’t want to commit

@@ -54,7 +54,7 @@ binaries=(
   openssh
   openSSL
   postgresql@9.5
-  python3
+  pyenv
   rbenv
   readline
   redis
