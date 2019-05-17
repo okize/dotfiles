@@ -6,12 +6,6 @@ if test ! $(which brew); then
   ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 fi
 
-# Use the latest Homebrew
-brew update
-
-# Upgrade any already-installed packages
-brew upgrade
-
 # Alternate versions of casks (eg. Chrome Canary)
 brew tap homebrew/cask-versions
 
@@ -108,9 +102,6 @@ apps=(
 )
 
 installcask ${apps[@]}
-
-# Remove outdated versions from the cellar
-brew cleanup
 
 # Check for any problems
 brew doctor
