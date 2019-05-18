@@ -66,6 +66,9 @@ binaries=(
   youtube-dl
 )
 
+echo "map vi so it opens the brew-installed vim..."
+ln -s /usr/local/bin/vim /usr/local/bin/vi
+
 brew install ${binaries[@]}
 
 function installcask() {
