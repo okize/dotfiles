@@ -380,13 +380,10 @@ defaults write com.apple.dock showhidden -bool true
 
 dockutil --no-restart --remove all
 dockutil --no-restart --position 1 --add "/Applications/Google Chrome.app"
-dockutil --no-restart --position 2 --add "/Applications/Google Chrome Canary.app"
-dockutil --no-restart --position 3 --add "/Applications/Sublime Text.app"
+dockutil --no-restart --position 3 --add "/Applications/Visual Studio Code.app"
 dockutil --no-restart --position 4 --add "/Applications/iTerm.app"
 dockutil --no-restart --position 5 --add "/Applications/Slack.app"
 dockutil --no-restart --position 6 --add "/Applications/Insomnia.app"
-dockutil --no-restart --position 7 --add "/Applications/Sketch.app"
-dockutil --no-restart --position 8 --add "/Applications/Navicat Essentials for PostgreSQL.app"
 dockutil --no-restart --position 9 --add "/Applications/SelfControl.app"
 dockutil --no-restart --position 10 --add "/Applications/Evernote.app"
 dockutil --no-restart --position 11 --add "/Applications/MacDown.app"
