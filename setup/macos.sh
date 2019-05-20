@@ -165,6 +165,8 @@ defaults write NSGlobalDomain AppleMetricUnits -bool false
 
 log_step "Set the timezone; see 'sudo systemsetup -listtimezones' for other values"
 sudo systemsetup -settimezone "America/New_York" > /dev/null
+sudo systemsetup -setnetworktimeserver "time.apple.com"
+sudo systemsetup -setusingnetworktime on
 
 log_step "Override action key mapping"
 ln -s ~/dotfiles/karabiner ~/.config
