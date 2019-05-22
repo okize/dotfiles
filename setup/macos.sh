@@ -116,7 +116,8 @@ log_step "show month & day next to time"
 defaults write com.apple.menuextra.clock DateFormat -string "MMM d  h:mm a"
 
 log_step "disable transparency"
-defaults write com.apple.universalaccess reduceTransparency -bool true
+# Could not write domain com.apple.universalaccess; exiting
+# defaults write com.apple.universalaccess reduceTransparency -bool true
 
 ###############################################################################
 # Trackpad, mouse, keyboard, Bluetooth accessories, and input                 #
@@ -148,11 +149,11 @@ log_step "Enable full keyboard access for all controls (e.g. enable Tab in modal
 defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
 
 log_step "Use scroll gesture with the Ctrl (^) modifier key to zoom"
-defaults write com.apple.universalaccess closeViewScrollWheelToggle -bool true
-defaults write com.apple.universalaccess HIDScrollZoomModifierMask -int 262144
+# defaults write com.apple.universalaccess closeViewScrollWheelToggle -bool true
+# defaults write com.apple.universalaccess HIDScrollZoomModifierMask -int 262144
 
 log_step "Follow the keyboard focus while zoomed in"
-defaults write com.apple.universalaccess closeViewZoomFollowsFocus -bool true
+# defaults write com.apple.universalaccess closeViewZoomFollowsFocus -bool true
 
 log_step "Disable press-and-hold for keys in favor of key repeat"
 defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
