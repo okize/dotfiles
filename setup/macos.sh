@@ -196,6 +196,10 @@ defaults write NSGlobalDomain AppleFontSmoothing -int 1
 log_step "Enable HiDPI display modes (requires restart)"
 sudo defaults write /Library/Preferences/com.apple.windowserver DisplayResolutionEnabled -bool true
 
+log_step "Disable Font Smoothing Disabler in macOS Mojave"
+# Reference: https://ahmadawais.com/fix-macos-mojave-font-rendering-issue/
+defaults write -g CGFontRenderingFontSmoothingDisabled -bool FALSE
+
 ###############################################################################
 # Screenshots                                                                 #
 ###############################################################################
