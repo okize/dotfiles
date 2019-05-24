@@ -592,6 +592,7 @@ sudo ln -sf "/Applications/Xcode.app/Contents/Developer/Applications/iOS Simulat
 # 10: Put display to sleep
 # 11: Launchpad
 # 12: Notification Center
+# 13: Lock Screen
 
 # log_step "Top left screen corner → Mission Control"
 # defaults write com.apple.dock wvous-tl-corner -int 2
@@ -601,8 +602,8 @@ sudo ln -sf "/Applications/Xcode.app/Contents/Developer/Applications/iOS Simulat
 # defaults write com.apple.dock wvous-tr-corner -int 4
 # defaults write com.apple.dock wvous-tr-modifier -int 0
 
-log_step "Bottom left screen corner → Start screen saver"
-defaults write com.apple.dock wvous-bl-corner -int 5
+log_step "Bottom left screen corner → Lock screen"
+defaults write com.apple.dock wvous-bl-corner -int 13
 defaults write com.apple.dock wvous-bl-modifier -int 0
 
 # log_step "Bottom right screen corner → Show application windows"
