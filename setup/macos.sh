@@ -645,11 +645,18 @@ log_step "Enable Debug Menu in the Mac App Store"
 defaults write com.apple.appstore ShowDebugMenu -bool true
 
 ###############################################################################
-# SSD-specific tweaks                                                         #
+# Time Machine                                                                #
 ###############################################################################
 
-log_step "Disable local Time Machine snapshots"
-sudo tmutil disablelocal
+log_step "Prevent Time Machine from prompting to use new hard drives as backup volume"
+defaults write com.apple.TimeMachine DoNotOfferNewDisksForBackup -bool true
+
+log_step "Disable local Time Machine backups"
+hash tmutil &> /dev/null && sudo tmutil disablelocal
+
+###############################################################################
+# SSD-specific tweaks                                                         #
+###############################################################################
 
 log_step "Disable hibernation (speeds up entering sleep mode)"
 sudo pmset -a hibernatemode 0
