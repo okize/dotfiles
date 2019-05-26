@@ -684,9 +684,6 @@ for app in "Activity Monitor" \
   "Contacts" \
   "Dock" \
   "Finder" \
-  "Firefox" \
-  "Google Chrome Canary" \
-  "Google Chrome" \
   "iTerm" \
   "Mail" \
   "Messages" \
