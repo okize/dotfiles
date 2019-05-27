@@ -4,11 +4,11 @@ function which_port() {
 }
 
 function log_section() {
-  echo "$(tput setaf 4)$(tput setab 7)$(tput bold) $1 $(tput sgr 0)"
+  echo "$(tput setaf 0)$(tput setab 7)$(tput bold) $1 $(tput sgr 0)"
 }
 
 function log_step() {
-  echo "$(tput setaf 4)- $1$(tput sgr 0)"
+  echo "$(tput setaf 6)- $1$(tput sgr 0)"
 }
 
 
