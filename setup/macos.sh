@@ -125,8 +125,8 @@ log_step "disable transparency"
 
 log_section "Trackpad, mouse, keyboard, etc"
 
-log_step "Set a fast keyboard repeat rate"
-defaults write NSGlobalDomain KeyRepeat -int 1
+log_step "Set keyboard repeat rate"
+defaults write NSGlobalDomain KeyRepeat -int 60
 defaults write NSGlobalDomain InitialKeyRepeat -int 10
 
 log_step "Set trackpad & mouse speed to a reasonable number"
@@ -429,30 +429,25 @@ log_step "Disable continuous spell checking"
 defaults write com.apple.messageshelper.MessageController SOInputLineSettings -dict-add "continuousSpellCheckingEnabled" -bool false
 
 ###############################################################################
-# Google Chrome & Google Chrome Canary                                        #
+# Google Chrome                                                               #
 ###############################################################################
 
 log_section "Browsers"
 
 log_step "Allow installing user scripts via GitHub Gist or Userscripts.org"
 defaults write com.google.Chrome ExtensionInstallSources -array "https://gist.githubusercontent.com/" "http://userscripts.org/*"
-defaults write com.google.Chrome.canary ExtensionInstallSources -array "https://gist.githubusercontent.com/" "http://userscripts.org/*"
 
 # log_step "Disable the all too sensitive backswipe on trackpads"
 # defaults write com.google.Chrome AppleEnableSwipeNavigateWithScrolls -bool false
-# defaults write com.google.Chrome.canary AppleEnableSwipeNavigateWithScrolls -bool false
 
 # log_step "Disable the all too sensitive backswipe on Magic Mouse"
 # defaults write com.google.Chrome AppleEnableMouseSwipeNavigateWithScrolls -bool false
-# defaults write com.google.Chrome.canary AppleEnableMouseSwipeNavigateWithScrolls -bool false
 
 log_step "Use the system-native print preview dialog"
 defaults write com.google.Chrome DisablePrintPreview -bool true
-defaults write com.google.Chrome.canary DisablePrintPreview -bool true
 
 log_step "Expand the print dialog by default"
 defaults write com.google.Chrome PMPrintingExpandedStateForPrint2 -bool true
-defaults write com.google.Chrome.canary PMPrintingExpandedStateForPrint2 -bool true
 
 ###############################################################################
 # Safari & WebKit                                                             #
