@@ -170,7 +170,7 @@ sudo systemsetup -setnetworktimeserver "time.apple.com"
 sudo systemsetup -setusingnetworktime on
 
 log_step "Override action key mapping"
-ln -s ~/dotfiles/karabiner ~/.config
+ln -sf ~/dotfiles/karabiner ~/.config
 launchctl kickstart -k gui/`id -u`/org.pqrs.karabiner.karabiner_console_user_server
 
 # log_step "Disable auto-correct"
@@ -419,8 +419,8 @@ defaults write com.apple.terminal StringEncodings -array 4
 
 log_section "Messages"
 
-log_step "Disable automatic emoji substitution (i.e. use plain text smileys)"
-defaults write com.apple.messageshelper.MessageController SOInputLineSettings -dict-add "automaticEmojiSubstitutionEnablediMessage" -bool false
+# log_step "Disable automatic emoji substitution (i.e. use plain text smileys)"
+# defaults write com.apple.messageshelper.MessageController SOInputLineSettings -dict-add "automaticEmojiSubstitutionEnablediMessage" -bool false
 
 log_step "Disable smart quotes as it's annoying for messages that contain code"
 defaults write com.apple.messageshelper.MessageController SOInputLineSettings -dict-add "automaticQuoteSubstitutionEnabled" -bool false
@@ -638,6 +638,27 @@ defaults write com.apple.appstore WebKitDeveloperExtras -bool true
 
 log_step "Enable Debug Menu in the Mac App Store"
 defaults write com.apple.appstore ShowDebugMenu -bool true
+
+log_step "Enable the automatic update check"
+defaults write com.apple.SoftwareUpdate AutomaticCheckEnabled -bool true
+
+log_step "Check for software updates daily, not just once per week"
+defaults write com.apple.SoftwareUpdate ScheduleFrequency -int 1
+
+log_step "Download newly available updates in background"
+defaults write com.apple.SoftwareUpdate AutomaticDownload -int 1
+
+log_step "Install System data files & security updates"
+defaults write com.apple.SoftwareUpdate CriticalUpdateInstall -int 1
+
+# log_step "Automatically download apps purchased on other Macs"
+# defaults write com.apple.SoftwareUpdate ConfigDataInstall -int 1
+
+# log_step "Turn on app auto-update"
+# defaults write com.apple.commerce AutoUpdate -bool true
+
+# log_step "Allow the App Store to reboot machine on macOS updates"
+# defaults write com.apple.commerce AutoUpdateRestartRequired -bool true
 
 ###############################################################################
 # Time Machine                                                                #
