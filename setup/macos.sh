@@ -690,6 +690,13 @@ log_step "Disable the sudden motion sensor as it's not useful for SSDs"
 sudo pmset -a sms 0
 
 ###############################################################################
+# Photos                                                                      #
+###############################################################################
+
+# Prevent Photos from opening automatically when devices are plugged in
+defaults -currentHost write com.apple.ImageCapture disableHotPlug -bool true
+
+###############################################################################
 # Kill affected applications                                                  #
 ###############################################################################
 
