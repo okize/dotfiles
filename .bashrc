@@ -1,7 +1,7 @@
 # path settings
-COREUTILS=$(brew --prefix coreutils)/libexec/gnubin
-FINDUTILS=$(brew --prefix findutils)/libexec/gnubin
-SED=$(brew --prefix gnu-sed)/libexec/gnubin
+COREUTILS=/usr/local/opt/coreutils/libexec/gnubin
+FINDUTILS=/usr/local/opt/findutils/libexec/gnubins
+SED=/usr/local/opt/gnu-sed/libexec/gnubin
 DIFF=$HOME/dotfiles/code/icdiff
 GIT=/usr/local/git/bin
 HEROKU=/usr/local/heroku/bin
