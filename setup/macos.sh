@@ -169,10 +169,6 @@ sudo systemsetup -settimezone "America/New_York" > /dev/null
 sudo systemsetup -setnetworktimeserver "time.apple.com"
 sudo systemsetup -setusingnetworktime on
 
-log_step "Override action key mapping"
-ln -sf ~/dotfiles/karabiner ~/.config
-launchctl kickstart -k gui/`id -u`/org.pqrs.karabiner.karabiner_console_user_server
-
 # log_step "Disable auto-correct"
 # defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
 
