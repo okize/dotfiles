@@ -43,10 +43,28 @@ if [[ $response =~ ^([yY][eE][sS]|[yY])$ ]]; then
   sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string $COMPUTER_NAME
 fi
 
+# Check for Homebrew & install if necessary
+if test ! $(which brew); then
+  echo "Installing Homebrew..."
+  ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+fi
+
 # Setup homebrew and apps
 echo "Installing binaries and apps with Homebrew"
-source ./setup/homebrew.sh
+brew bundle --verbose
 echo "...done"
+
+# Switch to using brew-installed bash as default shell
+if ! fgrep -q '/usr/local/bin/bash' /etc/shells; then
+  echo '/usr/local/bin/bash' | sudo tee -a /etc/shells;
+  chsh -s /usr/local/bin/bash;
+fi;
+
+# Map vi so it opens the brew-installed vim
+ln -s /usr/local/bin/vim /usr/local/bin/vi
+
+# Check for any problems
+brew doctor
 
 # Setup Node environment
 echo "Installing node and global modules"
