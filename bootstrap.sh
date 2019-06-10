@@ -101,5 +101,11 @@ code --install-extension Shan.code-settings-sync
 # symlink diff-highlight into path
 sudo ln -sf "$(brew --prefix)/share/git-core/contrib/diff-highlight/diff-highlight" /usr/bin/diff-highlight
 
-echo "$(tput bold)Done. Note that some of these changes require a logout/restart to take effect.$(tput sgr 0)"
+# remap caps-lock to ctrl
+source ./setup/keymap.sh
+
+# persist keymap after system reboot
+sudo defaults write com.apple.loginwindow LoginHook ~/dotfiles/setup/keymap.sh
+
+echo "\n$(tput bold)Done. Note that some of these changes require a logout/restart to take effect.$(tput sgr 0)"
 echo "To sync VS Code settings, open Code and paste Github Personal Access Token & Gist ID
