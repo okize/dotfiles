@@ -1,3 +1,8 @@
+## Misc programs ##
+alias macdown="open -a Macdown "
+alias mou="macdown"
+
+# displays some hardware stats
 alias about="~/dotfiles/code/about_mac.sh"
 
 # Detect which `ls` flavor is in use
@@ -220,15 +225,6 @@ alias lspg="psql --list"
 
 ## Heroku ##
 alias hra="heroku restart --app "
-
-## Sublime Text ##
-
-# list of installed sublime packages
-alias sublpak="ls ~/Library/Application\ Support/Sublime\ Text\ 3/Installed\ Packages | sed -E 's/.{16}$//'"
-alias subl2pak="ls ~/Library/Application\ Support/Sublime\ Text\ 2/Packages"
-
-## Misc programs ##
-alias mou="open -a Mou "
 
 # colorize code in clipboard to copy to keynote
 # javascript
