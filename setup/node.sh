@@ -12,3 +12,5 @@ nvm alias default node
 # Development
 # npm install -g iectrl # IE VMs
 npm install serverless -g
+npm install create-react-app
+npm install expo-cli
