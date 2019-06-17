@@ -5,6 +5,9 @@ alias mou="macdown"
 # displays some hardware stats
 alias about="~/dotfiles/code/about_mac.sh"
 
+# open ios simulator
+alias ios-simulator="open /Applications/Xcode.app/Contents/Developer/Applications/Simulator.app/"
+
 # Detect which `ls` flavor is in use
 if ls --color > /dev/null 2>&1; then # GNU `ls`
   colorflag="--color"
