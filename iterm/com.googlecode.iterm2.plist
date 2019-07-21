@@ -135,9 +135,11 @@
 	<key>NSTableView Supports v2 KeyBingingTable</key>
 	<true/>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>236 283 1016 512 0 0 1440 877 </string>
+	<string>236 309 796 486 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 425 570 452 0 0 1440 877 </string>
+	<string>0 23 1440 854 0 0 1440 877 </string>
+	<key>NSWindow Frame iTerm Window 1</key>
+	<string>-244 900 1920 1057 -244 900 1920 1057 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -736,7 +738,7 @@
 			<key>Screen</key>
 			<integer>-1</integer>
 			<key>Scrollback Lines</key>
-			<integer>1000</integer>
+			<integer>10000</integer>
 			<key>Selected Text Color</key>
 			<dict>
 				<key>Blue Component</key>
@@ -845,7 +847,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2019-06-18T12:17:38Z</date>
+	<date>2019-07-20T14:10:21Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>TabStyleWithAutomaticOption</key>
