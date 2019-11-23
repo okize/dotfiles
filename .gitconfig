@@ -51,6 +51,8 @@
   pushInsteadOf = "git://gist.github.com/"
 [url "git://gist.github.com/"]
   insteadOf = "gist:"
+[diff "blackbox"]
+  textconv = gpg --use-agent -q --batch --decrypt
 [user]
   name = Morgan Wigmanich
-	email = mwigmanich@wistia.com
+  email = mwigmanich@wistia.com
