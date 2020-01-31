@@ -153,7 +153,7 @@
 	<key>NSWindow Frame SharedPreferences</key>
 	<string>236 309 796 486 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 0 1440 875 0 0 1440 877 </string>
+	<string>3 0 1431 877 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>0 0 1440 877 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
@@ -2272,13 +2272,13 @@
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.130889892578125</real>
+				<real>0.29999999999999999</real>
 				<key>Color Space</key>
 				<string>sRGB</string>
 				<key>Green Component</key>
-				<real>0.945343017578125</real>
+				<real>0.29999999999999999</real>
 				<key>Red Component</key>
-				<real>0.0</real>
+				<real>0.29999999999999999</real>
 			</dict>
 			<key>Background Image Location</key>
 			<string></string>
@@ -2365,12 +2365,16 @@
 			<false/>
 			<key>Foreground Color</key>
 			<dict>
+				<key>Alpha Component</key>
+				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.73333334922790527</real>
+				<real>0.93725490196078431</real>
+				<key>Color Space</key>
+				<string>sRGB</string>
 				<key>Green Component</key>
-				<real>0.73333334922790527</real>
+				<real>0.93725490196078431</real>
 				<key>Red Component</key>
-				<real>0.73333334922790527</real>
+				<real>0.93725490196078431</real>
 			</dict>
 			<key>Guid</key>
 			<string>E024F389-2207-4D42-8880-7162223B5196</string>
@@ -2776,6 +2780,7 @@
 		<string>3.3.2</string>
 		<string>3.2.9</string>
 		<string>3.3.4</string>
+		<string>3.3.7</string>
 		<string>3.3.6</string>
 	</array>
 	<key>NoSyncFrame_SharedPreferences</key>
@@ -2790,7 +2795,7 @@
 	<key>NoSyncInstallationId</key>
 	<string>32D5575C-B97D-4060-81AD-B4953D5E29C9</string>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>11</integer>
+	<integer>20</integer>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
@@ -3586,11 +3591,11 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2019-11-20T13:43:50Z</date>
+	<date>2020-01-22T14:00:41Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SUUpdateRelaunchingMarker</key>
-	<true/>
+	<false/>
 	<key>ShowFullScreenTabBar</key>
 	<false/>
 	<key>SoundForEsc</key>
@@ -3606,7 +3611,7 @@
 	<key>findMode_iTerm</key>
 	<integer>0</integer>
 	<key>iTerm Version</key>
-	<string>3.3.6</string>
+	<string>3.3.7</string>
 	<key>kCPKSelectionViewPreferredModeKey</key>
 	<integer>3</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>
