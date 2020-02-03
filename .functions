@@ -11,7 +11,6 @@ function log_step() {
   echo "$(tput setaf 6)- $1$(tput sgr 0)"
 }
 
-
 # lazyload nvm for faster shell startup time
 # https://gist.github.com/fl0w/07ce79bd44788f647deab307c94d6922
 
@@ -36,10 +35,10 @@ npm() {
   npm $@
 }
 
-# retroactive git tagging
-# https://github.com/openmelody/melody/wiki/Devbest-tagging
-# git checkout SHA_HASH
-# GIT_COMMITTER_DATE="$(git show --format=%aD  | head -1)" git tag -a v1.0.0 -m"v1.0.0"
+# install version of node with all previous global modules
+function nvm_install {
+  nvm install $1 --reinstall-packages-from=default
+}
 
 # Pause execution until guest control is available for a virtual machine.
 function wait_for_guestcontrol() {
@@ -106,60 +105,10 @@ function ievm {
   done
 }
 
-# generates a git patch for a specific commit; sha is only arg
-function git_patch() {
-  git format-patch -1 "$1" --stdout > ~/new_patch.patch
+# prints a horizontal rule
+function rule() {
+  printf "%$(tput cols)s\n"|tr " " "─"}}
 }
-
-# batch git rm (opposite of git add .)
-function git_rm() {
-  git rm $(git ls-files --deleted)
-}
-
-# git log with per-commit cmd-clickable GitHub URLs (iTerm)
-function git_log_clickable() {
-  local remote="$(git remote -v | awk '/^origin.*\(push\)$/ {print $2}')"
-  [[ "$remote" ]] || return
-  local user_repo="$(echo "$remote" | perl -pe 's/.*://;s/\.git$//')"
-  git log $* --name-status --color | awk "$(cat <<AWK
-    /^.*commit [0-9a-f]{40}/ {sha=substr(\$2,1,7)}
-    /^[MA]\t/ {printf "%s\thttps://github.com/$user_repo/blob/%s/%s\n", \$1, sha, \$2; next}
-    /.*/ {print \$0}
-AWK
-  )" | less -F
-}
-
-# take this repo and copy it to somewhere else minus the .git stuff.
-function git_export() {
-  mkdir -p "$1"
-  git archive master | tar -x -C "$1"
-}
-
-#
-function git_top_authors() {
-  git shortlog -s -- $1 | cut -c8- | while read i
-  do
-      git log --author="$i" --pretty=tformat: --numstat -- $1 \
-      | awk -v name="$i" '{ add += $1; subs += $2; loc += $1 - $2 } END { printf "%s: added lines: %s removed lines: %s total lines: %s\n", name, add, subs, loc }'
-  done
-}
-
-# returns first commit of a repo (depending on past merges may return multiple SHAs)
-function git_first_commit() {
-  git show `git rev-list --max-parents=0 HEAD`
-}
-
-# function strip_diff_leading_symbols(){
-#   color_code_regex=$'(\x1B\\[([0-9]{1,2}(;[0-9]{1,2})?)?[m|K])'
-
-#   # simplify the unified patch diff header
-#   sed -E "s/^($color_code_regex)diff --git .*$//g" | \
-#   sed -E "s/^($color_code_regex)index .*$/\\1$(rule)/g" | \
-#   sed -E "s/^($color_code_regex)\+\+\+(.*)$/\1\+\+\+\5\\\1$(rule)/g" | \
-
-#   # actually strips the leading symbols
-#   sed -E "s/^($color_code_regex)[\+\-]/\1 /g"
-# }
 
 function strip_diff_leading_symbols() {
   color_code_regex=$'(\x1B\\[([0-9]{1,2}(;[0-9]{1,2})?)?[m|K])'
@@ -175,137 +124,10 @@ function strip_diff_leading_symbols() {
   sed -E "s/^($color_code_regex)[\+\-]/\1 /g"
 }
 
-# prints a horizontal rule
-function rule () {
-  printf "%$(tput cols)s\n"|tr " " "─"}}
-}
-
-function current_branch() {
-  git branch | grep '*' | cut -f2 -d' '
-}
-
-function branches_first_commit() {
-  git merge-base master $1
-}
-
-function git_commits_since_last_tag() {
-  git log `git describe --tags --abbrev=0`..HEAD --oneline
-}
-
-function git_branch_ls() {
-  BRANCH="${1:-`current_branch`}"
-  git log "$(branches_first_commit $BRANCH)"..HEAD --name-only --pretty=format: | sort | uniq
-}
-
-# display list of remote git branches ordered by most recently updated
-# can pass argument to limit count
-function git_branch_remote_ls() {
-  for branch in `git branch -r | grep -v HEAD`;
-  do echo -e `git show --date=short --pretty=format:"%Cblue%cd | %Cred%cr | %Creset%an | %Cgreen$k" $branch | head -n 1` \\t$branch;
-  done | sort -r | head -n 50 | column -t -s '|' | \
-  if [ -n "$1" ]
-    then
-      head -n $1
-  else
-    head -n 500
-  fi
-}
-
-# display list of local git branches ordered by most recently updated
-# can pass argument to limit count
-function git_branch_local_ls() {
-  git for-each-ref \
-  --format='%(color:blue)%(committerdate:short)%(color:reset) | %(color:red)%(committerdate:relative)%(color:reset) | %(authorname) | %(color:yellow)%(refname:short)%(color:reset)' \
-  --sort=-committerdate refs/heads/ | column -t -s '|' | \
-  if [ -n "$1" ]
-    then
-      head -n $1
-  else
-    head -n 500
-  fi
-}
-
-# write this less shittily someday
-function git_contribute() {
-  case "$1" in
-
-  1)  echo "All your contributions to this repo..."
-      git log --stat --author $(git config --get user.email) | awk -F',' '/files? changed/ {
-          files += $1
-          insertions += $2
-          deletions += $3
-      }
-      END {
-          print "Files Changed: " files
-          print "Insertions: " insertions
-          print "Deletions: " deletions
-          print "Lines changed: " insertions + deletions
-      }'
-      ;;
-  2)  echo "Your contributions to this repo in the last day..."
-      git log --stat --author $(git config --get user.email) --since='yesterday' --until='now' | awk -F',' '/files? changed/ {
-          files += $1
-          insertions += $2
-          deletions += $3
-      }
-      END {
-          print "Files Changed: " files
-          print "Insertions: " insertions
-          print "Deletions: " deletions
-          print "Lines changed: " insertions + deletions
-      }'
-      ;;
-  3)  echo "All team contributions to this repo..."
-      git log --stat | awk -F',' '/files? changed/ {
-          files += $1
-          insertions += $2
-          deletions += $3
-      }
-      END {
-          print "Files Changed: " files
-          print "Insertions: " insertions
-          print "Deletions: " deletions
-          print "Lines changed: " insertions + deletions
-      }'
-      ;;
-  4)  echo "All team contributions to this repo in the last day..."
-      git log --stat --since='yesterday' --until='now' | awk -F',' '/files? changed/ {
-          files += $1
-          insertions += $2
-          deletions += $3
-      }
-      END {
-          print "Files Changed: " files
-          print "Insertions: " insertions
-          print "Deletions: " deletions
-          print "Lines changed: " insertions + deletions
-      }'
-      ;;
-  *) echo "Fail"
-     ;;
-  esac
-
-}
-
-# displays commits that are on branch1 that do not exist on branch2
-# git_branch_compare branch1 branch2
-function git_branch_compare() {
-  git log $1 ^$2 --no-merges
-}
-
-function git_show_all_stashes() {
-  git stash list | awk -F: '{ print "\n\n\n\n"; print $0; print "\n\n"; system("git -c color.ui=always stash show -p " $1); }' | less -R
-}
-
 # go to rbenv directory of gems installed for local Ruby version
 function go_to_gem_dir() {
   RUBYVER="$(ruby -e 'print RUBY_VERSION')"
   cd ~/.rbenv/versions/$RUBYVER/lib/ruby/gems/$RUBYVER/gems/
-}
-
-# install version of node with all previous global modules
-function nvm_install {
-  nvm install $1 --reinstall-packages-from=default
 }
 
 # look up an IP address
@@ -509,4 +331,177 @@ function win7chrome(){
 function win7ff(){
   local url="http://www.browserstack.com/start#os=Windows&os_version=7&browser=Firefox&browser_version=16.0&zoom_to_fit=true&resolution=1024x768&speed=1&url=$1&start=true"
   open_url $url $2
+}
+
+
+
+
+# retroactive git tagging
+# https://github.com/openmelody/melody/wiki/Devbest-tagging
+# git checkout SHA_HASH
+# GIT_COMMITTER_DATE="$(git show --format=%aD  | head -1)" git tag -a v1.0.0 -m"v1.0.0"
+
+
+# generates a git patch for a specific commit; sha is only arg
+function git_patch() {
+  git format-patch -1 "$1" --stdout > ~/new_patch.patch
+}
+
+# batch git rm (opposite of git add .)
+function git_rm() {
+  git rm $(git ls-files --deleted)
+}
+
+# git log with per-commit cmd-clickable GitHub URLs (iTerm)
+function git_log_clickable() {
+  local remote="$(git remote -v | awk '/^origin.*\(push\)$/ {print $2}')"
+  [[ "$remote" ]] || return
+  local user_repo="$(echo "$remote" | perl -pe 's/.*://;s/\.git$//')"
+  git log $* --name-status --color | awk "$(cat <<AWK
+    /^.*commit [0-9a-f]{40}/ {sha=substr(\$2,1,7)}
+    /^[MA]\t/ {printf "%s\thttps://github.com/$user_repo/blob/%s/%s\n", \$1, sha, \$2; next}
+    /.*/ {print \$0}
+AWK
+  )" | less -F
+}
+
+# take this repo and copy it to somewhere else minus the .git stuff.
+function git_export() {
+  mkdir -p "$1"
+  git archive master | tar -x -C "$1"
+}
+
+# displays repo contributors and their total contributions
+function git_top_authors() {
+  git shortlog -s -- $1 | cut -c8- | while read i
+  do
+      git log --author="$i" --pretty=tformat: --numstat -- $1 \
+      | awk -v name="$i" '{ add += $1; subs += $2; loc += $1 - $2 } END { printf "%s: added lines: %s removed lines: %s total lines: %s\n", name, add, subs, loc }'
+  done
+}
+
+# returns first commit of a repo (depending on past merges may return multiple SHAs)
+function git_first_commit() {
+  git show `git rev-list --max-parents=0 HEAD`
+}
+
+#
+function git_commits_since_last_tag() {
+  git log `git describe --tags --abbrev=0`..HEAD --oneline
+}
+
+# returns the name of your current branch
+function current_branch() {
+  git branch | grep '*' | cut -f2 -d' '
+  # git rev-parse --abbrev-ref HEAD
+}
+
+function branches_first_commit() {
+  git merge-base master $1
+}
+
+# list of files changed on current branch
+function git_branch_ls() {
+  BRANCH="${1:-`current_branch`}"
+  git log "$(branches_first_commit $BRANCH)"..HEAD --name-only --pretty=format: | sort | uniq
+}
+
+# display list of remote git branches ordered by most recently updated
+# can pass argument to limit count
+function git_branch_remote_ls() {
+  for branch in `git branch -r | grep -v HEAD`;
+  do echo -e `git show --date=short --pretty=format:"%Cblue%cd | %Cred%cr | %Creset%an | %Cgreen$k" $branch | head -n 1` \\t$branch;
+  done | sort -r | head -n 50 | column -t -s '|' | \
+  if [ -n "$1" ]
+    then
+      head -n $1
+  else
+    head -n 500
+  fi
+}
+
+# display list of local git branches ordered by most recently updated
+# can pass argument to limit count
+function git_branch_local_ls() {
+  git for-each-ref \
+  --format='%(color:blue)%(committerdate:short)%(color:reset) | %(color:red)%(committerdate:relative)%(color:reset) | %(authorname) | %(color:yellow)%(refname:short)%(color:reset)' \
+  --sort=-committerdate refs/heads/ | column -t -s '|' | \
+  if [ -n "$1" ]
+    then
+      head -n $1
+  else
+    head -n 500
+  fi
+}
+
+# write this less shittily someday
+function git_contribute() {
+  case "$1" in
+
+  1)  echo "All your contributions to this repo..."
+      git log --stat --author $(git config --get user.email) | awk -F',' '/files? changed/ {
+          files += $1
+          insertions += $2
+          deletions += $3
+      }
+      END {
+          print "Files Changed: " files
+          print "Insertions: " insertions
+          print "Deletions: " deletions
+          print "Lines changed: " insertions + deletions
+      }'
+      ;;
+  2)  echo "Your contributions to this repo in the last day..."
+      git log --stat --author $(git config --get user.email) --since='yesterday' --until='now' | awk -F',' '/files? changed/ {
+          files += $1
+          insertions += $2
+          deletions += $3
+      }
+      END {
+          print "Files Changed: " files
+          print "Insertions: " insertions
+          print "Deletions: " deletions
+          print "Lines changed: " insertions + deletions
+      }'
+      ;;
+  3)  echo "All team contributions to this repo..."
+      git log --stat | awk -F',' '/files? changed/ {
+          files += $1
+          insertions += $2
+          deletions += $3
+      }
+      END {
+          print "Files Changed: " files
+          print "Insertions: " insertions
+          print "Deletions: " deletions
+          print "Lines changed: " insertions + deletions
+      }'
+      ;;
+  4)  echo "All team contributions to this repo in the last day..."
+      git log --stat --since='yesterday' --until='now' | awk -F',' '/files? changed/ {
+          files += $1
+          insertions += $2
+          deletions += $3
+      }
+      END {
+          print "Files Changed: " files
+          print "Insertions: " insertions
+          print "Deletions: " deletions
+          print "Lines changed: " insertions + deletions
+      }'
+      ;;
+  *) echo "Fail"
+     ;;
+  esac
+
+}
+
+# displays commits that are on branch1 that do not exist on branch2
+# git_branch_compare branch1 branch2
+function git_branch_compare() {
+  git log $1 ^$2 --no-merges
+}
+
+function git_show_all_stashes() {
+  git stash list | awk -F: '{ print "\n\n\n\n"; print $0; print "\n\n"; system("git -c color.ui=always stash show -p " $1); }' | less -R
 }
