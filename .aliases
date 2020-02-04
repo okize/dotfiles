@@ -304,12 +304,6 @@ alias gce="git commit --allow-empty -m 'forced commit'"
 # show commits on current branch that do not exist on master
 alias gherenotthere="git log HEAD \^origin/master --no-merges --oneline"
 
-# show the most recent commit
-# alias gclast="git show '`git rev-parse HEAD`'"
-
-# undo the most recent commit
-# alias gcundo="git reset `git log --format=%h -2 | tail -1`"
-
 # show git files about to be commited
 alias gcs="git show --pretty='format:' --name-only"
 
@@ -322,9 +316,6 @@ alias gcpc="git cherry-pick --continue"
 # interative rebase (example: `gir4` where 4 is the number of commits to go back in history)
 # TODO move this to function so it's possible to pass agrument
 alias gir="git rebase -i HEAD~"
-
-# create a pull request
-alias gpr="hub pull-request"
 
 # push to master branch on github
 alias gpom="git push origin master"
@@ -344,9 +335,6 @@ alias gallr="git reset HEAD ."
 
 # undo a 'git add .'
 # alias gunall="git rm -r --cached ."
-
-# redo last commit statement
-alias grs="git reset --soft HEAD"
 
 # redo last commit AND undo staged files
 alias grm="git reset --mixed HEAD"
@@ -381,7 +369,7 @@ alias gstashshowall="git_show_all_stashes"
 
 # display diff
 alias gdiff="git icdiff"
-# alias gdiff="git diff --color --color-words --abbrev"
+# alias gdiff2="git diff --color --color-words --abbrev"
 
 # show difference without whitespace changes
 alias gdw="git diff --ignore-space-change"
@@ -436,9 +424,6 @@ alias gtime="git log --author='`git config --global user.name`' --since='1 sunda
 
 # user commits in repo for previous week
 alias gtime2="git log --author='`git config --global user.name`' --since='2 sunday ago' --until='1 sunday ago' --format='%Cred%h%Creset %s %Cgreen(%ci) %Cblue<%an>%Creset' --no-merges"
-
-# display contribution calendar of repo
-alias gcal="git-cal"
 
 # list number of commits in repo per user
 alias gcoms="git shortlog --numbered --summary"
