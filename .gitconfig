@@ -37,6 +37,8 @@
   added = yellow
   changed = green
   untracked = cyan
+[interactive]
+  singleKey = true
 [merge]
   log = true
 [url "git@github.com:"]
