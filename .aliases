@@ -355,6 +355,9 @@ alias gstash="git stash"
 # recover last stash
 alias gstashp="git stash pop"
 
+# stash code in patches
+alias gstashs="git stash save --patch "
+
 # display stashes
 alias gstashl="git stash list"
 
