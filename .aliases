@@ -65,6 +65,7 @@ alias localip="ipconfig getifaddr en0"
 alias ips="ifconfig -a | perl -nle'/(\d+\.\d+\.\d+\.\d+)/ && print $1'"
 alias lookup="lookup_ip"
 # alias lookupip="curl ifconfig.me/"
+alias wherepi="list_raspberry_pi_ips"
 
 # Enhanced WHOIS lookups
 alias whois="whois -h whois-servers.net"
