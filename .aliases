@@ -170,13 +170,10 @@ alias docs="cd ~/documents"
 alias brake="bundle exec rake"
 
 # run pending migrations
-alias rdbm="bundle exec rake db:migrate RAILS_ENV=development"
+alias dbm="bundle exec rake db:migrate RAILS_ENV=development"
 
 # instead of slow rake assets:clobber (can only run in app root)
 alias clob="rm -rf ./tmp/cache/assets"
-
-# cds to directory where rbenv installed gems
-alias gemdir=go_to_gem_dir
 
 # running Rails tests
 alias rt="bin/rails test"
@@ -184,11 +181,17 @@ alias crt="CAPYBARA_DRIVER=chrome bin/rails test"
 alias rtreset="brake db:test:prepare"
 
 # displays running rails servers
-alias zombie-rails="ps ax | grep rails"
+alias rzombie="ps ax | grep rails"
 
 ## ruby foreman ##
 alias fst="foreman start"
 alias fstd="foreman start -f Procfile.dev"
+
+# changes into directory where rbenv installed gems
+alias gemdir=go_to_gem_dir
+
+# uninstalls rbenv-managed gems
+alias removegems="gem list | cut -d" " -f1 | xargs gem uninstall -aIx"
 
 ## NodeJS ##
 
