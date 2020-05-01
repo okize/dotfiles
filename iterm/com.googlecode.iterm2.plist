@@ -109,6 +109,14 @@
 	<integer>4</integer>
 	<key>LoadPrefsFromCustomFolder</key>
 	<true/>
+	<key>NSNavLastRootDirectory</key>
+	<string>/Applications</string>
+	<key>NSNavLastUserSetHideExtensionButtonState</key>
+	<false/>
+	<key>NSNavPanelExpandedSizeForOpenMode</key>
+	<string>{712, 448}</string>
+	<key>NSNavPanelExpandedSizeForSaveMode</key>
+	<string>{712, 448}</string>
 	<key>NSQuotedKeystrokeBinding</key>
 	<string></string>
 	<key>NSRepeatCountBinding</key>
@@ -124,24 +132,24 @@
 	</array>
 	<key>NSTableView Columns v2 KeyBingingTable</key>
 	<data>
-	YnBsaXN0MDDUAQIDBAUGNjdYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3AS
-	AAGGoK4HCA8aGxwdHh8gJjAxMlUkbnVsbNIJCgsOWk5TLm9iamVjdHNWJGNsYXNzogwN
-	gAKACoAN0xAJChEVGVdOUy5rZXlzoxITFIADgASABaMWFxiABoAHgAiACVpJZGVudGlm
-	aWVyVVdpZHRoVkhpZGRlblEwI0BowAAAAAAACNIhIiMkWiRjbGFzc25hbWVYJGNsYXNz
-	ZXNcTlNEaWN0aW9uYXJ5oiMlWE5TT2JqZWN00xAJCicrGaMSExSAA4AEgAWjLC0YgAuA
-	DIAIgAlRMSNAdKGdsi0OVtIhIjM0Xk5TTXV0YWJsZUFycmF5ozM1JVdOU0FycmF5XxAP
-	TlNLZXllZEFyY2hpdmVy0Tg5VUFycmF5gAEACAARABoAIwAtADIANwBGAEwAUQBcAGMA
-	ZgBoAGoAbABzAHsAfwCBAIMAhQCJAIsAjQCPAJEAnACiAKkAqwC0ALUAugDFAM4A2wDe
-	AOcA7gDyAPQA9gD4APwA/gEAAQIBBAEGAQ8BFAEjAScBLwFBAUQBSgAAAAAAAAIBAAAA
+	YnBsaXN0MDDUAQIDBAUGBwpYJHZlcnNpb25ZJGFyY2hpdmVyVCR0b3BYJG9iamVjdHMS
+	AAGGoF8QD05TS2V5ZWRBcmNoaXZlctEICVVBcnJheYABrgsMEx4fICEiIyQqNDU2VSRu
+	dWxs0g0ODxJaTlMub2JqZWN0c1YkY2xhc3OiEBGAAoAKgA3TFA0OFRkdV05TLmtleXOj
+	FhcYgAOABIAFoxobHIAGgAeACIAJWklkZW50aWZpZXJVV2lkdGhWSGlkZGVuUTAjQGjA
+	AAAAAAAI0iUmJyhaJGNsYXNzbmFtZVgkY2xhc3Nlc1xOU0RpY3Rpb25hcnmiJylYTlNP
+	YmplY3TTFA0OKy8doxYXGIADgASABaMwMRyAC4AMgAiACVExI0B0oZ2yLQ5W0iUmNzhe
+	TlNNdXRhYmxlQXJyYXmjNzkpV05TQXJyYXkACAARABoAJAApADIANwBJAEwAUgBUAGMA
+	aQBuAHkAgACDAIUAhwCJAJAAmACcAJ4AoACiAKYAqACqAKwArgC5AL8AxgDIANEA0gDX
+	AOIA6wD4APsBBAELAQ8BEQETARUBGQEbAR0BHwEhASMBLAExAUABRAAAAAAAAAIBAAAA
 	AAAAADoAAAAAAAAAAAAAAAAAAAFM
 	</data>
 	<key>NSTableView Sort Ordering v2 KeyBingingTable</key>
 	<data>
-	YnBsaXN0MDDUAQIDBAUGFBVYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3AS
-	AAGGoKMHCA1VJG51bGzSCQoLDFpOUy5vYmplY3RzViRjbGFzc6CAAtIODxARWiRjbGFz
-	c25hbWVYJGNsYXNzZXNeTlNNdXRhYmxlQXJyYXmjEBITV05TQXJyYXlYTlNPYmplY3Rf
-	EA9OU0tleWVkQXJjaGl2ZXLRFhdVQXJyYXmAAQgRGiMtMjc7QUZRWFlbYGt0g4ePmKqt
-	swAAAAAAAAEBAAAAAAAAABgAAAAAAAAAAAAAAAAAAAC1
+	YnBsaXN0MDDUAQIDBAUGBwpYJHZlcnNpb25ZJGFyY2hpdmVyVCR0b3BYJG9iamVjdHMS
+	AAGGoF8QD05TS2V5ZWRBcmNoaXZlctEICVVBcnJheYABowsMEVUkbnVsbNINDg8QWk5T
+	Lm9iamVjdHNWJGNsYXNzoIAC0hITFBVaJGNsYXNzbmFtZVgkY2xhc3Nlc15OU011dGFi
+	bGVBcnJheaMUFhdXTlNBcnJheVhOU09iamVjdAgRGiQpMjdJTFJUWF5jbnV2eH2IkaCk
+	rAAAAAAAAAEBAAAAAAAAABgAAAAAAAAAAAAAAAAAAAC1
 	</data>
 	<key>NSTableView Supports v2 KeyBingingTable</key>
 	<true/>
@@ -150,16 +158,16 @@
 		<key>TB Is Shown</key>
 		<integer>1</integer>
 	</dict>
+	<key>NSWindow Frame SUStatusFrame</key>
+	<string>203 361 400 129 0 0 1680 1027 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
-	<string>410 363 620 392 0 0 1440 877 </string>
+	<string>530 476 620 392 0 0 1680 1027 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>236 309 796 486 0 0 1440 877 </string>
+	<string>269 83 796 486 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 0 1440 877 0 0 1440 877 </string>
+	<string>0 18 1673 1009 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>0 0 1440 877 0 0 1440 877 </string>
-	<key>NSWindow Frame iTerm Window 2</key>
-	<string>-97 900 1277 960 -244 900 1920 1057 </string>
+	<string>0 0 1680 1027 0 0 1680 1027 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -170,157 +178,157 @@
 			<key>Ansi 0 Color</key>
 			<dict>
 				<key>Blue Component</key>
-				<real>0.0</real>
+				<string>0</string>
 				<key>Green Component</key>
-				<real>0.0</real>
+				<string>0</string>
 				<key>Red Component</key>
-				<real>0.0</real>
+				<string>0</string>
 			</dict>
 			<key>Ansi 1 Color</key>
 			<dict>
 				<key>Blue Component</key>
-				<real>0.0</real>
+				<string>0</string>
 				<key>Green Component</key>
-				<real>0.0</real>
+				<string>0</string>
 				<key>Red Component</key>
-				<real>0.73333334922790527</real>
+				<string>0.8</string>
 			</dict>
 			<key>Ansi 10 Color</key>
 			<dict>
 				<key>Blue Component</key>
-				<real>0.3333333432674408</real>
+				<string>0.2039216</string>
 				<key>Green Component</key>
-				<real>1</real>
+				<string>0.8862745</string>
 				<key>Red Component</key>
-				<real>0.3333333432674408</real>
+				<string>0.5411764999999999</string>
 			</dict>
 			<key>Ansi 11 Color</key>
 			<dict>
 				<key>Blue Component</key>
-				<real>0.3333333432674408</real>
+				<string>0.3098039</string>
 				<key>Green Component</key>
-				<real>1</real>
+				<string>0.9137255</string>
 				<key>Red Component</key>
-				<real>1</real>
+				<string>0.9882353</string>
 			</dict>
 			<key>Ansi 12 Color</key>
 			<dict>
 				<key>Blue Component</key>
-				<real>1</real>
+				<string>0.8117647</string>
 				<key>Green Component</key>
-				<real>0.3333333432674408</real>
+				<string>0.6235294</string>
 				<key>Red Component</key>
-				<real>0.3333333432674408</real>
+				<string>0.4470588</string>
 			</dict>
 			<key>Ansi 13 Color</key>
 			<dict>
 				<key>Blue Component</key>
-				<real>1</real>
+				<string>0.6588235</string>
 				<key>Green Component</key>
-				<real>0.3333333432674408</real>
+				<string>0.4980392</string>
 				<key>Red Component</key>
-				<real>1</real>
+				<string>0.6784314</string>
 			</dict>
 			<key>Ansi 14 Color</key>
 			<dict>
 				<key>Blue Component</key>
-				<real>1</real>
+				<string>0.8862745</string>
 				<key>Green Component</key>
-				<real>1</real>
+				<string>0.8862745</string>
 				<key>Red Component</key>
-				<real>0.3333333432674408</real>
+				<string>0.2039216</string>
 			</dict>
 			<key>Ansi 15 Color</key>
 			<dict>
 				<key>Blue Component</key>
-				<real>1</real>
+				<string>0.9254902</string>
 				<key>Green Component</key>
-				<real>1</real>
+				<string>0.9333333</string>
 				<key>Red Component</key>
-				<real>1</real>
+				<string>0.9333333</string>
 			</dict>
 			<key>Ansi 2 Color</key>
 			<dict>
 				<key>Blue Component</key>
-				<real>0.0</real>
+				<string>0.02352941</string>
 				<key>Green Component</key>
-				<real>0.73333334922790527</real>
+				<string>0.6039215999999999</string>
 				<key>Red Component</key>
-				<real>0.0</real>
+				<string>0.3058824</string>
 			</dict>
 			<key>Ansi 3 Color</key>
 			<dict>
 				<key>Blue Component</key>
-				<real>0.0</real>
+				<string>0</string>
 				<key>Green Component</key>
-				<real>0.73333334922790527</real>
+				<string>0.627451</string>
 				<key>Red Component</key>
-				<real>0.73333334922790527</real>
+				<string>0.7686275</string>
 			</dict>
 			<key>Ansi 4 Color</key>
 			<dict>
 				<key>Blue Component</key>
-				<real>0.73333334922790527</real>
+				<string>0.6431373</string>
 				<key>Green Component</key>
-				<real>0.0</real>
+				<string>0.3960784</string>
 				<key>Red Component</key>
-				<real>0.0</real>
+				<string>0.2039216</string>
 			</dict>
 			<key>Ansi 5 Color</key>
 			<dict>
 				<key>Blue Component</key>
-				<real>0.73333334922790527</real>
+				<string>0.4823529</string>
 				<key>Green Component</key>
-				<real>0.0</real>
+				<string>0.3137255</string>
 				<key>Red Component</key>
-				<real>0.73333334922790527</real>
+				<string>0.4588235</string>
 			</dict>
 			<key>Ansi 6 Color</key>
 			<dict>
 				<key>Blue Component</key>
-				<real>0.73333334922790527</real>
+				<string>0.6039215999999999</string>
 				<key>Green Component</key>
-				<real>0.73333334922790527</real>
+				<string>0.5960785</string>
 				<key>Red Component</key>
-				<real>0.0</real>
+				<string>0.02352941</string>
 			</dict>
 			<key>Ansi 7 Color</key>
 			<dict>
 				<key>Blue Component</key>
-				<real>0.73333334922790527</real>
+				<string>0.8117647</string>
 				<key>Green Component</key>
-				<real>0.73333334922790527</real>
+				<string>0.8431373</string>
 				<key>Red Component</key>
-				<real>0.73333334922790527</real>
+				<string>0.827451</string>
 			</dict>
 			<key>Ansi 8 Color</key>
 			<dict>
 				<key>Blue Component</key>
-				<real>0.3333333432674408</real>
+				<string>0.3254902</string>
 				<key>Green Component</key>
-				<real>0.3333333432674408</real>
+				<string>0.3411765</string>
 				<key>Red Component</key>
-				<real>0.3333333432674408</real>
+				<string>0.3333333</string>
 			</dict>
 			<key>Ansi 9 Color</key>
 			<dict>
 				<key>Blue Component</key>
-				<real>0.3333333432674408</real>
+				<string>0.1607843</string>
 				<key>Green Component</key>
-				<real>0.3333333432674408</real>
+				<string>0.1607843</string>
 				<key>Red Component</key>
-				<real>1</real>
+				<string>0.9372549</string>
 			</dict>
 			<key>BM Growl</key>
 			<true/>
 			<key>Background Color</key>
 			<dict>
 				<key>Blue Component</key>
-				<real>0.0</real>
+				<string>0</string>
 				<key>Green Component</key>
-				<real>0.0</real>
+				<string>0</string>
 				<key>Red Component</key>
-				<real>0.0</real>
+				<string>0</string>
 			</dict>
 			<key>Background Image Location</key>
 			<string></string>
@@ -346,11 +354,11 @@
 			<key>Bold Color</key>
 			<dict>
 				<key>Blue Component</key>
-				<real>1</real>
+				<string>1</string>
 				<key>Green Component</key>
-				<real>1</real>
+				<string>1</string>
 				<key>Red Component</key>
-				<real>1</real>
+				<string>1</string>
 			</dict>
 			<key>Character Encoding</key>
 			<integer>4</integer>
@@ -363,11 +371,11 @@
 			<key>Cursor Color</key>
 			<dict>
 				<key>Blue Component</key>
-				<real>0.73333334922790527</real>
+				<string>1</string>
 				<key>Green Component</key>
-				<real>0.73333334922790527</real>
+				<string>1</string>
 				<key>Red Component</key>
-				<real>0.73333334922790527</real>
+				<string>1</string>
 			</dict>
 			<key>Cursor Guide Color</key>
 			<dict>
@@ -385,11 +393,11 @@
 			<key>Cursor Text Color</key>
 			<dict>
 				<key>Blue Component</key>
-				<real>1</real>
+				<string>0</string>
 				<key>Green Component</key>
-				<real>1</real>
+				<string>0</string>
 				<key>Red Component</key>
-				<real>1</real>
+				<string>0</string>
 			</dict>
 			<key>Custom Command</key>
 			<string>No</string>
@@ -406,11 +414,11 @@
 			<key>Foreground Color</key>
 			<dict>
 				<key>Blue Component</key>
-				<real>0.73333334922790527</real>
+				<string>1</string>
 				<key>Green Component</key>
-				<real>0.73333334922790527</real>
+				<string>1</string>
 				<key>Red Component</key>
-				<real>0.73333334922790527</real>
+				<string>1</string>
 			</dict>
 			<key>Guid</key>
 			<string>1D273CE9-69E1-4106-B219-A0E6AA9D2EDB</string>
@@ -735,6 +743,8 @@
 				<key>Red Component</key>
 				<real>0.0</real>
 			</dict>
+			<key>Minimum Contrast</key>
+			<real>0.0</real>
 			<key>Mouse Reporting</key>
 			<true/>
 			<key>Name</key>
@@ -762,20 +772,20 @@
 			<key>Selected Text Color</key>
 			<dict>
 				<key>Blue Component</key>
-				<real>0.0</real>
+				<string>0</string>
 				<key>Green Component</key>
-				<real>0.0</real>
+				<string>0</string>
 				<key>Red Component</key>
-				<real>0.0</real>
+				<string>0</string>
 			</dict>
 			<key>Selection Color</key>
 			<dict>
 				<key>Blue Component</key>
-				<real>1</real>
+				<string>1</string>
 				<key>Green Component</key>
-				<real>0.8353000283241272</real>
+				<string>0.8353</string>
 				<key>Red Component</key>
-				<real>0.70980000495910645</real>
+				<string>0.7098</string>
 			</dict>
 			<key>Send Code When Idle</key>
 			<false/>
@@ -2274,13 +2284,13 @@
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.29999999999999999</real>
+				<real>0.0</real>
 				<key>Color Space</key>
 				<string>sRGB</string>
 				<key>Green Component</key>
-				<real>0.29999999999999999</real>
+				<real>0.0</real>
 				<key>Red Component</key>
-				<real>0.29999999999999999</real>
+				<real>0.0</real>
 			</dict>
 			<key>Background Image Location</key>
 			<string></string>
@@ -2779,13 +2789,11 @@
 	</array>
 	<key>NoSyncAllAppVersions</key>
 	<array>
-		<string>3.3.6</string>
-		<string>3.3.8</string>
-		<string>3.3.7</string>
 		<string>3.3.9</string>
 		<string>3.2.9</string>
-		<string>3.3.2</string>
-		<string>3.3.4</string>
+		<string>3.3.8</string>
+		<string>3.3.7</string>
+		<string>3.3.6</string>
 	</array>
 	<key>NoSyncBFPRecents</key>
 	<array>
@@ -2795,22 +2803,22 @@
 	<key>NoSyncFrame_SharedPreferences</key>
 	<dict>
 		<key>screenFrame</key>
-		<string>{{0, 0}, {1440, 900}}</string>
+		<string>{{0, 0}, {1680, 1050}}</string>
 		<key>topLeft</key>
-		<string>{206, 710}</string>
+		<string>{518, 823}</string>
 	</dict>
 	<key>NoSyncHaveWarnedAboutPasteConfirmationChange</key>
 	<true/>
 	<key>NoSyncInstallationId</key>
-	<string>32D5575C-B97D-4060-81AD-B4953D5E29C9</string>
+	<string>96DDF6BC-67F9-476D-BE4F-577CD50F3D81</string>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>38</integer>
+	<integer>21</integer>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
 	<integer>0</integer>
 	<key>NoSyncNextAnnoyanceTime</key>
-	<real>588862410.72379005</real>
+	<real>593884179.62549198</real>
 	<key>NoSyncOnboardingWindowHasBeenShown</key>
 	<true/>
 	<key>NoSyncPermissionToShowTip</key>
@@ -3197,14 +3205,6 @@
 				<key>isTerminal</key>
 				<true/>
 				<key>name</key>
-				<string>currentTab.window</string>
-				<key>nonterminalContext</key>
-				<integer>0</integer>
-			</dict>
-			<dict>
-				<key>isTerminal</key>
-				<true/>
-				<key>name</key>
 				<string>id</string>
 				<key>nonterminalContext</key>
 				<integer>0</integer>
@@ -3302,11 +3302,11 @@
 		<array>
 			<dict>
 				<key>isTerminal</key>
-				<false/>
+				<true/>
 				<key>name</key>
-				<string>currentSession</string>
+				<string>currentSession.terminalWindowName</string>
 				<key>nonterminalContext</key>
-				<integer>1</integer>
+				<integer>0</integer>
 			</dict>
 			<dict>
 				<key>isTerminal</key>
@@ -3318,19 +3318,19 @@
 			</dict>
 			<dict>
 				<key>isTerminal</key>
-				<true/>
-				<key>name</key>
-				<string>currentSession.terminalIconName</string>
-				<key>nonterminalContext</key>
-				<integer>0</integer>
-			</dict>
-			<dict>
-				<key>isTerminal</key>
 				<false/>
 				<key>name</key>
 				<string>title</string>
 				<key>nonterminalContext</key>
 				<integer>1</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
+				<true/>
+				<key>name</key>
+				<string>title</string>
+				<key>nonterminalContext</key>
+				<integer>0</integer>
 			</dict>
 			<dict>
 				<key>isTerminal</key>
@@ -3344,7 +3344,7 @@
 				<key>isTerminal</key>
 				<true/>
 				<key>name</key>
-				<string>title</string>
+				<string>currentSession.terminalIconName</string>
 				<key>nonterminalContext</key>
 				<integer>0</integer>
 			</dict>
@@ -3416,14 +3416,6 @@
 				<key>isTerminal</key>
 				<true/>
 				<key>name</key>
-				<string>window</string>
-				<key>nonterminalContext</key>
-				<integer>0</integer>
-			</dict>
-			<dict>
-				<key>isTerminal</key>
-				<true/>
-				<key>name</key>
 				<string>id</string>
 				<key>nonterminalContext</key>
 				<integer>0</integer>
@@ -3441,14 +3433,6 @@
 				<true/>
 				<key>name</key>
 				<string>currentSession.username</string>
-				<key>nonterminalContext</key>
-				<integer>0</integer>
-			</dict>
-			<dict>
-				<key>isTerminal</key>
-				<true/>
-				<key>name</key>
-				<string>currentSession.path</string>
 				<key>nonterminalContext</key>
 				<integer>0</integer>
 			</dict>
@@ -3488,7 +3472,7 @@
 				<key>isTerminal</key>
 				<true/>
 				<key>name</key>
-				<string>currentSession.pid</string>
+				<string>currentSession.path</string>
 				<key>nonterminalContext</key>
 				<integer>0</integer>
 			</dict>
@@ -3496,7 +3480,7 @@
 				<key>isTerminal</key>
 				<true/>
 				<key>name</key>
-				<string>currentSession.terminalWindowName</string>
+				<string>currentSession.pid</string>
 				<key>nonterminalContext</key>
 				<integer>0</integer>
 			</dict>
@@ -3515,6 +3499,14 @@
 				<string>currentSession</string>
 				<key>nonterminalContext</key>
 				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
+				<false/>
+				<key>name</key>
+				<string>currentSession</string>
+				<key>nonterminalContext</key>
+				<integer>1</integer>
 			</dict>
 		</array>
 		<key>4</key>
@@ -3545,12 +3537,8 @@
 			</dict>
 		</array>
 	</dict>
-	<key>NoSyncSuppressDownloadConfirmation</key>
-	<true/>
-	<key>NoSyncSuppressDownloadConfirmation_selection</key>
-	<integer>0</integer>
 	<key>NoSyncTimeOfFirstLaunchOfVersionWithTip</key>
-	<real>579286885.54807103</real>
+	<real>578941069.53134406</real>
 	<key>PointerActions</key>
 	<dict>
 		<key>Button,1,1,,</key>
@@ -3595,13 +3583,15 @@
 	<key>SUFeedAlternateAppNameKey</key>
 	<string>iTerm</string>
 	<key>SUFeedURL</key>
-	<string>https://iterm2.com/appcasts/final_new.xml?shard=47</string>
+	<string>https://iterm2.com/appcasts/final_new.xml?shard=26</string>
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2020-03-23T18:12:02Z</date>
+	<date>2020-04-22T20:24:25Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
+	<key>SUUpdateGroupIdentifier</key>
+	<integer>3803988827</integer>
 	<key>SUUpdateRelaunchingMarker</key>
 	<false/>
 	<key>ShowFullScreenTabBar</key>
