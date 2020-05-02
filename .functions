@@ -136,6 +136,11 @@ function go_to_gem_dir() {
   cd ~/.rbenv/versions/$RUBYVER/lib/ruby/gems/$RUBYVER/gems/
 }
 
+# delete all the rbenv-installed gems for cwd
+function remove_rbenv_gems() {
+  gem list | cut -d" " -f1 | xargs gem uninstall -aIx
+}
+
 # look up an IP address
 function lookup_ip() {
   curl ipinfo.io/$1

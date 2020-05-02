@@ -191,7 +191,7 @@ alias fstd="foreman start -f Procfile.dev"
 alias gemdir=go_to_gem_dir
 
 # uninstalls rbenv-managed gems
-alias removegems="gem list | cut -d" " -f1 | xargs gem uninstall -aIx"
+alias rmgems="remove_rbenv_gems"
 
 ## NodeJS ##
 
