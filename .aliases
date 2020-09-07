@@ -251,6 +251,9 @@ alias gp="git pull"
 # pull from a remote and avoid the merge commit
 alias gpre="git pull --rebase"
 
+# pull master and rebase onto current branch
+alias gup="git pull origin master --rebase"
+
 # create new local branch
 alias gb="git checkout -b"
 
@@ -307,6 +310,7 @@ alias gce="git commit --allow-empty -m 'forced commit'"
 
 # show commits on current branch that do not exist on master
 alias gherenotthere="git log HEAD \^origin/master --no-merges --oneline"
+alias ghnt="gherenotthere"
 
 # show git files about to be commited
 alias gcs="git show --pretty='format:' --name-only"
