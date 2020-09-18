@@ -19,6 +19,7 @@ brew "bash"
 brew "bash-completion2"
 
 brew "ack"
+brew "awscli"
 brew "dockutil"
 brew "git"
 brew "git-lfs"
