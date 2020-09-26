@@ -302,6 +302,9 @@ alias gc="git commit -m "
 # amend previous commit
 alias gca="git commit --amend"
 
+# add all & amend to previous commit without editing
+alias gcaa="git add . && git commit --amend --no-edit"
+
 # add all modified files and commit
 alias gcall="git add . -A && git commit -m"
 
