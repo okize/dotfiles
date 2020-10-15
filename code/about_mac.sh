@@ -1,70 +1,63 @@
-#!/bin/bash
+#!/usr/bin/env sh
 # mjk 2018.07.09
 
 #=======================================================
-#  CLI alternative to OS X's "About this Mac" feature.    
-#  Retrieve information about: OS X "marketing" name;    
-#  OS version number; hardware model; processor; memory; 
-#  startup disk; graphics; and serial number.           
+#  CLI alternative to OS X's "About this Mac" feature.
+#  retrieve information about: OS X "marketing" name;
+#  OS version number; hardware model; processor; memory;
+#  startup disk; graphics; and serial number.
 #=======================================================
 
 #==========================================================
-# This script frequently calls                            
-# OS X's system_profiler to poll a data type, e.g.:       
-# system_profiler SP_Some_DataType \                     
+# This script frequently calls
+# OS X's system_profiler to poll a data type, e.g.:
+# system_profiler SP_Some_DataType \
 # | awk '/string_to_extract/{ sub(/^.*: /, ""); print; }')
-# where the output of the profiler is piped to `awk`;     
-# a search string is extracted;                           
-# and characters to the right of `:` are printed          
+# where the output of the profiler is piped to `awk`;
+# a search string is extracted;
+# and characters to the right of `:` are printed
 #==========================================================
 
-# Lookup table for OS X marketing names 
-
+# lookup table for OS X marketing names
 MARKETING_NAME=(
-["10"]="Yosemite"
-["11"]="El Capitan"
-["12"]="Sierra"
-["13"]="High Sierra"
-["14"]="Mojave"
+["1010"]="Yosemite"
+["1011"]="El Capitan"
+["1012"]="Sierra"
+["1013"]="High Sierra"
+["1014"]="Mojave"
+["1015"]="Catalina"
 )
 
-# Display header message
-
+# display header message
 write_header() {
   local name=$1; shift;
   printf "%s\\n""--------------------\\n$name%s\\n--------------------\\n"
   printf "%s\\n" "$@"
 }
 
-# Retrieve Apple's marketing name for installed operating system. 
-
+# retrieve Apple's marketing name for installed operating system
 osx_name () {
-  
-  local osx_number 
-  osx_number=$(sw_vers -productVersion| awk -F '[.]' '{print $2}')
- 
-  if [[ -n "${MARKETING_NAME[$osx_number]}" ]]; then 
+  local osx_number
+  osx_number=$(sw_vers -productVersion| awk -F '[.]' '{print $1$2}')
+
+  if [[ -n "${MARKETING_NAME[$osx_number]}" ]]; then
     local osx_name
-    osx_name="${MARKETING_NAME[$osx_number]}"    
+    osx_name="${MARKETING_NAME[$osx_number]}"
 fi
-  
+
   write_header "OS X Name" "$osx_name"
 }
 
-# Retrieve operating system version 
-
+# retrieve operating system version
 operating_system () {
-
-  local os  
+  local os
   os=$(sw_vers -productVersion)
 
   write_header "OS Version" "$os"
 }
 
-# Retrieve hardware model 
-
+# retrieve hardware model
 hardware_model () {
-
   local hardware_mod
   hardware_mod=$(defaults read ~/Library/Preferences/com.apple.SystemProfiler.plist 'CPU Names' \
   | cut -sd '"' -f 4 \
@@ -73,11 +66,10 @@ hardware_model () {
   write_header "Hardware Model" "$hardware_mod"
 }
 
-# Retrieve processor information 
+# retrieve processor information
 
 processor () {
-
-  local cpu  
+  local cpu
   cpu=$(system_profiler SPHardwareDataType \
   | awk '/Processor (Name|Speed):/ { sub(/^.*: /, ""); print; }'\
   | sort \
@@ -86,11 +78,9 @@ processor () {
   write_header "Processor" "$cpu"
 }
 
-# Retrieve memory information 
-
-memory () { 
-
-  local ram 
+# retrieve memory information
+memory () {
+  local ram
   ram=$(
   awk '
     $1~/Size/ && $2!~/Empty/ {size+=$2}
@@ -103,23 +93,19 @@ memory () {
   write_header "Memory" "${ram}"
 }
 
-# Retrieve startup disk information
-
+# retrieve startup disk information
 startup_disk () {
-
-  local disk  
+  local disk
   disk=$(system_profiler SPStorageDataType \
   | awk 'FNR == 3 {print}'\
   | sed 's/[[:blank:]:]*//g')
-  
-  write_header "Startup Disk" "$disk" 
+
+  write_header "Startup Disk" "$disk"
 }
 
-# Retrieve graphics information
-
+# retrieve graphics information
 graphics () {
-
-  local gpu  
+  local gpu
   gpu=$(system_profiler SPDisplaysDataType \
   | awk '/(Model|Max\)|Total\)):/ { sub(/^.*: /, ""); print; }' \
   | xargs)
@@ -127,10 +113,8 @@ graphics () {
   write_header "Graphics" "$gpu"
 }
 
-# Retrieve serial number
-
+# retrieve serial number
 serial_number () {
-
   local serialnum
   serialnum=$(system_profiler SPHardwareDataType \
   | awk '/Serial/ { sub(/^.*: /, ""); print; }')
@@ -138,18 +122,15 @@ serial_number () {
   write_header "Serial Number" "$serialnum"
 }
 
-# Las entranas del programa 
-
 main () {
-
-	osx_name
-	operating_system
-	hardware_model
-	processor
-	memory
-	startup_disk
-	graphics
-	serial_number
+  osx_name
+  operating_system
+  hardware_model
+  processor
+  memory
+  startup_disk
+  graphics
+  serial_number
 }
 
 main "$@"
