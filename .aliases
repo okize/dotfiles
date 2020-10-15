@@ -334,6 +334,9 @@ alias gpom="git push origin master"
 # push to currently checked out branch on github
 alias gpoh="git push origin HEAD"
 
+# force push to currently checked out branch on github
+alias gpohf="gpoh --force"
+
 # undo a push
 alias gunpush="git push -f origin HEAD^:master"
 
