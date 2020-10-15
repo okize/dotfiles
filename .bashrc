@@ -37,6 +37,21 @@ for option in autocd globstar; do
   shopt -s "$option" 2> /dev/null;
 done;
 
+# # Setup Compiler paths for readline and openssl
+# # see: https://github.com/rbenv/ruby-build/issues/1409
+# READLINE_PATH=$(brew --prefix readline)
+# OPENSSL_PATH=$(brew --prefix openssl)
+# export LDFLAGS="-L$READLINE_PATH/lib -L$OPENSSL_PATH/lib"
+# export CPPFLAGS="-I$READLINE_PATH/include -I$OPENSSL_PATH/include"
+# export PKG_CONFIG_PATH="$READLINE_PATH/lib/pkgconfig:$OPENSSL_PATH/lib/pkgconfig"
+
+# # Use the OpenSSL from Homebrew instead of ruby-build
+# # Note: the Homebrew version gets updated, the ruby-build version doesn't
+# export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$OPENSSL_PATH"
+
+# # Place openssl@1.1 at the beginning of your PATH (preempt system libs)
+# export PATH=$OPENSSL_PATH/bin:$PATH
+
 # init rbenv for ruby
 if which rbenv > /dev/null; then
   eval "$(rbenv init -)"
