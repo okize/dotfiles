@@ -74,7 +74,7 @@ cask "spotify"
 cask "viscosity"
 cask "visual-studio-code"
 cask "xquartz"
-cask "zoomus"
+cask "zoom"
 
 mas "com.apple.dt.Xcode", id: 497799835
 mas "com.prect.NavicatEssentialsForPostgreSQL", id: 466725643
