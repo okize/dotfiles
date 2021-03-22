@@ -272,6 +272,9 @@ alias gbr="git branch -r"
 # display remote branches by most recently updated
 alias gbrl="git_branch_remote_ls"
 
+# display local branches that do not have a remote
+alias gbnr="git_branch_no_remote"
+
 # display all changed files in current branch
 alias gbls="git_branch_ls"
 

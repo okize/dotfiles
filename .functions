@@ -417,6 +417,11 @@ function git_branch_ls() {
   git log "$(branches_first_commit $BRANCH)"..HEAD --name-only --pretty=format: | sort | uniq
 }
 
+# display local branches that do not have a remote
+function git_branch_no_remote() {
+  git branch --format "%(refname:short) %(upstream)" | awk '{if (!$2) print $1;}'
+}
+
 # display list of remote git branches ordered by most recently updated
 # can pass argument to limit count
 function git_branch_remote_ls() {
