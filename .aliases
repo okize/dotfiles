@@ -305,6 +305,9 @@ alias gc="git commit -m "
 # amend previous commit
 alias gca="git commit --amend"
 
+# amend previous commit time to current time
+alias gcar="git commit --amend --reset-author"
+
 # add all & amend to previous commit without editing
 alias gcaa="git add . && git commit --amend --no-edit"
 
@@ -317,6 +320,8 @@ alias gce="git commit --allow-empty -m 'forced commit'"
 # show commits on current branch that do not exist on master
 alias gherenotthere="git log HEAD \^origin/master --no-merges --oneline"
 alias ghnt="gherenotthere"
+alias gherenottheremain="git log HEAD \^origin/main --no-merges --oneline"
+alias ghntm="gherenottheremain"
 
 # show git files about to be commited
 alias gcs="git show --pretty='format:' --name-only"
@@ -326,6 +331,9 @@ alias gcp="git cherry-pick "
 
 # cherry pick continue
 alias gcpc="git cherry-pick --continue"
+
+# cherry pick abort
+alias gcpa="git cherry-pick --abort"
 
 # interative rebase (example: `gir4` where 4 is the number of commits to go back in history)
 # TODO move this to function so it's possible to pass agrument
