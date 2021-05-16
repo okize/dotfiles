@@ -58,3 +58,5 @@
 [user]
   name = Morgan Wigmanich
   email = mwigmanich@wistia.com
+[init]
+  defaultBranch = main
