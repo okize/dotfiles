@@ -252,7 +252,7 @@ alias gp="git pull"
 alias gpre="git pull --rebase"
 
 # pull master and rebase onto current branch
-alias gup="git pull origin master --rebase"
+alias gup="git_bring_up_to_date"
 
 # create new local branch
 alias gb="git checkout -b"
@@ -317,11 +317,8 @@ alias gcall="git add . -A && git commit -m"
 # make a commit without adding anything (for Heroku push)
 alias gce="git commit --allow-empty -m 'forced commit'"
 
-# show commits on current branch that do not exist on master
-alias gherenotthere="git log HEAD \^origin/master --no-merges --oneline"
-alias ghnt="gherenotthere"
-alias gherenottheremain="git log HEAD \^origin/main --no-merges --oneline"
-alias ghntm="gherenottheremain"
+# list of commits that exist on current branch but not on remote #main
+alias ghnt="git_here_not_there"
 
 # show git files about to be commited
 alias gcs="git show --pretty='format:' --name-only"

@@ -411,6 +411,26 @@ function branches_first_commit() {
   git merge-base master $1
 }
 
+# list of commits that exist on current branch but not on remote #main
+function git_here_not_there() {
+  if [ `git branch --list master` ]
+  then
+    git log HEAD \^origin/master --no-merges --oneline
+  else
+    git log HEAD \^origin/main --no-merges --oneline
+  fi
+}
+
+# rebase main remote branch onto current branch
+function git_bring_up_to_date() {
+  if [ `git branch --list master` ]
+  then
+    git pull origin master --rebase
+  else
+    git pull origin main --rebase
+  fi
+}
+
 # list of files changed on current branch
 function git_branch_ls() {
   BRANCH="${1:-`current_branch`}"
