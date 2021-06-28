@@ -4,12 +4,13 @@ FINDUTILS=/usr/local/opt/findutils/libexec/gnubins
 SED=/usr/local/opt/gnu-sed/libexec/gnubin
 DIFF=$HOME/dotfiles/code/icdiff
 GIT=/usr/local/git/bin
+AWSEBCLI=$HOME/.local/bin
 HEROKU=/usr/local/heroku/bin
 HOMEBREW=/usr/local/bin:/usr/local/lib:/usr/local/sbin
+MYSQL=/usr/local/opt/mysql@5.6/bin
 NVM_DIR=$HOME/.nvm
 POSTGRES=/usr/local/opt/postgresql@9.5/bin
-MYSQL=/usr/local/opt/mysql@5.6/bin
-AWSEBCLI=$HOME/.local/bin
+PYENV_ROOT=$HOME/.pyenv
 PYTHON=$HOME/Library/Python/2.7/bin
 RBENV=$HOME/.rbenv/bin
 RBENV_SHIMS=$HOME/.rbenv/shims
@@ -21,7 +22,7 @@ ANDROID_PLATFORM_TOOLS=$ANDROID_HOME/platform-tools
 OPEN_SSL=/usr/local/opt/openssl/bin
 LIBRARY_PATH=/usr/local/opt/openssl/lib/
 
-export PATH=$PATH:$COREUTILS:$FINDUTILS:$SED:$DIFF:$GIT:$HEROKU:$HOMEBREW:$NVM_DIR:$POSTGRES:$MYSQL:$AWSEBCLI:$PYTHON:$RBENV:$RBENV_SHIMS:$YARN:$ANDROID_HOME:$ANDROID_TOOLS:$ANDROID_TOOLS_BIN_STUBS:$ANDROID_PLATFORM_TOOLS:$OPEN_SSL:$LIBRARY_PATH
+export PATH=$PATH:$COREUTILS:$FINDUTILS:$SED:$DIFF:$GIT:$HEROKU:$HOMEBREW:$NVM_DIR:$POSTGRES:$MYSQL:$AWSEBCLI:$PYTHON:$PYENV_ROOT:$RBENV:$RBENV_SHIMS:$YARN:$ANDROID_HOME:$ANDROID_TOOLS:$ANDROID_TOOLS_BIN_STUBS:$ANDROID_PLATFORM_TOOLS:$OPEN_SSL:$LIBRARY_PATH
 
 # loads dotfiles into shell
 # ~/.extra used for settings I don’t want to commit
@@ -62,7 +63,7 @@ fi
 
 # init pyenv for python
 if command -v pyenv 1>/dev/null 2>&1; then
-  eval "$(pyenv init -)"
+  eval "$(pyenv init --path)"
 fi
 
 # init nvm for node
