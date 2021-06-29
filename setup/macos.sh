@@ -375,7 +375,7 @@ defaults write com.apple.dock autohide -bool true
 log_step "Make Dock icons of hidden applications translucent"
 defaults write com.apple.dock showhidden -bool true
 
-log_step "Don’t show recent applications in Dock"
+log_step "Don't show recent applications in Dock"
 defaults write com.apple.dock show-recents -bool false
 
 # log_step "Add a spacer to the left side of the Dock (where the applications are)"
