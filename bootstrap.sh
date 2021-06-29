@@ -105,7 +105,7 @@ code --install-extension Shan.code-settings-sync
 # symlink diff-highlight into path
 sudo ln -sf "$(brew --prefix)/share/git-core/contrib/diff-highlight/diff-highlight" /usr/bin/diff-highlight
 
-# remap caps-lock to ctrl
+# remap keyboard keys
 source ./setup/keymap.sh
 
 # persist keymap after system reboot

@@ -3,14 +3,19 @@
 ## Installation
 
 1. install Xcode command line tools (so that Git is installed)
-```bash
+
+```sh
 xcode-select --install
 ```
+
 2. clone dotfiles repo
-```bash
+
+```sh
 git clone https://github.com/okize/dotfiles.git
 ```
+
 3. run setup script
-```bash
+
+```sh
 cd dotfiles && source bootstrap.sh
 ```
