@@ -111,25 +111,6 @@ function ievm {
   done
 }
 
-# prints a horizontal rule
-function rule() {
-  printf "%$(tput cols)s\n"|tr " " "─"}}
-}
-
-function strip_diff_leading_symbols() {
-  color_code_regex=$'(\x1B\\[([0-9]{1,2}(;[0-9]{1,2})?)?[m|K])'
-
-  # simplify the unified patch diff header
-  sed -E "s/^($color_code_regex)diff --git .*$//g" | \
-  sed -E "s/^($color_code_regex)index .*$/\
-\1$(rule)/g" | \
-  sed -E "s/^($color_code_regex)\+\+\+(.*)$/\1\+\+\+\5\\
-\1$(rule)/g" | \
-
-  # actually strips the leading symbols
-  sed -E "s/^($color_code_regex)[\+\-]/\1 /g"
-}
-
 # go to rbenv directory of gems installed for local Ruby version
 function go_to_gem_dir() {
   RUBYVER="$(ruby -e 'print RUBY_VERSION')"
