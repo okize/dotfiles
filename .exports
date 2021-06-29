@@ -1,10 +1,5 @@
 #!/usr/bin/env bash
 
-# glorious 256 color display
-if [ -n "$DISPLAY" -a "$TERM" == "xterm" ]; then
-  export TERM=xterm-256color;
-fi
-
 # set nano as default editor
 export EDITOR='nano';
 
