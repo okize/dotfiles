@@ -72,5 +72,4 @@ cask "visual-studio-code"
 cask "xquartz"
 cask "zoom"
 
-mas "com.apple.dt.Xcode", id: 497799835
 mas "com.prect.NavicatEssentialsForPostgreSQL", id: 466725643
