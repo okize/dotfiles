@@ -390,13 +390,11 @@ dockutil --no-restart --position 2 --add "/Applications/Visual Studio Code.app"
 dockutil --no-restart --position 3 --add "/Applications/iTerm.app"
 dockutil --no-restart --position 4 --add "/Applications/Slack.app"
 dockutil --no-restart --position 5 --add "/Applications/Insomnia.app"
-dockutil --no-restart --position 6 --add "/Applications/SelfControl.app"
-dockutil --no-restart --position 7 --add "/Applications/iOS Simulator.app"
-dockutil --no-restart --position 8 --add "/Applications/MacDown.app"
-dockutil --no-restart --position 9 --add "/Applications/Messages.app"
-dockutil --no-restart --position 10 --add "/Applications/Spotify.app"
-dockutil --no-restart --position 11 --add "/Applications/Calendar.app"
-dockutil --no-restart --position 12 --add '~/Downloads' --view grid --display folder
+dockutil --no-restart --position 6 --add "/Applications/MacDown.app"
+dockutil --no-restart --position 7 --add "/Applications/Spotify.app"
+dockutil --no-restart --position 8 --add "/Applications/zoom.us.app"
+dockutil --no-restart --position 9 --add "/System/Applications/Messages.app"
+dockutil --no-restart --position 10 --add "/Applications/SelfControl.app"
 
 ###############################################################################
 # iTerm & Terminal                                                            #

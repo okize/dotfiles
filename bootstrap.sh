@@ -107,6 +107,7 @@ source ./setup/keymap.sh
 sudo defaults write com.apple.loginwindow LoginHook ~/dotfiles/setup/keymap.sh
 
 # Attempt to add iOS Simulator to the dock
+# for some reason this can't be in setup/macos.sh
 defaults write com.apple.dock persistent-apps -array-add "<dict><key>tile-data</key><dict><key>file-data</key><dict><key>_CFURLString</key><string>/Applications/Xcode.app/Contents/Developer/Applications/Simulator.app/</string><key>_CFURLStringType</key><integer>0</integer></dict></dict></dict>"
 killall Dock
 
