@@ -61,15 +61,16 @@ echo "Installing binaries and apps with Homebrew"
 brew bundle --verbose
 echo "...done"
 
+# Check for any problems with homebrew
+brew bundle check
+brew doctor
+
 # Attempt to add iOS Simulator to the dock
 defaults write com.apple.dock persistent-apps -array-add "<dict><key>tile-data</key><dict><key>file-data</key><dict><key>_CFURLString</key><string>/Applications/Xcode.app/Contents/Developer/Applications/Simulator.app/</string><key>_CFURLStringType</key><integer>0</integer></dict></dict></dict>"
 killall Dock
 
 # Map vi so it opens the brew-installed vim
 ln -s /usr/local/bin/vim /usr/local/bin/vi
-
-# Check for any problems
-brew doctor
 
 # Setup Node environment
 echo "Installing node and global modules"
