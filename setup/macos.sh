@@ -595,8 +595,8 @@ sudo ln -sf "/Applications/Xcode.app/Contents/Developer/Applications/iOS Simulat
 # defaults write com.apple.dock wvous-tr-modifier -int 0
 
 log_step "Bottom left screen corner → Lock screen"
-defaults write com.apple.dock wvous-bl-corner -int 13
-defaults write com.apple.dock wvous-bl-modifier -int 0
+defaults write com.apple.dock wvous-tl-corner -int 13
+defaults write com.apple.dock wvous-tl-modifier -int 0
 
 # log_step "Bottom right screen corner → Show application windows"
 # defaults write com.apple.dock wvous-br-corner -int 3
@@ -665,7 +665,7 @@ log_step "Prevent Time Machine from prompting to use new hard drives as backup v
 defaults write com.apple.TimeMachine DoNotOfferNewDisksForBackup -bool true
 
 log_step "Disable local Time Machine backups"
-hash tmutil &> /dev/null && sudo tmutil disablelocal
+# hash tmutil &> /dev/null && sudo tmutil disablelocal
 
 ###############################################################################
 # SSD-specific tweaks                                                         #

@@ -65,10 +65,6 @@ echo "...done"
 brew bundle check
 brew doctor
 
-# Attempt to add iOS Simulator to the dock
-defaults write com.apple.dock persistent-apps -array-add "<dict><key>tile-data</key><dict><key>file-data</key><dict><key>_CFURLString</key><string>/Applications/Xcode.app/Contents/Developer/Applications/Simulator.app/</string><key>_CFURLStringType</key><integer>0</integer></dict></dict></dict>"
-killall Dock
-
 # Map vi so it opens the brew-installed vim
 ln -s /usr/local/bin/vim /usr/local/bin/vi
 
@@ -109,6 +105,10 @@ source ./setup/keymap.sh
 
 # persist keymap after system reboot
 sudo defaults write com.apple.loginwindow LoginHook ~/dotfiles/setup/keymap.sh
+
+# Attempt to add iOS Simulator to the dock
+defaults write com.apple.dock persistent-apps -array-add "<dict><key>tile-data</key><dict><key>file-data</key><dict><key>_CFURLString</key><string>/Applications/Xcode.app/Contents/Developer/Applications/Simulator.app/</string><key>_CFURLStringType</key><integer>0</integer></dict></dict></dict>"
+killall Dock
 
 echo "\n$(tput bold)Done. Note that some of these changes require a logout/restart to take effect.$(tput sgr 0)"
 echo "To sync VS Code settings, open Code and paste Github Personal Access Token & Gist ID
