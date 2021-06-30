@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env sh
 
 RUBY_VERSION=`cat ~/.ruby-version`
 echo "installing Ruby v$RUBY_VERSION..."

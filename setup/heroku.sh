@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env sh
 
 # Install Heroku CLI
 brew tap heroku/brew && brew install heroku

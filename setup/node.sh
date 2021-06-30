@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env sh
 
 NODE_VERSION=`cat ~/.nvmrc`
 echo "installing NodeJS $NODE_VERSION..."
