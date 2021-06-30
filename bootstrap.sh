@@ -32,8 +32,10 @@ for file in $files; do
     echo "symlinking $dir/$file -> ~/$file"
 done
 
+# pre-emptive sudo signin
+sudo echo ""
+
 # optionally set computer name
-echo ""
 echo "Would you like to set your computer name (as done via System Preferences >> Sharing)?  (y/n)"
 read -r response
 if [[ $response =~ ^([yY][eE][sS]|[yY])$ ]]; then
