@@ -2,6 +2,7 @@
 
 ############################
 # This script creates symlinks from the home directory to any desired dotfiles in ~/dotfiles
+# as well as assorted other "setup" tasks
 ############################
 
 # dotfiles directory
@@ -45,9 +46,9 @@ if [[ $response =~ ^([yY][eE][sS]|[yY])$ ]]; then
 fi
 
 # Check for Homebrew & install if necessary
-if test ! $(which brew); then
-  echo "Installing Homebrew..."
-  ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+if [ ! -n "$(command -v brew)" ]
+then
+  /bin/sh -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 fi
 
 # Setup homebrew and apps
