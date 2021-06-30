@@ -14,10 +14,6 @@ brew "findutils"
 # some other useful utilities like `sponge`, `errno`
 brew "moreutils"
 
-# Bash 4
-brew "bash"
-brew "bash-completion2"
-
 brew "ack"
 brew "awscli"
 brew "dockutil"
