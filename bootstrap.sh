@@ -51,13 +51,13 @@ then
   /bin/sh -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 fi
 
+# Accept Xcode license
+sudo xcodebuild -license accept
+
 # Setup homebrew and apps
 echo "Installing binaries and apps with Homebrew"
 brew bundle --verbose
 echo "...done"
-
-# Accept Xcode license
-sudo xcodebuild -license
 
 # Attempt to add iOS Simulator to the dock
 defaults write com.apple.dock persistent-apps -array-add "<dict><key>tile-data</key><dict><key>file-data</key><dict><key>_CFURLString</key><string>/Applications/Xcode.app/Contents/Developer/Applications/Simulator.app/</string><key>_CFURLStringType</key><integer>0</integer></dict></dict></dict>"
