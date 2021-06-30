@@ -154,6 +154,7 @@ alias serial_number="system_profiler | grep 'Serial Number (system):'"
 
 # reload shell after dotfiles change
 alias br="source ~/.bashrc; echo 'reloaded shell session'"
+alias zr="source ~/.zshrc; echo 'reloaded shell session'"
 
 # File system navigation
 alias ..="cd .."
