@@ -19,10 +19,8 @@ Thumbs.db
 .extra
 .netrc
 
-# Sublime packages I don't want commited
-Package\ Control.cache/
-Package\ Control.last-run
-sublime/Packages/Babel/test/
+# Homebrew lockfile that will differ between machines
+Brewfile.lock.json
 
 # VS Code settings I don't want commited
 .vscode
