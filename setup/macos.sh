@@ -584,17 +584,17 @@ sudo ln -sf "/Applications/Xcode.app/Contents/Developer/Applications/iOS Simulat
 # 12: Notification Center
 # 13: Lock Screen
 
-# log_step "Top left screen corner → Mission Control"
-# defaults write com.apple.dock wvous-tl-corner -int 2
-# defaults write com.apple.dock wvous-tl-modifier -int 0
-
 # log_step "Top right screen corner → Desktop"
 # defaults write com.apple.dock wvous-tr-corner -int 4
 # defaults write com.apple.dock wvous-tr-modifier -int 0
 
-log_step "Bottom left screen corner → Lock screen"
-defaults write com.apple.dock wvous-tl-corner -int 13
-defaults write com.apple.dock wvous-tl-modifier -int 0
+# log_step "Top left screen corner → Lock screen"
+# defaults write com.apple.dock wvous-tl-corner -int 13
+# defaults write com.apple.dock wvous-tl-modifier -int 0
+
+# log_step "Bottom left screen corner → Mission Control"
+# defaults write com.apple.dock wvous-tl-corner -int 2
+# defaults write com.apple.dock wvous-tl-modifier -int 0
 
 # log_step "Bottom right screen corner → Show application windows"
 # defaults write com.apple.dock wvous-br-corner -int 3
