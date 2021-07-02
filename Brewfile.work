@@ -1,0 +1,7 @@
+tap "wistia/dub", "https://github.com/wistia/dub"
+
+brew "asdf"
+brew "elixir"
+brew "erlang"
+brew "mysql@5.6", restart_service: true
+brew "wistia/dub/wistia-dub"

@@ -22,6 +22,7 @@ Thumbs.db
 
 # Homebrew lockfile that will differ between machines
 Brewfile.lock.json
+Brewfile.work.lock.json
 
 # VS Code settings I don't want commited
 .vscode
