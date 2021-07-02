@@ -176,6 +176,13 @@ log_step "Turn off keyboard illumination when computer is not used for 5 minutes
 defaults write com.apple.BezelServices kDimTime -int 300
 
 ###############################################################################
+# MacBookPro Touch Bar                                                        #
+###############################################################################
+
+log_step "Configure touch bar to always display full control strip (ignoring App Controls)"
+defaults write com.apple.touchbar.agent PresentationModeGlobal fullControlStrip
+
+###############################################################################
 # Screen                                                                      #
 ###############################################################################
 
@@ -698,20 +705,18 @@ defaults -currentHost write com.apple.ImageCapture disableHotPlug -bool true
 for app in "Activity Monitor" \
   "Address Book" \
   "Calendar" \
-  "cfprefsd" \
   "Contacts" \
+  "ControlStrip" \
+  "cfprefsd" \
   "Dock" \
   "Finder" \
-  "iTerm" \
   "Mail" \
   "Messages" \
   "Photos" \
   "Safari" \
-  "SizeUp" \
   "Spectacle" \
   "SystemUIServer" \
-  "Terminal" \
-  "iCal"; do
+  "Terminal"; do
   killall "${app}" &> /dev/null
 done
 echo "$(tput bold)Done. Note that some of these changes require a logout/restart to take effect.$(tput sgr 0)"
