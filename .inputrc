@@ -31,7 +31,7 @@ set completion-query-items 200
 # No case-sensitivity
 # set completion-ignore-case on
 
-# Show extra file information when completing, like `ls -F` does
+# Show additional file information when completing, like `ls -F` does
 set visible-stats on
 
 # Be more intelligent when autocompleting by also looking at the text after

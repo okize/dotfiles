@@ -22,7 +22,7 @@ cd $dir
 echo "...done"
 
 # list of files/folders to symlink in homedir
-files=".aliases .bash_profile .bash_prompt .bashrc .exports .extra .functions .gitconfig .gitignore .inputrc .gemrc .irbrc .nvmrc .pryrc .rspec .ruby-version .vimrc .wgetrc"
+files=".aliases .bash_profile .bash_prompt .bashrc .exports .functions .gitconfig .gitignore .inputrc .gemrc .irbrc .nvmrc .pryrc .rspec .ruby-version .secrets .vimrc .wgetrc"
 
 # move any existing dotfiles in homedir to dotfilesBackup directory, then create symlinks from the homedir to any files in the ~/dotfiles directory specified in $files
 echo "Moving any existing dotfiles from ~ to $olddir & Creating symlink to $files in home directory."

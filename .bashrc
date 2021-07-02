@@ -25,8 +25,8 @@ LIBRARY_PATH=/usr/local/opt/openssl/lib/
 export PATH=$PATH:$COREUTILS:$FINDUTILS:$SED:$DIFF:$GIT:$HEROKU:$HOMEBREW:$NVM_DIR:$POSTGRES:$MYSQL:$AWSEBCLI:$PYTHON:$PYENV_ROOT:$RBENV:$RBENV_SHIMS:$YARN:$ANDROID_HOME:$ANDROID_TOOLS:$ANDROID_TOOLS_BIN_STUBS:$ANDROID_PLATFORM_TOOLS:$OPEN_SSL:$LIBRARY_PATH
 
 # loads dotfiles into shell
-# ~/.extra used for settings I don't want to commit
-for file in ~/.{bash_prompt,aliases,functions,exports,extra}; do
+# ~/.secrets used for settings I don't want to commit
+for file in ~/.{bash_prompt,aliases,functions,exports,secrets}; do
   [ -r "$file" ] && source "$file"
 done
 unset file

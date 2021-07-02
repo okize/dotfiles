@@ -18,6 +18,7 @@ Thumbs.db
 # Dotfiles I don't want commited
 .extra
 .netrc
+.secrets
 
 # Homebrew lockfile that will differ between machines
 Brewfile.lock.json
