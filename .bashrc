@@ -21,11 +21,12 @@ ANDROID_TOOLS_BIN_STUBS=$ANDROID_TOOLS/bin
 ANDROID_PLATFORM_TOOLS=$ANDROID_HOME/platform-tools
 OPEN_SSL=/usr/local/opt/openssl/bin
 LIBRARY_PATH=/usr/local/opt/openssl/lib/
+RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
 
 export PATH=$PATH:$COREUTILS:$FINDUTILS:$SED:$DIFF:$GIT:$HEROKU:$HOMEBREW:$NVM_DIR:$POSTGRES:$MYSQL:$AWSEBCLI:$PYTHON:$PYENV_ROOT:$RBENV:$RBENV_SHIMS:$YARN:$ANDROID_HOME:$ANDROID_TOOLS:$ANDROID_TOOLS_BIN_STUBS:$ANDROID_PLATFORM_TOOLS:$OPEN_SSL:$LIBRARY_PATH
 
 # loads dotfiles into shell
-# ~/.secrets used for settings I don't want to commit
+# .secrets is used for settings I don't want to commit
 for file in ~/.{bash_prompt,aliases,functions,exports,secrets}; do
   [ -r "$file" ] && source "$file"
 done
@@ -38,24 +39,6 @@ for option in autocd globstar; do
   shopt -s "$option" 2> /dev/null;
 done;
 
-# # Setup Compiler paths for readline and openssl
-# # discoverable via `brew --prefix openssl` z& `brew --prefix readline`
-# # see: https://github.com/rbenv/ruby-build/issues/1409
-# OPENSSL_PATH="/usr/local/opt/openssl@1.1"
-# READLINE_PATH="/usr/local/opt/readline"
-
-# # for compilers to find openssl@1.1
-# export LDFLAGS="-L$OPENSSL_PATH/lib"
-# export CPPFLAGS="--I$OPENSSL_PATH/include"
-
-# # Use the OpenSSL from Homebrew instead of ruby-build
-# # Note: the Homebrew version gets updated, the ruby-build version doesn't
-# export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$OPENSSL_PATH"
-# export PKG_CONFIG_PATH="$READLINE_PATH/lib/pkgconfig:$OPENSSL_PATH/lib/pkgconfig"
-
-# # place openssl@1.1 at the beginning of PATH (preempt system libs)
-# export PATH=$OPENSSL_PATH/bin:$PATH
-
 # init rbenv for ruby
 if which rbenv > /dev/null; then
   eval "$(rbenv init -)"
@@ -65,9 +48,6 @@ fi
 if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init --path)"
 fi
-
-# init nvm for node
-# moved to .functions for lazy-loading
 
 # init z (https://github.com/rupa/z)
 source ~/dotfiles/code/z/z.sh
