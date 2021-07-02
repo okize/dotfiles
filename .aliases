@@ -478,3 +478,6 @@ alias gloc="git diff --stat `git hash-object -t tree /dev/null` | tail -1"
 
 # get my merge commits
 alias gmymerges="git log --merges --color --graph --abbrev-commit --author='`git config --global user.name`'"
+
+# fix rebase conflict with yarn lockfile
+alias yarc="yarn && git add yarn.lock && git rebase --continue"
