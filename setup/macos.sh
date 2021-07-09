@@ -333,77 +333,6 @@ defaults write com.apple.finder FXInfoPanesExpanded -dict \
   Privileges -bool true
 
 ###############################################################################
-# Dock
-###############################################################################
-
-log_section "Dock"
-
-log_step "Wipe all (default) app icons from the Dock"
-# this is only really useful when setting up a new Mac
-defaults write com.apple.dock persistent-apps -array
-
-log_step "Enable highlight hover effect for the grid view of a stack (Dock)"
-defaults write com.apple.dock mouse-over-hilite-stack -bool true
-
-log_step "Set the icon size of Dock items to 36 pixels"
-defaults write com.apple.dock tilesize -int 36
-
-log_step "Move the dock to the left-side of screen"
-defaults write com.apple.dock orientation -string "left"
-
-log_step "Move the dock to the upper-left corner"
-# this does not appear to work in Yosemite
-defaults write com.apple.dock pinning -string start
-
-log_step "Change minimize/maximize window effect"
-defaults write com.apple.dock mineffect -string "scale"
-
-log_step "Minimize windows into their application's icon"
-defaults write com.apple.dock minimize-to-application -bool true
-
-log_step "Enable spring loading for all Dock items"
-defaults write com.apple.dock enable-spring-load-actions-on-all-items -bool true
-
-log_step "Show indicator lights for open applications in the Dock"
-defaults write com.apple.dock show-process-indicators -bool true
-
-log_step "Don't animate opening applications from the Dock"
-defaults write com.apple.dock launchanim -bool false
-
-log_step "Remove the auto-hiding Dock delay"
-defaults write com.apple.dock autohide-delay -float 0
-
-log_step "Remove the animation when hiding/showing the Dock"
-defaults write com.apple.dock autohide-time-modifier -float 0
-
-log_step "Automatically hide and show the Dock"
-defaults write com.apple.dock autohide -bool true
-
-log_step "Make Dock icons of hidden applications translucent"
-defaults write com.apple.dock showhidden -bool true
-
-log_step "Don't show recent applications in Dock"
-defaults write com.apple.dock show-recents -bool false
-
-# log_step "Add a spacer to the left side of the Dock (where the applications are)"
-# defaults write com.apple.dock persistent-apps -array-add '{tile-data={}; tile-type="spacer-tile";}'
-
-# log_step "Add a spacer to the right side of the Dock (where the Trash is)"
-# "defaults write com.apple.dock persistent-others -array-add '{tile-data={}; tile-type="spacer-tile";}'
-
-dockutil --no-restart --remove all
-dockutil --no-restart --position 1 --add "/Applications/Google Chrome.app"
-dockutil --no-restart --position 2 --add "/Applications/Visual Studio Code.app"
-dockutil --no-restart --position 3 --add "/Applications/iTerm.app"
-dockutil --no-restart --position 4 --add "/Applications/Slack.app"
-dockutil --no-restart --position 5 --add "/Applications/Insomnia.app"
-dockutil --no-restart --position 6 --add "/Applications/MacDown.app"
-dockutil --no-restart --position 7 --add "/Applications/Spotify.app"
-dockutil --no-restart --position 8 --add "/Applications/zoom.us.app"
-dockutil --no-restart --position 9 --add "/System/Applications/Messages.app"
-dockutil --no-restart --position 10 --add "/Applications/SelfControl.app"
-
-###############################################################################
 # iTerm & Terminal                                                            #
 ###############################################################################
 
@@ -697,6 +626,77 @@ sudo pmset -a sms 0
 
 # Prevent Photos from opening automatically when devices are plugged in
 defaults -currentHost write com.apple.ImageCapture disableHotPlug -bool true
+
+###############################################################################
+# Dock
+###############################################################################
+
+log_section "Dock"
+
+log_step "Wipe all (default) app icons from the Dock"
+# this is only really useful when setting up a new Mac
+defaults write com.apple.dock persistent-apps -array
+
+log_step "Enable highlight hover effect for the grid view of a stack (Dock)"
+defaults write com.apple.dock mouse-over-hilite-stack -bool true
+
+log_step "Set the icon size of Dock items to 36 pixels"
+defaults write com.apple.dock tilesize -int 36
+
+log_step "Move the dock to the left-side of screen"
+defaults write com.apple.dock orientation -string "left"
+
+log_step "Move the dock to the upper-left corner"
+# this does not appear to work in Yosemite
+defaults write com.apple.dock pinning -string start
+
+log_step "Change minimize/maximize window effect"
+defaults write com.apple.dock mineffect -string "scale"
+
+log_step "Minimize windows into their application's icon"
+defaults write com.apple.dock minimize-to-application -bool true
+
+log_step "Enable spring loading for all Dock items"
+defaults write com.apple.dock enable-spring-load-actions-on-all-items -bool true
+
+log_step "Show indicator lights for open applications in the Dock"
+defaults write com.apple.dock show-process-indicators -bool true
+
+log_step "Don't animate opening applications from the Dock"
+defaults write com.apple.dock launchanim -bool false
+
+log_step "Remove the auto-hiding Dock delay"
+defaults write com.apple.dock autohide-delay -float 0
+
+log_step "Remove the animation when hiding/showing the Dock"
+defaults write com.apple.dock autohide-time-modifier -float 0
+
+log_step "Automatically hide and show the Dock"
+defaults write com.apple.dock autohide -bool true
+
+log_step "Make Dock icons of hidden applications translucent"
+defaults write com.apple.dock showhidden -bool true
+
+log_step "Don't show recent applications in Dock"
+defaults write com.apple.dock show-recents -bool false
+
+# log_step "Add a spacer to the left side of the Dock (where the applications are)"
+# defaults write com.apple.dock persistent-apps -array-add '{tile-data={}; tile-type="spacer-tile";}'
+
+# log_step "Add a spacer to the right side of the Dock (where the Trash is)"
+# "defaults write com.apple.dock persistent-others -array-add '{tile-data={}; tile-type="spacer-tile";}'
+
+dockutil --no-restart --remove all
+dockutil --no-restart --position 1 --add "/Applications/Google Chrome.app"
+dockutil --no-restart --position 2 --add "/Applications/Visual Studio Code.app"
+dockutil --no-restart --position 3 --add "/Applications/iTerm.app"
+dockutil --no-restart --position 4 --add "/Applications/Slack.app"
+dockutil --no-restart --position 5 --add "/Applications/Insomnia.app"
+dockutil --no-restart --position 6 --add "/Applications/MacDown.app"
+dockutil --no-restart --position 7 --add "/Applications/Spotify.app"
+dockutil --no-restart --position 8 --add "/Applications/zoom.us.app"
+dockutil --no-restart --position 9 --add "/System/Applications/Messages.app"
+dockutil --no-restart --position 10 --add "/Applications/SelfControl.app"
 
 ###############################################################################
 # Kill affected applications                                                  #
