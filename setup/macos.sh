@@ -88,6 +88,10 @@ defaults write NSGlobalDomain NSAutomaticPeriodSubstitutionEnabled -bool false
 log_step "Disable Notification Center and remove the menu bar icon"
 launchctl unload -w /System/Library/LaunchAgents/com.apple.notificationcenterui.plist 2> /dev/null
 
+# screenshots should be available immediately in Downloads without waiting for thumbnail preview
+log_step "Disable screenshot thumbnail previews"
+defaults write com.apple.screencapture show-thumbnail -bool FALSE
+
 ###############################################################################
 # Menu bar                                                                    #
 ###############################################################################
