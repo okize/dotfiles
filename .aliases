@@ -243,6 +243,34 @@ alias c2ks="pbpaste | pygmentize -l sass -f rtf -O style=native | pbcopy"
 
 ## Git ##
 
+# make a commit
+alias gc="git commit -m "
+
+# amend previous commit
+alias gca="git commit --amend"
+
+# amend previous commit time to current time
+alias gcar="git commit --amend --reset-author"
+
+# get git status
+alias gs="git status"
+
+# open all files with merge conflicts in Sublime Text
+# why doesn't this work?
+# alias gconf="git diff --name-only --diff-filter=U | uniq | xargs subl -n"
+
+# list number of commits in repo per user
+alias gcoms="git shortlog --numbered --summary"
+
+# list number of commits in repo per user not including merges
+alias gcomsnm="git shortlog --numbered --summary --no-merges"
+
+# list number of commits in repo per user with their email address
+alias gcomse="git shortlog --numbered --summary --email"
+
+# create new local branch
+alias gb="git checkout -b"
+
 # pull from a remote
 alias gp="git pull"
 
@@ -251,9 +279,6 @@ alias gpre="git pull --rebase"
 
 # pull master and rebase onto current branch
 alias gup="git_bring_up_to_date"
-
-# create new local branch
-alias gb="git checkout -b"
 
 # display commits that are on one branch but not another
 alias gbc="git_branch_compare"
@@ -296,15 +321,6 @@ alias gaall="git add ."
 
 # see dry run of 'git add .'
 alias gaalldry="git add -n ."
-
-# commit files on stage
-alias gc="git commit -m "
-
-# amend previous commit
-alias gca="git commit --amend"
-
-# amend previous commit time to current time
-alias gcar="git commit --amend --reset-author"
 
 # add all & amend to previous commit without editing
 alias gcaa="git add . && git commit --amend --no-edit"
@@ -364,10 +380,6 @@ alias grh="git reset --hard HEAD"
 
 # ref-log
 alias gr="git reflog"
-
-# open all files with merge conflicts in Sublime Text
-# why doesn't this work?
-alias gconf="git diff --name-only --diff-filter=U | uniq | xargs subl -n"
 
 # stash unstaged files
 alias gstash="git stash"
@@ -447,15 +459,6 @@ alias gtime="git log --author='`git config --global user.name`' --since='1 sunda
 
 # user commits in repo for previous week
 alias gtime2="git log --author='`git config --global user.name`' --since='2 sunday ago' --until='1 sunday ago' --format='%Cred%h%Creset %s %Cgreen(%ci) %Cblue<%an>%Creset' --no-merges"
-
-# list number of commits in repo per user
-alias gcoms="git shortlog --numbered --summary"
-
-# list number of commits in repo per user not including merges
-alias gcomsnm="git shortlog --numbered --summary --no-merges"
-
-# list number of commits in repo per user with their email address
-alias gcomse="git shortlog --numbered --summary --email"
 
 # info about own contributions
 alias gme="git_contribute 1"
