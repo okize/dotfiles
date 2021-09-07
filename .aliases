@@ -454,6 +454,9 @@ alias gblame="git blame -w"
 # show first commit of repo
 alias gfc="git_first_commit"
 
+# show first commit SHA
+alias gfcsha="git rev-list --max-parents=0 HEAD"
+
 # user commits in repo for last week
 alias gtime="git log --author='`git config --global user.name`' --since='1 sunday ago' --until='now' --format='%Cred%h%Creset %s %Cgreen(%ci) %Cblue<%an>%Creset' --no-merges"
 
