@@ -277,8 +277,21 @@ alias gp="git pull"
 # pull from a remote and avoid the merge commit
 alias gpre="git pull --rebase"
 
+# continue rebase after resolving merge conflict
+alias grc="git rebase --continue"
+
+# abort rebase after hitting merge conflict
+alias gra="git rebase --abort"
+
 # pull master and rebase onto current branch
 alias gup="git_bring_up_to_date"
+
+# interative rebase (example: `gir4` where 4 is the number of commits to go back in history)
+# TODO move this to function so it's possible to pass agrument
+alias gir="git rebase -i HEAD~"
+
+# fix rebase conflict with yarn lockfile
+alias yarc="yarn && git add yarn.lock && git rebase --continue"
 
 # display commits that are on one branch but not another
 alias gbc="git_branch_compare"
@@ -345,10 +358,6 @@ alias gcpc="git cherry-pick --continue"
 
 # cherry pick abort
 alias gcpa="git cherry-pick --abort"
-
-# interative rebase (example: `gir4` where 4 is the number of commits to go back in history)
-# TODO move this to function so it's possible to pass agrument
-alias gir="git rebase -i HEAD~"
 
 # push to master branch on github
 alias gpom="git push origin master"
@@ -484,6 +493,3 @@ alias gloc="git diff --stat `git hash-object -t tree /dev/null` | tail -1"
 
 # get my merge commits
 alias gmymerges="git log --merges --color --graph --abbrev-commit --author='`git config --global user.name`'"
-
-# fix rebase conflict with yarn lockfile
-alias yarc="yarn && git add yarn.lock && git rebase --continue"
