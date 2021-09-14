@@ -350,6 +350,9 @@ alias ghnt="git_here_not_there"
 # show git files about to be commited
 alias gcs="git show --pretty='format:' --name-only"
 
+# run all repo commits through commitlint
+alias gcl="commitlint_all_commits"
+
 # cherry pick commits
 alias gcp="git cherry-pick "
 
@@ -460,11 +463,8 @@ alias gblame="git blame -w"
 
 ## Git repo trivia ##
 
-# show first commit of repo
-alias gfc="git_first_commit"
-
 # show first commit SHA
-alias gfcsha="git rev-list --max-parents=0 HEAD"
+alias gfc="git_first_commit"
 
 # user commits in repo for last week
 alias gtime="git log --author='`git config --global user.name`' --since='1 sunday ago' --until='now' --format='%Cred%h%Creset %s %Cgreen(%ci) %Cblue<%an>%Creset' --no-merges"
