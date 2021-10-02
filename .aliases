@@ -362,14 +362,15 @@ alias gcpc="git cherry-pick --continue"
 # cherry pick abort
 alias gcpa="git cherry-pick --abort"
 
-# push to master branch on github
+# push master branch to remote
 alias gpom="git push origin master"
 
-# push to currently checked out branch on github
+# push branch to remote
 alias gpoh="git push origin HEAD"
 
-# force push to currently checked out branch on github
-alias gpohf="gpoh --force"
+# force push branch to remote
+# https://blog.developer.atlassian.com/force-with-lease/
+alias gpohf="gpoh --force-with-lease"
 
 # undo a push
 alias gunpush="git push -f origin HEAD^:master"
@@ -436,7 +437,7 @@ alias glognm="git log --no-merges --color --graph --pretty=format:'%Cred%h%Crese
 # nice log output, only display commits directly to current branch
 alias glogoc="git log --no-merges --first-parent --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --"
 
-# log output with cmd-clickable github urls
+# log output with cmd-clickable urls
 alias glogc="git_log_clickable"
 
 # log commits since last tag
