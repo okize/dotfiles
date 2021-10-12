@@ -105,3 +105,4 @@ cask "zoom"
 # App Store packages
 mas "ColorSlurp", id: 1287239339
 mas "Navicat Essentials for PostgreSQL", id: 466725643
+# mas "Xcode", id: 497799835
