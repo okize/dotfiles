@@ -60,3 +60,5 @@
   email = mwigmanich@wistia.com
 [init]
   defaultBranch = main
+[rerere]
+  enabled = 1
