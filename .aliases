@@ -58,10 +58,11 @@ alias dns-flush="sudo killall -HUP mDNSResponder"
 alias dns-reset="sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.mDNSResponder.plist; sudo launchctl load -w /System/Library/LaunchDaemons/com.apple.mDNSResponder.plist;"
 
 # IP addresses
-alias externalip="dig +short myip.opendns.com @resolver1.opendns.com"
+alias localip="ipconfig getifaddr en0"
+alias publicip="dig +short myip.opendns.com @resolver1.opendns.com"
+alias externalip="publicip"
 # alias externalip="curl http://ipecho.net/plain; echo"
 # alias externalip="curl http://ifconfig.me/ip"
-alias localip="ipconfig getifaddr en0"
 alias ips="ifconfig -a | perl -nle'/(\d+\.\d+\.\d+\.\d+)/ && print $1'"
 alias lookup="lookup_ip"
 # alias lookupip="curl ifconfig.me/"
