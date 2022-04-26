@@ -63,3 +63,5 @@
   defaultBranch = main
 [rerere]
   enabled = 1
+[advice]
+  skippedCherryPicks = false
