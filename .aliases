@@ -245,7 +245,7 @@ alias c2ks="pbpaste | pygmentize -l sass -f rtf -O style=native | pbcopy"
 ## Git ##
 
 # rerun all failed GH workflows on current branch
-alias grerun="gh run list -b $(git rev-parse --abbrev-ref HEAD) | grep 'failure' | grep -o -E '[0-9]{10}' | xargs -L 1 gh run rerun"
+# alias grerun="gh run list -b $(git rev-parse --abbrev-ref HEAD) | grep 'failure' | grep -o -E '[0-9]{10}' | xargs -L 1 gh run rerun"
 
 # make a commit
 alias gc="git commit -m "

@@ -8,22 +8,24 @@ AWSEBCLI=$HOME/.local/bin
 HEROKU=/usr/local/heroku/bin
 HOMEBREW=/usr/local/bin:/usr/local/lib:/usr/local/sbin
 MYSQL=/usr/local/opt/mysql@5.6/bin
-NVM_DIR=$HOME/.nvm
 POSTGRES=/usr/local/opt/postgresql@9.5/bin
 PYENV_ROOT=$HOME/.pyenv
 PYTHON=$HOME/Library/Python/2.7/bin
+LIBRARY_PATH=/usr/local/opt/openssl/lib/
+OPEN_SSL=/usr/local/opt/openssl/bin
+
+YARN=$HOME/.yarn/bin
+NVM_DIR=$HOME/.nvm
 RBENV=$HOME/.rbenv/bin
 RBENV_SHIMS=$HOME/.rbenv/shims
-YARN=$HOME/.yarn/bin
+
 ANDROID_HOME=$HOME/Library/Android/sdk
 ANDROID_TOOLS=$ANDROID_HOME/tools
 ANDROID_TOOLS_BIN_STUBS=$ANDROID_TOOLS/bin
 ANDROID_PLATFORM_TOOLS=$ANDROID_HOME/platform-tools
-OPEN_SSL=/usr/local/opt/openssl/bin
-LIBRARY_PATH=/usr/local/opt/openssl/lib/
-RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
 
-export PATH=$PATH:$COREUTILS:$FINDUTILS:$SED:$DIFF:$GIT:$HEROKU:$HOMEBREW:$NVM_DIR:$POSTGRES:$MYSQL:$AWSEBCLI:$PYTHON:$PYENV_ROOT:$RBENV:$RBENV_SHIMS:$YARN:$ANDROID_HOME:$ANDROID_TOOLS:$ANDROID_TOOLS_BIN_STUBS:$ANDROID_PLATFORM_TOOLS:$OPEN_SSL:$LIBRARY_PATH
+export PATH=$PATH:$COREUTILS:$FINDUTILS:$SED:$DIFF:$GIT:$AWSEBCLI:$HEROKU:$HOMEBREW:$MYSQL:$POSTGRES:$PYENV_ROOT:$PYTHON:$LIBRARY_PATH:$OPEN_SSL:$YARN:$NVM_DIR:$RBENV:$RBENV_SHIMS
+export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1) --disable-install-doc"
 
 # loads dotfiles into shell
 # .secrets is used for settings I don't want to commit
