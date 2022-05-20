@@ -527,3 +527,15 @@ function git_branch_compare() {
 function git_show_all_stashes() {
   git stash list | awk -F: '{ print "\n\n\n\n"; print $0; print "\n\n"; system("git -c color.ui=always stash show -p " $1); }' | less -R
 }
+
+function yarn_add_and_commit() {
+  yarn add $1 && git add . && git commit -m "install $1 package"
+}
+
+function yarn_add_development_and_commit() {
+  yarn add -D $1 && git add . && git commit -m "install $1 package as a dev dependency"
+}
+
+function yarn_remove_and_commit() {
+  yarn remove $1 && git add . && git commit -m "uninstall $1 package"
+}
