@@ -192,12 +192,6 @@ alias rzombie="ps ax | grep rails"
 alias fst="foreman start"
 alias fstd="foreman start -f Procfile.dev"
 
-# changes into directory where rbenv installed gems
-alias gemdir=go_to_gem_dir
-
-# uninstalls rbenv-managed gems
-alias rmgems="remove_rbenv_gems"
-
 ## NodeJS ##
 
 # npm update; delete node_modules dir then npm install
