@@ -377,6 +377,9 @@ alias gpom="git push origin master"
 # push branch to remote
 alias gpoh="git push origin HEAD"
 
+# push branch & tags to remote
+alias gpoht="gpoh --tags"
+
 # force push branch to remote
 # https://blog.developer.atlassian.com/force-with-lease/
 alias gpohf="gpoh --force-with-lease"
@@ -386,7 +389,6 @@ alias gunpush="git push -f origin HEAD^:master"
 
 # undo a merge
 alias gunmerge="git reset --hard ORIG_HEAD"
-# alias gunmerge="git reset --hard HEAD@{1}"
 
 # remove all files from stage
 alias gallr="git reset HEAD ."
