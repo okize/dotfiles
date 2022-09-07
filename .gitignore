@@ -1,6 +1,9 @@
 # Files for project notes
 .idea
 
+# For soft-deletion of staged git files
+.trash
+
 # Folder view configuration files
 .DS_Store
 Desktop.ini
