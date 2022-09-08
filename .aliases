@@ -2,6 +2,9 @@
 alias macdown="open -a Macdown "
 alias mou="macdown"
 
+# Extract and download an mp3 from a video
+alias song-dl="youtube-dl -x --audio-format mp3"
+
 # displays some hardware stats
 alias about="~/dotfiles/code/about_mac.sh"
 
