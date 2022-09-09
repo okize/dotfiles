@@ -217,6 +217,7 @@ alias nfstd="nf start -f Procfile.dev"
 alias ya="yarn_add_and_commit"
 alias yad="yarn_add_development_and_commit"
 alias yr="yarn_remove_and_commit"
+alias yrd="yarn_remove_development_and_commit"
 
 ## DB ##
 
