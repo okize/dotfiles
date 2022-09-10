@@ -407,6 +407,11 @@ function git_here_not_there() {
   fi
 }
 
+# do an interactive rebase <N> commits back on HEAD
+function git_rebase_interactive_distance() {
+  git rebase -i HEAD~"$1"
+}
+
 # rebase main remote branch onto current branch
 function git_bring_up_to_date() {
   if [ `git branch --list master` ]

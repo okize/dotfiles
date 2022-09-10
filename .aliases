@@ -299,9 +299,8 @@ alias gra="git rebase --abort"
 # pull master and rebase onto current branch
 alias gup="git_bring_up_to_date"
 
-# interative rebase (example: `gir4` where 4 is the number of commits to go back in history)
-# TODO move this to function so it's possible to pass agrument
-alias gir="git rebase -i HEAD~"
+# interative rebase (example: `gri 4` where 4 is the number of commits to go back in history)
+alias gri="git_rebase_interactive_distance"
 
 # fix rebase conflict with yarn lockfile
 alias yarc="yarn && git add yarn.lock && git rebase --continue"
