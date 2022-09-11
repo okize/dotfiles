@@ -57,12 +57,14 @@
   insteadOf = "gist:"
 [diff "blackbox"]
   textconv = gpg --use-agent -q --batch --decrypt
-[user]
-  name = Morgan Wigmanich
-  email = mwigmanich@wistia.com
 [init]
   defaultBranch = main
 [rerere]
   enabled = 1
 [advice]
   skippedCherryPicks = false
+[user]
+  name = Morgan Wigmanich
+  email = okize123@gmail.com
+[includeIf "gitdir:~/wistia/"]
+    path = ~/wistia/.gitconfig_include
