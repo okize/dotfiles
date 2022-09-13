@@ -1,6 +1,9 @@
+# reload shell after dotfiles change
+alias br="source ~/.bashrc; echo 'reloaded shell session'"
+
 ## Misc programs ##
 alias macdown="open -a Macdown "
-alias mou="macdown"
+alias mou="macdown" # muscle memory
 
 # Extract and download an mp3 from a video
 alias song-dl="youtube-dl -x --audio-format mp3"
@@ -156,9 +159,6 @@ alias bci='brew cask install --appdir="/Applications" '
 # get laptop serial number
 alias serial_number="system_profiler | grep 'Serial Number (system):'"
 
-# reload shell after dotfiles change
-alias br="source ~/.bashrc; echo 'reloaded shell session'"
-
 # File system navigation
 alias ..="cd .."
 alias ...="cd ../.."
@@ -219,6 +219,9 @@ alias yad="yarn_add_development_and_commit"
 alias yr="yarn_remove_and_commit"
 alias yrd="yarn_remove_development_and_commit"
 
+# fix rebase conflict with yarn lockfile
+alias yarc="yarn && git add package.json yarn.lock && git rebase --continue"
+
 ## DB ##
 
 # start redis server
@@ -268,10 +271,6 @@ alias gcar="git commit --amend --reset-author"
 # get git status
 alias gs="git status"
 
-# open all files with merge conflicts in Sublime Text
-# why doesn't this work?
-# alias gconf="git diff --name-only --diff-filter=U | uniq | xargs subl -n"
-
 # list number of commits in repo per user
 alias gcoms="git shortlog --numbered --summary"
 
@@ -301,9 +300,6 @@ alias gup="git_bring_up_to_date"
 
 # interative rebase (example: `gri 4` where 4 is the number of commits to go back in history)
 alias gri="git_rebase_interactive_distance"
-
-# fix rebase conflict with yarn lockfile
-alias yarc="yarn && git add yarn.lock && git rebase --continue"
 
 # display commits that are on one branch but not another
 alias gbc="git_branch_compare"
