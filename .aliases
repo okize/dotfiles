@@ -166,6 +166,9 @@ alias ....="cd ../../.."
 alias .....="cd ../../../.."
 alias ~="cd ~"
 
+# get a count of file based on their extension (eg. cfe coffee)
+alias cfe="count_files_by_extension"
+
 ## Rails ##
 
 # bundle exec shortcut

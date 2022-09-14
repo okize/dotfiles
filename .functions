@@ -233,7 +233,7 @@ function unidecode() {
 
 function count_files_by_extension() {
   echo "Number of files with .$@ extension:"
-  find . -name "*.$@" | wc -l
+  find . -path ./node_modules -prune -o -name "*.$@" -print | wc -l
 }
 
 function yarn_add_and_commit() {
