@@ -18,6 +18,7 @@ brew "moreutils"
 
 brew "ack"
 brew "autoconf"
+brew "bat"
 brew "cloc"
 brew "cmake"
 brew "dnsmasq"
