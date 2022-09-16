@@ -314,7 +314,6 @@ function git_commits_since_last_tag() {
 # returns the name of your current branch
 function current_branch() {
   git branch | grep '*' | cut -f2 -d' '
-  # git rev-parse --abbrev-ref HEAD
 }
 
 function branches_first_commit() {

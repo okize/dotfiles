@@ -355,9 +355,6 @@ alias gcall="git add . -A && git commit -m"
 # make a commit without adding anything (for Heroku push)
 alias gce="git commit --allow-empty -m 'forced commit'"
 
-# list of commits that exist on current branch but not on remote #main
-alias ghnt="git_here_not_there"
-
 # show git files about to be commited
 alias gcs="git show --pretty='format:' --name-only"
 
@@ -440,6 +437,11 @@ alias gdfiles="git diff --stat"
 
 # shows difference between empty tree and current working tree
 alias gtreediff="git diff --stat `git hash-object -t tree /dev/null`"
+
+# numbered list of commits that exist on current branch but not on remote #main
+# (git here, not there)
+alias ghnt="git_here_not_there"
+alias gl="git log --oneline --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative \$(git symbolic-ref refs/remotes/origin/HEAD | sed 's@^refs/remotes/origin/@@')..\$(git rev-parse --abbrev-ref HEAD) | cat -n"
 
 # nice log output
 alias glog="git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --"
