@@ -17,6 +17,7 @@
   helper = osxkeychain
 [push]
   default = tracking
+	autoSetupRemote = true
 [grep]
   lineNumber = true
   extendRegexp = true
