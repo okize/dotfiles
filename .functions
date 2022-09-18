@@ -56,61 +56,6 @@ function wait_for_guestcontrol() {
   done
 }
 
-function start_vm() {
-  # --type headless
-  IE_VM=$1
-  VBoxManage startvm "$IE_VM"
-  wait_for_guestcontrol "$IE_VM"
-  start_ie "$IE_VM"
-}
-
-function start_ie() {
-  IE_VM=$1
-  LOCALIP=`ipconfig getifaddr en0`
-  URL="http://$LOCALIP:8080"
-  USER="IEUser"
-  PASSWORD="Passw0rd!"
-  IE_PATH="C:\Progra~1\Intern~1\iexplore.exe"
-  VBoxmanage guestcontrol "$IE_VM" start --exe "$IE_PATH" --username "$USER" --password "$PASSWORD" -- iexplore "$URL"
-}
-
-# Internet Explorer virtual box VMs
-function ievm {
-  IE8="IE8 - WinXP"
-  IE9="IE9 - Win7"
-  IE10="IE10 - Win7"
-  IE11="IE11 - Win7"
-  EDGE="MSEdge - Win10"
-  PS3='Please choose an Internet Explorer version: '
-  options=("$IE8" "$IE9" "$IE10" "$IE11" "$EDGE")
-  select opt in "${options[@]}"
-  do
-    case $opt in
-      "$IE8")
-        start_vm "$IE8"
-        break
-        ;;
-      "$IE9")
-        start_vm "$IE9"
-        break
-        ;;
-      "$IE10")
-        start_vm "$IE10"
-        break
-        ;;
-      "$IE11")
-        start_vm "$IE11"
-        break
-        ;;
-      "$EDGE")
-        start_vm "$EDGE"
-        break
-        ;;
-      *) echo invalid option;;
-    esac
-  done
-}
-
 # go to rbenv directory of gems installed for local Ruby version
 function go_to_gem_dir() {
   RUBYVER="$(ruby -e 'print RUBY_VERSION')"
