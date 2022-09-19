@@ -176,9 +176,14 @@ function unidecode() {
   echo # newline
 }
 
+# recursive list of files by extension (ignores node_modules directory)
+function list_files_by_extension() {
+  find . -path ./node_modules -prune -o -name "*.$1" -print
+}
+
 function count_files_by_extension() {
-  echo "Number of files with .$@ extension:"
-  find . -path ./node_modules -prune -o -name "*.$@" -print | wc -l
+  echo "Number of files with .$1 extension:"
+  list_files_by_extension $1 | wc -l
 }
 
 function yarn_add_and_commit() {
