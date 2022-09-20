@@ -218,6 +218,13 @@ function git_rm() {
   git rm $(git ls-files --deleted)
 }
 
+# use git to recursively rename file extensions
+function git_rename_file_extensions() {
+  for file in $(list_files_by_extension "*$1"); do
+    git mv "$file" "${file%$1}$2"
+  done
+}
+
 # git log with per-commit cmd-clickable GitHub URLs (iTerm)
 function git_log_clickable() {
   local remote="$(git remote -v | awk '/^origin.*\(push\)$/ {print $2}')"
