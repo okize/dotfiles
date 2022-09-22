@@ -22,7 +22,7 @@ cd $dir
 echo "...done"
 
 # list of files/folders to symlink in homedir
-files=".aliases .bash_profile .bash_prompt .bashrc .exports .functions .gitconfig .gitignore .inputrc .gemrc .irbrc .nvmrc .pryrc .rspec .ruby-version .secrets .wgetrc"
+files=".aliases .bash_profile .bash_prompt .bashrc .exports .functions .gitconfig .gitignore .inputrc .gemrc .irbrc .pryrc .secrets .tool-versions .wgetrc"
 
 # move any existing dotfiles in homedir to dotfilesBackup directory, then create symlinks from the homedir to any files in the ~/dotfiles directory specified in $files
 echo "Moving any existing dotfiles from ~ to $olddir & Creating symlink to $files in home directory."
@@ -68,16 +68,6 @@ brew doctor
 
 # Map vi so it opens the brew-installed vim
 ln -s /usr/local/bin/vim /usr/local/bin/vi
-
-# Setup Node environment
-echo "Installing node and global modules"
-source ./setup/node.sh
-echo "...done"
-
-# Setup Ruby environment
-echo "Setting up Ruby, Bundler & Rake"
-source ./setup/ruby.sh
-echo "...done"
 
 # Setup Heroku
 echo "Setting up Heroku"

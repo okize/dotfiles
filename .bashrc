@@ -9,22 +9,18 @@ HEROKU=/usr/local/heroku/bin
 HOMEBREW=/usr/local/bin:/usr/local/lib:/usr/local/sbin
 MYSQL=/usr/local/opt/mysql@5.6/bin
 POSTGRES=/usr/local/opt/postgresql@9.5/bin
-PYENV_ROOT=$HOME/.pyenv
 PYTHON=$HOME/Library/Python/2.7/bin
 LIBRARY_PATH=/usr/local/opt/openssl/lib/
 OPEN_SSL=/usr/local/opt/openssl/bin
 
 YARN=$HOME/.yarn/bin
-NVM_DIR=$HOME/.nvm
-RBENV=$HOME/.rbenv/bin
-RBENV_SHIMS=$HOME/.rbenv/shims
 
 ANDROID_HOME=$HOME/Library/Android/sdk
 ANDROID_TOOLS=$ANDROID_HOME/tools
 ANDROID_TOOLS_BIN_STUBS=$ANDROID_TOOLS/bin
 ANDROID_PLATFORM_TOOLS=$ANDROID_HOME/platform-tools
 
-export PATH=$PATH:$COREUTILS:$FINDUTILS:$SED:$DIFF:$GIT:$AWSEBCLI:$HEROKU:$HOMEBREW:$MYSQL:$POSTGRES:$PYENV_ROOT:$PYTHON:$LIBRARY_PATH:$OPEN_SSL:$YARN:$NVM_DIR:$RBENV:$RBENV_SHIMS
+export PATH=$PATH:$COREUTILS:$FINDUTILS:$SED:$DIFF:$GIT:$AWSEBCLI:$HEROKU:$HOMEBREW:$MYSQL:$POSTGRES:$PYTHON:$LIBRARY_PATH:$OPEN_SSL:$YARN
 export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1) --disable-install-doc"
 
 # loads dotfiles into shell
@@ -40,16 +36,6 @@ unset file
 for option in autocd globstar; do
   shopt -s "$option" 2> /dev/null;
 done;
-
-# init rbenv for ruby
-if which rbenv > /dev/null; then
-  eval "$(rbenv init -)"
-fi
-
-# init pyenv for python
-if command -v pyenv 1>/dev/null 2>&1; then
-  eval "$(pyenv init --path)"
-fi
 
 # init z (https://github.com/rupa/z)
 source ~/dotfiles/code/z/z.sh
@@ -68,3 +54,7 @@ source ~/dotfiles/code/npm-completion.sh
 
 # killall tab completion for common apps
 complete -o "nospace" -W "Contacts Calendar Dock Finder Mail Safari iTunes SystemUIServer Terminal" killall
+
+# asdf
+. /usr/local/opt/asdf/libexec/asdf.sh
+. /usr/local/opt/asdf/etc/bash_completion.d/asdf.bash

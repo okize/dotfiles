@@ -17,35 +17,6 @@ function list_raspberry_pi_ips() {
   # arp -na | grep -i b8:27:eb
 }
 
-# lazyload nvm for faster shell startup time
-# https://gist.github.com/fl0w/07ce79bd44788f647deab307c94d6922
-
-lazynvm() {
-  unset -f nvm node npm
-  source $(brew --prefix nvm)/nvm.sh
-  # [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
-}
-
-nvm() {
-  lazynvm
-  nvm $@
-}
-
-node() {
-  lazynvm
-  node $@
-}
-
-npm() {
-  lazynvm
-  npm $@
-}
-
-# install version of node with all previous global modules
-function nvm_install {
-  nvm install $1 --reinstall-packages-from=default
-}
-
 # Pause execution until guest control is available for a virtual machine.
 function wait_for_guestcontrol() {
   sleep_wait="5"
