@@ -58,3 +58,5 @@ complete -o "nospace" -W "Contacts Calendar Dock Finder Mail Safari iTunes Syste
 # asdf
 . "$(brew --prefix asdf)/libexec/asdf.sh"
 . "$(brew --prefix asdf)/etc/bash_completion.d/asdf.bash"
+
+eval "$(starship init bash)"
