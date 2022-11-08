@@ -149,7 +149,7 @@ function unidecode() {
 
 # recursive list of files by extension (ignores node_modules directory)
 function list_files_by_extension() {
-  find . -path ./node_modules -prune -o -name "*.$1" -print
+  find . -type d -name node_modules -prune -o -name "*.$1" -print
 }
 
 function count_files_by_extension() {

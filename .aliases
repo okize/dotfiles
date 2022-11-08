@@ -166,7 +166,10 @@ alias ....="cd ../../.."
 alias .....="cd ../../../.."
 alias ~="cd ~"
 
-# get a count of file based on their extension (eg. cfe coffee)
+# list files based on their extension
+alias lfe="list_files_by_extension"
+
+# get a count of files based on their extension (eg. cfe coffee)
 alias cfe="count_files_by_extension"
 
 ## Rails ##
