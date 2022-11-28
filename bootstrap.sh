@@ -103,4 +103,3 @@ defaults write com.apple.dock persistent-apps -array-add "<dict><key>tile-data</
 killall Dock
 
 echo "\n$(tput bold)Done. Note that some of these changes require a logout/restart to take effect.$(tput sgr 0)"
-echo "To sync VS Code settings, open Code and paste Github Personal Access Token & Gist ID
