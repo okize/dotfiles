@@ -56,5 +56,5 @@ source ~/dotfiles/code/npm-completion.sh
 complete -o "nospace" -W "Contacts Calendar Dock Finder Mail Safari iTunes SystemUIServer Terminal" killall
 
 # asdf
-. /usr/local/opt/asdf/libexec/asdf.sh
-. /usr/local/opt/asdf/etc/bash_completion.d/asdf.bash
+. "$(brew --prefix asdf)/libexec/asdf.sh"
+. "$(brew --prefix asdf)/etc/bash_completion.d/asdf.bash"
