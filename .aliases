@@ -295,7 +295,7 @@ alias grc="git rebase --continue"
 # abort rebase after hitting merge conflict
 alias gra="git rebase --abort"
 
-# pull master and rebase onto current branch
+# pull main and rebase onto current branch
 alias gup="git_bring_up_to_date"
 
 # interative rebase (example: `gri 4` where 4 is the number of commits to go back in history)
@@ -367,8 +367,8 @@ alias gcpc="git cherry-pick --continue"
 # cherry pick abort
 alias gcpa="git cherry-pick --abort"
 
-# push master branch to remote
-alias gpom="git push origin master"
+# push main branch to remote
+alias gpom="git push origin main"
 
 # push branch to remote
 alias gpoh="git push origin HEAD"
@@ -381,7 +381,7 @@ alias gpoht="gpoh --tags"
 alias gpohf="gpoh --force-with-lease"
 
 # undo a push
-alias gunpush="git push -f origin HEAD^:master"
+alias gunpush="git push -f origin HEAD^:main"
 
 # undo a merge
 alias gunmerge="git reset --hard ORIG_HEAD"

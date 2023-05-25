@@ -212,7 +212,7 @@ AWK
 # take this repo and copy it to somewhere else minus the .git stuff.
 function git_export() {
   mkdir -p "$1"
-  git archive master | tar -x -C "$1"
+  git archive main | tar -x -C "$1"
 }
 
 # displays repo contributors and their total contributions
@@ -245,16 +245,16 @@ function current_branch() {
 }
 
 function branches_first_commit() {
-  git merge-base master $1
+  git merge-base main $1
 }
 
 # list of commits that exist on current branch but not on remote #main
 function git_here_not_there() {
-  if [ `git branch --list master` ]
+  if [ `git branch --list main` ]
   then
-    git log HEAD \^origin/master --no-merges --oneline
-  else
     git log HEAD \^origin/main --no-merges --oneline
+  else
+    git log HEAD \^origin/master --no-merges --oneline
   fi
 }
 
@@ -265,11 +265,11 @@ function git_rebase_interactive_distance() {
 
 # rebase main remote branch onto current branch
 function git_bring_up_to_date() {
-  if [ `git branch --list master` ]
+  if [ `git branch --list main` ]
   then
-    git pull origin master --rebase
-  else
     git pull origin main --rebase
+  else
+    git pull origin master --rebase
   fi
 }
 
