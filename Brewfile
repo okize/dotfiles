@@ -18,6 +18,7 @@ brew "moreutils"
 
 brew "ack"
 brew "asdf"
+brew "awscli"
 brew "autoconf"
 brew "bat"
 brew "cloc"
