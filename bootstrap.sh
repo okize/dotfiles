@@ -85,8 +85,6 @@ rsync --exclude ".DS_Store" -av --no-perms fonts/ ~/Library/Fonts/
 echo "...done"
 
 echo "Finalizing..."
-# install VS Code settings sync extension
-code --install-extension Shan.code-settings-sync
 
 # symlink diff-highlight into path
 sudo ln -sf "$(brew --prefix)/share/git-core/contrib/diff-highlight/diff-highlight" /usr/bin/diff-highlight
