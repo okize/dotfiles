@@ -1,5 +1,2 @@
-tap "wistia/dub", "https://github.com/wistia/dub"
-
 brew "mysql@5.6", restart_service: true
-brew "wistia/dub/wistia-dub"
 brew "wkhtmltopdf"
