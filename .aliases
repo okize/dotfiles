@@ -507,5 +507,8 @@ alias gloc="git diff --stat `git hash-object -t tree /dev/null` | tail -1"
 # get my merge commits
 alias gmymerges="git log --merges --color --graph --abbrev-commit --author='`git config --global user.name`'"
 
+# delete all non-tracked files & folders
+alias gnuke="git clean -dfx ."
+
 # docker
 alias dc="docker compose"
