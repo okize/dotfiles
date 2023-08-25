@@ -222,6 +222,9 @@ alias yrd="yarn_remove_development_and_commit"
 # fix rebase conflict with yarn lockfile
 alias yarc="yarn && git add package.json yarn.lock && git rebase --continue"
 
+# recursive deletion of node_modules directories
+alias dnm="~/dotfiles/code/delete-node-modules.sh"
+
 ## DB ##
 
 # start redis server
