@@ -59,7 +59,6 @@ sudo xcodebuild -license accept
 # Setup homebrew and apps
 echo "Installing binaries and apps with Homebrew"
 brew bundle --verbose
-brew bundle --verbose --file=./Brewfile.work
 echo "...done"
 
 # Check for any problems with homebrew
