@@ -11,6 +11,14 @@ dir=~/dotfiles
 # old dotfiles backup directory
 olddir=~/dotfilesBackup
 
+function log_section() {
+  echo "$(tput setaf 0)$(tput setab 7)$(tput bold) $1 $(tput sgr 0)"
+}
+
+function log_step() {
+  echo "$(tput setaf 6)- $1$(tput sgr 0)"
+}
+
 # create dotfilesBackup in homedir
 echo "Creating $olddir for backup of any existing dotfiles in ~"
 mkdir -p $olddir
@@ -35,6 +43,9 @@ done
 # pre-emptive sudo signin
 sudo echo ""
 
+# Accept Xcode license
+sudo xcodebuild -license accept
+
 # optionally set computer name
 echo "Would you like to set your computer name (as done via System Preferences >> Sharing)?  (y/n)"
 read -r response
@@ -53,9 +64,6 @@ then
   /bin/sh -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 fi
 
-# Accept Xcode license
-sudo xcodebuild -license accept
-
 # Setup homebrew and apps
 echo "Installing binaries and apps with Homebrew"
 brew bundle --verbose
@@ -69,9 +77,9 @@ brew doctor
 ln -s /usr/local/bin/vim /usr/local/bin/vi
 
 # Setup Heroku
-echo "Setting up Heroku"
-source ./setup/heroku.sh
-echo "...done"
+# echo "Setting up Heroku"
+# source ./setup/heroku.sh
+# echo "...done"
 
 # Setup macOS
 echo "Setting up macOS"
@@ -89,7 +97,7 @@ echo "Finalizing..."
 sudo ln -sf "$(brew --prefix)/share/git-core/contrib/diff-highlight/diff-highlight" /usr/bin/diff-highlight
 
 # remap keyboard keys
-source ./setup/keymap.sh
+# source ./setup/keymap.sh
 
 # persist keymap after system reboot
 sudo defaults write com.apple.loginwindow LoginHook ~/dotfiles/setup/keymap.sh

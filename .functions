@@ -3,14 +3,6 @@ function which_port() {
   lsof -n -i4TCP:$1 | grep LISTEN
 }
 
-function log_section() {
-  echo "$(tput setaf 0)$(tput setab 7)$(tput bold) $1 $(tput sgr 0)"
-}
-
-function log_step() {
-  echo "$(tput setaf 6)- $1$(tput sgr 0)"
-}
-
 function list_raspberry_pi_ips() {
   echo "IPs of network-connected raspberry pi computers:"
   sudo nmap -sP 10.0.1.0/24 | awk '/^Nmap/{ip=$NF}/B8:27:EB/{print ip}'
