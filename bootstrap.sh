@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+#!/bin/sh
 
 ############################
 # This script creates symlinks from the home directory to any desired dotfiles in ~/dotfiles
@@ -43,7 +43,7 @@ done
 # pre-emptive sudo signin
 sudo echo ""
 
-# Accept Xcode license
+# accept Xcode license
 sudo xcodebuild -license accept
 
 # optionally set computer name
@@ -58,30 +58,38 @@ if [[ $response =~ ^([yY][eE][sS]|[yY])$ ]]; then
   sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string $COMPUTER_NAME
 fi
 
-# Check for Homebrew & install if necessary
-if [ ! -n "$(command -v brew)" ]
-then
+# check for Homebrew & install if necessary
+if ! [ -x "$(command -v brew)" ]; then
+  log "Homebrew not found, installing it"
   /bin/sh -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+  UNAME_MACHINE="$(/usr/bin/uname -m)"
+  if [[ "${UNAME_MACHINE}" == "arm64" ]]
+  then
+    HOMEBREW_PREFIX="/opt/homebrew"
+  else
+    HOMEBREW_PREFIX="/usr/local"
+  fi
 fi
 
-# Setup homebrew and apps
+# setup homebrew and apps
 echo "Installing binaries and apps with Homebrew"
 brew bundle --verbose
 echo "...done"
 
-# Check for any problems with homebrew
+# check for any problems with homebrew
 brew bundle check
 brew doctor
 
-# Map vi so it opens the brew-installed vim
+# map vi so it opens the brew-installed vim
 ln -s /usr/local/bin/vim /usr/local/bin/vi
 
 # Setup Heroku
-# echo "Setting up Heroku"
-# source ./setup/heroku.sh
-# echo "...done"
+echo "Setting up Heroku"
+source ./setup/heroku.sh
+echo "...done"
 
-# Setup macOS
+# setup macOS
 echo "Setting up macOS"
 source ./setup/macos.sh
 echo "...done"
@@ -102,7 +110,7 @@ sudo ln -sf "$(brew --prefix)/share/git-core/contrib/diff-highlight/diff-highlig
 # persist keymap after system reboot
 sudo defaults write com.apple.loginwindow LoginHook ~/dotfiles/setup/keymap.sh
 
-# Attempt to add iOS Simulator to the dock
+# attempt to add iOS Simulator to the dock
 # for some reason this can't be in setup/macos.sh
 defaults write com.apple.dock persistent-apps -array-add "<dict><key>tile-data</key><dict><key>file-data</key><dict><key>_CFURLString</key><string>/Applications/Xcode.app/Contents/Developer/Applications/Simulator.app/</string><key>_CFURLStringType</key><integer>0</integer></dict></dict></dict>"
 killall Dock
