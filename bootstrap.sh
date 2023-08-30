@@ -43,9 +43,6 @@ done
 # pre-emptive sudo signin
 sudo echo ""
 
-# accept Xcode license
-sudo xcodebuild -license accept
-
 # optionally set computer name
 echo "Would you like to set your computer name (as done via System Preferences >> Sharing)?  (y/n)"
 read -r response
@@ -56,6 +53,13 @@ if [[ $response =~ ^([yY][eE][sS]|[yY])$ ]]; then
   sudo scutil --set HostName $COMPUTER_NAME
   sudo scutil --set LocalHostName $COMPUTER_NAME
   sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string $COMPUTER_NAME
+fi
+
+# install Xcode Command Line Tools if not installed.
+if xcode-select -p > /dev/null; then
+  log "Xcode Command Line Tools already installed"
+else
+  xcode-select --install
 fi
 
 # check for Homebrew & install if necessary
