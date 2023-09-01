@@ -89,11 +89,6 @@ brew doctor
 # map vi so it opens the brew-installed vim
 ln -s /usr/local/bin/vim /usr/local/bin/vi
 
-# Setup Heroku
-echo "Setting up Heroku"
-source ./setup/heroku.sh
-echo "...done"
-
 # setup macOS
 echo "Setting up macOS"
 source ./setup/macos.sh

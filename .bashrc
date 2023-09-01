@@ -5,7 +5,6 @@ SED=/usr/local/opt/gnu-sed/libexec/gnubin
 DIFF=$HOME/dotfiles/code/icdiff
 GIT=/usr/local/git/bin
 AWSEBCLI=$HOME/.local/bin
-HEROKU=/usr/local/heroku/bin
 HOMEBREW=/usr/local/bin:/usr/local/lib:/usr/local/sbin
 MYSQL=/usr/local/opt/mysql@5.6/bin
 POSTGRES=/usr/local/opt/postgresql@9.5/bin
@@ -20,7 +19,7 @@ ANDROID_TOOLS=$ANDROID_HOME/tools
 ANDROID_TOOLS_BIN_STUBS=$ANDROID_TOOLS/bin
 ANDROID_PLATFORM_TOOLS=$ANDROID_HOME/platform-tools
 
-export PATH=$PATH:$COREUTILS:$FINDUTILS:$SED:$DIFF:$GIT:$AWSEBCLI:$HEROKU:$HOMEBREW:$MYSQL:$POSTGRES:$PYTHON:$LIBRARY_PATH:$OPEN_SSL:$YARN
+export PATH=$PATH:$COREUTILS:$FINDUTILS:$SED:$DIFF:$GIT:$AWSEBCLI:$HOMEBREW:$MYSQL:$POSTGRES:$PYTHON:$LIBRARY_PATH:$OPEN_SSL:$YARN
 export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1) --disable-install-doc"
 
 # loads dotfiles into shell
