@@ -12,6 +12,7 @@ main() {
   install_xcode_cli
   install_homebrew
   install_brewfile_packages
+  install_asdf
   setup_macos
 }
 
@@ -20,6 +21,9 @@ dir=~/dotfiles
 
 # old dotfiles backup directory
 olddir=~/dotfilesBackup
+
+# pinned asdf version
+ASDF_VERSION=0.12.0
 
 # pre-emptive sudo signin
 sudo echo ""
@@ -100,6 +104,37 @@ install_brewfile_packages() {
   # check for any problems with homebrew
   brew bundle check
   brew doctor
+}
+
+# if not already installed, install a pinned version of asdf via git into ${HOME}/.asdf
+# then preinstall some frequently used plugins
+install_asdf() {
+  if ! [ -x "$(command -v asdf)" ]; then
+    echo "asdf not found, installing it"
+    if [ ! -d ~/.asdf ]; then
+      git clone https://github.com/asdf-vm/asdf.git $HOME/.asdf --branch v$ASDF_VERSION
+    fi
+
+    # Enable asdf for use by this script
+    . $HOME/.asdf/asdf.sh
+  fi
+
+  echo "asdf version $(asdf --version) is installed"
+
+  if ! asdf plugin-list | grep -q yarn; then
+    echo "Adding yarn plugin to asdf"
+    asdf plugin-add yarn
+  fi
+  asdf plugin-update yarn
+
+  if ! asdf plugin-list | grep -q nodejs; then
+    echo "Adding nodejs plugin to asdf"
+    asdf plugin-add nodejs
+  fi
+  asdf plugin-update nodejs
+
+  # install whatever is set in ~/.tool-versions
+  asdf install
 }
 
 # install brews & casks from Brewfile

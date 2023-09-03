@@ -36,8 +36,14 @@ for option in autocd globstar; do
   shopt -s "$option" 2> /dev/null;
 done;
 
-# init z (https://github.com/rupa/z)
+# initialize z (https://github.com/rupa/z)
 source ~/dotfiles/code/z/z.sh
+
+# initialize asdf
+. "$HOME/.asdf/asdf.sh"
+
+# tab completion for asdf
+. "$HOME/.asdf/completions/asdf.bash"
 
 # tab completion for Git
 source ~/dotfiles/code/git-completion.bash
@@ -53,7 +59,3 @@ source ~/dotfiles/code/npm-completion.sh
 
 # killall tab completion for common apps
 complete -o "nospace" -W "Contacts Calendar Dock Finder Mail Safari iTunes SystemUIServer Terminal" killall
-
-# asdf
-. "$(brew --prefix asdf)/libexec/asdf.sh"
-. "$(brew --prefix asdf)/etc/bash_completion.d/asdf.bash"

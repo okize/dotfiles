@@ -1,5 +1,8 @@
 #!/usr/bin/env sh
 
+# install location for asdf
+export ASDF_DIR="$HOME/.asdf";
+
 # set nano as default editor
 export EDITOR='nano';
 
