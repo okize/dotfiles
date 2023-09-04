@@ -28,5 +28,8 @@ export GPG_TTY=$(tty);
 # Hide the 'default interactive shell is now zsh' warning about bash on macOS
 export BASH_SILENCE_DEPRECATION_WARNING=1;
 
+# x86_64 or arm64
+export MACHINE_ARCHITECTURE="$(/usr/bin/uname -m)"
+
 # Prevent homebrew casks from throwing Gatekeeper message on opening
 export HOMEBREW_CASK_OPTS=--no-quarantine
