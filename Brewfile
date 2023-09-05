@@ -1,9 +1,5 @@
 tap "github/gh"
 tap "homebrew/bundle"
-tap "homebrew/cask"
-tap "homebrew/cask-drivers"
-tap "homebrew/cask-versions"
-tap "homebrew/core"
 tap "homebrew/services"
 
 # Install GNU core utilities (those that come with macOS are outdated)

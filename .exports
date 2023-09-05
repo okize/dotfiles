@@ -31,5 +31,13 @@ export BASH_SILENCE_DEPRECATION_WARNING=1;
 # x86_64 or arm64
 export MACHINE_ARCHITECTURE="$(/usr/bin/uname -m)"
 
+# Homebrew installs in different locations depending on architecture
+if [[ "${MACHINE_ARCHITECTURE}" == "arm64" ]]
+then
+  export HOMEBREW_PREFIX="/opt/homebrew"
+else
+  export HOMEBREW_PREFIX="/usr/local"
+fi
+
 # Prevent homebrew casks from throwing Gatekeeper message on opening
 export HOMEBREW_CASK_OPTS=--no-quarantine

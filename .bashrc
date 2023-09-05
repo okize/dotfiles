@@ -48,11 +48,11 @@ source ~/dotfiles/code/z/z.sh
 # tab completion for Git
 source ~/dotfiles/code/git-completion.bash
 
-# tab completion for homebrew
-source ~/dotfiles/code/homebrew-completion.sh
-
 # tab completion for NPM
 source ~/dotfiles/code/npm-completion.sh
+
+# tab completion for Homebrew
+[[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] && . "/usr/local/etc/profile.d/bash_completion.sh"
 
 # tab completion for SSH hostnames based on ~/.ssh/config, ignoring wildcards
 [ -e "$HOME/.ssh/config" ] && complete -o "default" -o "nospace" -W "$(grep "^Host" ~/.ssh/config | grep -v "[?*]" | cut -d " " -f2- | tr ' ' '\n')" scp sftp ssh;
