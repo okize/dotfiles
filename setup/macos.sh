@@ -720,8 +720,7 @@ for app in "Activity Monitor" \
   "Photos" \
   "Safari" \
   "Spectacle" \
-  "SystemUIServer" \
-  "Terminal"; do
+  "SystemUIServer"; do
   killall "${app}" &> /dev/null
 done
 echo "$(tput bold)Done. Note that some of these changes require a logout/restart to take effect.$(tput sgr 0)"
