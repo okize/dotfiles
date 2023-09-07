@@ -4,90 +4,102 @@
 # CLI alternative to macOS's "About this Mac" feature.
 #=======================================================
 
-# lookup table for OS X marketing names
-OSX_MARKETING_NAME=(
-  ["0"]="Cheetah"
-  ["1"]="Puma"
-  ["2"]="Jaguar"
-  ["3"]="Panther"
-  ["4"]="Tiger"
-  ["5"]="Leopard"
-  ["6"]="Snow Leopard"
-  ["7"]="Lion"
-  ["8"]="Mountain Lion"
-  ["9"]="Mavericks"
-  ["10"]="Yosemite"
-  ["11"]="El Capitan"
-  ["12"]="Sierra"
-  ["13"]="High Sierra"
-  ["14"]="Mojave"
-  ["15"]="Catalina"
-)
-
-# lookup table for macOS marketing names
-MACOS_MARKETING_NAME=(
-  ["11"]="Big Sur"
-  ["12"]="Monterey"
-)
-
-OS_VER=$(sw_vers -productVersion)
-
 # display a header message
 write_header() {
-  local name=$1; shift;
-  printf "$name: $@\n"
+  local NAME=$1; shift;
+  printf "$NAME: $@\n"
 }
 
-# derrive Apple's marketing name for installed operating system
-os_name () {
-  local osx_number
-  local os_type
-  local os_version_major
-  local os_version_minor
-  local os_name
+# either "macOS" or "Mac OS X"
+OS_TYPE=$(sw_vers -productName)
+OS_VERSION=$(sw_vers -productVersion)
+OS_BUILD=$(sw_vers -buildVersion)
 
-  os_version_major=$(echo $OS_VER | awk -F '[.]' '{print $1}')
-  os_version_minor=$(echo $OS_VER | awk -F '[.]' '{print $2}')
-
-  if [ $os_version_major == 10 ]
+# derrive Apple's product name for installed operating system and assign it to OS_PRODUCT_NAME
+os_product_name () {
+  if [ "$OS_TYPE" == "macOS" ]
   then
-    os_type="OS X"
-    os_name="${OSX_MARKETING_NAME[$os_version_minor]}"
+    OS_PRODUCT_NAME="macOS"
   else
-    os_type="macOS"
-    os_name="${MACOS_MARKETING_NAME[$os_version_major]}"
+    OS_PRODUCT_NAME="OS X"
   fi
+}
 
-  printf "\n$os_type $os_name\n"
+# derrive Apple's marketing name for installed operating system and assign it to OS_MARKETING_NAME
+os_marketing_name () {
+  local MACOS_MARKETING_NAME
+  local OSX_MARKETING_NAME
+  local OS_VERSION_MAJOR
+  local OS_VERSION_MINOR
+
+  # lookup table for macOS marketing names
+  MACOS_MARKETING_NAME=(
+    ["11"]="Big Sur"
+    ["12"]="Monterey"
+    ["13"]="Ventura"
+  )
+
+  # lookup table for OS X marketing names
+  OSX_MARKETING_NAME=(
+    ["0"]="Cheetah"
+    ["1"]="Puma"
+    ["2"]="Jaguar"
+    ["3"]="Panther"
+    ["4"]="Tiger"
+    ["5"]="Leopard"
+    ["6"]="Snow Leopard"
+    ["7"]="Lion"
+    ["8"]="Mountain Lion"
+    ["9"]="Mavericks"
+    ["10"]="Yosemite"
+    ["11"]="El Capitan"
+    ["12"]="Sierra"
+    ["13"]="High Sierra"
+    ["14"]="Mojave"
+    ["15"]="Catalina"
+  )
+
+  OS_VERSION_MAJOR=$(echo $OS_VERSION | awk -F '[.]' '{print $1}')
+  OS_VERSION_MINOR=$(echo $OS_VERSION | awk -F '[.]' '{print $2}')
+
+  if [ "$OS_TYPE" == "macOS" ]
+  then
+    OS_MARKETING_NAME="${MACOS_MARKETING_NAME[$OS_VERSION_MAJOR]}"
+  else
+    OS_MARKETING_NAME="${OSX_MARKETING_NAME[$OS_VERSION_MINOR]}"
+  fi
+}
+
+os_details () {
+  os_product_name
+  os_marketing_name
+
+  printf "\n$OS_PRODUCT_NAME | $OS_MARKETING_NAME ($OS_VERSION)\n"
   echo "------------------------"
 }
 
-os_version () {
-  write_header "VERSION" "$OS_VER"
-}
-
 hardware_model () {
-  local hardware_mod
-  hardware_mod=$(defaults read ~/Library/Preferences/com.apple.SystemProfiler.plist 'CPU Names' \
+  local HARDWARE_MOD
+  HARDWARE_MOD=$(defaults read ~/Library/Preferences/com.apple.SystemProfiler.plist 'CPU Names' \
   | cut -sd '"' -f 4 \
   | uniq)
 
-  write_header "HARDWARE" "$hardware_mod"
+  write_header "HARDWARE" "$HARDWARE_MOD"
 }
 
 processor () {
-  local cpu
-  cpu=$(system_profiler SPHardwareDataType \
+  local CPU
+  CPU=$(system_profiler SPHardwareDataType \
   | awk '/Processor (Name|Speed):/ { sub(/^.*: /, ""); print; }'\
   | sort \
   | xargs)
 
-  write_header "PROCESSOR" "$cpu"
+  write_header "PROCESSOR" "$CPU"
 }
 
 memory () {
-  local ram
-  ram=$(
+  local RAM
+  RAM=$(
   awk '
     $1~/Size/ && $2!~/Empty/ {size+=$2}
     $1~/Speed/ && $2!~/Empty/ {speed=$2" "$3}
@@ -96,39 +108,38 @@ memory () {
     ' <<< "$(system_profiler SPHardwareDataType; system_profiler SPMemoryDataType)"
 )
 
-  write_header "MEMORY" "${ram}"
+  write_header "MEMORY" "${RAM}"
 }
 
 startup_disk () {
-  local disk
-  disk=$(system_profiler SPStorageDataType \
+  local DISK
+  DISK=$(system_profiler SPStorageDataType \
   | awk 'FNR == 3 {print}'\
   | sed 's/[[:blank:]:]*//g')
 
-  write_header "STARTUP DISK" "$disk"
+  write_header "STARTUP DISK" "$DISK"
 }
 
 graphics () {
-  local gpu
-  gpu=$(system_profiler SPDisplaysDataType \
+  local GPU
+  GPU=$(system_profiler SPDisplaysDataType \
   | awk '/(Model|Max\)|Total\)):/ { sub(/^.*: /, ""); print; }' \
   | xargs)
 
-  write_header "GRAPHICS" "$gpu"
+  write_header "GRAPHICS" "$GPU"
 }
 
 serial_number () {
-  local serialnum
-  serialnum=$(system_profiler SPHardwareDataType \
+  local SERIALNUM
+  SERIALNUM=$(system_profiler SPHardwareDataType \
   | awk '/Serial/ { sub(/^.*: /, ""); print; }')
 
-  write_header "SERIAL NUMBER" "$serialnum"
+  write_header "SERIAL NUMBER" "$SERIALNUM"
 }
 
 # order here will also be display order
 main () {
-  os_name
-  os_version
+  os_details
   hardware_model
   processor
   memory
