@@ -6,6 +6,9 @@ export ASDF_DIR="$HOME/.asdf";
 # set nano as default editor
 export EDITOR='nano';
 
+# set icdiff as default git diff tool
+export DIFF=$HOME/dotfiles/code/icdiff
+
 # Larger bash history (default is 500)
 export HISTSIZE=1000000;
 export HISTFILESIZE=$HISTSIZE;
@@ -41,3 +44,8 @@ fi
 
 # Prevent homebrew casks from throwing Gatekeeper message on opening
 export HOMEBREW_CASK_OPTS=--no-quarantine
+
+# Path adjustments
+DIFF=$HOME/dotfiles/code/icdiff # make icdiff available for gdiff alias
+
+export PATH=$DIFF:$PATH

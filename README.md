@@ -22,4 +22,4 @@ cd dotfiles && source bootstrap.sh
 
 5. configure iTerm
 
-iTerm2 > Preferences > General > Preferences > check `Load preferences from a custom folder or URL` and set to `~/dotfiles/iterm`
+iTerm2 > Settings > General > Preferences > check `Load preferences from a custom folder or URL` and set to `~/dotfiles/iterm`

@@ -1,29 +1,5 @@
-# path settings
-COREUTILS=/usr/local/opt/coreutils/libexec/gnubin
-FINDUTILS=/usr/local/opt/findutils/libexec/gnubins
-SED=/usr/local/opt/gnu-sed/libexec/gnubin
-DIFF=$HOME/dotfiles/code/icdiff
-GIT=/usr/local/git/bin
-AWSEBCLI=$HOME/.local/bin
-HOMEBREW=/usr/local/bin:/usr/local/lib:/usr/local/sbin
-MYSQL=/usr/local/opt/mysql@5.6/bin
-POSTGRES=/usr/local/opt/postgresql@9.5/bin
-PYTHON=$HOME/Library/Python/2.7/bin
-LIBRARY_PATH=/usr/local/opt/openssl/lib/
-OPEN_SSL=/usr/local/opt/openssl/bin
-
-YARN=$HOME/.yarn/bin
-
-ANDROID_HOME=$HOME/Library/Android/sdk
-ANDROID_TOOLS=$ANDROID_HOME/tools
-ANDROID_TOOLS_BIN_STUBS=$ANDROID_TOOLS/bin
-ANDROID_PLATFORM_TOOLS=$ANDROID_HOME/platform-tools
-
-export PATH=$PATH:$COREUTILS:$FINDUTILS:$SED:$DIFF:$GIT:$AWSEBCLI:$HOMEBREW:$MYSQL:$POSTGRES:$PYTHON:$LIBRARY_PATH:$OPEN_SSL:$YARN
-export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1) --disable-install-doc"
-
 # loads dotfiles into shell
-# .secrets is used for settings I don't want to commit
+# note: .secrets is used for settings I don't want to commit
 for file in ~/.{bash_prompt,aliases,functions,exports,secrets}; do
   [ -r "$file" ] && source "$file"
 done
