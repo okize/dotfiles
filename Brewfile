@@ -30,6 +30,7 @@ brew "gcc"
 brew "gh"
 brew "git"
 brew "git-lfs"
+brew "gpg"
 brew "gnu-sed"
 brew "gnupg"
 brew "gnutls"
@@ -73,7 +74,6 @@ brew "youtube-dl"
 # install apps
 cask "1password"
 cask "1password-cli"
-cask "android-studio"
 cask "appcleaner"
 cask "chromedriver"
 cask "cyberduck"
@@ -110,6 +110,7 @@ cask "xquartz"
 cask "zoom"
 
 # other apps I may want
+# cask "android-studio"
 # cask "arduino"
 # cask "balenaetcher"
 # cask "garmin-basecamp" # deleted from homebrew?
