@@ -12,6 +12,9 @@ for option in autocd globstar; do
   shopt -s "$option" 2> /dev/null;
 done;
 
+# initialize homebrew
+eval "$($HOMEBREW_PREFIX/bin/brew shellenv)"
+
 # initialize z (https://github.com/rupa/z)
 source ~/dotfiles/code/z/z.sh
 
