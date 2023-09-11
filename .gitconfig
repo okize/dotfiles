@@ -27,6 +27,7 @@
   editor = "nano"
   excludesfile = ~/.gitignore
   whitespace = fix,space-before-tab,tab-in-indent,trailing-space
+  pager = `brew --prefix git`/share/git-core/contrib/diff-highlight/diff-highlight | less -rx1,5
 [color "branch"]
   current = yellow reverse
   local = yellow
