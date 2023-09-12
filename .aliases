@@ -12,7 +12,11 @@ alias song-dl="youtube-dl -x --audio-format mp3"
 alias about="~/dotfiles/code/about_mac.sh"
 
 # open ios simulator
-alias ios-simulator="open /Applications/Xcode.app/Contents/Developer/Applications/Simulator.app/"
+alias iossim="open /Applications/Xcode.app/Contents/Developer/Applications/Simulator.app/"
+
+# docker
+alias dc="docker compose"
+alias dcremove="docker compose down --remove-orphans --volumes"
 
 # Detect which `ls` flavor is in use
 if ls --color > /dev/null 2>&1; then # GNU `ls`
@@ -509,6 +513,3 @@ alias gmymerges="git log --merges --color --graph --abbrev-commit --author='`git
 
 # delete all non-tracked files & folders
 alias gnuke="git clean -dfx ."
-
-# docker
-alias dc="docker compose"
