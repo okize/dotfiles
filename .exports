@@ -28,6 +28,10 @@ export MANPAGER="less -X";
 # https://stackoverflow.com/a/42265848/96656
 export GPG_TTY=$(tty);
 
+# Expiration time for the aws-vault GetSessionToken credentials
+# https://github.com/99designs/aws-vault/blob/master/USAGE.md
+export AWS_SESSION_TOKEN_TTL=24h
+
 # Hide the 'default interactive shell is now zsh' warning about bash on macOS
 export BASH_SILENCE_DEPRECATION_WARNING=1;
 
