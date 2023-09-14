@@ -229,6 +229,10 @@ alias yarc="yarn && git add package.json yarn.lock && git rebase --continue"
 # recursive deletion of node_modules directories
 alias dnm="~/dotfiles/code/delete-node-modules.sh"
 
+# map python to python3
+alias python="python3"
+alias py="python3"
+
 ## DB ##
 
 # start redis server

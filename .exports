@@ -50,6 +50,6 @@ fi
 export HOMEBREW_CASK_OPTS=--no-quarantine
 
 # Path adjustments
-DIFF=$HOME/dotfiles/code/icdiff # make icdiff available for gdiff alias
+GITDIFF=$HOME/dotfiles/code/icdiff # make icdiff available for gdiff alias
 
-export PATH=$DIFF:$PATH
+export PATH=$GITDIFF:$PATH
