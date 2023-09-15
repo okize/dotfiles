@@ -17,11 +17,15 @@ if type complete &>/dev/null; then
     fi
 
     local si="$IFS"
-    IFS=$'\n' COMPREPLY=($(COMP_CWORD="$cword" \
-                           COMP_LINE="$COMP_LINE" \
-                           COMP_POINT="$COMP_POINT" \
-                           npm completion -- "${words[@]}" \
-                           2>/dev/null)) || return $?
+    if ! IFS=$'\n' COMPREPLY=($(COMP_CWORD="$cword" \
+                            COMP_LINE="$COMP_LINE" \
+                            COMP_POINT="$COMP_POINT" \
+                            npm completion -- "${words[@]}" \
+                            2>/dev/null)); then
+      local ret=$?
+      IFS="$si"
+      return $ret
+    fi
     IFS="$si"
     if type __ltrim_colon_completions &>/dev/null; then
       __ltrim_colon_completions "${words[cword]}"
@@ -32,10 +36,10 @@ elif type compdef &>/dev/null; then
   _npm_completion() {
     local si=$IFS
     compadd -- $(COMP_CWORD=$((CURRENT-1)) \
-                 COMP_LINE=$BUFFER \
-                 COMP_POINT=0 \
-                 npm completion -- "${words[@]}" \
-                 2>/dev/null)
+                  COMP_LINE=$BUFFER \
+                  COMP_POINT=0 \
+                  npm completion -- "${words[@]}" \
+                  2>/dev/null)
     IFS=$si
   }
   compdef _npm_completion npm
@@ -48,11 +52,16 @@ elif type compctl &>/dev/null; then
     read -l line
     read -ln point
     si="$IFS"
-    IFS=$'\n' reply=($(COMP_CWORD="$cword" \
-                       COMP_LINE="$line" \
-                       COMP_POINT="$point" \
-                       npm completion -- "${words[@]}" \
-                       2>/dev/null)) || return $?
+    if ! IFS=$'\n' reply=($(COMP_CWORD="$cword" \
+                        COMP_LINE="$line" \
+                        COMP_POINT="$point" \
+                        npm completion -- "${words[@]}" \
+                        2>/dev/null)); then
+
+      local ret=$?
+      IFS="$si"
+      return $ret
+    fi
     IFS="$si"
   }
   compctl -K _npm_completion npm
