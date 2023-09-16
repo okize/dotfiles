@@ -43,6 +43,7 @@ brew "id3lib"
 brew "imagemagick"
 brew "jpeg"
 brew "jq"
+brew "noahgorstein/tap/jqp" # repl for jq
 brew "just"
 brew "kubectl"
 brew "kubectx"
