@@ -18,6 +18,9 @@ alias iossim="open /Applications/Xcode.app/Contents/Developer/Applications/Simul
 alias dc="docker compose"
 alias dcremove="docker compose down --remove-orphans --volumes"
 
+# remove containers, images & volumes
+alias dcnuke="docker system prune -a && docker volume prune && docker volume ls -f dangling=true && docker system df"
+
 # Detect which `ls` flavor is in use
 if ls --color > /dev/null 2>&1; then # GNU `ls`
   colorflag="--color"
