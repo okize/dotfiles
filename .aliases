@@ -179,6 +179,8 @@ alias lfe="list_files_by_extension"
 # get a count of files based on their extension (eg. cfe coffee)
 alias cfe="count_files_by_extension"
 
+alias gps="~/dotfiles/code/exif-gps.sh"
+
 ## Rails ##
 
 # bundle exec shortcut
@@ -248,7 +250,6 @@ alias redc="redis-cli"
 alias smongo="mongod"
 
 ## Postgres ##
-
 alias pg="pg_ctl start -D /usr/local/var/postgresql@9.5"
 alias stoppg="pg_ctl -D /usr/local/var/postgresql@9.5 stop -m immediate"
 alias spg="postgres -D /usr/local/var/postgres"
