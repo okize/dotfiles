@@ -521,3 +521,6 @@ alias gmymerges="git log --merges --color --graph --abbrev-commit --author='`git
 
 # delete all non-tracked files & folders
 alias gnuke="git clean -dfx ."
+
+# bulk delete caches
+alias gha_cache_delete="gh cache list --limit 100 | tail -n +5 | awk '{print $1}' | tr '\n' '\0' | xargs -0 -n1 gh cache delete"

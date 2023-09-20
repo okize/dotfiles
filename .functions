@@ -1,3 +1,13 @@
+# recursive list of files by extension (ignores node_modules directory)
+function list_files_by_extension() {
+  find . -type d -name node_modules -prune -o -name "*.$1" -print
+}
+
+function count_files_by_extension() {
+  echo "Number of files with .$1 extension:"
+  list_files_by_extension $1 | wc -l
+}
+
 # what is listening on a given port
 function which_port() {
   lsof -n -i4TCP:$1 | grep LISTEN
@@ -17,17 +27,6 @@ function wait_for_guestcontrol() {
     sleep "${sleep_wait}"
     VBoxManage showvminfo "${1}" | grep 'Additions run level:' | grep -q "3" && return 0 || true
   done
-}
-
-# go to rbenv directory of gems installed for local Ruby version
-function go_to_gem_dir() {
-  RUBYVER="$(ruby -e 'print RUBY_VERSION')"
-  cd ~/.rbenv/versions/$RUBYVER/lib/ruby/gems/$RUBYVER/gems/
-}
-
-# delete all the rbenv-installed gems for cwd
-function remove_rbenv_gems() {
-  gem list | cut -d" " -f1 | xargs gem uninstall -aIx
 }
 
 # look up an IP address
@@ -139,16 +138,6 @@ function unidecode() {
   echo # newline
 }
 
-# recursive list of files by extension (ignores node_modules directory)
-function list_files_by_extension() {
-  find . -type d -name node_modules -prune -o -name "*.$1" -print
-}
-
-function count_files_by_extension() {
-  echo "Number of files with .$1 extension:"
-  list_files_by_extension $1 | wc -l
-}
-
 function yarn_add_and_commit() {
   yarn add $1 && git add . && git commit -m "build(deps): install $1 package"
 }
@@ -170,6 +159,10 @@ function yarn_remove_development_and_commit() {
 # git checkout SHA_HASH
 # GIT_COMMITTER_DATE="$(git show --format=%aD  | head -1)" git tag -a v1.0.0 -m"v1.0.0"
 
+# run all repo commits through commitlint
+function commitlint_all_commits() {
+  npx commitlint --from `git_first_commit` --to head --verbose
+}
 
 # generates a git patch for a specific commit; sha is only arg
 function git_patch() {
@@ -214,11 +207,6 @@ function git_top_authors() {
       git log --author="$i" --pretty=tformat: --numstat -- $1 \
       | awk -v name="$i" '{ add += $1; subs += $2; loc += $1 - $2 } END { printf "%s: added lines: %s removed lines: %s total lines: %s\n", name, add, subs, loc }'
   done
-}
-
-# run all repo commits through commitlint
-function commitlint_all_commits() {
-  npx commitlint --from `git_first_commit` --to head --verbose
 }
 
 # returns first commit of a repo (depending on past merges may return multiple SHAs)
@@ -374,4 +362,15 @@ function git_branch_compare() {
 
 function git_show_all_stashes() {
   git stash list | awk -F: '{ print "\n\n\n\n"; print $0; print "\n\n"; system("git -c color.ui=always stash show -p " $1); }' | less -R
+}
+
+# go to rbenv directory of gems installed for local Ruby version
+function go_to_gem_dir() {
+  RUBYVER="$(ruby -e 'print RUBY_VERSION')"
+  cd ~/.rbenv/versions/$RUBYVER/lib/ruby/gems/$RUBYVER/gems/
+}
+
+# delete all the rbenv-installed gems for cwd
+function remove_rbenv_gems() {
+  gem list | cut -d" " -f1 | xargs gem uninstall -aIx
 }
