@@ -245,7 +245,9 @@ function git_rebase_interactive_distance() {
 
 # rebase main remote branch onto current branch
 function git_bring_up_to_date() {
-  if [ `git branch --list main` ]
+  HAS_MAIN_BRANCH=$(git branch --list main);
+
+  if [ "$HAS_MAIN_BRANCH" ]
   then
     git pull origin main --rebase
   else
