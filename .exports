@@ -51,5 +51,6 @@ export HOMEBREW_CASK_OPTS=--no-quarantine
 
 # Path adjustments
 GITDIFF=$HOME/dotfiles/code/icdiff # make icdiff available for gdiff alias
+CURL=/opt/homebrew/opt/curl/bin # make homebrew-install curl available
 
-export PATH=$GITDIFF:$PATH
+export PATH=$GITDIFF:$CURL:$PATH
