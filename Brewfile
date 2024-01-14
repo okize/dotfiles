@@ -119,6 +119,7 @@ cask "zoom"
 # cask "google-earth-pro"
 # cask "handbrake"
 # cask "prusaslicer"
+# cask "raspberry-pi-imager"
 # cask "tinymediamanager"
 
 # App Store packages
