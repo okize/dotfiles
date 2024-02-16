@@ -438,6 +438,9 @@ alias gstashshowall="git_show_all_stashes"
 alias gdiff="git icdiff"
 # alias gdiff2="git diff --color --color-words --abbrev"
 
+# list files with merge conflicts
+alias glscon="git diff --name-only --diff-filter=U"
+
 # show difference without whitespace changes
 alias gdw="git diff --ignore-space-change"
 
