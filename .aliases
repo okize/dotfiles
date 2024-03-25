@@ -436,7 +436,8 @@ alias gstashshowall="git_show_all_stashes"
 
 # display diff
 alias gdiff="git icdiff"
-# alias gdiff2="git diff --color --color-words --abbrev"
+alias gdiff2="GIT_EXTERNAL_DIFF=difft git diff"
+alias gdiff3="git diff --color --color-words --abbrev"
 
 # list files with merge conflicts
 alias glscon="git diff --name-only --diff-filter=U"
