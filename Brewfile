@@ -1,6 +1,7 @@
 tap "github/gh"
 tap "homebrew/bundle"
 tap "homebrew/services"
+tap "lencx/chatgpt", "https://github.com/lencx/ChatGPT.git" # for chatgpt app
 
 # Install GNU core utilities (those that come with macOS are outdated)
 brew "coreutils"
@@ -77,6 +78,7 @@ brew "youtube-dl"
 cask "1password"
 cask "1password-cli"
 cask "appcleaner"
+cask "chatgpt"
 cask "chromedriver"
 cask "cyberduck"
 cask "docker"
