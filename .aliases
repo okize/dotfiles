@@ -1,6 +1,9 @@
 # reload shell after dotfiles change
 alias br="source ~/.bashrc; echo 'reloaded shell session'"
 
+# clear bash history
+alias chistory="cat /dev/null > ~/.bash_history && history -c && exit"
+
 ## Misc programs ##
 alias macdown="open -a Macdown "
 alias mou="macdown" # muscle memory
