@@ -37,8 +37,10 @@ fi
 alias ls="ls ${colorflag}"
 
 # List all files colorized in long format, including dot files
-alias la="ls -lav"
-alias dir="la"
+alias la="ls -lAv"
+
+# similar to old MS-DOS dir
+alias dir="ls -A"
 
 # List only directories
 alias dirs="ls -d */ | tr -d /"
