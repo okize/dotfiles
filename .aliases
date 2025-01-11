@@ -189,18 +189,18 @@ alias gps="~/dotfiles/code/exif-gps.sh"
 ## Rails ##
 
 # bundle exec shortcut
-alias brake="bundle exec rake"
+alias brake="bundle exec rails"
 
 # run pending migrations
-alias dbm="bundle exec rake db:migrate RAILS_ENV=development"
+alias dbm="bundle exec rails db:migrate RAILS_ENV=development"
 
-# instead of slow rake assets:clobber (can only run in app root)
+# instead of slow assets:clobber (can only run in app root)
 alias clob="rm -rf ./tmp/cache/assets"
 
 # running Rails tests
 alias rt="bin/rails test"
 alias crt="CAPYBARA_DRIVER=chrome bin/rails test"
-alias rtreset="brake db:test:prepare"
+alias rtreset="bundle exec rails db:test:prepare"
 
 # displays running rails servers
 alias rzombie="ps ax | grep rails"
