@@ -72,7 +72,7 @@ brew "watchman"
 brew "wget"
 brew "yamllint"
 brew "yarn"
-brew "youtube-dl"
+brew "yt-dlp"
 
 # install apps
 cask "1password"
