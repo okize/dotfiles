@@ -37,6 +37,8 @@ os_marketing_name () {
     ["11"]="Big Sur"
     ["12"]="Monterey"
     ["13"]="Ventura"
+    ["14"]="Sonoma"
+    ["15"]="Sequoia"
   )
 
   # lookup table for OS X marketing names
