@@ -168,9 +168,6 @@ alias update="sudo softwareupdate -i -a; brew update; brew cleanup;"
 alias bi="brew install "
 alias bci='brew cask install --appdir="/Applications" '
 
-# get laptop serial number
-alias serial_number="system_profiler | grep 'Serial Number (system):'"
-
 # File system navigation
 alias ..="cd .."
 alias ...="cd ../.."
