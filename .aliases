@@ -153,9 +153,8 @@ alias showdesktop="defaults write com.apple.finder CreateDesktop -bool true && k
 alias mute="osascript -e 'set volume output muted true'"
 alias crankit="osascript -e 'set volume 10'"
 
-# Disable/Enable Spotlight
-alias spotoff="sudo mdutil -a -i off"
-alias spoton="sudo mdutil -a -i on"
+# Disable & re-enable Spotlight indexing
+alias spot_index="sudo mdutil -Eai off && sudo mdutil -Eai on && mdutil -as"
 
 # Kill all the tabs in Chrome to free up memory
 # [C] explained: http://www.commandlinefu.com/commands/view/402/exclude-grep-from-your-grepped-output-of-ps-alias-included-in-description
