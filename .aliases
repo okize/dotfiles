@@ -8,6 +8,9 @@ alias chistory="cat /dev/null > ~/.bash_history && history -c && exit"
 alias macdown="open -a Macdown "
 alias mou="macdown" # muscle memory
 
+# Alias youtube-dl to yt-dlp
+alias youtube-dl="yt-dlp"
+
 # Extract and download an mp3 from a video
 alias song-dl="yt-dlp -x --audio-format mp3"
 
