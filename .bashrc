@@ -18,12 +18,6 @@ eval "$($HOMEBREW_PREFIX/bin/brew shellenv)"
 # initialize z (https://github.com/rupa/z)
 source ~/dotfiles/code/z/z.sh
 
-# initialize asdf
-. "$HOME/.asdf/asdf.sh"
-
-# tab completion for asdf
-. "$HOME/.asdf/completions/asdf.bash"
-
 # tab completion for Git
 source ~/dotfiles/code/git-completion.bash
 
