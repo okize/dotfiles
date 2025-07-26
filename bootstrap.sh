@@ -22,9 +22,6 @@ dir=~/dotfiles
 # old dotfiles backup directory
 olddir=~/dotfilesBackup
 
-# pinned asdf version
-ASDF_VERSION=0.12.0
-
 # pre-emptive sudo signin
 sudo echo ""
 

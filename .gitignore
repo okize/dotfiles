@@ -29,3 +29,6 @@ Brewfile.work.lock.json
 
 # VS Code settings I don't want commited
 .vscode
+
+# Claude settings I don't want commited
+.claude

@@ -2,6 +2,7 @@
 
 # asdf data directory
 export ASDF_DATA_DIR=$HOME/.asdf
+ASDF_SHIMS=$ASDF_DATA_DIR/shims
 
 # set nano as default editor
 export EDITOR='nano';
@@ -50,7 +51,6 @@ fi
 export HOMEBREW_CASK_OPTS=--no-quarantine
 
 # Path adjustments
-ASDF_SHIMS=$ASDF_DATA_DIR/shims
 GITDIFF=$HOME/dotfiles/code/icdiff # make icdiff available for gdiff alias
 CURL=/opt/homebrew/opt/curl/bin # make homebrew-install curl available
 
