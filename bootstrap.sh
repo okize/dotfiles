@@ -109,15 +109,15 @@ install_brewfile_packages() {
 install_asdf_plugins() {
   if ! asdf plugin list | grep -q yarn; then
     echo "Adding yarn plugin to asdf"
-    asdf plugin-add yarn
+    asdf plugin add yarn
   fi
-  asdf plugin-update yarn
+  asdf plugin update yarn
 
   if ! asdf plugin list | grep -q nodejs; then
     echo "Adding nodejs plugin to asdf"
-    asdf plugin-add nodejs
+    asdf plugin add nodejs
   fi
-  asdf plugin-update nodejs
+  asdf plugin update nodejs
 
   # install whatever is set in ~/.tool-versions
   asdf install
