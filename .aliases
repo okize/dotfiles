@@ -260,6 +260,9 @@ alias spg="postgres -D /usr/local/var/postgres"
 alias oldstoppg="pg_ctl -D /usr/local/var/postgres stop -m immediate"
 alias lspg="psql --list"
 
+# execute commands from commands.log file
+alias ec="bash ~/dotfiles/code/execute_commands.sh"
+
 # colorize code in clipboard to copy to keynote
 # javascript
 alias c2kj="pbpaste | pygmentize -l javascript -f rtf -O style=native | pbcopy"
