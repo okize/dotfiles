@@ -2,7 +2,7 @@
 alias br="source ~/.bashrc; echo 'reloaded shell session'"
 
 # clear bash history
-alias chistory="cat /dev/null > ~/.bash_history && history -c && exit"
+alias clh="cat /dev/null > ~/.bash_history && history -c && exit"
 
 ## Misc programs ##
 alias macdown="open -a Macdown "
