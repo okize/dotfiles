@@ -5,9 +5,9 @@
   trash = !mkdir -p .trash && git ls-files --others --exclude-standard | xargs mv -f -t .trash
   purge = "!f() { \
     local branch=$(git branch --show-current); \
-    [[ "$branch" == \"main\" || "$branch" == \"main\" ]] && \
+    [[ "$branch" == \"main\" || "$branch" == \"master\" ]] && \
         (git branch --merged | grep -v \" ${branch}$\" | xargs -n 1 git branch -d) || \
-        (echo 'Must be on \"master\" or \"main\" branch.'); \
+        (echo 'Must be on \"main\" or \"master\" branch.'); \
   }; f"
 [color]
   ui = auto
