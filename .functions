@@ -239,12 +239,7 @@ function branches_first_commit() {
 
 # list of commits that exist on current branch but not on remote #main
 function git_here_not_there() {
-  if [ `git branch --list main` ]
-  then
-    git log HEAD \^origin/main --no-merges --oneline
-  else
-    git log HEAD \^origin/master --no-merges --oneline
-  fi
+  git log HEAD \^origin/main --no-merges --oneline
 }
 
 # do an interactive rebase <N> commits back on HEAD
