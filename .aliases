@@ -5,7 +5,7 @@ alias br="exec zsh"
 alias clh="cat /dev/null > ~/.zsh_history && exec zsh"
 
 # create a new worktree and open claude
-alias wsc='wt switch --create -x claude'
+alias wtc='wt switch --create -x claude'
 
 ## Misc programs ##
 alias macdown="open -a Macdown "
