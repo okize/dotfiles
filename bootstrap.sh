@@ -43,7 +43,7 @@ function symlink_dotfiles() {
   cd $dir
 
   # list of files/folders to symlink in homedir
-  files=".aliases .bash_profile .bash_prompt .bashrc .exports .functions .gitconfig .gitignore .inputrc .gemrc .irbrc .pryrc .secrets .tool-versions .wgetrc"
+  files=".aliases .bash_profile .bash_prompt .bashrc .exports .functions .gitconfig .gitignore .inputrc .gemrc .irbrc .secrets .tool-versions .wgetrc"
 
   # move any existing dotfiles in homedir to dotfilesBackup directory, then create symlinks from the homedir to any files in the ~/dotfiles directory specified in $files
   echo "Moving any existing dotfiles from ~ to $olddir & Creating symlink to $files in home directory."
