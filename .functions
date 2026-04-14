@@ -79,13 +79,6 @@ function srvr() {
   python3 -c "import http.server; map = http.server.SimpleHTTPRequestHandler.extensions_map; map[''] = 'text/plain'; [map.__setitem__(k, v + ';charset=UTF-8') for k, v in map.items()]; http.server.test(HandlerClass=http.server.SimpleHTTPRequestHandler, port=${port})"
 }
 
-# python 2 version of srvr
-function legacy_srvr() {
-  local port="${1:-8000}"
-  open "http://localhost:${port}/"
-  python -c $'import SimpleHTTPServer;\nmap = SimpleHTTPServer.SimpleHTTPRequestHandler.extensions_map;\nmap[""] = "text/plain";\nfor key, value in map.items():\n\tmap[key] = value + ";charset=UTF-8";\nSimpleHTTPServer.test();' "$port"
-}
-
 # Create a new directory and enter it
 function md() {
   mkdir -p "$@" && cd "$@"
@@ -128,10 +121,10 @@ function http_compression() {
 function json() {
   if [ -p /dev/stdin ]; then
     # piping, e.g. `echo '{"foo":42}' | json`
-    python -mjson.tool | pygmentize -l javascript
+    python3 -mjson.tool | pygmentize -l javascript
   else
     # e.g. `json '{"foo":42}'`
-    python -mjson.tool <<< "$*" | pygmentize -l javascript
+    python3 -mjson.tool <<< "$*" | pygmentize -l javascript
   fi
 }
 

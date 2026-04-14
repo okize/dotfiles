@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+#!/bin/bash
 
 #=======================================================
 # CLI alternative to macOS's "About this Mac" feature.
