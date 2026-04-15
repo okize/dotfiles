@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/zsh
 
 ############################
 # This script creates symlinks from the home directory to any desired dotfiles in ~/dotfiles
@@ -43,7 +43,7 @@ function symlink_dotfiles() {
   cd $dir
 
   # list of files/folders to symlink in homedir
-  files=".aliases .bash_profile .bash_prompt .bashrc .exports .functions .gitconfig .gitignore .inputrc .gemrc .irbrc .secrets .tool-versions .wgetrc"
+  files=".aliases .zshenv .zsh_prompt .zshrc .functions .gitconfig .gitignore .gemrc .irbrc .secrets .tool-versions .wgetrc"
 
   # move any existing dotfiles in homedir to dotfilesBackup directory, then create symlinks from the homedir to any files in the ~/dotfiles directory specified in $files
   echo "Moving any existing dotfiles from ~ to $olddir & Creating symlink to $files in home directory."
@@ -54,7 +54,7 @@ function symlink_dotfiles() {
   done
 
   # reload shell session
-  source ~/.bashrc;
+  source ~/.zshrc;
 }
 
 # optionally set computer name
@@ -121,19 +121,6 @@ install_asdf_plugins() {
 
   # install whatever is set in ~/.tool-versions
   asdf install
-}
-
-# install brews & casks from Brewfile
-install_brewfile_packages() {
-  echo "Installing binaries and apps with Homebrew"
-  brew bundle --verbose
-
-  # map vi so it opens the brew-installed vim
-  ln -s /usr/local/bin/vim /usr/local/bin/vi
-
-  # check for any problems with homebrew
-  brew bundle check
-  brew doctor
 }
 
 setup_macos() {

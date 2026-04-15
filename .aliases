@@ -1,8 +1,8 @@
 # reload shell after dotfiles change
-alias br="source ~/.bashrc; echo 'reloaded shell session'"
+alias br="source ~/.zshrc; echo 'reloaded shell session'"
 
-# clear bash history
-alias clh="cat /dev/null > ~/.bash_history && history -c && exit"
+# clear zsh history
+alias clh="cat /dev/null > ~/.zsh_history && exec zsh"
 
 ## Misc programs ##
 alias macdown="open -a Macdown "
@@ -45,8 +45,8 @@ alias la="ls -lAv"
 # similar to old MS-DOS dir
 alias dir="ls -A"
 
-# List only directories
-alias dirs="ls -d */ | tr -d /"
+# List only directories (named lsdirs to avoid shadowing zsh's dirs builtin)
+alias lsdirs="ls -d */ | tr -d /"
 
 # recursive tree view of current directory
 alias tree="tree -C -a -I .git"
@@ -67,7 +67,7 @@ alias rfosize="du -sh"
 alias power="pmset -g"
 
 # Print each PATH entry on a separate line
-alias path='echo -e ${PATH//:/\\n}'
+alias path='print -l ${(s.:.)PATH}'
 
 # open a 'clean' profile of Chrome
 alias clean-chrome="open -a 'Google Chrome' --args --user-data-dir=/dev/null"
