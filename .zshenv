@@ -1,39 +1,23 @@
-#!/usr/bin/env sh
-
-# asdf data directory
-export ASDF_DATA_DIR=$HOME/.asdf
-ASDF_SHIMS=$ASDF_DATA_DIR/shims
-
 # set nano as default editor
 export EDITOR='nano';
 
 # set icdiff as default git diff tool
 export DIFF=$HOME/dotfiles/code/icdiff
 
-# Larger bash history (default is 500)
+# Larger history (default is much smaller)
 export HISTSIZE=1000000;
-export HISTFILESIZE=$HISTSIZE;
-export HISTCONTROL=ignoredups;
+export HISTFILE=$HOME/.zsh_history;
+export SAVEHIST=$HISTSIZE;
 
 # Prefer US English and use UTF-8.
 export LANG='en_US.UTF-8';
 export LC_ALL='en_US.UTF-8';
 
-# Highlight section titles in manual pages.
-export LESS_TERMCAP_md="${yellow}";
-
 # Don't clear the screen after quitting a manual page
 export MANPAGER="less -X";
 
-# Avoid issues with `gpg` as installed via Homebrew.
-# https://stackoverflow.com/a/42265848/96656
-export GPG_TTY=$(tty);
-
 # Expiration time for the aws-vault GetSessionToken credentials (default is 1h)
 export AWS_SESSION_TOKEN_TTL=12h
-
-# Hide the 'default interactive shell is now zsh' warning about bash on macOS
-export BASH_SILENCE_DEPRECATION_WARNING=1;
 
 # x86_64 or arm64
 export MACHINE_ARCHITECTURE="$(/usr/bin/uname -m)"
@@ -52,5 +36,6 @@ export HOMEBREW_CASK_OPTS=--no-quarantine
 # Path adjustments
 GITDIFF=$HOME/dotfiles/code/icdiff # make icdiff available for gdiff alias
 CURL=/opt/homebrew/opt/curl/bin # make homebrew-install curl available
+VITEPLUS=$HOME/.vite-plus/bin # Vite+ bin (https://viteplus.dev)
 
-export PATH=$ASDF_SHIMS:$GITDIFF:$CURL:$PATH
+export PATH=$GITDIFF:$CURL:$VITEPLUS:$PATH
