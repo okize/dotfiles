@@ -75,6 +75,7 @@ brew "wget"
 brew "yamllint"
 brew "yarn"
 brew "yt-dlp"
+brew "zoxide"
 
 # install apps
 cask "1password"

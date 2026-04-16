@@ -28,8 +28,8 @@ eval "$($HOMEBREW_PREFIX/bin/brew shellenv)"
 # TODO is there a better way to do this?
 export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
 
-# initialize z (https://github.com/rupa/z)
-source ~/dotfiles/code/z/z.sh
+# initialize zoxide (smarter cd, replaces z)
+eval "$(zoxide init zsh)"
 
 # uncomment to make `vp env use` work
 # . "$HOME/.vite-plus/env"
