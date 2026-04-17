@@ -31,6 +31,10 @@ export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
 # initialize zoxide (smarter cd, replaces z)
 eval "$(zoxide init zsh)"
 
+# initialize fzf keybindings and completion
+# Ctrl+R: fuzzy history search, Ctrl+T: fuzzy file finder, Alt+C: fuzzy cd
+source <(fzf --zsh)
+
 # uncomment to make `vp env use` work
 # . "$HOME/.vite-plus/env"
 
