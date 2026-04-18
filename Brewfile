@@ -77,6 +77,8 @@ brew "yamllint"
 brew "yarn"
 brew "yt-dlp"
 brew "zoxide"
+brew "zsh-autosuggestions"
+brew "zsh-syntax-highlighting"
 
 # install apps
 cask "1password"

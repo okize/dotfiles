@@ -17,6 +17,8 @@ setopt EXTENDED_HISTORY
 setopt SHARE_HISTORY
 setopt APPEND_HISTORY
 setopt NO_NOMATCH # don't error on unmatched globs
+setopt INTERACTIVE_COMMENTS # allow # comments in interactive shell
+setopt HIST_VERIFY # show expanded history command before executing
 
 # Avoid issues with `gpg` as installed via Homebrew.
 # https://stackoverflow.com/a/42265848/96656
@@ -62,6 +64,12 @@ if [ -e "$HOME/.ssh/config" ]; then
   zstyle ':completion:*:scp:*' hosts $_ssh_hosts
   zstyle ':completion:*:sftp:*' hosts $_ssh_hosts
 fi
+
+# zsh-autosuggestions (suggest commands as you type, accept with right arrow)
+source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+# zsh-syntax-highlighting (must be sourced last)
+source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # keybindings (replaces .inputrc)
 bindkey '\e[A' history-search-backward
