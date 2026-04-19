@@ -1,5 +1,5 @@
-# reload shell after dotfiles change
-alias br="source ~/.zshrc; echo 'reloaded shell session'"
+# reload shell (replaces current process with a fresh zsh)
+alias br="exec zsh"
 
 # clear zsh history
 alias clh="cat /dev/null > ~/.zsh_history && exec zsh"
