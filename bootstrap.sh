@@ -8,6 +8,7 @@
 # order of operations
 main() {
   symlink_dotfiles
+  symlink_claude_settings
   set_computer_name
   install_xcode_cli
   install_homebrew
@@ -55,6 +56,18 @@ function symlink_dotfiles() {
 
   # reload shell session
   source ~/.zshrc;
+}
+
+function symlink_claude_settings() {
+  log_section "Claude Code Settings"
+  mkdir -p ~/.claude
+
+  if [ -f ~/.claude/settings.json ] && [ ! -L ~/.claude/settings.json ]; then
+    mv ~/.claude/settings.json $olddir/settings.json
+    log_step "Backed up existing ~/.claude/settings.json to $olddir"
+  fi
+  ln -sf $dir/claude/settings.json ~/.claude/settings.json
+  log_step "symlinking $dir/claude/settings.json -> ~/.claude/settings.json"
 }
 
 # optionally set computer name

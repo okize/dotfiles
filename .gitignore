@@ -31,4 +31,4 @@ Brewfile.work.lock.json
 .vscode
 
 # Claude settings I don't want commited
-.claude
+.claude/settings.local.json
