@@ -4,6 +4,9 @@ alias br="exec zsh"
 # clear zsh history
 alias clh="cat /dev/null > ~/.zsh_history && exec zsh"
 
+# create a new worktree and open claude
+alias wsc='wt switch --create -x claude'
+
 ## Misc programs ##
 alias macdown="open -a Macdown "
 alias mou="macdown" # muscle memory
@@ -414,8 +417,8 @@ alias gallr="git reset HEAD ."
 # redo last commit AND undo staged files
 alias grm="git reset --mixed HEAD"
 
-#
-alias grh="git reset --hard HEAD"
+# reset last commit (worktree safe)
+alias grh="git reset HEAD~"
 
 # ref-log
 alias gr="git reflog"
