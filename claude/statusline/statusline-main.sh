@@ -22,6 +22,8 @@ input=$(cat)
   read -r current_output
   read -r rate_five_pct
   read -r rate_seven_pct
+  read -r rate_five_reset
+  read -r rate_seven_reset
 } < <(echo "$input" | jq -r '
   .model.display_name,
   .workspace.current_dir,
@@ -32,7 +34,9 @@ input=$(cat)
   (.context_window.current_usage.cache_read_input_tokens // 0),
   (.context_window.current_usage.output_tokens // 0),
   (.rate_limits.five_hour.used_percentage // ""),
-  (.rate_limits.seven_day.used_percentage // "")
+  (.rate_limits.seven_day.used_percentage // ""),
+  (.rate_limits.five_hour.resets_at // ""),
+  (.rate_limits.seven_day.resets_at // "")
 ')
 
 current_folder="${cwd/#$HOME/~}"
@@ -133,18 +137,43 @@ rate_limit_color() {
   fi
 }
 
+# Format a reset timestamp (ISO 8601) for display
+# For 5h window: "2:50 PM"
+# For 7d window: "4/3/25 5:50 PM"
+format_reset_time() {
+  local epoch="$1"
+  local window="$2"  # "5h" or "7d"
+  [ -z "$epoch" ] && return
+
+  if [ "$window" = "5h" ]; then
+    date -r "$epoch" +"%-I:%M %p" 2>/dev/null
+  else
+    date -r "$epoch" +"%-m/%-d/%y %-I:%M %p" 2>/dev/null
+  fi
+}
+
 rate_limits_display=""
 if [ -n "$rate_five_pct" ] || [ -n "$rate_seven_pct" ]; then
   rate_parts=()
   if [ -n "$rate_five_pct" ]; then
     pct_int=$(printf "%.0f" "$rate_five_pct")
     color=$(rate_limit_color "$pct_int")
-    rate_parts+=("⏱️ ${color}${pct_int}% 5h${RESET}")
+    reset_label=$(format_reset_time "$rate_five_reset" "5h")
+    if [ -n "$reset_label" ]; then
+      rate_parts+=("⏱️ ${color}${pct_int}% 5h (${reset_label})${RESET}")
+    else
+      rate_parts+=("⏱️ ${color}${pct_int}% 5h${RESET}")
+    fi
   fi
   if [ -n "$rate_seven_pct" ]; then
     pct_int=$(printf "%.0f" "$rate_seven_pct")
     color=$(rate_limit_color "$pct_int")
-    rate_parts+=("📅 ${color}${pct_int}% 7d${RESET}")
+    reset_label=$(format_reset_time "$rate_seven_reset" "7d")
+    if [ -n "$reset_label" ]; then
+      rate_parts+=("📅 ${color}${pct_int}% 7d (${reset_label})${RESET}")
+    else
+      rate_parts+=("📅 ${color}${pct_int}% 7d${RESET}")
+    fi
   fi
   # Join parts with " | "
   rate_limits_display="${rate_parts[0]}"
