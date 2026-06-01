@@ -1,6 +1,16 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
 # loads dotfiles into shell
 # note: .secrets is used for settings I don't want to commit
-for file in ~/.{zsh_prompt,aliases,functions,secrets}; do
+for file in ~/.{aliases,functions,secrets}; do
   [ -r "$file" ] && source "$file"
 done
 unset file
@@ -65,6 +75,9 @@ if [ -e "$HOME/.ssh/config" ]; then
   zstyle ':completion:*:sftp:*' hosts $_ssh_hosts
 fi
 
+# powerlevel10k prompt theme (https://github.com/romkatv/powerlevel10k)
+source $(brew --prefix)/share/powerlevel10k/powerlevel10k.zsh-theme
+
 # zsh-autosuggestions (suggest commands as you type, accept with right arrow)
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
@@ -79,4 +92,4 @@ bindkey '\e[1;5C' forward-word
 bindkey '\e[3;3~' kill-word
 
 # worktrunk shell integration
-if command -v wt >/dev/null 2>&1; then eval "$(command wt config shell init zsh)"; fi
+if command -v wt >/dev/null 2e>&1; then eval "$(command wt config shell init zsh)"; fi
