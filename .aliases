@@ -372,7 +372,7 @@ alias gcaa="git add . && git commit --amend --no-edit"
 alias gcall="git add . -A && git commit -m"
 
 # make a commit without adding anything
-alias gce="git commit --allow-empty -m 'forced commit'"
+alias gce="git commit --allow-empty -m 'chore: forced commit'"
 
 # show git files about to be commited
 alias gcs="git show --pretty='format:' --name-only"

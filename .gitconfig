@@ -16,7 +16,7 @@
 [credential]
   helper = osxkeychain
 [push]
-  default = tracking
+	default = simple
 	autoSetupRemote = true
 [grep]
   lineNumber = true
