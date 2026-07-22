@@ -8,6 +8,10 @@
     "type": "command",
     "command": "~/dotfiles/claude/statusline/statusline-main.sh"
   },
+  "enabledPlugins": {
+    "superpowers@claude-plugins-official": true,
+    "ruby-lsp@claude-plugins-official": true
+  },
   "extraKnownMarketplaces": {
     "superpowers-marketplace": {
       "source": {
@@ -34,7 +38,5 @@
     }
   },
   "alwaysThinkingEnabled": true,
-  "enabledPlugins": {
-    "superpowers@claude-plugins-official": true
-  }
+  "effortLevel": "xhigh"
 }
