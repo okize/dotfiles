@@ -16,8 +16,8 @@
 [credential]
   helper = osxkeychain
 [push]
-	default = simple
-	autoSetupRemote = true
+  default = simple
+  autoSetupRemote = true
 [grep]
   lineNumber = true
   extendRegexp = true
@@ -28,6 +28,11 @@
   excludesfile = ~/.gitignore
   whitespace = fix,space-before-tab,tab-in-indent,trailing-space
   pager = `brew --prefix git`/share/git-core/contrib/diff-highlight/diff-highlight | less -rx1,5
+[icdiff]
+  # git-icdiff runs this pager as a plain command (no shell), so it
+  # cannot contain backticks or pipes like core.pager does;
+  # cat = inline output instead of a full-screen pager
+  pager = cat
 [color "branch"]
   current = yellow reverse
   local = yellow
@@ -75,4 +80,4 @@
   name = Morgan Wigmanich
   email = okize123@gmail.com
 [includeIf "gitdir:~/wistia/"]
-    path = ~/wistia/.gitconfig_include
+  path = ~/wistia/.gitconfig_include
