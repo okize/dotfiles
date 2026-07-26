@@ -92,4 +92,4 @@ bindkey '\e[1;5C' forward-word
 bindkey '\e[3;3~' kill-word
 
 # worktrunk shell integration
-if command -v wt >/dev/null 2e>&1; then eval "$(command wt config shell init zsh)"; fi
+if command -v wt >/dev/null 2>&1; then eval "$(command wt config shell init zsh)"; fi
