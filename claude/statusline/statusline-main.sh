@@ -160,9 +160,9 @@ if [ -n "$rate_five_pct" ] || [ -n "$rate_seven_pct" ]; then
     color=$(rate_limit_color "$pct_int")
     reset_label=$(format_reset_time "$rate_five_reset" "5h")
     if [ -n "$reset_label" ]; then
-      rate_parts+=("⏱️ ${color}${pct_int}% 5h (${reset_label})${RESET}")
+      rate_parts+=("${color}${pct_int}% 5h (${reset_label})${RESET}")
     else
-      rate_parts+=("⏱️ ${color}${pct_int}% 5h${RESET}")
+      rate_parts+=("${color}${pct_int}% 5h${RESET}")
     fi
   fi
   if [ -n "$rate_seven_pct" ]; then
@@ -170,9 +170,9 @@ if [ -n "$rate_five_pct" ] || [ -n "$rate_seven_pct" ]; then
     color=$(rate_limit_color "$pct_int")
     reset_label=$(format_reset_time "$rate_seven_reset" "7d")
     if [ -n "$reset_label" ]; then
-      rate_parts+=("📅 ${color}${pct_int}% 7d (${reset_label})${RESET}")
+      rate_parts+=("${color}${pct_int}% 7d (${reset_label})${RESET}")
     else
-      rate_parts+=("📅 ${color}${pct_int}% 7d${RESET}")
+      rate_parts+=("${color}${pct_int}% 7d${RESET}")
     fi
   fi
   # Join parts with " | "
@@ -191,7 +191,7 @@ git_stats_line=$(echo "$git_output" | sed -n '2p')
 # --- Output ---
 echo ""
 echo -e "${CYAN}${model_name}${RESET} | ${rate_limits_display}${context_display} • ${LIGHT_GREY}In: ${tokens_in_display}${RESET} • ${LIGHT_GREY}Out: ${tokens_out_display}${RESET}"
-echo -e "📁 ${current_folder} | 🌳 ${git_branch_line}"
+echo -e "${current_folder} | ${git_branch_line}"
 if [ -n "$git_stats_line" ]; then
   echo -e "${git_stats_line}"
 fi

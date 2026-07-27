@@ -75,14 +75,14 @@ if [ -n "$porcelain" ]; then
     staged_diff=$(run_git diff --cached --shortstat 2>/dev/null)
     staged_ins=$(echo "$staged_diff" | grep -oE '[0-9]+ insertion' | grep -oE '[0-9]+')
     staged_del=$(echo "$staged_diff" | grep -oE '[0-9]+ deletion' | grep -oE '[0-9]+')
-    change_stats="Staged: ${LIGHT_GREY}📄 ${staged_files}${RESET} • (${MUTED_GREEN}+${staged_ins:-0}${RESET}/${MUTED_RED}-${staged_del:-0}${RESET})"
+    change_stats="Staged: ${LIGHT_GREY} ${staged_files}${RESET} • (${MUTED_GREEN}+${staged_ins:-0}${RESET}/${MUTED_RED}-${staged_del:-0}${RESET})"
   fi
 
   if [ "$unstaged_files" -gt 0 ]; then
     unstaged_diff=$(run_git diff --shortstat 2>/dev/null)
     unstaged_ins=$(echo "$unstaged_diff" | grep -oE '[0-9]+ insertion' | grep -oE '[0-9]+')
     unstaged_del=$(echo "$unstaged_diff" | grep -oE '[0-9]+ deletion' | grep -oE '[0-9]+')
-    unstaged_part="Unstaged: ${LIGHT_GREY}📄 ${unstaged_files}${RESET} • (${MUTED_GREEN}+${unstaged_ins:-0}${RESET}/${MUTED_RED}-${unstaged_del:-0}${RESET})"
+    unstaged_part="Unstaged: ${LIGHT_GREY} ${unstaged_files}${RESET} • (${MUTED_GREEN}+${unstaged_ins:-0}${RESET}/${MUTED_RED}-${unstaged_del:-0}${RESET})"
     if [ -n "$change_stats" ]; then
       change_stats="${change_stats} | ${unstaged_part}"
     else
@@ -105,9 +105,9 @@ echo -e "${branch} (Upstream: ${upstream_display}) • ${sync_color}${sync_statu
 # Line 2: [Shortcut |] change stats or "No pending changes"
 # Uses printf '%b' for OSC 8 hyperlinks (echo -e unreliable for \e on macOS bash 3.2)
 if [ -n "$sc_url" ] && [ -n "$change_stats" ]; then
-  printf '%b\n' "Shortcut: ${LINK_BLUE}🔗 \033]8;;${sc_url}\a${sc_number}\033]8;;\a${RESET} | ${change_stats}"
+  printf '%b\n' "Shortcut: ${LINK_BLUE} \033]8;;${sc_url}\a${sc_number}\033]8;;\a${RESET} | ${change_stats}"
 elif [ -n "$sc_url" ]; then
-  printf '%b\n' "Shortcut: ${LINK_BLUE}🔗 \033]8;;${sc_url}\a${sc_number}\033]8;;\a${RESET} | ${LIGHT_GREY}No pending changes${RESET}"
+  printf '%b\n' "Shortcut: ${LINK_BLUE} \033]8;;${sc_url}\a${sc_number}\033]8;;\a${RESET} | ${LIGHT_GREY}No pending changes${RESET}"
 elif [ -n "$change_stats" ]; then
   echo -e "${change_stats}"
 else
