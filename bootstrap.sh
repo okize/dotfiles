@@ -9,6 +9,7 @@
 main() {
   symlink_dotfiles
   symlink_claude_settings
+  clone_statusline
   set_computer_name
   install_xcode_cli
   install_homebrew
@@ -68,6 +69,23 @@ function symlink_claude_settings() {
   fi
   ln -sf $dir/claude/settings.json ~/.claude/settings.json
   log_step "symlinking $dir/claude/settings.json -> ~/.claude/settings.json"
+}
+
+# clone the standalone statusline repo (source of truth for the Claude Code status line;
+# settings.json points its statusLine command at ~/src/statusline/statusline-main.sh)
+function clone_statusline() {
+  log_section "Claude Code Statusline"
+  local repo="https://github.com/okize/statusline"
+  local dest=~/src/statusline
+
+  if [ -d "$dest/.git" ]; then
+    log_step "Updating existing statusline clone at $dest"
+    git -C "$dest" pull --ff-only
+  else
+    mkdir -p ~/src
+    log_step "Cloning $repo -> $dest"
+    git clone "$repo" "$dest"
+  fi
 }
 
 # optionally set computer name
