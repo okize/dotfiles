@@ -20,6 +20,9 @@ alias song-dl="yt-dlp -x --audio-format mp3"
 # displays some hardware stats
 alias about="~/dotfiles/code/about_mac.sh"
 
+# checkout main/master and pull --rebase every repo under the current dir (or a given dir)
+alias update-repos="~/dotfiles/code/update-repos.sh"
+
 # open ios simulator
 alias iossim="open /Applications/Xcode.app/Contents/Developer/Applications/Simulator.app/"
 
@@ -445,6 +448,7 @@ alias gstashshow="git stash show -p stash@{0}"
 alias gstashshowall="git_show_all_stashes"
 
 # display diff
+alias gd="hunk diff"
 alias gdiff="git icdiff"
 alias gdiff2="GIT_EXTERNAL_DIFF=difft git diff"
 alias gdiff3="git diff --color --color-words --abbrev"
@@ -538,3 +542,6 @@ alias gnuke="git clean -dfx ."
 
 # bulk delete caches
 alias gha_cache_delete="gh cache list --limit 100 | tail -n +5 | awk '{print $1}' | tr '\n' '\0' | xargs -0 -n1 gh cache delete"
+
+# check archived status of all github repos in current directory
+alias check-archived="~/dotfiles/code/check-archived.sh"
