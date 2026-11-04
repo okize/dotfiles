@@ -20,15 +20,21 @@ unset file
 # * Extended globbing for advanced pattern matching
 setopt autocd
 setopt extendedglob
-setopt HIST_IGNORE_DUPS
-setopt HIST_IGNORE_SPACE
-setopt HIST_REDUCE_BLANKS
-setopt EXTENDED_HISTORY
-setopt SHARE_HISTORY
-setopt APPEND_HISTORY
+setopt HIST_IGNORE_SPACE # prevents commands from being saved to your command history if they begin with a leading space
+setopt HIST_REDUCE_BLANKS # removes blank lines from history
+setopt HIST_EXPIRE_DUPS_FIRST # expire duplicates first
+setopt HIST_FIND_NO_DUPS #ignore duplicates when searching
+setopt HIST_IGNORE_DUPS # do not store duplications
+setopt EXTENDED_HISTORY # extend size of stored history
+setopt SHARE_HISTORY # share history across multiple zsh sessions
+setopt APPEND_HISTORY # append to history
+setopt HIST_VERIFY # show expanded history command before executing
+setopt INC_APPEND_HISTORY # adds commands to history as they are typed, not at shell exit
 setopt NO_NOMATCH # don't error on unmatched globs
 setopt INTERACTIVE_COMMENTS # allow # comments in interactive shell
-setopt HIST_VERIFY # show expanded history command before executing
+setopt NO_CASE_GLOB # make globbing case insensitive
+setopt CORRECT # enable correction
+setopt CORRECT_ALL
 
 # Avoid issues with `gpg` as installed via Homebrew.
 # https://stackoverflow.com/a/42265848/96656

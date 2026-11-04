@@ -6,8 +6,10 @@ export DIFF=$HOME/dotfiles/code/icdiff
 
 # Larger history (default is much smaller)
 export HISTSIZE=1000000;
-export HISTFILE=$HOME/.zsh_history;
 export SAVEHIST=$HISTSIZE;
+
+# set location to store zsh history
+export HISTFILE=$HOME/.zsh_history;
 
 # Prefer US English and use UTF-8.
 export LANG='en_US.UTF-8';
