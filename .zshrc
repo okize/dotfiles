@@ -99,3 +99,8 @@ bindkey '\e[3;3~' kill-word
 
 # worktrunk shell integration
 if command -v wt >/dev/null 2>&1; then eval "$(command wt config shell init zsh)"; fi
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/Users/morganwigmanich/.lmstudio/bin"
+# End of LM Studio CLI section
+

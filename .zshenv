@@ -39,5 +39,7 @@ export HOMEBREW_CASK_OPTS=--no-quarantine
 GITDIFF=$HOME/dotfiles/code/icdiff # make icdiff available for gdiff alias
 CURL=/opt/homebrew/opt/curl/bin # make homebrew-install curl available
 VITEPLUS=$HOME/.vite-plus/bin # Vite+ bin (https://viteplus.dev)
+CARGO=$HOME/.cargo/bin # Rust toolchain (cargo, rustc, rustup)
+LIGHTPANDA=$HOME/.local/bin # headless browser for agents
 
-export PATH=$GITDIFF:$CURL:$VITEPLUS:$PATH
+export PATH=$GITDIFF:$CURL:$VITEPLUS:$CARGO:$LIGHTPANDA:$PATH
