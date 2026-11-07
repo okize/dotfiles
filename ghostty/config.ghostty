@@ -1,0 +1,3 @@
+copy-on-select = clipboard
+confirm-close-surface = false
+theme = light:Builtin Tango Light,dark:Catppuccin Mocha

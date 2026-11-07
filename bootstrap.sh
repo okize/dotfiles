@@ -9,6 +9,7 @@
 main() {
   symlink_dotfiles
   symlink_claude_settings
+  symlink_ghostty_config
   clone_statusline
   set_computer_name
   install_xcode_cli
@@ -69,6 +70,21 @@ function symlink_claude_settings() {
   fi
   ln -sf $dir/claude/settings.json ~/.claude/settings.json
   log_step "symlinking $dir/claude/settings.json -> ~/.claude/settings.json"
+}
+
+# Ghostty reads its config from the macOS-native path (the file the
+# Settings > config.ghostty menu item opens), so symlink that at the repo copy.
+function symlink_ghostty_config() {
+  log_section "Ghostty Config"
+  local target=~/Library/Application\ Support/com.mitchellh.ghostty/config.ghostty
+  mkdir -p "${target:h}"
+
+  if [ -f "$target" ] && [ ! -L "$target" ]; then
+    mv "$target" $olddir/config.ghostty
+    log_step "Backed up existing $target to $olddir"
+  fi
+  ln -sf $dir/ghostty/config.ghostty "$target"
+  log_step "symlinking $dir/ghostty/config.ghostty -> $target"
 }
 
 # clone the standalone statusline repo (source of truth for the Claude Code status line;
