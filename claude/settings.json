@@ -6,7 +6,7 @@
   },
   "statusLine": {
     "type": "command",
-    "command": "~/src/statusline/statusline-main.sh"
+    "command": "~/src/statusline/statusline"
   },
   "enabledPlugins": {
     "superpowers@claude-plugins-official": true,

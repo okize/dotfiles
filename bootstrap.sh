@@ -16,6 +16,7 @@ main() {
   install_homebrew
   install_brewfile_packages
   install_asdf_plugins
+  build_statusline
   setup_macos
 }
 
@@ -87,8 +88,9 @@ function symlink_ghostty_config() {
   log_step "symlinking $dir/ghostty/config.ghostty -> $target"
 }
 
-# clone the standalone statusline repo (source of truth for the Claude Code status line;
-# settings.json points its statusLine command at ~/src/statusline/statusline-main.sh)
+# clone the standalone statusline repo (source of truth for the Claude Code status line).
+# It's a Go program; build_statusline (below) compiles the binary that
+# settings.json runs at ~/src/statusline/statusline.
 function clone_statusline() {
   log_section "Claude Code Statusline"
   local repo="https://github.com/okize/statusline"
@@ -102,6 +104,33 @@ function clone_statusline() {
     log_step "Cloning $repo -> $dest"
     git clone "$repo" "$dest"
   fi
+}
+
+# build the statusline Go binary. Runs after install_asdf_plugins so the asdf
+# toolchain is available. The binary is gitignored (each machine builds its own),
+# and settings.json runs the resulting ~/src/statusline/statusline.
+function build_statusline() {
+  log_section "Building statusline binary"
+  local dest=~/src/statusline
+
+  if [ ! -d "$dest" ]; then
+    log_step "No clone at $dest; skipping build"
+    return
+  fi
+
+  # ensure the golang plugin, then install the Go version pinned in the repo's
+  # .tool-versions (idempotent) and build
+  if ! asdf plugin list 2>/dev/null | grep -qx golang; then
+    log_step "Adding golang plugin to asdf"
+    asdf plugin add golang
+  fi
+  log_step "Installing the Go toolchain pinned in $dest/.tool-versions"
+  (cd "$dest" && asdf install golang)
+
+  # prepend the asdf shims dir so `go` resolves even in this non-interactive run
+  # (.zshrc adds it, but .zshrc isn't sourced here)
+  log_step "Building $dest/statusline"
+  (cd "$dest" && PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH" make build)
 }
 
 # optionally set computer name
