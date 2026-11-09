@@ -9,6 +9,7 @@
 main() {
   symlink_dotfiles
   symlink_claude_settings
+  symlink_claude_hooks
   symlink_ghostty_config
   clone_statusline
   set_computer_name
@@ -71,6 +72,21 @@ function symlink_claude_settings() {
   fi
   ln -sf $dir/claude/settings.json ~/.claude/settings.json
   log_step "symlinking $dir/claude/settings.json -> ~/.claude/settings.json"
+}
+
+function symlink_claude_hooks() {
+  log_section "Claude Code Hooks"
+  mkdir -p ~/.claude/hooks
+
+  for hook in $dir/claude/hooks/*; do
+    name=$(basename "$hook")
+    if [ -f ~/.claude/hooks/$name ] && [ ! -L ~/.claude/hooks/$name ]; then
+      mv ~/.claude/hooks/$name $olddir/hooks-$name
+      log_step "Backed up existing ~/.claude/hooks/$name to $olddir"
+    fi
+    ln -sf "$hook" ~/.claude/hooks/$name
+    log_step "symlinking $hook -> ~/.claude/hooks/$name"
+  done
 }
 
 # Ghostty reads its config from the macOS-native path (the file the
