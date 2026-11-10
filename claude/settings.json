@@ -34,14 +34,54 @@
     "command": "~/src/statusline/statusline"
   },
   "enabledPlugins": {
+    "agent-skills@addy-agent-skills": true,
+    "codex@openai-codex": true,
+    "i-have-adhd@i-have-adhd": true,
     "superpowers@claude-plugins-official": true,
-    "ruby-lsp@claude-plugins-official": true
+    "worktrunk@worktrunk": true,
+    "code@wistia-skills": true
   },
   "extraKnownMarketplaces": {
+    "addy-agent-skills": {
+      "source": {
+        "source": "github",
+        "repo": "addyosmani/agent-skills"
+      }
+    },
+    "i-have-adhd": {
+      "source": {
+        "source": "github",
+        "repo": "ayghri/i-have-adhd"
+      }
+    },
+    "openai-codex": {
+      "source": {
+        "source": "github",
+        "repo": "openai/codex-plugin-cc"
+      }
+    },
     "superpowers-marketplace": {
       "source": {
         "source": "github",
         "repo": "obra/superpowers-marketplace"
+      }
+    },
+    "worktrunk": {
+      "source": {
+        "source": "github",
+        "repo": "max-sixty/worktrunk"
+      }
+    },
+    "unifi-plugins": {
+      "source": {
+        "source": "github",
+        "repo": "sirkirby/unifi-mcp"
+      }
+    },
+    "wistia-skills": {
+      "source": {
+        "source": "github",
+        "repo": "wistia/skills"
       }
     }
   },
