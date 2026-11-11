@@ -32,3 +32,5 @@ Brewfile.work.lock.json
 
 # Claude settings I don't want commited
 .claude/settings.local.json
+
+**/.claude/.cc-writes/

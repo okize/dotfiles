@@ -4,6 +4,24 @@
     "AWS_REGION": "us-east-1",
     "ENABLE_TOOL_SEARCH": "true"
   },
+  "permissions": {
+    "deny": [
+      "Read(**/*.env*)",
+      "Read(**/*.env)",
+      "Read(**/.env.local)",
+      "Read(**/secrets/**)",
+      "Read(~/.aws/**)",
+      "Read(~/Library/Keychains/**)",
+      "Bash(**/bin/deploy*)",
+      "Bash(**/bin/decrypt-keys*)",
+      "Bash(aws-vault *)"
+    ],
+    "defaultMode": "auto",
+    "additionalDirectories": [
+      "/Users/morganwigmanich/wistia/wizard"
+    ]
+  },
+  "model": "claude-fable-5-1[1m]",
   "hooks": {
     "UserPromptSubmit": [
       {
@@ -102,7 +120,9 @@
       ]
     }
   },
+  "feedbackDrafts": "off",
   "alwaysThinkingEnabled": true,
   "effortLevel": "xhigh",
-  "skipDangerousModePermissionPrompt": true
+  "skipDangerousModePermissionPrompt": true,
+  "theme": "auto"
 }
