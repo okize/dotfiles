@@ -211,6 +211,12 @@ install_asdf_plugins() {
   fi
   asdf plugin update nodejs
 
+  if ! asdf plugin list | grep -q pnpm; then
+    echo "Adding pnpm plugin to asdf"
+    asdf plugin add pnpm
+  fi
+  asdf plugin update pnpm
+
   # install whatever is set in ~/.tool-versions
   asdf install
 }
