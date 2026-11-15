@@ -545,3 +545,6 @@ alias gha_cache_delete="gh cache list --limit 100 | tail -n +5 | awk '{print $1}
 
 # check archived status of all github repos in current directory
 alias check-archived="~/dotfiles/code/check-archived.sh"
+
+# check default branch of all github repos in current directory (or a given dir), marks forks
+alias check-default-branch="~/dotfiles/code/check-default-branch.sh"
