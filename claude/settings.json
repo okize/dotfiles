@@ -21,7 +21,6 @@
       "/Users/morganwigmanich/wistia/wizard"
     ]
   },
-  "model": "claude-fable-5-1[1m]",
   "hooks": {
     "UserPromptSubmit": [
       {
@@ -53,9 +52,7 @@
   },
   "enabledPlugins": {
     "agent-skills@addy-agent-skills": true,
-    "codex@openai-codex": true,
     "i-have-adhd@i-have-adhd": true,
-    "superpowers@claude-plugins-official": true,
     "worktrunk@worktrunk": true,
     "code@wistia-skills": true
   },
@@ -123,6 +120,15 @@
   "feedbackDrafts": "off",
   "alwaysThinkingEnabled": true,
   "effortLevel": "xhigh",
+  "modelSettings": {
+    "claude-fable-5-1": {
+      "effortLevel": "high"
+    },
+    "claude-opus-5-5": {
+      "effortLevel": "high"
+    }
+  },
+  "autoCompactWindow": 200000,
   "skipDangerousModePermissionPrompt": true,
   "theme": "auto"
 }
