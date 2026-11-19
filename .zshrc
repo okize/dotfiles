@@ -33,8 +33,6 @@ setopt INC_APPEND_HISTORY # adds commands to history as they are typed, not at s
 setopt NO_NOMATCH # don't error on unmatched globs
 setopt INTERACTIVE_COMMENTS # allow # comments in interactive shell
 setopt NO_CASE_GLOB # make globbing case insensitive
-setopt CORRECT # enable correction
-setopt CORRECT_ALL
 
 # Avoid issues with `gpg` as installed via Homebrew.
 # https://stackoverflow.com/a/42265848/96656
