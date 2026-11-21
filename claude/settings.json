@@ -44,6 +44,18 @@
           }
         ]
       }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "EnterWorktree",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "sh '/Users/morganwigmanich/.claude/hooks/block-nested-worktree.sh'",
+            "timeout": 5
+          }
+        ]
+      }
     ]
   },
   "statusLine": {
@@ -130,5 +142,6 @@
   },
   "autoCompactWindow": 200000,
   "skipDangerousModePermissionPrompt": true,
-  "theme": "auto"
+  "theme": "auto",
+  "model": "opus"
 }
