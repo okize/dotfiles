@@ -17,9 +17,11 @@
       "Bash(aws-vault *)"
     ],
     "defaultMode": "auto",
-    "additionalDirectories": [
-      "/Users/morganwigmanich/wistia/wizard"
-    ]
+    "additionalDirectories": []
+  },
+  "statusLine": {
+    "type": "command",
+    "command": "~/src/statusline/statusline"
   },
   "hooks": {
     "UserPromptSubmit": [
@@ -58,14 +60,9 @@
       }
     ]
   },
-  "statusLine": {
-    "type": "command",
-    "command": "~/src/statusline/statusline"
-  },
   "enabledPlugins": {
     "agent-skills@addy-agent-skills": true,
     "i-have-adhd@i-have-adhd": true,
-    "worktrunk@worktrunk": true,
     "code@wistia-skills": true
   },
   "extraKnownMarketplaces": {
@@ -79,30 +76,6 @@
       "source": {
         "source": "github",
         "repo": "ayghri/i-have-adhd"
-      }
-    },
-    "openai-codex": {
-      "source": {
-        "source": "github",
-        "repo": "openai/codex-plugin-cc"
-      }
-    },
-    "superpowers-marketplace": {
-      "source": {
-        "source": "github",
-        "repo": "obra/superpowers-marketplace"
-      }
-    },
-    "worktrunk": {
-      "source": {
-        "source": "github",
-        "repo": "max-sixty/worktrunk"
-      }
-    },
-    "unifi-plugins": {
-      "source": {
-        "source": "github",
-        "repo": "sirkirby/unifi-mcp"
       }
     },
     "wistia-skills": {
@@ -137,7 +110,7 @@
       "effortLevel": "high"
     },
     "claude-opus-5-5": {
-      "effortLevel": "high"
+      "effortLevel": "xhigh"
     }
   },
   "autoCompactWindow": 200000,
