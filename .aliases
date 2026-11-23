@@ -1,3 +1,22 @@
+## AI stuff #
+
+# Clean a multi-line command copied from a terminal: strip indentation, join lines with a space, drop a leading "! "
+alias c="pbpaste | sed 's/^[[:space:]]*//; s/[[:space:]]*\$//; /^\$/d' | paste -sd ' ' -  | sed 's/^! //' | tr -d '\n' | pbcopy"
+
+# claude code cli
+alias cc="claude"
+alias ccd="claude --dangerously-skip-permissions"
+
+# chatgpt/codex cli
+alias co="codex"
+alias cr="codex review --base main"
+
+# opencode
+alias oc="opencode"
+
+# upgrade agent (and related) binaries
+alias upai="brew upgrade claude-code@latest codex opencode herdr"
+
 # reload shell (replaces current process with a fresh zsh)
 alias br="exec zsh"
 
@@ -107,9 +126,6 @@ alias flush="dscacheutil -flushcache"
 # View HTTP traffic
 alias sniff="sudo ngrep -d 'en0' -t '^(GET|POST) ' 'tcp and port 80'"
 alias httpdump="sudo tcpdump -i en0 -n -s 0 -w - | grep -a -o -E \"Host\: .*|GET \/.*\""
-
-# Trim new lines and copy to clipboard
-alias c="tr -d '\n' | pbcopy"
 
 # Clean up LaunchServices to remove duplicates in the “Open With” menu
 alias lscleanup="/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user && killall Finder"
