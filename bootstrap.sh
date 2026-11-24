@@ -11,6 +11,7 @@ main() {
   symlink_claude_settings
   symlink_claude_hooks
   symlink_ghostty_config
+  symlink_opencode_config
   clone_statusline
   set_computer_name
   install_xcode_cli
@@ -102,6 +103,19 @@ function symlink_ghostty_config() {
   fi
   ln -sf $dir/ghostty/config.ghostty "$target"
   log_step "symlinking $dir/ghostty/config.ghostty -> $target"
+}
+
+function symlink_opencode_config() {
+  log_section "OpenCode Config"
+  local target=~/.config/opencode/opencode.jsonc
+  mkdir -p "${target:h}"
+
+  if [ -f "$target" ] && [ ! -L "$target" ]; then
+    mv "$target" $olddir/opencode.jsonc
+    log_step "Backed up existing $target to $olddir"
+  fi
+  ln -sf $dir/opencode/opencode.jsonc "$target"
+  log_step "symlinking $dir/opencode/opencode.jsonc -> $target"
 }
 
 # clone the standalone statusline repo (source of truth for the Claude Code status line).
