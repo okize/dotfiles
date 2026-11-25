@@ -19,10 +19,7 @@
     "defaultMode": "auto",
     "additionalDirectories": []
   },
-  "statusLine": {
-    "type": "command",
-    "command": "~/src/statusline/statusline"
-  },
+  "model": "opus",
   "hooks": {
     "UserPromptSubmit": [
       {
@@ -46,24 +43,17 @@
           }
         ]
       }
-    ],
-    "PreToolUse": [
-      {
-        "matcher": "EnterWorktree",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "sh '/Users/morganwigmanich/.claude/hooks/block-nested-worktree.sh'",
-            "timeout": 5
-          }
-        ]
-      }
     ]
+  },
+  "statusLine": {
+    "type": "command",
+    "command": "~/src/statusline/statusline"
   },
   "enabledPlugins": {
     "agent-skills@addy-agent-skills": true,
     "i-have-adhd@i-have-adhd": true,
-    "code@wistia-skills": true
+    "code@wistia-skills": true,
+    "worktrunk@worktrunk": true
   },
   "extraKnownMarketplaces": {
     "addy-agent-skills": {
@@ -115,6 +105,5 @@
   },
   "autoCompactWindow": 200000,
   "skipDangerousModePermissionPrompt": true,
-  "theme": "auto",
-  "model": "opus"
+  "theme": "auto"
 }
