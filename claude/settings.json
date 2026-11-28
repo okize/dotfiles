@@ -19,7 +19,6 @@
     "defaultMode": "auto",
     "additionalDirectories": []
   },
-  "model": "opus",
   "hooks": {
     "UserPromptSubmit": [
       {
@@ -53,7 +52,8 @@
     "agent-skills@addy-agent-skills": true,
     "i-have-adhd@i-have-adhd": true,
     "code@wistia-skills": true,
-    "worktrunk@worktrunk": true
+    "worktrunk@worktrunk": true,
+    "cc-plugin-you-should-know@builtin": false
   },
   "extraKnownMarketplaces": {
     "addy-agent-skills": {
@@ -105,5 +105,6 @@
   },
   "autoCompactWindow": 200000,
   "skipDangerousModePermissionPrompt": true,
-  "theme": "auto"
+  "theme": "auto",
+  "model": "opus"
 }
